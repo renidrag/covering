@@ -1,0 +1,90 @@
+{
+  "version": "1.2.0",
+  "name": "covering_designs",
+  "lakeDir": ".lake",
+  "packagesDir": ".lake/packages",
+  "fixedToolchain": true,
+  "packages": [
+    {
+      "type": "path",
+      "name": "plausible",
+      "scope": "leanprover-community",
+      "dir": "vendor/plausible",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "LeanSearchClient",
+      "scope": "leanprover-community",
+      "dir": "vendor/LeanSearchClient",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "importGraph",
+      "scope": "leanprover-community",
+      "dir": "vendor/importGraph",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "proofwidgets",
+      "scope": "leanprover-community",
+      "dir": "vendor/proofwidgets",
+      "inherited": true,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "aesop",
+      "scope": "leanprover-community",
+      "dir": "vendor/aesop",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "Qq",
+      "scope": "leanprover-community",
+      "dir": "vendor/Qq",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "batteries",
+      "scope": "leanprover-community",
+      "dir": "vendor/batteries",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "Cli",
+      "scope": "leanprover",
+      "dir": "vendor/Cli",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "type": "path",
+      "name": "mathlib",
+      "scope": "",
+      "dir": "vendor/mathlib4-4.34.1",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json"
+    }
+  ]
+}

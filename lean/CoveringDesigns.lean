@@ -1,0 +1,3 @@
+import CoveringDesigns.C11_5_2
+import CoveringDesigns.C12_6_3
+import CoveringDesigns.C13_7_4

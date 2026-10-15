@@ -1,0 +1,36 @@
+{
+  "v": 13,
+  "k": 7,
+  "t": 4,
+  "blocks": 30,
+  "distinct": true,
+  "subsets": 715,
+  "covered": 715,
+  "uncovered": 0,
+  "multiplicity_histogram": {
+    "1": 511,
+    "2": 108,
+    "3": 71,
+    "4": 17,
+    "5": 6,
+    "6": 2
+  },
+  "degrees": [
+    15,
+    16,
+    15,
+    16,
+    15,
+    17,
+    17,
+    17,
+    17,
+    15,
+    17,
+    17,
+    16
+  ],
+  "input_file": "data/ljcr-30-one-based.txt",
+  "input_sha256": "f73908114792824efc2deb0dca6d8c06756f55028a8a170e8499e958af16ce7a",
+  "elapsed_seconds": 0.0019124590326100588
+}

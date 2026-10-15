@@ -1,0 +1,54 @@
+# Lean/Lake caches and compiled proof artifacts.
+.lake/
+*.olean
+*.olean.private
+*.olean.server
+*.ilean
+
+# Downloaded dependencies; keep the pinned installation provenance.
+/lean/vendor/*
+!/lean/vendor/dependencies-provenance.json
+
+# Local verification records and logs; keep the retained witness report.
+/results/*
+!/results/verify30.json
+*.log
+
+# Python caches, local environments and analysis output.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local editor settings and backup files.
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
+
+# Operating-system metadata.
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Local configuration; retain distributable environment examples.
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Local agent instructions and settings.
+/AGENTS.md
+/AGENTS.local.md
+/.agents/
+/.codex/
+/.nova/

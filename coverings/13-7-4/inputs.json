@@ -1,0 +1,20 @@
+{
+  "entry": "CoveringDesigns.C13_7_4",
+  "kind": "Structural proof established in this project using the proved Stanton and GPPT structural results",
+  "depends_on": [
+    "12-6-3"
+  ],
+  "inputs": [
+    {
+      "path": "data/ljcr-30.json",
+      "role": "Zero-based thirty-block construction",
+      "sha256": "34e22b7b87e5b79e709ad153a0314996b7a87d5bf64aa0ad758c64732115892c"
+    },
+    {
+      "path": "data/ljcr-30-one-based.txt",
+      "role": "Preserved one-based source transcription",
+      "sha256": "f73908114792824efc2deb0dca6d8c06756f55028a8a170e8499e958af16ce7a"
+    }
+  ],
+  "path_convention": "All paths are relative to the repository root."
+}

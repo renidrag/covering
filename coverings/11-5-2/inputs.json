@@ -1,0 +1,88 @@
+{
+  "entry": "CoveringDesigns.C11_5_2",
+  "kind": "Structural proof of the known minimum and two-type classification, using only standard foundational axioms",
+  "depends_on": [],
+  "inputs": [
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Representatives.lean",
+      "role": "Two explicit minimum covering representatives",
+      "sha256": "8c36f08a3822d8b6497c9598fcb03c202f9176c015fa44677f0738086d15fb75"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Stanton.lean",
+      "role": "Public structural template and classification theorems",
+      "sha256": "4b04ea8c639a1fdf723f18751b3f4318ed361ca837aa5b061a8b9f0a0290387f"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Classification.lean",
+      "role": "Kernel-checked representatives, nonisomorphism and exact minimum",
+      "sha256": "0531b3ff3ae342fa22376e75b541fac0a80f4dcce8b6466794e81d8083e60aff"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/Degrees.lean",
+      "role": "Structural classification proof",
+      "sha256": "7c8b5149b9f9812a26c9b1745853ca5985e0b77c8cbcb6a9222e5e145acda522"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/DoubledEdges.lean",
+      "role": "Structural classification proof",
+      "sha256": "d526eadd586076b11e80219947657620d60a47a93cf326e792b6da513e1e4d29"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/Frame.lean",
+      "role": "Structural classification proof",
+      "sha256": "971c24112abbc692b1d28e91f93ca80b4164e31ce72671ecd23915e2b869a6a5"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/Grid.lean",
+      "role": "Structural classification proof",
+      "sha256": "336294fd8bf0e72c785612c7926d076c2f89ff163852becdef7d80ceabc0a5aa"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/Intersections.lean",
+      "role": "Structural classification proof",
+      "sha256": "63849d51d43816edb4a84b5e06ea689375de24730c60813f49a42ff4c716b1a4"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/NormalForm.lean",
+      "role": "Structural classification proof",
+      "sha256": "58abc11036c1c54c4a1eb6f7cabe61fccc2f19ba401cd157dff51646c89e60a6"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/Partition.lean",
+      "role": "Structural classification proof",
+      "sha256": "613bb0a80f3dbd4fd4aa408c4f1662c6fe9de1a846ecb76b251569e31cb45c7f"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/Residual.lean",
+      "role": "Structural classification proof",
+      "sha256": "36b84a2ce64d627f198d908b990b1d9e0c666141f479d9d15d24ce0f65c39854"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/Template.lean",
+      "role": "Structural classification proof",
+      "sha256": "ad04e124376cabf1a666d94f892aa26012695c097e20f77740c00f20b73172f9"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Structural/TracePairs.lean",
+      "role": "Structural classification proof",
+      "sha256": "444879c6915ecd145af1e03ed67decf5354dd7df97870bbe0c6b1f7722222d10"
+    },
+    {
+      "path": "lean/CoveringDesigns/Foundations/Intersecting.lean",
+      "role": "Reusable structural counting or partition obstruction",
+      "sha256": "473bd5f06511510695fffc5bf8d44834c19f4e158dd6dff705c67f8094197121"
+    },
+    {
+      "path": "lean/CoveringDesigns/Foundations/PairCapacity.lean",
+      "role": "Reusable structural counting or partition obstruction",
+      "sha256": "5918c64d81d512836d02b20fced6df076be8eef527c563e87919d9af01b1e1d7"
+    },
+    {
+      "path": "lean/CoveringDesigns/Foundations/PartitionObstruction.lean",
+      "role": "Reusable structural counting or partition obstruction",
+      "sha256": "f6193fbf74017d5a372d7912ad63813352ca5b15b2349245b4bf0a785436c024"
+    }
+  ],
+  "path_convention": "All paths are relative to the repository root."
+}

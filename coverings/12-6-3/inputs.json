@@ -1,0 +1,45 @@
+{
+  "entry": "CoveringDesigns.C12_6_3",
+  "kind": "Structural proof of the GPPT reduction and kernel-checked catalogue completeness",
+  "depends_on": [
+    "11-5-2"
+  ],
+  "inputs": [
+    {
+      "path": "data/gppt-figure1.json",
+      "role": "Published partial covering transcription, retained for provenance",
+      "sha256": "c0a4da085805d2fbb31dcd963d856c90ca8d9ae35602f57cc4db96f007732e30"
+    },
+    {
+      "path": "data/gppt-figure6.json",
+      "role": "Fifteen-block construction",
+      "sha256": "08ef7dbe27cf745249c48a42812e0df0c31f8bf46bb32c43dd40b119f4b8a728"
+    },
+    {
+      "path": "data/links-68.json",
+      "role": "Explicit local-cover catalogue",
+      "sha256": "b71ba111f428b74a832e0b9fb6c90c6f612ba039d69f242d664f859ff27c5086"
+    },
+    {
+      "path": "data/completion-isomorphisms.bin.gz",
+      "role": "Source of proposed completion isomorphisms for the untrusted generator; all resulting witnesses are kernel checked",
+      "sha256": "cc3bb1186139f2e7aff725371bbc4bfe0f1dc7787a7298e1b0beaba973f0a5f0"
+    },
+    {
+      "path": "data/sources/gppt-1995.pdf",
+      "role": "Retained author-hosted source paper",
+      "sha256": "6da3d15935e5eb8eca9e533c60ffb08db48cb335a94f88c007bd449729f8cf79"
+    },
+    {
+      "path": "lean/CoveringDesigns/C12_6_3/Structural/CompletionData.lean",
+      "role": "Explicit automorphisms and completion witnesses checked by the Lean kernel",
+      "sha256": "3af2ee22d1e4e8ede3af1e37d561ef0ed0ad9c3612fcb621c86fda9cea8f2e6d"
+    },
+    {
+      "path": "scripts/generate_gppt_completions.py",
+      "role": "Deterministic untrusted generator of the completion witnesses",
+      "sha256": "b259edee1791d241dff7874d94d3b801d9efda48a5e2b213be4f0cbc3f1b9ac5"
+    }
+  ],
+  "path_convention": "All paths are relative to the repository root."
+}

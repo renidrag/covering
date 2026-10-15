@@ -1,0 +1,340 @@
+{
+  "problem": {
+    "v": 11,
+    "k": 5,
+    "t": 2
+  },
+  "scope": "Historical attribution of the seven-block classification and identification of the two explicit library representatives.",
+  "stanton_reference": {
+    "author": "R. G. Stanton",
+    "title": "Isomorphism Classes of Small Covering Designs with Block Size Five",
+    "book": "Combinatorial Design Theory",
+    "editors": [
+      "Charles J. Colbourn",
+      "Rudolf Mathon"
+    ],
+    "publisher": "North-Holland",
+    "year": 1987,
+    "pages": "441-448",
+    "series": [
+      "Annals of Discrete Mathematics 34",
+      "North-Holland Mathematics Studies 149"
+    ],
+    "isbn": "0-444-70328-4",
+    "doi": "10.1016/S0304-0208(08)72910-4",
+    "url": "https://doi.org/10.1016/S0304-0208(08)72910-4",
+    "bibliography_checked": true,
+    "full_chapter_obtained_or_read": false,
+    "available_preview_scope": "Title, copyright and contents pages; the preview does not contain the Stanton chapter."
+  },
+  "gppt_attribution": {
+    "authors": [
+      "Daniel M. Gordon",
+      "Oren Patashnik",
+      "John Petro",
+      "Herbert Taylor"
+    ],
+    "title": "Minimum (12,6,3) Covers",
+    "journal": "Ars Combinatoria",
+    "volume": 40,
+    "year": 1995,
+    "journal_pages": "161-177",
+    "author_copy_url": "https://dmgordon.org/papers/c-12-6-3.pdf",
+    "publisher_record_url": "https://combinatorialpress.com/ars-articles/volume-040-ars-articles/minimum-12-6-3-covers/",
+    "checked_copy": "15-page author-hosted prepublication version included as data/sources/gppt-1995.pdf",
+    "theorem_location": "Section 3, Theorem 3.1, printed/PDF page 4",
+    "classification_statement": "Every minimum (11,5,2) cover is a relabelled completion of Figure 2.",
+    "two_types_location": "Figure 2, remarks and explanation following Property 3.3, printed/PDF page 5",
+    "reference_location": "Reference [5], printed/PDF page 15",
+    "attribution_scope": "GPPT explicitly attributes the result to Stanton and says its formulation differs slightly. This establishes the citation chain; direct comparison to the original chapter remains outstanding.",
+    "visual_checks": [
+      "Theorem 3.1 and its attribution",
+      "Figure 2 and two-completion explanation",
+      "Reference [5]"
+    ]
+  },
+  "figure2_transcription": {
+    "numbering": "One-based GPPT labels, with T=10 and E=11.",
+    "partial_blocks": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        1,
+        2,
+        6,
+        7,
+        8
+      ],
+      [
+        1,
+        2,
+        9,
+        10,
+        11
+      ],
+      [
+        3,
+        7,
+        8,
+        10,
+        11
+      ],
+      [
+        4,
+        5,
+        6,
+        10,
+        11
+      ],
+      [
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      [
+        3,
+        6,
+        9
+      ]
+    ],
+    "comparisons": [
+      {
+        "added_one_based_points": [
+          7,
+          8
+        ],
+        "blocks_one_based": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            6,
+            7,
+            8
+          ],
+          [
+            1,
+            2,
+            9,
+            10,
+            11
+          ],
+          [
+            3,
+            7,
+            8,
+            10,
+            11
+          ],
+          [
+            4,
+            5,
+            6,
+            10,
+            11
+          ],
+          [
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          [
+            3,
+            6,
+            7,
+            8,
+            9
+          ]
+        ],
+        "matches": [
+          {
+            "lean_tag": true,
+            "gppt_zero_based_to_lean_points": [
+              1,
+              5,
+              10,
+              2,
+              6,
+              8,
+              0,
+              4,
+              9,
+              3,
+              7
+            ]
+          }
+        ],
+        "independent_cover_check": {
+          "v": 11,
+          "k": 5,
+          "t": 2,
+          "blocks": 7,
+          "distinct": true,
+          "subsets": 55,
+          "covered": 55,
+          "uncovered": 0,
+          "multiplicity_histogram": {
+            "1": 45,
+            "2": 6,
+            "3": 3,
+            "4": 1
+          },
+          "degrees": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            3,
+            3,
+            3
+          ]
+        }
+      },
+      {
+        "added_one_based_points": [
+          7,
+          10
+        ],
+        "blocks_one_based": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            6,
+            7,
+            8
+          ],
+          [
+            1,
+            2,
+            9,
+            10,
+            11
+          ],
+          [
+            3,
+            7,
+            8,
+            10,
+            11
+          ],
+          [
+            4,
+            5,
+            6,
+            10,
+            11
+          ],
+          [
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          [
+            3,
+            6,
+            7,
+            9,
+            10
+          ]
+        ],
+        "matches": [
+          {
+            "lean_tag": false,
+            "gppt_zero_based_to_lean_points": [
+              5,
+              7,
+              2,
+              6,
+              8,
+              0,
+              3,
+              9,
+              1,
+              4,
+              10
+            ]
+          }
+        ],
+        "independent_cover_check": {
+          "v": 11,
+          "k": 5,
+          "t": 2,
+          "blocks": 7,
+          "distinct": true,
+          "subsets": 55,
+          "covered": 55,
+          "uncovered": 0,
+          "multiplicity_histogram": {
+            "1": 44,
+            "2": 7,
+            "3": 4
+          },
+          "degrees": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            4,
+            3
+          ]
+        }
+      }
+    ],
+    "check_scope": "Standard-library set checks of coverage and explicit point permutations. This verifies the representatives agree with the two stated GPPT completions; it is not a new exhaustive classification proof."
+  },
+  "project_scope": {
+    "value": "The lower bound seven follows from the elementary incidence count; an explicit seven-block cover supplies equality.",
+    "classification": "The project formalizes a structural reconstruction supplied by the project owner, with shortened intersecting-triple, intersection and complementary-partition arguments. Every minimum covering reaches the seven-block template, whose completions have exactly two types. No exhaustive classification certificate or native assertion is used.",
+    "priority": "No claim that Stanton first established the numerical value C(11,5,2)=7.",
+    "original_proof": "The original Stanton chapter remains unread. This proof is not claimed to reproduce his argument, and no novelty claim is made for the classification theorem."
+  },
+  "source_hashes": [
+    {
+      "path": "data/sources/gppt-1995.pdf",
+      "sha256": "6da3d15935e5eb8eca9e533c60ffb08db48cb335a94f88c007bd449729f8cf79"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Stanton.lean",
+      "sha256": "4b04ea8c639a1fdf723f18751b3f4318ed361ca837aa5b061a8b9f0a0290387f"
+    },
+    {
+      "path": "lean/CoveringDesigns/C11_5_2/Representatives.lean",
+      "sha256": "8c36f08a3822d8b6497c9598fcb03c202f9176c015fa44677f0738086d15fb75"
+    }
+  ],
+  "bibliography_checked_utc": "2026-10-12T07:44:30.469241+00:00",
+  "files_and_representatives_checked_utc": "2026-10-14T20:00:19.792282+00:00"
+}

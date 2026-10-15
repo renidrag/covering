@@ -1,0 +1,13 @@
+name = "covering_designs"
+version = "0.1.0"
+defaultTargets = ["CoveringDesigns"]
+
+[[require]]
+name = "mathlib"
+path = "vendor/mathlib4-4.34.1"
+
+[[lean_lib]]
+name = "CoveringDesigns"
+# Per-process Lean allocation limit; the recorded builds also use an RSS watchdog.
+weakLeanArgs = ["-M16384"]
+
