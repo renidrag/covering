@@ -14,6 +14,9 @@
 !/results/verify30.json
 *.log
 
+# Generated process state and logs from memory-control tests.
+/lean/pilots/VerificationControls/MemoryGuardControls/
+
 # Python caches, local environments and analysis output.
 __pycache__/
 *.py[cod]
