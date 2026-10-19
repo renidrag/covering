@@ -11,6 +11,29 @@ A $(v,k,t)$ covering is a family of distinct $k$-element blocks on $v$ points
 that covers every $t$-element subset. The smallest possible number of blocks
 is $C(v,k,t)$.
 
+## Lower bounds and exact values for $C(2k-c,k,3)$
+
+**19 October 2026.** Structural lower bounds, formalised in Lean 4, give the
+following results. Every equality includes an attaining ordinary covering.
+
+| Covering | Parameter range | Proved conclusion |
+|---|---|---|
+| $C(20,11,3)$ | — | $12$ |
+| $C(2k-2,k,3)$ | $18\le k\le35$ | $13\le C\le14$ |
+| $C(2k-2,k,3)$ | $k\ge36$ | $14$ |
+| $C(2k-3,k,3)$ | $k\ge59$ | $14$ |
+| $C(2k-c,k,3)$ | $c\ge2,\ k\ge25c$ | $14$ |
+
+My contribution is the structural lower-bound arguments and their Lean
+formalisation, developed with AI assistance. The proofs combine incidence
+counting, constraints on shared blocks, and matrix rank. Known constructions
+supply the upper bounds. The account includes its mathematical prerequisites
+and all supporting Lean modules.
+
+- [Read the mathematical proof](coverings/2k-minus-c-k-3/proof.md).
+- [Read the parameter ranges and proof outline](coverings/2k-minus-c-k-3/README.md).
+- [Read the sources and attribution](coverings/2k-minus-c-k-3/sources.md).
+
 ## New result: $C(13,7,4)=30$
 
 **13 October 2026.** Covering every four-element subset of thirteen points
@@ -32,7 +55,7 @@ describes those records and the limits of the search.
 
 **These are self-contained proofs of known results, reconstructed and
 formalised in Lean. They are not literal translations of the original
-papers.** They provide the proved prerequisites for the new result.
+papers.** They provide the proved prerequisites for $C(13,7,4)=30$.
 
 | Result | Supporting proof |
 |---|---|
@@ -61,8 +84,8 @@ twelve-point page.
 ## Verification
 
 [GitHub Actions](.github/workflows/lean-verification.yml) rebuilds and verifies
-all three Lean proofs on every push and pull request, including their theorem,
-axiom and dependency audits. The badge above reports the workflow's live
+all included Lean proofs on every push and pull request, including their
+theorem, axiom and dependency audits. The badge above reports the workflow's live
 status; a passing run confirms successful verification of that run's revision.
 Click it to inspect the run and download its verification records and logs.
 

@@ -81,6 +81,22 @@ with **Copyright (c) 2024, Daniel M. Gordon**. Its disclaimer is retained here:
 > OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 > SOFTWARE.
 
+## Near-half triple coverings
+
+The twelve-block C(20,11,3) witness displayed in the
+[canonical proof](coverings/2k-minus-c-k-3/proof.md#8-attainment-a-known-witness-and-weighted-affine-planes)
+and encoded in [Witness.lean](lean/CoveringDesigns/C20_11_3/Witness.lean)
+is existing covering data. The recorded Covering Repository metadata credits
+**Jan de Heer, 16 May 2005**, and names the Dan Gordon Covering Repository
+as source. The project uses zero-based point labels and checks the witness
+in Lean. This credit and date are repository metadata, not a claim about
+first discovery or publication. The [source account](coverings/2k-minus-c-k-3/sources.md#constructions-and-point-links)
+records the provenance and retrieval limitations.
+
+The same source account attributes the established counting, selection,
+rank and affine-construction methods used in the proofs. No additional
+third-party paper or repository payload is included in this release.
+
 ## External software dependencies
 
 Lean, Mathlib and the other packages pinned in

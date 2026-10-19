@@ -105,7 +105,7 @@ jobs:
 
       - name: Check verification tools and record controls
         run: |
-          ./covering run --name workflow-tests --timeout 120 --no-memory-guard -- \
+          ./covering run --name workflow-tests --timeout 900 --no-memory-guard -- \
             python3 -B -m unittest discover -s tests -v
           ./covering controls audit --no-memory-guard
 

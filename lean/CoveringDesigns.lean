@@ -1,3 +1,17 @@
 import CoveringDesigns.C11_5_2
 import CoveringDesigns.C12_6_3
 import CoveringDesigns.C13_7_4
+import CoveringDesigns.Schoenheim
+import CoveringDesigns.C17_9_5
+import CoveringDesigns.Weighted
+import CoveringDesigns.CaroTuza
+import CoveringDesigns.Multicover
+
+import CoveringDesigns.MulticoverLargeDefect
+import CoveringDesigns.PointReduction
+import CoveringDesigns.C20_11_3
+import CoveringDesigns.TwoKMinusTwo
+
+import CoveringDesigns.TwoKMinusTwoEquality
+import CoveringDesigns.TwoKMinusC
+import CoveringDesigns.TwoKMinusCGeneral

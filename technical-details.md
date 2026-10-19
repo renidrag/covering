@@ -194,7 +194,7 @@ witness data. The [workflow tests](tests/) and
 they are separate from the mathematical proofs. To run them:
 
 ```sh
-./covering run --name workflow-tests --timeout 60 -- \
+./covering run --name workflow-tests --timeout 900 -- \
   python3 -B -m unittest discover -s tests -v
 ./covering controls
 ```
@@ -217,3 +217,24 @@ Original project material is available under the [MIT licence](LICENSE).
 The [third-party notices](THIRD_PARTY_NOTICES.md) identify the separate
 licences, editions and attributions for the reference papers, covering data
 and external dependencies.
+
+## Lower bounds and exact values for $C(2k-c,k,3)$
+
+Read the [canonical account](coverings/2k-minus-c-k-3/README.md), then its [proof and Lean correspondence](coverings/2k-minus-c-k-3/proof.md) and [sources](coverings/2k-minus-c-k-3/sources.md). The supporting proofs, audit contracts and verification inputs are included in this repository.
+
+The full verification command above covers the first three results and all of these additional components. Each listed target also accepts `./covering verify TARGET` and `./covering audit TARGET`. Supporting audits retain their complete existing contracts and examples.
+
+| Target | Public import |
+|---|---|
+| `caro-tuza` | `CoveringDesigns.CaroTuza` |
+| `schoenheim` | `CoveringDesigns.Schoenheim` |
+| `17-9-5` | `CoveringDesigns.C17_9_5` |
+| `weighted` | `CoveringDesigns.Weighted` |
+| `multicover` | `CoveringDesigns.Multicover` |
+| `multicover-large-defect` | `CoveringDesigns.MulticoverLargeDefect` |
+| `point-reduction` | `CoveringDesigns.PointReduction` |
+| `20-11-3` | `CoveringDesigns.C20_11_3` |
+| `two-k-minus-two` | `CoveringDesigns.TwoKMinusTwo` |
+| `two-k-minus-two-equality` | `CoveringDesigns.TwoKMinusTwoEquality` |
+| `two-k-minus-c` | `CoveringDesigns.TwoKMinusC` |
+| `two-k-minus-c-general` | `CoveringDesigns.TwoKMinusCGeneral` |
