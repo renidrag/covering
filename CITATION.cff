@@ -2,6 +2,13 @@ cff-version: 1.2.0
 message: "If you cite this proof package, please use this citation."
 type: software
 title: "Covering designs: structural proofs and Lean 4 verification"
+version: "1.2.0"
+date-released: "2026-10-20"
+doi: "10.5281/zenodo.23512290"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23511135"
+    description: "Concept DOI for all versions of this proof package."
 authors:
   - family-names: Gardiner
     given-names: Rob

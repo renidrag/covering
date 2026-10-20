@@ -7,6 +7,19 @@ mathematical results. Dates use Europe/London time. The links identify each
 snapshot's mathematical account and successful Lean verification run.
 Every stated exact value includes an attaining ordinary covering.
 
+Releases are cumulative. The [collection DOI](https://doi.org/10.5281/zenodo.23511135)
+represents all versions; use a version DOI below to cite a particular archive.
+
+| Release | First public date | Archived snapshot | Version DOI |
+|---|---|---|---|
+| [v1.0.0](https://github.com/renidrag/covering/releases/tag/v1.0.0) | 15 October 2026 | [aee92cd704b6](https://github.com/renidrag/covering/tree/aee92cd704b6ac7dd2143459659c9e101d61d859) | [10.5281/zenodo.23511136](https://doi.org/10.5281/zenodo.23511136) |
+| [v1.1.0](https://github.com/renidrag/covering/releases/tag/v1.1.0) | 19 October 2026 | [9bc5a0f8d7e2](https://github.com/renidrag/covering/tree/9bc5a0f8d7e2d2b104bbed38eccad35b778fe46d) | [10.5281/zenodo.23511297](https://doi.org/10.5281/zenodo.23511297) |
+| [v1.2.0](https://github.com/renidrag/covering/releases/tag/v1.2.0) | 20 October 2026 | [d9886e4709b3](https://github.com/renidrag/covering/tree/d9886e4709b3987974e6920d98cb4df5345ef922) | [10.5281/zenodo.23512290](https://doi.org/10.5281/zenodo.23512290) |
+
+All three releases were archived on Zenodo on 20 October 2026. The v1.1.0
+archive uses a same-day packaging cleanup with unchanged mathematics; the
+19 October account below retains the first public snapshot.
+
 ## 15 October 2026 — $C(13,7,4)=30$
 
 The proof establishes $C(13,7,4)=30$, supported by reconstructed proofs and
