@@ -696,6 +696,293 @@ COMPONENTS['two-k-minus-two-tightening'] = {
     'scope': 'Ordinary triple coverings on arbitrary finite labels: lower thirteen at offset two for k>=17 and exact fourteen for k>=35, including attainment; only 13--14 at (32,17,3). Weak nullity, centering, binary support completion and clone capacity exclude the new endpoint budgets with all floors derived internally. Generic centering and completion are finite real-matrix results; clone capacity preserves indexed occurrences. No full component stability classification, equality-refinement dependency, numerical C20 theorem, search or external certificate. Rob Gardiner with AI assistance.',
 }
 
+# Arbitrary-corank affine capacity and the k>=33 family, added independently.
+COMPONENTS['rank-slack-capacity'] = {
+    'entry': 'CoveringDesigns.RankSlackCapacity',
+    'audit_name': 'rank-slack-capacity-audit',
+    'audit_file': 'RankSlackCapacity.lean',
+    'principal_theorem': 'CoveringDesigns.TwoKMinusTwoCapacity.exactness',
+    'explicit_theorem': 'CoveringDesigns.AuditRankSlackCapacity.exactness_explicit',
+    'summary_path': 'results/rank-slack-capacity-verification.json',
+    'theorems': [
+        'CoveringDesigns.AffineCapacity.exists_spanning_points',
+        'CoveringDesigns.AffineCapacity.coordinate_eq_of_mem_affineSpan',
+        'CoveringDesigns.AffineCapacity.row_eq_one_iff',
+        'CoveringDesigns.AffineCapacity.common_support_eq',
+        'CoveringDesigns.AffineCapacity.exists_block_of_dimension_lt',
+        'CoveringDesigns.AffineCapacity.card_le_of_dimension_lt',
+        'CoveringDesigns.AffineCapacity.binary_card_le_pow',
+        'CoveringDesigns.AffineCapacity.binary_affine_card_le_pow',
+        'CoveringDesigns.SupportDimension.one_le_corank',
+        'CoveringDesigns.SupportDimension.zeroSumKernel_finrank',
+        'CoveringDesigns.SupportDimension.sub_mem_zeroSumKernel',
+        'CoveringDesigns.SupportDimension.fibre_eq_translate',
+        'CoveringDesigns.SupportDimension.fibre_dimension',
+        'CoveringDesigns.SupportDimension.family_dimension_le',
+        'CoveringDesigns.SupportDimension.binary_support_card_le',
+        'CoveringDesigns.SupportDimension.common_block',
+        'CoveringDesigns.SupportCapacity.aggregate',
+        'CoveringDesigns.SupportCapacity.signed_aggregate',
+        'CoveringDesigns.SupportCapacity.of_support_bound',
+        'CoveringDesigns.SupportCapacity.numerator_pos',
+        'CoveringDesigns.SupportCapacity.card_le_div_of_support_bound',
+        'CoveringDesigns.DeficitCharging.bad_card_le',
+        'CoveringDesigns.DeficitCharging.sum_le_mul_positive',
+        'CoveringDesigns.DeficitCharging.regular_count',
+        'CoveringDesigns.BoundaryIncidence.low_degree',
+        'CoveringDesigns.BoundaryIncidence.high_degree',
+        'CoveringDesigns.BoundaryIncidence.low_ne_high',
+        'CoveringDesigns.BoundaryIncidence.pair_self',
+        'CoveringDesigns.BoundaryIncidence.singleton_degree',
+        'CoveringDesigns.BoundaryIncidence.pair_comm',
+        'CoveringDesigns.BoundaryIncidence.row_binary',
+        'CoveringDesigns.BoundaryIncidence.row_sum',
+        'CoveringDesigns.BoundaryIncidence.row_dot',
+        'CoveringDesigns.BoundaryIncidence.degree_sum',
+        'CoveringDesigns.BoundaryIncidence.excess_cast',
+        'CoveringDesigns.BoundaryIncidence.total_excess',
+        'CoveringDesigns.BoundaryIncidence.balance',
+        'CoveringDesigns.BoundaryIncidence.gram',
+        'CoveringDesigns.BoundaryIncidence.completion',
+        'CoveringDesigns.BoundaryIncidence.degree_balance',
+        'CoveringDesigns.BoundaryIncidence.regular_degree',
+        'CoveringDesigns.BoundaryIncidence.regular_image',
+        'CoveringDesigns.BoundaryIncidence.regular_centered_image',
+        'CoveringDesigns.BoundaryIncidence.deficit_le',
+        'CoveringDesigns.BoundaryIncidence.regular_count',
+        'CoveringDesigns.BoundaryIncidence.lowerCount_le',
+        'CoveringDesigns.BoundaryIncidence.row_membership_eq',
+        'CoveringDesigns.BoundaryIncidence.supports_le',
+        'CoveringDesigns.BoundaryIncidence.dimension_le',
+        'CoveringDesigns.BoundaryIncidence.clone_bound',
+        'CoveringDesigns.BoundaryIncidence.clone_obstruction',
+        'CoveringDesigns.BoundaryIncidence.covering_obstruction',
+        'CoveringDesigns.TwoKMinusTwoCapacity.indexed_degree_ge_six',
+        'CoveringDesigns.TwoKMinusTwoCapacity.thirteen_budget',
+        'CoveringDesigns.TwoKMinusTwoCapacity.no_thirteen',
+        'CoveringDesigns.TwoKMinusTwoCapacity.indexed_fourteen_le_card',
+        'CoveringDesigns.TwoKMinusTwoCapacity.fourteen_le_card',
+        'CoveringDesigns.TwoKMinusTwoCapacity.attaining',
+        'CoveringDesigns.TwoKMinusTwoCapacity.exactness',
+        'CoveringDesigns.TwoKMinusTwoCapacity.covering_number',
+        'CoveringDesigns.C64_33_3.exactness_on',
+        'CoveringDesigns.covering_number_64_33_3',
+        'CoveringDesigns.C66_34_3.exactness_on',
+        'CoveringDesigns.covering_number_66_34_3',
+    ],
+    'milestones': ['CoveringDesigns.AuditRankSlackCapacity.indexed_explicit'],
+    'independent_of': [key for key in ['caro-tuza', 'horsley', 'schoenheim', '11-5-2', '12-5-2', '12-6-3', '13-7-4', 'horsley-lifts', 'horsley-singh', 'equality', '17-9-5', 'higher-incidence', 'weighted', '47-14-5', '42-15-5', 'large-defect', 'small-defect', 'small-defect-b', 'small-defect-c', 'multicover', 'multicover-incidence', 'multicover-large-defect', 'coefficient-positivity', 'affine-constructions', 'affine-schoenheim', 'affine-optimality', 'lifting-comparison', 'schoenheim-improvement', 'multicover-small-defect', 'low-degree-selection', 'seed-comparison', 'exact-design', 'point-reduction', 'base-affine', 'schoenheim-family-comparison', 'max-degree-sequence', 'max-guarantee', 'max-covering', 'max-higher-covering', '14-8-5', '59-17-5', '66-18-5', '79-22-5', '87-23-5', '98-22-5', 'labelled-cliques', 'turan-duality', 'turan', 'de-caen', 'chvatal', 'gkp-combination', 'gkp-induced', 'gkp-induced-averaging', 'projective-hyperplanes', 'finite-flat-geometry', 'degree-selected', '20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening'] if key not in
+        ('two-k-minus-two', 'affine-constructions', '20-11-3',
+         'caro-tuza', 'horsley', 'schoenheim', 'horsley-singh', 'equality',
+         'higher-incidence', 'weighted', 'large-defect')],
+    'scope': 'Actual affine representatives and common-block capacity; arbitrary-corank real fibres and binary support counts; integer charging and signed support-fibre aggregation; actual indexed boundary incidence, weak-nullity selection and two capacities. Every indexed threefold pair cover on 2k-2 points with k>=33 has at least fourteen occurrences, allowing repeated blocks and deriving its own degrees. Ordinary triple-cover exactness at k>=33, with unchanged affine attainment and numerical 64-33-3/66-34-3 corollaries. No component stability, numerical C20 theorem, old tightening/equality proof, search, certificate or new historical-priority claim. Rob Gardiner with AI assistance.',
+}
+
+# Additive ordinary endpoint extension and reusable affine/matching machinery.
+COMPONENTS['saturated-matching'] = {'entry': 'CoveringDesigns.SaturatedMatching',
+ 'milestones': [],
+ 'audit_name': 'saturated-matching-audit',
+ 'audit_file': 'SaturatedMatching.lean',
+ 'principal_theorem': 'CoveringDesigns.TwoKMinusTwoMatching.exactness_on',
+ 'explicit_theorem': 'CoveringDesigns.AuditSaturatedMatching.exactness_explicit',
+ 'summary_path': 'results/saturated-matching-verification.json',
+ 'theorems': ['CoveringDesigns.AffineCapacity.affine_coefficients',
+              'CoveringDesigns.AffineCapacity.omitted_coordinate',
+              'CoveringDesigns.AffineCapacity.omitted_coordinates_rigidity',
+              'CoveringDesigns.AffineCapacity.omitted_coordinates_independent',
+              'CoveringDesigns.AffineCapacity.boundary_dichotomy',
+              'CoveringDesigns.AffineCapacity.boundary_supports',
+              'CoveringDesigns.AffineCapacity.card_mul_le_of_dimension_le',
+              'CoveringDesigns.AffineCapacity.card_le_max_of_fibres',
+              'CoveringDesigns.SaturatedMatching.boundary_six',
+              'CoveringDesigns.SaturatedMatching.thirteen_budget',
+              'CoveringDesigns.SaturatedMatching.regular_fibre_le_nine',
+              'CoveringDesigns.SaturatedMatching.no_thirteen_of_pair_floor',
+              'CoveringDesigns.SaturatedMatching.Split.cross_endpoints',
+              'CoveringDesigns.SaturatedMatching.Split.matching_endpoints',
+              'CoveringDesigns.SaturatedMatching.Split.matching_separate',
+              'CoveringDesigns.SaturatedMatching.Split.matching_injective',
+              'CoveringDesigns.SaturatedMatching.Split.matching_complete',
+              'CoveringDesigns.SaturatedMatching.Split.matching_card',
+              'CoveringDesigns.SaturatedMatching.cross_excess_identity',
+              'CoveringDesigns.SaturatedMatching.loss_identity',
+              'CoveringDesigns.SaturatedMatching.cross_loss_identity',
+              'CoveringDesigns.SaturatedMatching.balanced_of_loss_zero',
+              'CoveringDesigns.SaturatedMatching.capacity_loss_at',
+              'CoveringDesigns.SaturatedMatching.shared_block_bound',
+              'CoveringDesigns.SaturatedMatching.assignment_fibre_bound',
+              'CoveringDesigns.SaturatedMatching.assignment_total_bound',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.cross_card_bound',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.four_zero',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.cross_exact',
+              'CoveringDesigns.SaturatedMatching.Split.balanced_intersections',
+              'CoveringDesigns.SaturatedMatching.Split.orient_cross',
+              'CoveringDesigns.SaturatedMatching.Split.excess_two',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.not_five',
+              'CoveringDesigns.SaturatedMatching.Split.residual_of_separated',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.four_compatibility',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.supporting_intersection_sixteen',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.not_four',
+              'CoveringDesigns.SaturatedMatching.family_degree',
+              'CoveringDesigns.SaturatedMatching.Split.endpoints_left',
+              'CoveringDesigns.SaturatedMatching.Split.endpoints_right',
+              'CoveringDesigns.SaturatedMatching.Split.complementary',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.point_ne',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.own_mem',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.block_injective',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.endpoint_degree',
+              'CoveringDesigns.SaturatedMatching.CoverMatching.pair_floor',
+              'CoveringDesigns.SaturatedMatching.Split.endpoint_floor',
+              'CoveringDesigns.SaturatedMatching.Split.no_second_partner',
+              'CoveringDesigns.SaturatedMatching.Split.endpoint_counts',
+              'CoveringDesigns.SaturatedMatching.Split.surviving_counts',
+              'CoveringDesigns.SaturatedMatching.no_saturation_32',
+              'CoveringDesigns.TwoKMinusTwoMatching.fourteen_le_card',
+              'CoveringDesigns.TwoKMinusTwoMatching.attaining',
+              'CoveringDesigns.TwoKMinusTwoMatching.exactness_on',
+              'CoveringDesigns.TwoKMinusTwoMatching.covering_number',
+              'CoveringDesigns.SaturatedMatching.five_pair_excess',
+              'CoveringDesigns.SaturatedMatching.four_pair_small_intersection',
+              'CoveringDesigns.SaturatedMatching.four_rest',
+              'CoveringDesigns.SaturatedMatching.Remaining.signatures_compatible',
+              'CoveringDesigns.SaturatedMatching.Remaining.no_three_share',
+              'CoveringDesigns.SaturatedMatching.Remaining.signature_fibre_le_two',
+              'CoveringDesigns.SaturatedMatching.Remaining.two_groups',
+              'CoveringDesigns.SaturatedMatching.Remaining.grouped_indices',
+              'CoveringDesigns.SaturatedMatching.Remaining.disjoint_correlations',
+              'CoveringDesigns.SaturatedMatching.aligned_signs',
+              'CoveringDesigns.SaturatedMatching.normalized_from_aligned',
+              'CoveringDesigns.SaturatedMatching.normalized_unmatched',
+              'CoveringDesigns.SaturatedMatching.normalized_small_intersection',
+              'CoveringDesigns.SaturatedMatching.Remaining.exists_of_four',
+              'CoveringDesigns.SaturatedMatching.Remaining.point_mem',
+              'CoveringDesigns.SaturatedMatching.Remaining.index_ne',
+              'CoveringDesigns.SaturatedMatching.Remaining.signature_card',
+              'CoveringDesigns.SaturatedMatching.Remaining.pair_count',
+              'CoveringDesigns.SaturatedMatching.Remaining.four_pair_count',
+              'CoveringDesigns.SaturatedMatching.Remaining.equal_of_missing',
+              'CoveringDesigns.SaturatedMatching.Remaining.ne_of_mixed',
+              'CoveringDesigns.SaturatedMatching.Remaining.signatures_equal_or_disjoint',
+              'CoveringDesigns.SaturatedMatching.Remaining.flip_correlation',
+              'CoveringDesigns.SaturatedMatching.Remaining.shared_free_separated',
+              'CoveringDesigns.SaturatedMatching.saturated_partner_of_mem',
+              'CoveringDesigns.SaturatedMatching.second_partner_block',
+              'CoveringDesigns.SaturatedMatching.second_partner_traces_left',
+              'CoveringDesigns.SaturatedMatching.second_partner_trace',
+              'CoveringDesigns.SaturatedMatching.intersection_le_pred',
+              'CoveringDesigns.SaturatedMatching.shared_intersection_sum',
+              'CoveringDesigns.SaturatedMatching.Pattern.named_card',
+              'CoveringDesigns.SaturatedMatching.Pattern.free_card',
+              'CoveringDesigns.SaturatedMatching.Pattern.sum_partition',
+              'CoveringDesigns.SaturatedMatching.Pattern.degree_named',
+              'CoveringDesigns.SaturatedMatching.Pattern.endpoint_degree',
+              'CoveringDesigns.SaturatedMatching.Pattern.five_no_free',
+              'CoveringDesigns.SaturatedMatching.Pattern.four_unique_free',
+              'CoveringDesigns.SaturatedMatching.Pattern.cross_named_contribution',
+              'CoveringDesigns.SaturatedMatching.Pattern.own_named_contribution',
+              'CoveringDesigns.SaturatedMatching.Pattern.pair_partition',
+              'CoveringDesigns.SaturatedMatching.Pattern.five_pair_multiplicity',
+              'CoveringDesigns.SaturatedMatching.Pattern.four_named_lower',
+              'CoveringDesigns.SaturatedMatching.Pattern.relabel_degree',
+              'CoveringDesigns.SaturatedMatching.Pattern.relabel_pair_floor',
+              'CoveringDesigns.SaturatedMatching.Pattern.relabel_named',
+              'CoveringDesigns.SaturatedMatching.Remaining.relabel_signature',
+              'CoveringDesigns.SaturatedMatching.saturated_matching',
+              'CoveringDesigns.SaturatedMatching.Split.loss_le_five',
+              'CoveringDesigns.SaturatedMatching.Split.no_internal_left',
+              'CoveringDesigns.SaturatedMatching.Split.separates',
+              'CoveringDesigns.SaturatedMatching.Split.no_shared_support',
+              'CoveringDesigns.SaturatedMatching.Split.cross_disjoint',
+              'CoveringDesigns.SaturatedMatching.Split.cross_card_le_four',
+              'CoveringDesigns.SaturatedMatching.Split.small_budget',
+              'CoveringDesigns.SaturatedMatching.Split.exists_of_saturated',
+              'CoveringDesigns.SaturatedMatching.Split.saturated',
+              'CoveringDesigns.SaturatedMatching.Split.geometry',
+              'CoveringDesigns.SaturatedMatching.Split.weight_left',
+              'CoveringDesigns.SaturatedMatching.Split.weight_right',
+              'CoveringDesigns.SaturatedMatching.Split.cap_P',
+              'CoveringDesigns.SaturatedMatching.Split.cap_Q',
+              'CoveringDesigns.SaturatedMatching.Split.cap_N',
+              'CoveringDesigns.SaturatedMatching.Split.capacity_bound',
+              'CoveringDesigns.SaturatedMatching.Split.cap_sum',
+              'CoveringDesigns.SaturatedMatching.Split.parts',
+              'CoveringDesigns.SaturatedMatching.Split.assignment',
+              'CoveringDesigns.SaturatedMatching.Split.cross_card_le',
+              'CoveringDesigns.SaturatedMatching.Split.exact_budget',
+              'CoveringDesigns.SaturatedMatching.Split.loss_at',
+              'CoveringDesigns.SaturatedMatching.Split.residual_degree_two',
+              'CoveringDesigns.SaturatedMatching.Split.refined_bound',
+              'CoveringDesigns.SaturatedMatching.Split.swap_P',
+              'CoveringDesigns.SaturatedMatching.Split.swap_Q',
+              'CoveringDesigns.SaturatedMatching.Split.swap_crosses',
+              'CoveringDesigns.SaturatedMatching.no_saturation_31',
+              'CoveringDesigns.C60_31_3.no_thirteen',
+              'CoveringDesigns.C60_31_3.fourteen_le_card',
+              'CoveringDesigns.C60_31_3.attaining',
+              'CoveringDesigns.C60_31_3.exactness_on',
+              'CoveringDesigns.covering_number_60_31_3',
+              'CoveringDesigns.SaturatedMatching.family_pair',
+              'CoveringDesigns.C62_32_3.no_thirteen',
+              'CoveringDesigns.C62_32_3.fourteen_le_card',
+              'CoveringDesigns.C62_32_3.attaining',
+              'CoveringDesigns.C62_32_3.exactness_on',
+              'CoveringDesigns.covering_number_62_32_3'],
+ 'independent_of': ['11-5-2',
+                    '12-5-2',
+                    '12-6-3',
+                    '13-7-4',
+                    'horsley-lifts',
+                    '17-9-5',
+                    '47-14-5',
+                    '42-15-5',
+                    'small-defect',
+                    'small-defect-b',
+                    'small-defect-c',
+                    'coefficient-positivity',
+                    'affine-schoenheim',
+                    'affine-optimality',
+                    'lifting-comparison',
+                    'schoenheim-improvement',
+                    'multicover-small-defect',
+                    'low-degree-selection',
+                    'seed-comparison',
+                    'exact-design',
+                    'point-reduction',
+                    'base-affine',
+                    'schoenheim-family-comparison',
+                    'max-degree-sequence',
+                    'max-guarantee',
+                    'max-covering',
+                    'max-higher-covering',
+                    '14-8-5',
+                    '59-17-5',
+                    '66-18-5',
+                    '79-22-5',
+                    '87-23-5',
+                    '98-22-5',
+                    'labelled-cliques',
+                    'turan-duality',
+                    'turan',
+                    'de-caen',
+                    'chvatal',
+                    'gkp-combination',
+                    'gkp-induced',
+                    'gkp-induced-averaging',
+                    'projective-hyperplanes',
+                    'finite-flat-geometry',
+                    'degree-selected',
+                    'two-k-minus-two-equality',
+                    'two-k-minus-c-general'],
+ 'scope': 'Structural affine-boundary simplex rigidity for actual indexed binary incidence, including '
+          'nonuniform blocks and duplicate point supports; exact saturated cross-loss and positive excess, '
+          'forced supporting blocks and refined shared-block capacity; independent five-pair and four-pair '
+          'compatibility theorems with actual identities and symbolically derived orientations. Ordinary '
+          'C(2k-2,k,3)=14 for k>=31, with actual attaining families on arbitrary finite point types and '
+          'Fin60/Fin62. The unchanged lower thirteen, k>=33 indexed/ordinary theorem and upper construction '
+          'are imported at their stated ranges. The indexed threefold pair scope remains k>=33. No '
+          'admissions, extra axioms, search certificate, publication refresh or historical-priority claim. '
+          'Rob Gardiner with AI assistance.'}
+
 def source(module):
     return ROOT / (module.replace('.', '/') + '.lean')
 
@@ -842,11 +1129,91 @@ def closure(entry):
     return {source(module) for module in module_order([entry])}
 
 
-PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening'}
+PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching'}
 
 def check_sources():
     publication_boundaries = PUBLICATION_BOUNDARIES
     closures = {key: closure(item['entry']) for key, item in COMPONENTS.items()}
+    # New matching modules have fixed declared interfaces; no existing component
+    # may import them. The abstract pattern proofs exclude numerical adapters.
+    matching_parts = {'AffineCapacity.Boundary': ['AffineCapacity.Basic'],
+     'C60_31_3': ['C60_31_3.Bounds', 'Foundations.StandardAxioms'],
+     'C60_31_3.Bounds': ['SaturatedMatching.CoverFive'],
+     'C62_32_3': ['C62_32_3.Bounds', 'Foundations.StandardAxioms'],
+     'C62_32_3.Bounds': ['SaturatedMatching.Endpoints',
+                  'SaturatedMatching.Budget',
+                  'TwoKMinusTwoTightening',
+                  'TwoKMinusTwo.Construction'],
+     'SaturatedMatching': ['SaturatedMatching.Exactness', 'Foundations.StandardAxioms'],
+     'SaturatedMatching.Budget': ['TwoKMinusTwoCapacity.Indexed', 'AffineCapacity.Boundary'],
+     'SaturatedMatching.CompleteMatching': ['SaturatedMatching.CoverPattern'],
+     'SaturatedMatching.Counting': ['TwoKMinusTwo.Capacity'],
+     'SaturatedMatching.CoverBudget': ['SaturatedMatching.CompleteMatching'],
+     'SaturatedMatching.CoverFive': ['SaturatedMatching.CoverFour'],
+     'SaturatedMatching.CoverFour': ['SaturatedMatching.CoverBudget'],
+     'SaturatedMatching.CoverPattern': ['SaturatedMatching.Separation',
+                                        'SaturatedMatching.Four',
+                                        'SaturatedMatching.Five',
+                                        'C62_32_3'],
+     'SaturatedMatching.Endpoints': ['SaturatedMatching.Split'],
+     'SaturatedMatching.Exactness': ['C60_31_3', 'TwoKMinusTwoCapacity.Exactness'],
+     'SaturatedMatching.Five': ['SaturatedMatching.Pattern'],
+     'SaturatedMatching.Four': ['SaturatedMatching.FourNormalize'],
+     'SaturatedMatching.FourGroups': ['SaturatedMatching.FourSignatures'],
+     'SaturatedMatching.FourNormalize': ['SaturatedMatching.Relabel',
+                                         'SaturatedMatching.FourNormalized'],
+     'SaturatedMatching.FourNormalized': ['SaturatedMatching.Pattern'],
+     'SaturatedMatching.FourSignatures': ['SaturatedMatching.Pattern'],
+     'SaturatedMatching.Geometry': ['TwoKMinusTwo.Capacity', 'C20_11_3.SaturatedLoss'],
+     'SaturatedMatching.Pattern': ['BoundaryRank.IndexedIncidence'],
+     'SaturatedMatching.Relabel': ['SaturatedMatching.FourGroups'],
+     'SaturatedMatching.Separation': ['SaturatedMatching.Endpoints'],
+     'SaturatedMatching.Split': ['SaturatedMatching.Geometry', 'SaturatedMatching.Counting']}
+    matching_sources = {source('CoveringDesigns.' + part) for part in matching_parts}
+    for key, paths in closures.items():
+        if key != 'saturated-matching':
+            assert not paths & matching_sources, f'Established component {key} imports saturated matching'
+    for part, dependencies in matching_parts.items():
+        module = 'CoveringDesigns.' + part
+        expected = {source(module)}
+        for dependency in dependencies:
+            expected |= closure('CoveringDesigns.' + dependency)
+        assert closure(module) == expected, f'Matching {part} imports outside its declared interface'
+    for part in ('', '.Rank', '.Saturated', '.LowerBound', '.Witness'):
+        assert source('CoveringDesigns.C20_11_3' + part) not in closures['saturated-matching'], \
+            'Saturated matching imports the numerical C20 proof or witness'
+    # New capacity paths are additive; established components remain independent.
+    capacity_parts = {
+        'AffineCapacity.Basic': ['Foundations.Basic'],
+        'AffineCapacity.Cube': ['AffineCapacity.Basic'],
+        'BoundaryRank.SupportDimension': ['AffineCapacity.Cube', 'BoundaryRank.Completion'],
+        'BoundaryRank.SupportCapacity': ['BoundaryRank.CloneCapacity'],
+        'BoundaryRank.DeficitCharging': [],
+        'BoundaryRank.IndexedIncidence': ['AffineCapacity.Basic', 'BoundaryRank.CloneCapacity', 'BoundaryRank.Completion'],
+        'BoundaryRank.IndexedCounting': ['BoundaryRank.IndexedIncidence', 'BoundaryRank.DeficitCharging'],
+        'BoundaryRank.Capacity': ['BoundaryRank.IndexedCounting', 'BoundaryRank.SupportDimension', 'BoundaryRank.SupportCapacity'],
+        'TwoKMinusTwoCapacity.Indexed': ['BoundaryRank.Capacity'],
+        'TwoKMinusTwoCapacity.Exactness': ['TwoKMinusTwoCapacity.Indexed', 'TwoKMinusTwo.Bounds', 'TwoKMinusTwo.Construction'],
+        'TwoKMinusTwoCapacity': ['TwoKMinusTwoCapacity.Exactness', 'Foundations.StandardAxioms'],
+        'C64_33_3.Bounds': ['TwoKMinusTwoCapacity.Exactness'],
+        'C64_33_3': ['C64_33_3.Bounds', 'Foundations.StandardAxioms'],
+        'C66_34_3.Bounds': ['TwoKMinusTwoCapacity.Exactness'],
+        'C66_34_3': ['C66_34_3.Bounds', 'Foundations.StandardAxioms'],
+        'RankSlackCapacity': ['TwoKMinusTwoCapacity', 'C64_33_3', 'C66_34_3'],
+    }
+    capacity_sources = {source('CoveringDesigns.' + part) for part in capacity_parts}
+    for key, paths in closures.items():
+        if key not in ('rank-slack-capacity', 'saturated-matching'):
+            assert not paths & capacity_sources, f'Established component {key} imports rank-slack capacity'
+    for part, dependencies in capacity_parts.items():
+        module = 'CoveringDesigns.' + part
+        expected = {source(module)}
+        for dependency in dependencies:
+            expected |= closure('CoveringDesigns.' + dependency)
+        assert closure(module) == expected, f'Capacity {part} imports outside its declared interface'
+    for part in ('', '.Rank', '.SaturatedLoss', '.Saturated', '.LowerBound', '.Witness'):
+        assert source('CoveringDesigns.C20_11_3' + part) not in closures['rank-slack-capacity'], \
+            'Rank-slack capacity imports the numerical C20 proof or witness'
     tightening_parts = {
         'BoundaryRank.Completion': ['BoundaryRank.Nullity'],
         'BoundaryRank.BinaryCompletion': [],
@@ -859,7 +1226,7 @@ def check_sources():
     }
     tightening_sources = {source('CoveringDesigns.' + part) for part in tightening_parts}
     for key, paths in closures.items():
-        if key != 'two-k-minus-two-tightening':
+        if key not in ('two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching'):
             assert not paths & tightening_sources, f'Established component {key} imports checkpoint tightening'
     for part, dependencies in tightening_parts.items():
         module = 'CoveringDesigns.' + part
@@ -907,7 +1274,7 @@ def check_sources():
     offset_root = ROOT / 'CoveringDesigns/TwoKMinusC'
     offset_entry = source('CoveringDesigns.TwoKMinusC')
     for key, paths in closures.items():
-        if key not in ('two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening'):
+        if key not in ('two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'saturated-matching'):
             assert not any(p == offset_entry or p.is_relative_to(offset_root) for p in paths), \
                 f'Established component {key} imports TwoKMinusC'
     for part in ('', '.Rank', '.SaturatedLoss', '.Saturated', '.LowerBound', '.Witness'):
@@ -932,13 +1299,13 @@ def check_sources():
                  ROOT / 'CoveringDesigns/BoundaryRank')
     c20_entry = source('CoveringDesigns.C20_11_3')
     for key, paths in closures.items():
-        if key not in ('20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening'):
+        if key not in ('20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching'):
             assert not any(p == c20_entry or any(p.is_relative_to(r) for r in c20_roots)
                            for p in paths), f'Established component {key} imports C20_11_3'
     family_root = ROOT / 'CoveringDesigns/TwoKMinusTwo'
     family_entry = source('CoveringDesigns.TwoKMinusTwo')
     for key, paths in closures.items():
-        if key not in ('two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening'):
+        if key not in ('two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching'):
             assert not any(p == family_entry or p.is_relative_to(family_root) for p in paths), \
                 f'Established component {key} imports TwoKMinusTwo'
     # The new family may reuse generic helpers, never the established C20 result.

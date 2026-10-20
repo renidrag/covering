@@ -1,0 +1,8 @@
+{
+  "entry": "CoveringDesigns.SaturatedMatching",
+  "kind": "Affine-boundary and saturated-matching proof of ordinary C(2k-2,k,3)=14 for k>=31",
+  "depends_on": ["two-k-minus-two", "two-k-minus-two-tightening", "rank-slack-capacity"],
+  "reuse_scope": "Unchanged affine representatives, boundary incidence, lower thirteen, k>=33 exactness, saturated actual-block foundations and fourteen-block construction. No proof-search data or external certificate. The indexed threefold pair-cover theorem retains k>=33.",
+  "inputs": [],
+  "path_convention": "Paths are relative to the repository root. No external proof data is required."
+}

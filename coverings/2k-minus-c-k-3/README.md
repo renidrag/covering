@@ -19,8 +19,8 @@ $v$ points that contain every $t$-element subset. Every row has **$t=3$**.
 | Conditions on $v,k$ | Proved conclusion | Example |
 |---|---|---|
 | $v=20,\ k=11$ | $C(v,k,3)=12$ | $(20,11,3)$ |
-| $v=2k-2,\ 17\le k\le34$ | $13\le C(v,k,3)\le14$ | $(32,17,3)$ |
-| $v=2k-2,\ k\ge35$ | $C(v,k,3)=14$ | $(68,35,3)$ |
+| $v=2k-2,\ 17\le k\le30$ | $13\le C(v,k,3)\le14$ | $(32,17,3)$ |
+| $v=2k-2,\ k\ge31$ | $C(v,k,3)=14$ | $(60,31,3)$ |
 | $v=2k-3,\ k\ge59$ | $C(v,k,3)=14$ | $(115,59,3)$ |
 | $k\ge50,\ \lceil49k/25\rceil\le v\le2k-2$ | $C(v,k,3)=14$ | $(196,100,3)$ |
 
@@ -42,12 +42,13 @@ restricts how saturated pairs can share supporting blocks.
 
 The twenty-point proof first uses a boundary-rank argument to force a
 saturated pair, then excludes it by shared-block counting. For the family
-bounds, capacity inequalities first exclude saturated pairs in a hypothetical
-small cover. The resulting incidence Gram matrix has nonnegative pair excess
-over three. Partitioning or Caro–Tuza selection then supplies too many
-independent rows for the number of blocks. At the two offset-two boundary
-cases, centering limits the possible supports of high points; counting
-limits how many points can share each support, giving a contradiction.
+bounds, capacity inequalities and compatibility between saturated pairs
+exclude that alternative. The resulting incidence Gram matrix has
+nonnegative pair excess over three. Partitioning or Caro–Tuza selection
+gives the general bounds. The sharper offset-two argument combines rank
+slack with affine dimension: too many points have too few possible block
+supports. At $k=31$, the remaining saturated matching forces the same two
+blocks to intersect in both four and sixteen points.
 
 These are independent lower-bound arguments. Attaining constructions complete
 the equalities; the family proof does not use $C(20,11,3)=12$ as a premise.
@@ -71,10 +72,12 @@ No unavailable historical source is a proof premise.
 ## Build and verify
 
 The principal public imports are `CoveringDesigns.C20_11_3`,
-`CoveringDesigns.TwoKMinusC`, `CoveringDesigns.TwoKMinusTwoTightening`
-and `CoveringDesigns.TwoKMinusCGeneral`.
+`CoveringDesigns.TwoKMinusC`, `CoveringDesigns.TwoKMinusTwoTightening`,
+`CoveringDesigns.SaturatedMatching` and `CoveringDesigns.TwoKMinusCGeneral`.
 Their final statements quantify over arbitrary finite point types, without
-unproved structural or classification assumptions.
+unproved structural or classification assumptions. The separate indexed
+threefold pair-covering theorem applies for $k\ge33$; the ordinary
+triple-covering threshold $k\ge31$ uses additional triple coverage.
 
 The [verification guide](../../technical-details.md) explains dependency
 setup and reproduction. [Appendix A](proof.md#appendix-a-lean-correspondence-and-dependency-contracts)

@@ -13,11 +13,17 @@ explicit arguments in [proof.md](proof.md).
 Rob Gardiner, with AI assistance, supplies this project's structural arguments and
 Lean formalisations of the bounds and exact values stated in [proof.md](proof.md).
 The twenty-point shared-block exclusion, bounded-fibre capacity argument,
-and their compositions with partitioned rank and actual-multiplicity
-selection are the project's arguments as presented here. **First
+affine support rigidity, saturated-matching compatibility, and their
+compositions with partitioned rank and actual-multiplicity selection are
+the project's arguments as presented here. **First
 mathematical priority is not established.** Existing witnesses, affine
 constructions, incidence counting, signless forms, partitioning and
 selection/rank methods retain their established antecedents.
+
+The 19 October assessment concerned the then-established ranges; the
+20 October refinements to $17/31/59$ reuse those antecedents and add the
+affine-support and matching arguments in proof §§7.4–7.8. No new historical
+search is claimed for those refinements.
 
 The inspected sources did not yield an earlier statement or complete earlier
 implication of the lower twelve at $(20,11,3)$, the unconditional offset-two
@@ -45,7 +51,7 @@ These comparisons distinguish improvement over an inspected entry from
 first discovery of a bound. A table may omit an earlier result. No old
 interval is asserted here for every member of the infinite families.
 In particular, the inspected form offered block sizes only through $25$;
-it supplied no comparison for the boundary examples $(70,36,3)$,
+it supplied no comparison for the boundary examples $(60,31,3)$, $(62,32,3)$,
 $(115,59,3)$ or $(196,100,3)$. Their exact values follow from the proved
 lower bounds and constructions, independently of repository entries.
 
@@ -257,6 +263,8 @@ current combined proof:
 | `TwoKMinusTwoEquality` | Lower thirteen for $k\ge19$, exact fourteen for $k\ge40$, and the optional equality rigidity in proof §9. |
 | `TwoKMinusC` / `TwoKMinusCGeneral` | The selection-based $18/36/59$ and uniform $25c$ ranges. |
 | `TwoKMinusTwoTightening` | Centered support completion adds the 17/35 offset-two endpoints; earlier modules are unchanged. |
+| `RankSlackCapacity` | Indexed threefold pair-cover lower bound fourteen and ordinary exactness for $k\ge33$, using affine fibres and support-class capacity. |
+| `SaturatedMatching` | Ordinary exactness for $k\ge31$, adding affine-boundary rigidity and actual saturated-matching compatibility. |
 
 The Lean appendix gives the operative declarations. A stronger paper
 classification at the equality boundary is outside this account and is not
@@ -288,3 +296,18 @@ methodological source limitations; the required arguments are supplied in
 proof.md from the verified reconstructions. The remaining historical priority
 and threshold-optimality questions are
 left open. No first-discovery or optimal-threshold claim is made.
+
+## Consolidated offset-two proof, 20 October 2026
+
+The final ordinary exactness interface is
+[`SaturatedMatching.Exactness`](../../lean/CoveringDesigns/SaturatedMatching/Exactness.lean),
+with threshold $k\ge31$. Its reusable actual affine-boundary and saturated-
+matching arguments are proved in full in [proof §§7.5–7.8](proof.md#75-actual-affine-supports-and-the-dimension-boundary).
+The independent indexed pair-cover interface
+[`TwoKMinusTwoCapacity.Indexed`](../../lean/CoveringDesigns/TwoKMinusTwoCapacity/Indexed.lean)
+retains the coverage premise of multiplicity at least three and
+the separate range $k\ge33$; it does not require triple coverage. The
+centering and clone-capacity argument of §7.4 still supplies the lower
+thirteen at $k=17$. Earlier proved interfaces remain included at their
+original scopes. None of these statements asserts that 31 is the optimal
+threshold, or resolves any additional case below it.

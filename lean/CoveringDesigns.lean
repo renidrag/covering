@@ -16,3 +16,5 @@ import CoveringDesigns.TwoKMinusTwoEquality
 import CoveringDesigns.TwoKMinusC
 import CoveringDesigns.TwoKMinusCGeneral
 import CoveringDesigns.TwoKMinusTwoTightening
+import CoveringDesigns.RankSlackCapacity
+import CoveringDesigns.SaturatedMatching

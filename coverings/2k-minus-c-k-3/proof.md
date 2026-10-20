@@ -6,13 +6,15 @@
 
 We prove $C(20,11,3)=12$ and quantitative bounds for $C(2k-c,k,3)$.
 In particular, $C(2k-2,k,3)\ge13$ for $k\ge17$,
-$C(2k-2,k,3)=14$ for $k\ge35$, $C(2k-3,k,3)=14$ for $k\ge59$, and
+$C(2k-2,k,3)=14$ for $k\ge31$, $C(2k-3,k,3)=14$ for $k\ge59$, and
 $C(2k-c,k,3)=14$ for $c\ge2, k\ge25c$. Small block budgets force many
 low-degree points. Pairs occurring in exactly two blocks impose shared-block
 constraints; combining these with incidence Gram rank gives the exclusions.
 The twenty-point proof uses a boundary-rank argument, while the family bounds
-use partitioning or Caro–Tuza selection, with centered support completion at
-the two offset-two boundary cases. Known constructions supply attainment.
+use partitioning or Caro–Tuza selection. The sharper offset-two argument
+connects rank slack to affine support dimension, then uses saturated-matching
+compatibility to exclude the remaining cases. Known constructions supply
+attainment.
 The conclusions and structural prerequisites are formalised in Lean. Historical
 priority and optimality of the thresholds are not asserted.
 
@@ -62,8 +64,9 @@ of the same mechanism, not an induction from the numerical case.
 3. For twenty points, boundary rank forces such a pair, and a sharper
    shared-block count excludes it (§§4–5). For the families, saturation is
    excluded first; partitioned rank or selection and strict rank then force
-   more blocks (§§6–7). The two boundary cases use the small number of
-   possible high-point supports and a shared-support capacity bound (§7.4).
+   more blocks (§§6–7). At offset two, affine support capacity handles
+   the nonsaturated case; the final saturated cases close by actual-block
+   intersections and matching compatibility (§§7.4–7.8).
 4. A displayed twelve-block witness and weighted affine constructions give
    the upper bounds (§8). Section 10 assembles the main theorem.
 
@@ -81,7 +84,7 @@ commands and the included supporting modules.
 \begin{aligned}
 C(20,11,3)&=12,\\
 13\le C(2k-2,k,3)&\le14 &&(k\ge17),\\
-C(2k-2,k,3)&=14 &&(k\ge35),\\
+C(2k-2,k,3)&=14 &&(k\ge31),\\
 C(2k-3,k,3)&=14 &&(k\ge59),\\
 C(2k-c,k,3)&=14 &&(c\ge2,\ k\ge25c).
 \end{aligned}
@@ -100,7 +103,8 @@ The twenty-point exclusion is an independent boundary-rank and shared-block
 argument (§5). The uniform-offset exclusion uses partitioned strict rank
 (§6); the sharper offset-two and offset-three exclusions use Caro–Tuza
 selection, strict Gram rank and two-level incidence counting (§7), following
-the structural argument of Horsley–Singh. Attainment comes from existing
+the structural argument of Horsley–Singh. The final offset-two range adds
+affine support rigidity and saturated-matching compatibility (§§7.5–7.8). Attainment comes from existing
 constructions (§8), separately from all lower exclusions. Equality rigidity
 explains a boundary phenomenon (§9), but is not needed for the strongest
 thresholds.
@@ -730,6 +734,421 @@ on 68 points. Hence the first case has $|F|\le5u<6u$, and the second has
 $|F|\le20<38$. Both contradict (16). Corollary 10 handles all larger $k$;
 Proposition 11 supplies the unchanged upper bound fourteen. $\square$
 
+
+### 7.5. Actual affine supports and the dimension boundary
+
+**Lemma 10b (affine capacity).** Let a finite indexed family cover every
+$t$-subset of a $v$-point set, where $1\le t\le v$, and let every block
+have size at most $k$. For a nonempty point set $F$, write $w_x$ for the
+binary incidence row of $x$ in the **actual block columns** and let $d$
+be the affine dimension of $\{w_x:x\in F\}$ over $\mathbb R$.
+
+If $d<t$, some block contains all of $F$. If $d\le t$, either such a
+block exists or there are exactly $t+1$ distinct, affinely independent
+support classes $F_0,\ldots,F_t$. In the latter case, for each $i$ an
+actual block meets $F$ in exactly $F\setminus F_i$. Consequently
+\[
+ t|F|\le(t+1)k.
+\]
+If each support class has at most $M$ points, then in both alternatives
+\[
+ |F|\le\max\{k,(t+1)M\}.
+\]
+Repeated block occurrences and duplicate point supports are allowed.
+
+*Proof.* Choose $d+1$ actual points whose rows form an affine basis. If
+$d<t$, extend these points to a $t$-set and cover it. In that block's
+coordinate all basis rows equal one. Every affine combination, whose
+coefficients sum to one, also has coordinate one. This proves the first
+assertion, counting every point with a duplicate support.
+
+Suppose there is no common block and $d\le t$. The first assertion forces
+$d=t$. Choose affine basis rows $w_0,\ldots,w_t$. For each $i$, cover the
+other $t$ actual basis points by a block $A_i$. It cannot contain point
+$i$, since then its coordinate would be one on the whole affine span,
+contrary to the absence of a common block. Thus that coordinate is
+$1-\mathbf1_{i=j}$ on $w_j$. Write any row in the span as
+$w=\sum_j\alpha_jw_j$, with $\sum_j\alpha_j=1$. Its $A_i$ coordinate
+is $1-\alpha_i$. Since $w$ is binary, each $\alpha_i$ is zero or one;
+exactly one is one. Hence every row is one of the basis rows, and $A_i$
+contains exactly the other support classes. Summing
+$|F|-|F_i|\le k$ gives the first bound. Counting the $t+1$ classes gives
+the second, while a common block gives $|F|\le k$. $\square$
+
+We also need the general version of the fibre argument in Proposition 10a.
+If $T$ has $b>0$ columns, $T\mathbf1=0$ and corank $u$, then rows with
+fixed $Tw$ and fixed coordinate sum lie in a translate of
+$\ker T\cap\mathbf1^\perp$, of dimension $u-1$. Indeed, coordinate sum
+is a nonzero linear functional on $\ker T$, since it takes the value $b$
+on $\mathbf1$. Such a fibre contains at most $2^{u-1}$ distinct binary
+rows. To see the latter fact without enumeration, an affine space of
+dimension $e$ has $e$ coordinate functionals whose restrictions separate
+its points: choose a basis of the dual of its direction space from the
+coordinate restrictions. Projection to these coordinates is injective,
+and a binary vector has at most $2^e$ projected values. Empty fibres
+satisfy the assertion trivially.
+
+The common-block assertion requires actual covering rows. A general binary
+matrix in an affine subspace supplies no block covering a chosen set of
+points. The rank-fibre assertion and support count do not require coverage.
+
+### 7.6. The nonsaturated thirteen-block case
+
+**Proposition 10c.** No ordinary $(2k-2,k,3)$ covering has thirteen blocks
+and pair multiplicity at least three when $k\ge31$.
+
+*Proof.* First take $31\le k\le34$, and keep the notation $L,\ell,R,T,u,p$
+and $\eta$ of Proposition 10a, now with $b=13$. The same Gram calculation,
+centering and weak-nullity estimate apply. Exact incidence counting gives
+\[
+ \ell=k-14+\eta,\qquad
+ p+2u+\eta+k\le40,\qquad u\ge1. \tag{18}
+\]
+Let $F$ again be the degree-seven points meeting every low point exactly
+three times. Charging a high point of degree above seven to $\eta$ and a
+positive low–high excess to its low endpoint gives
+\[
+ |F|\ge v-\ell-\eta-3p
+       \ge4k-108+6u+\eta. \tag{19}
+\]
+Every support row of $F$ has the fixed image and degree used in §7.4;
+its affine dimension is at most $u-1$. By (17), each nonempty support
+class of size $g$ satisfies
+\[
+ 4g\le k+6. \tag{20}
+\]
+For $k=31,32$, (18) gives $u\le4$ and (20) gives $g\le9$.
+For $u=1,2$ there are at most one and two supports. For $u=3$, Lemma 10b
+puts $F$ in one block. For $u=4$, its boundary alternative gives at most
+four support classes unless a common block already exists. These bounds
+contradict (19):
+
+| Corank $u$ | Lower bound on $|F|$, $k=31$ | Lower bound, $k=32$ | Upper bound |
+|---|---:|---:|---:|
+| 1 | 22 | 26 | 9 |
+| 2 | 28 | 32 | 18 |
+| 3 | 34 | 38 | $k$ |
+| 4 | 40 | 44 | $\max\{k,36\}=36$ |
+
+For $k\ge33$ an indexed argument is available without triple coverage.
+In any thirteen-occurrence threefold pair cover by $k$-sets on $2k-2$
+points, companion counting gives
+$d(x)(k-1)\ge3(2k-3)$, hence $d(x)\ge6$. Equations (18)–(20) still
+hold, and $1\le u\le3$. The binary support bound and (20) imply
+\[
+ 4(4k-108+6u)\le2^{u-1}(k+6). \tag{21}
+\]
+For $u=1,2,3$ this would respectively give
+$15k\le414$, $14k\le396$, or $12k\le384$, each impossible for $k\ge33$.
+For fewer than thirteen occurrences, the degree floor gives
+$6(2k-2)\le kb$, excluding $b\le11$ when $k\ge33$. If $b=12$,
+incidence gives $\ell=2k-14+\eta\ge52$, while Lemma 5 gives
+$\ell\le2\operatorname{rank}R\le24$, again impossible. Thus the
+indexed lower bound is fourteen for $k\ge33$, completing the ordinary
+proposition. $\square$
+
+The indexed conclusion stops at $k\ge33$. The proof at $31$ and $32$
+uses the actual triple-covering hypothesis in Lemma 10b. There is no claim
+that those cases follow from the threefold pair condition alone.
+
+### 7.7. Refined shared-block counting and the case $k=32$
+
+Fix a saturated pair $\{p,q\}$ in a thirteen-block covering on $2k-2$
+points. Its supporting blocks are $\{p,q\}\cup X$ and $\{p,q\}\cup Y$,
+where $|X|=|Y|=k-2$. Write $P,Q,N$ for the $p$-only, $q$-only and
+neither blocks, and $a=|P|$, $c'=|Q|$. Here $c'$ is an endpoint count,
+not the offset $c$ in Theorem 1. Let $s$ count saturated pairs in $X\times Y$.
+The assignment of §3 gives $s\le ac'$.
+
+Suppose $q$ has no other saturated partner. Every residual point $x$ has
+$\mu(q,x)\ge3$ and occurs in just one of the two original supporting
+blocks, so it occurs in at least two of the $Q$-blocks. For a fixed
+$A\in P$, summing over its $k-1$ residual points gives
+\[
+ 2(k-1)\le\sum_{B\in Q}|A\cap B|.
+\]
+If $j$ saturated cross-pairs are assigned to $A$, their second assigned
+blocks are distinct, and each intersection with $A$ has size two. The
+other intersections have size at most $k-1$. Therefore
+\[
+ (k-3)j\le(c'-2)(k-1). \tag{22}
+\]
+For $c'=4$ and $k=31,32$, this gives $j\le2$ and hence $s\le2a$.
+Only assignment into the **pair** of supporting blocks is used here;
+individual first-coordinate injectivity has not been assumed.
+
+**Proposition 10d.** A thirteen-block $(62,32,3)$ covering has no saturated
+pair, and consequently $C(62,32,3)=14$.
+
+*Proof.* The capacity inequality of §3 gives
+\[
+ 2700+16(a+c')\le2816+ac',\quad a,c'\ge4,\quad a+c'\le11.
+\]
+Writing $a=4+x,c'=4+y$ leaves $x+y\le3$ and $12(x+y)\le xy$,
+so $x=y=0$. The eight endpoint-only blocks cover at most $8\cdot240$
+cross-pair occurrences, and the three neither blocks at most $3\cdot256$.
+Their total is $2688$, whereas threefold coverage would require $2700$.
+Thus $s\ge12$, and assignment gives $s\le16$.
+
+If $q$ had another saturated partner $x\in X$, one supporting block would
+be the original block containing $X$. Triple coverage forces the other
+to be $\{q,x\}\cup Y$, a $q$-only block with cross trace product $30$.
+This loses $210$ from its allowance $240$, forcing $s\ge222>16$.
+The case $x\in Y$ and the other endpoint are identical. Thus there is
+no second saturated partner. Equation (22) now gives $s\le8$, contrary
+to $s\ge12$. Proposition 10a rules out fewer than thirteen blocks,
+Proposition 10c excludes thirteen with no saturation, and Proposition 11
+supplies attainment. $\square$
+
+### 7.8. Saturated matching compatibility at $k=31$
+
+**Proposition 10e.** A thirteen-block $(60,31,3)$ covering has no saturated
+pair, and consequently $C(60,31,3)=14$.
+
+*Proof.* We retain actual points and actual block identities throughout.
+The preceding notation is used, with $c'=|Q|$.
+
+Fix a saturated pair $e=\{p,q\}$, meaning $\mu(p,q)=2$. Its supporting
+blocks are $e\cup X,e\cup Y$, where $X,Y$ partition the other points
+and have size 29. Let $P,Q,N$ be the $p$-only, $q$-only and
+neither blocks, and $a=|P|,c'=|Q|$.
+The actual-block capacity theorem gives
+\[
+2523+15(a+c')\le2640+ac',\qquad a,c'\ge4,\quad a+c'\le11.
+\]
+Put $a=4+x,c'=4+y$. Then $x+y\le3$ and
+$11(x+y)-xy\le13$. For $x+y\ge2$, the left side is at least
+$22-2=20>13$. Thus
+\[
+(a,c')\in\{(4,4),(4,5),(5,4)\}.
+\]
+
+Let $s_e$ count saturated cross-pairs in $X\times Y$, and
+$S_e=\sum_{X\times Y}\mu(x,y)$. The two original supporting blocks
+contribute zero. An endpoint-only block contributes at most 225, and a
+neither block at most 240. The established injection gives $s_e\le ac'$.
+
+| Endpoint counts | Maximum $S_e$ | Required $s_e$ | Injection cap |
+|---|---:|---:|---:|
+| $(4,4)$ | $8(225)+3(240)=2520$ | at least 3 | 16 |
+| $(4,5)$ or $(5,4)$ | $9(225)+2(240)=2505$ | at least 18 | 20 |
+
+If an endpoint has another saturated partner in one residual side, its
+other supporting block is forced, as in Proposition 10d. Its cross contribution
+is 29 rather than 225: a loss of 196. The required cross-pair count would
+be at least 199 or 214, respectively, exceeding 16 or 20.
+Thus **neither endpoint of any saturated pair has another saturated partner**.
+This statement holds in all three candidate cases before any are removed.
+The saturated pairs consequently form a matching.
+
+Equation (22) now applies in both orientations. For $(4,5)$ its symmetric version gives
+\[
+s_e\le5\left\lfloor60/28\right\rfloor=10<18;
+\]
+the $(5,4)$ case is identical after exchange. They are impossible.
+Every saturated pair therefore has endpoint counts $(4,4)$, and both
+endpoints have degree six. The same shared bound gives $s_e\le8$.
+
+#### Exact loss and global separation
+
+For each saturated pair $e$, define the nonnegative integer quantities
+\[
+D_e=2520-S_e,\qquad
+E_e=\sum_{\substack{x\in X,y\in Y\\\mu(x,y)\ne2}}(\mu(x,y)-3).
+\]
+Here $D_e$ is the sum of the individual block losses from 225 or 240.
+Every nonsaturated pair has multiplicity at least three, so $E_e\ge0$.
+The exact identity is
+\[
+\boxed{D_e+E_e=s_e-3.}\tag{M1}
+\]
+In particular $D_e\le5$, using $s_e\le8$.
+
+No other saturated pair $f$ can lie entirely inside $X$ (or $Y$).
+If it did, $e\cup X$ would be one of its two supporting blocks, so
+its other supporting block would have to be $f\cup Y$.
+This is a neither block for $e$, with cross contribution
+$2\cdot29=58$, a loss of $240-58=182>5$.
+
+Consequently every other saturated pair crosses the residual partition
+of $e$. Also **no actual block contains two saturated pairs**: it
+would be a supporting block of the first and put the other pair in one
+residual side. Let $m$ be the total number of saturated pairs. Then:
+
+1. $s_e=m-1$, so $m\ge4$.
+2. Their $2m$ supporting blocks are all different actual blocks.
+3. For any other pair $f$, its two supporting blocks contain exactly
+   one endpoint of $e$ each, in opposite blocks. They give one block
+   in $P$ and one in $Q$.
+4. These first blocks are different for different $f$, because a block
+   cannot contain two saturated pairs. Thus $m-1\le|P|=4$.
+
+We have reduced the entire saturated branch to
+\[
+m\in\{4,5\},\qquad D_e+E_e=m-4\quad\text{for every }e.
+\tag{M2}
+\]
+
+This is stronger than the original injection into *pairs* of endpoint
+blocks: its individual coordinates become injective only after the
+global no-two-saturated-pairs-per-block conclusion has been proved.
+
+#### Five saturated pairs
+
+There would be ten supporting blocks and three other blocks.
+An endpoint belongs to both supporting blocks of its own pair and exactly
+one supporting block of each other pair: $2+4=6$ occurrences. Since its
+degree is six, it belongs to no other block.
+
+Choose two different pairs $f,g$, label each of their endpoints $+,-$,
+and consider their four endpoint combinations. The supporting blocks
+of $f$ and $g$ contribute exactly two occurrences to **each** combination.
+Each of the other three pairs $e$ contributes one occurrence to both
+combinations of one correlation type: either $++/--$ or $+-/-+$.
+Other blocks contribute none, by the preceding paragraph.
+
+All four combinations are nonsaturated and must have multiplicity at least
+three. Hence the three correlation types are not all equal. One type occurs
+once and the other twice. Choose the unique minority pair $e$.
+Its two residual sides separate exactly the endpoint combinations of the
+opposite correlation. Both majority pairs contribute to those combinations,
+so both have multiplicity four. They are two different nonsaturated
+cross-pairs for $e$, giving $E_e\ge2$.
+But (M2) gives $D_e+E_e=1$, impossible.
+
+#### Four saturated pairs
+
+There are eight supporting blocks and five other blocks, called *free*
+blocks in this section. This word denotes their position in the partition,
+not any freedom to choose them.
+Each endpoint belongs to $2+3=5$ supporting blocks and therefore to
+exactly one free block. The endpoints of a pair have different free
+blocks, since their only common blocks are their two supporting blocks.
+Write $J_f$ for this two-element set of free blocks.
+
+By (M2), $D_e=E_e=0$ for every pair $e$.
+Therefore every nonsaturated cross-pair for $e$ has multiplicity exactly
+three. Also every endpoint-only block for $e$ has residual split $15+15$,
+because equality in $ab\le225$, $a+b=30$, forces $a=b=15$.
+In particular, for supporting blocks of different pairs,
+\[
+|B_e^\sigma\cap B_f^\tau|=16\qquad(e\ne f).
+\tag{M3}
+\]
+The extra one in (M3) is the unique endpoint of $e$ in $B_f^\tau$.
+
+#### Equal or disjoint free-block signatures
+
+For different pairs $f,g$, let $e,h$ be the remaining two pairs.
+Their supporting blocks each contribute to one correlation type of the
+four endpoint combinations of $f,g$, as above. Let those types be
+$c_e,c_h\in\{+1,-1\}$. The own supporting blocks of $f,g$ contribute
+two to every combination. A free block adds at most one, since each
+endpoint has a unique free block.
+
+- If $c_e\ne c_h$, all four combinations already have multiplicity three
+  in supporting blocks. Two are cross-pairs for $e$, and the other two
+  are cross-pairs for $h$. Their exact multiplicity three precludes any
+  common free block. Thus $J_f\cap J_g=\varnothing$.
+- If $c_e=c_h=c$, both combinations of correlation $-c$ have only two
+  supporting occurrences. The pair floor forces their endpoints to share
+  a free block. These two equalities give $J_f=J_g$.
+
+Thus the four two-element signatures partition into groups of equal
+signatures, and distinct groups use disjoint free blocks. There are at
+most two groups, because only five free blocks exist.
+
+No group has three pairs. To see this, choose three pairs in such a group
+and the fourth pair $h$. Label the plus endpoint of each of the three
+by the same free block. The shared-free correlation is then $+1$.
+The preceding equal-signature case forces, for every two of these three,
+the correlation in the supporting blocks of $h$ to be $-1$.
+Three signs cannot be pairwise opposite.
+There must therefore be exactly two groups of two pairs, say
+$\{1,2\}$ and $\{3,4\}$. Four free blocks are used by endpoints;
+the fifth contains no endpoint.
+
+#### Deriving the sign pattern
+
+Normalize endpoint labels within each equal-signature group so their plus
+endpoints have the same free block. Orient each pair's two supporting
+blocks $B_e^+,B_e^-$, and let $s_{ef}$ be the label of the endpoint
+of $f$ in $B_e^+$, for $e\ne f$. The other block contains its opposite.
+
+The equal-signature pairs give
+\[
+s_{31}s_{32}=s_{41}s_{42}=-1,\qquad
+s_{13}s_{14}=s_{23}s_{24}=-1.
+\]
+Reverse block orientations to set
+$s_{13}=s_{23}=s_{31}=s_{41}=1$. The remaining signs have the form
+\[
+\begin{pmatrix}
+ *&a&1&-1\\
+ b&*&1&-1\\
+ 1&-1&*&c\\
+ 1&-1&d&*
+\end{pmatrix}.
+\]
+For pairs in different groups the two other correlations are opposite.
+Applying this to $(1,3),(1,4),(2,3)$, respectively, gives
+$d=-b,c=b,a=-b$. If necessary interchange both endpoint labels in
+group $\{1,2\}$, and reorient rows 3 and 4; this changes $b$ to $-b$.
+Hence we may take
+\[
+(s_{ef})=
+\begin{pmatrix}
+ *&-1&1&-1\\
+ 1&*&1&-1\\
+ 1&-1&*&1\\
+ 1&-1&-1&*
+\end{pmatrix}.
+\tag{M4}
+\]
+These are consequences of the equal/disjoint signature rule, not a
+classification obtained by testing possible sign matrices.
+
+#### The incompatible intersection
+
+Take any point $x$ not among the eight matched endpoints. Let
+$z_e\in\{+1,-1\}$ record its supporting block in pair $e$.
+It lies in exactly one of $B_e^+,B_e^-$, since those blocks partition
+all points outside the pair.
+
+For an endpoint $e^+$, its own supporting blocks contribute exactly one
+occurrence with $x$. Of the other three supporting block-pairs, let $n$
+contain $x$ together with $e^+$. The opposite endpoint has $3-n$
+such occurrences. Each endpoint has only one free block, which can add
+at most one. Their pair multiplicities with $x$ are at least three.
+Consequently $1\le n\le2$.
+
+Using (M4), this says each of the following triples of signs is not constant:
+\[
+(z_2,z_3,z_4),\quad (z_1,z_3,z_4),\quad
+(z_1,z_2,-z_4),\quad (z_1,z_2,-z_3).
+\tag{M5}
+\]
+If $z_1=z_2=a$, the last two constraints force $z_4=z_3=a$;
+the first is then violated. Thus $z_1=-z_2$. Similarly, if
+$z_3=z_4=b$, the first two force $z_1=z_2=-b$, impossible.
+Hence also $z_3=-z_4$.
+
+In particular no unmatched point lies in $B_1^+\cap B_2^+$.
+The table (M4) identifies their matched intersection as exactly
+$\{1^+,2^-,3^+,4^-\}$, of size four. This contradicts (M3), which
+requires intersection sixteen. The four-pair case is impossible.
+
+
+The saturated branch is therefore impossible. Proposition 10c excludes the
+nonsaturated thirteen-block case, and Proposition 10a excludes smaller
+budgets. The attaining construction of Proposition 11 proves the equality.
+$\square$
+
+The matrix argument was used only in the nonsaturated branch, where all
+pair excesses over three are nonnegative. The matching proof instead uses
+exact block partitions, multiplicities and intersections. It does not
+apply the positive-semidefinite argument to a signed excess matrix.
+
 ## 8. Attainment: a known witness and weighted affine planes
 
 ### Proposition 11. Attaining witnesses and the fourteen-block upper bound
@@ -858,8 +1277,10 @@ Proposition 11 supplies the displayed twelve-block covering. This proves (a).
 
 For $k\ge17$, Proposition 10a gives the lower bound thirteen at offset two,
 and Proposition 11 gives the upper bound fourteen. This proves (b), without
-asserting a thirteen-block construction. For $k\ge35$, Proposition 10a improves
-the lower bound to fourteen, proving (c). The offset-three exclusion for
+asserting a thirteen-block construction. For $k\ge33$, the saturation
+exclusion in §3 and the indexed argument of Proposition 10c give at least
+fourteen blocks. Propositions 10d and 10e cover $k=32$ and $k=31$.
+Proposition 11 gives attainment throughout, proving (c). The offset-three exclusion for
 $k\ge59$ similarly combines with Proposition 11 to prove (d).
 
 For (e), assume $c\ge2$ and $k\ge25c$. The degree-floor lemma applies,
@@ -901,6 +1322,8 @@ Audit keys below refer to full-contract checks and transitive axiom checks:
 **A2** = [TwoKMinusTwo](../../lean/audits/TwoKMinusTwo.lean),
 **AE** = [TwoKMinusTwoEquality](../../lean/audits/TwoKMinusTwoEquality.lean),
 **AT** = [TwoKMinusTwoTightening](../../lean/audits/TwoKMinusTwoTightening.lean),
+**AK** = [RankSlackCapacity](../../lean/audits/RankSlackCapacity.lean),
+**AX** = [SaturatedMatching](../../lean/audits/SaturatedMatching.lean),
 **AC** = [TwoKMinusC](../../lean/audits/TwoKMinusC.lean),
 **AG** = [TwoKMinusCGeneral](../../lean/audits/TwoKMinusCGeneral.lean),
 **AS** = [CaroTuza](../../lean/audits/CaroTuza.lean),
@@ -917,7 +1340,8 @@ Audit keys below refer to full-contract checks and transitive axiom checks:
 | Theorem 1(a), Proposition 6: twenty-point lower bound | [C20_11_3.LowerBound](../../lean/CoveringDesigns/C20_11_3/LowerBound.lean) | `lower_bound_20_11_3` | A20: 20 points, ordinary (11,3) cover imply at least 12 blocks. |
 | Theorem 1(a), Proposition 11: twenty-point attainment and exactness | [C20_11_3.Witness](../../lean/CoveringDesigns/C20_11_3/Witness.lean), [C20_11_3](../../lean/CoveringDesigns/C20_11_3.lean) | `upper_bound_20_11_3_on`, `covering_number_20_11_3_on`, `covering_number_20_11_3` | A20: arbitrary-label and Fin 20 exactness; expanded in Audit20_11_3.covering_number_explicit. |
 | Unconditional inequality (1) | [TwoKMinusTwo.Bounds](../../lean/CoveringDesigns/TwoKMinusTwo/Bounds.lean) | `TwoKMinusTwo.lower_inequality` | A2: $k\ge9$, $v=2k-2$, IsCover only; AuditTwoKMinusTwo.lower_explicit expands it. |
-| Theorem 1(b,c), Proposition 10a: sharpened offset-two bounds | [TwoKMinusTwoTightening.Bounds](../../lean/CoveringDesigns/TwoKMinusTwoTightening/Bounds.lean) | `TwoKMinusTwoTightening.thirteen_le_card`, `TwoKMinusTwoTightening.fourteen_le_card`, `TwoKMinusTwoTightening.exactness`, `TwoKMinusTwoTightening.covering_number` | AT: $k\ge17$ / $k\ge35$, $v=2k-2$; actual attainment and expanded covering conditions. |
+| Theorem 1(b), Proposition 10a: sharpened offset-two bounds | [TwoKMinusTwoTightening.Bounds](../../lean/CoveringDesigns/TwoKMinusTwoTightening/Bounds.lean) | `TwoKMinusTwoTightening.thirteen_le_card`, `TwoKMinusTwoTightening.fourteen_le_card`, `TwoKMinusTwoTightening.exactness`, `TwoKMinusTwoTightening.covering_number` | AT: $k\ge17$ / $k\ge35$, $v=2k-2$; actual attainment and expanded covering conditions. |
+| Theorem 1(c), Propositions 10c–10e | [SaturatedMatching.Exactness](../../lean/CoveringDesigns/SaturatedMatching/Exactness.lean) | `TwoKMinusTwoMatching.fourteen_le_card`, `TwoKMinusTwoMatching.attaining`, `TwoKMinusTwoMatching.exactness_on`, `TwoKMinusTwoMatching.covering_number` | AX: $k\ge31$, arbitrary point type of size $2k-2$, ordinary IsCover only; exactness includes fourteen distinct blocks. |
 | Corollary 10: selection-based offset-two bounds | [TwoKMinusC.OffsetTwo](../../lean/CoveringDesigns/TwoKMinusC/OffsetTwo.lean) | `TwoKMinusC.OffsetTwo.thirteen_le_card`, `TwoKMinusC.OffsetTwo.fourteen_le_card`, `TwoKMinusC.OffsetTwo.exactness`, `TwoKMinusC.OffsetTwo.covering_number` | AC: $k\ge18$ / $k\ge36$, $v=2k-2$; exactness includes attainment. |
 | Theorem 1(e), §6: uniform-offset lower bound | [TwoKMinusCGeneral.UniformLower](../../lean/CoveringDesigns/TwoKMinusCGeneral/UniformLower.lean) | `TwoKMinusCGeneral.fourteen_le_card_uniform` | AG: $c\ge2$, $k\ge25c$, $v=2k-c$, IsCover only. |
 | Theorem 1(d), Corollary 10: offset-three lower bound | [TwoKMinusCGeneral.OffsetThreeLower](../../lean/CoveringDesigns/TwoKMinusCGeneral/OffsetThreeLower.lean) | `TwoKMinusCGeneral.fourteen_le_card_offset_three` | AG: $k\ge59$, $v=2k-3$, IsCover only. |
@@ -964,6 +1388,21 @@ $a_0=a_1=3$, $d=6(k-1)-3(v-1)=3(c-1)$ and $\binom{k}{1}=k$.
 These verify all its premises. Its separate covering wrapper requires
 universal residual bounds; this application does not use that wrapper.
 
+### Affine capacity and matching contracts
+
+| Step | Exact import | Declarations | Audited hypotheses and scope |
+|---|---|---|---|
+| Lemma 10b: common-block capacity | [AffineCapacity.Basic](../../lean/CoveringDesigns/AffineCapacity/Basic.lean) | `AffineCapacity.exists_spanning_points`, `AffineCapacity.exists_block_of_dimension_lt`, `AffineCapacity.card_le_of_dimension_lt` | AK: nonempty actual point set, $1\le t\le v$, indexed coverage and affine dimension below $t$; cardinality uses a block-size upper bound. |
+| Lemma 10b: dimension boundary | [AffineCapacity.Boundary](../../lean/CoveringDesigns/AffineCapacity/Boundary.lean) | `AffineCapacity.boundary_dichotomy`, `AffineCapacity.boundary_supports`, `AffineCapacity.card_mul_le_of_dimension_le`, `AffineCapacity.card_le_max_of_fibres` | AX: actual indexed coverage, dimension at most $t$; gives a common block or exactly $t+1$ independent supports and omitted-fibre blocks. Duplicate points and repeated occurrences retained. |
+| Fixed-image fibres and binary support bound | [BoundaryRank.SupportDimension](../../lean/CoveringDesigns/BoundaryRank/SupportDimension.lean), [AffineCapacity.Cube](../../lean/CoveringDesigns/AffineCapacity/Cube.lean) | `SupportDimension.fibre_dimension`, `SupportDimension.family_dimension_le`, `SupportDimension.binary_support_card_le`, `AffineCapacity.binary_affine_card_le_pow` | AK: positive matrix width, T1=0, fixed image and coordinate sum; binary coordinates for the exponential count. |
+| Proposition 10c: counting and fibre capacity | [SaturatedMatching.Budget](../../lean/CoveringDesigns/SaturatedMatching/Budget.lean) | `SaturatedMatching.thirteen_budget`, `SaturatedMatching.regular_fibre_le_nine`, `SaturatedMatching.no_thirteen_of_pair_floor` | AX: thirteen indexed uniform blocks on $2k-2$ points; actual floors six/three. Final exclusion at $k=31,32$ additionally uses triple coverage. |
+| Proposition 10c: indexed pair-cover conclusion | [TwoKMinusTwoCapacity.Indexed](../../lean/CoveringDesigns/TwoKMinusTwoCapacity/Indexed.lean) | `TwoKMinusTwoCapacity.indexed_degree_ge_six`, `TwoKMinusTwoCapacity.indexed_fourteen_le_card` | AK: $k\ge33$, uniform indexed blocks, $v=2k-2$ and pair multiplicity at least three; derives the point floor, permits repeated occurrences, needs no triple coverage. |
+| Equation (22), exact loss and excess | [SaturatedMatching.Counting](../../lean/CoveringDesigns/SaturatedMatching/Counting.lean), [SaturatedMatching.Split](../../lean/CoveringDesigns/SaturatedMatching/Split.lean) | `SaturatedMatching.shared_block_bound`, `SaturatedMatching.cross_loss_identity`, `SaturatedMatching.Split.exact_budget`, `SaturatedMatching.Split.refined_bound` | AX: finite counting and individual capacity bounds; covering adapter retains actual blocks and the no-second-partner condition. |
+| Proposition 10d and endpoint restrictions | [SaturatedMatching.Endpoints](../../lean/CoveringDesigns/SaturatedMatching/Endpoints.lean) | `SaturatedMatching.Split.no_second_partner`, `SaturatedMatching.Split.surviving_counts`, `SaturatedMatching.no_saturation_32` | AX: thirteen-block ordinary covers at $k=31,32$ with actual supporting blocks; no separate assumed degree profile. |
+| Proposition 10e: matching and separation | [SaturatedMatching.Separation](../../lean/CoveringDesigns/SaturatedMatching/Separation.lean) | `SaturatedMatching.saturated_matching`, `SaturatedMatching.Split.separates`, `SaturatedMatching.Split.no_shared_support`, `SaturatedMatching.Split.small_budget` | AX: ordinary (60,31,3) cover of size thirteen; matching and loss restrictions are derived, not classification hypotheses. |
+| Five-pair obstruction | [SaturatedMatching.Five](../../lean/CoveringDesigns/SaturatedMatching/Five.lean), [SaturatedMatching.CoverFive](../../lean/CoveringDesigns/SaturatedMatching/CoverFive.lean) | `SaturatedMatching.five_pair_excess`, `SaturatedMatching.CoverMatching.not_five` | AX: abstract actual-incidence Pattern and its explicit pair floors; the covering adapter derives them and contradicts excess at most one. |
+| Four-pair obstruction | [SaturatedMatching.Four](../../lean/CoveringDesigns/SaturatedMatching/Four.lean), [SaturatedMatching.CoverFour](../../lean/CoveringDesigns/SaturatedMatching/CoverFour.lean) | `SaturatedMatching.four_pair_small_intersection`, `SaturatedMatching.CoverMatching.supporting_intersection_sixteen`, `SaturatedMatching.CoverMatching.not_four` | AX: Pattern and FourCompatibility are explicit reusable hypotheses; the covering adapter establishes every field and contradicts the intersection sizes four and sixteen. |
+
 ### Logical independence and representation checks
 
 The twenty-point entry imports only its LowerBound, Witness and standard
@@ -980,7 +1419,17 @@ offset-three arithmetic and Saturation; it does not use partitioned rank.
 OffsetTwo similarly composes its adapter/arithmetic with the unchanged
 offset-two saturation and construction modules. Equality rigidity is not
 needed by these sharper thresholds. These boundaries are checked by the
-unchanged [library audit policy](../../scripts/audit_library.py).
+[library audit policy](../../scripts/audit_library.py).
+
+The capacity component imports generic incidence, nullity, centering and
+clone-capacity lemmas. Its indexed theorem is independent of triple-cover
+saturation. The matching component imports that $k\ge33$ result for the
+final assembly, while proving the $31$ and $32$ cases separately. The
+abstract four- and five-pair lemmas have explicit pattern hypotheses; the
+ordinary covering adapters derive these from coverage and the block budget.
+They do not import the numerical C20 exclusion or witness. Their complete
+contracts and dependency boundaries are checked by AK and AX. The broad
+real-matrix component-stability classification is not used or asserted here.
 
 In §7 each original block becomes exactly one indexed occurrence, so the
 rank column count is still $b$. In §8 different padded occurrences can
@@ -1005,8 +1454,9 @@ $a+1$, and $a+1+1_{\{x,y\}}$, for two distinct base points $x,y$.
 These are the same four patterns with shifted residues. Lean proves
 coverage of smaller projections by extending them to a three-set; §8
 uses the equivalent annihilating-functional argument. Section 6 sums the
-class bounds, while Lean selects a largest class. These are explanatory
-reorganisations, not additional hypotheses or strengthened contracts.
+class bounds, while Lean selects a largest class. The binary support count in §7.5 uses an injective coordinate projection;
+Lean proves the same dimension bound by coordinate induction. These are
+explanatory reorganisations, not additional hypotheses or strengthened contracts.
 
 Only the foundational axioms `propext`, `Classical.choice`, `Quot.sound`
 are permitted by the audits, with the existing exact sets required where
@@ -1034,15 +1484,17 @@ the resulting records against the current inputs without recompiling.
 The full verification covers all included results. The guide also lists
 focused verification targets for these results and their prerequisites.
 
-The six public entry modules are
+The eight public entry modules are
 [`C20_11_3`](../../lean/CoveringDesigns/C20_11_3.lean),
 [`TwoKMinusTwo`](../../lean/CoveringDesigns/TwoKMinusTwo.lean),
 [`TwoKMinusTwoEquality`](../../lean/CoveringDesigns/TwoKMinusTwoEquality.lean),
 [`TwoKMinusC`](../../lean/CoveringDesigns/TwoKMinusC.lean),
-[`TwoKMinusTwoTightening`](../../lean/CoveringDesigns/TwoKMinusTwoTightening.lean), and
+[`TwoKMinusTwoTightening`](../../lean/CoveringDesigns/TwoKMinusTwoTightening.lean),
+[`RankSlackCapacity`](../../lean/CoveringDesigns/RankSlackCapacity.lean),
+[`SaturatedMatching`](../../lean/CoveringDesigns/SaturatedMatching.lean), and
 [`TwoKMinusCGeneral`](../../lean/CoveringDesigns/TwoKMinusCGeneral.lean).
 Together with their transitive project imports they comprise the following
-96 included source modules. In this table paths are relative to
+138 included source modules. In this table paths are relative to
 `lean/CoveringDesigns/`; “entry” means the `.lean` file beside that directory.
 The equality entry supports optional §9 and the preserved component stages.
 
@@ -1055,7 +1507,12 @@ The equality entry supports optional §9 and the preserved component stages.
 | `TwoKMinusC` | entry, Algebra, LargeDefect, OffsetTwo, OffsetTwoArithmetic |
 | `TwoKMinusCGeneral` | entry, Arithmetic, Assignment, Attainment, Capacity, Exactness, Geometry, Incidence, OffsetThreeArithmetic, OffsetThreeLower, Rank, Saturation, UniformLower |
 | `Foundations` | Basic, Bounds, Intersecting, Links, Relabelling, StandardAxioms |
-| `BoundaryRank` | BinaryCompletion, CloneCapacity, Completion, Equality, Nullity, Signless |
+| `BoundaryRank` | BinaryCompletion, Capacity, CloneCapacity, Completion, DeficitCharging, Equality, IndexedCounting, IndexedIncidence, Nullity, Signless, SupportCapacity, SupportDimension |
+| `AffineCapacity` | Basic, Boundary, Cube |
+| `TwoKMinusTwoCapacity` | entry, Exactness, Indexed |
+| `RankSlackCapacity` | entry |
+| `C60_31_3`, `C62_32_3`, `C64_33_3`, `C66_34_3` | entry and Bounds for each |
+| `SaturatedMatching` | entry, Budget, CompleteMatching, Counting, CoverBudget, CoverFive, CoverFour, CoverPattern, Endpoints, Exactness, Five, Four, FourGroups, FourNormalize, FourNormalized, FourSignatures, Geometry, Pattern, Relabel, Separation, Split |
 | `Weighted` | Counting, Matrix, PartitionedRank |
 | `Combinatorics` | WeightedPartition |
 | `CaroTuza` | Function, Graph, Selection |
@@ -1071,7 +1528,7 @@ The equality entry supports optional §9 and the preserved component stages.
 | `PointReduction` | Basic, Bounds, Family |
 | `Schoenheim` | LowerBound |
 
-The twelve audit files linked in the proof appendix are included under
+The fourteen audit files linked in the proof appendix are included under
 [`lean/audits/`](../../lean/audits/), together with their imports. These audits
 also exercise other applications and examples, so the repository includes
 23 additional project modules beyond the proof closure: `Applications.ZeroDefect`, `C17_9_5`

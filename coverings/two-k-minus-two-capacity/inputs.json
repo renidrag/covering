@@ -1,0 +1,8 @@
+{
+  "entry": "CoveringDesigns.RankSlackCapacity",
+  "kind": "Actual affine support capacity and exact fourteen at offset two for k>=33",
+  "depends_on": ["two-k-minus-two"],
+  "reuse_scope": "Unchanged weak nullity, centering, indexed clone capacity, ordinary saturation exclusion and affine upper construction. New arbitrary-corank, charging and incidence interfaces. No old tightening or component-stability proof, numerical C20 theorem, external certificate or proof-search data.",
+  "inputs": [],
+  "path_convention": "Paths are relative to the repository root. No external proof data is required."
+}

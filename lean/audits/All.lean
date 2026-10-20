@@ -793,3 +793,91 @@ end CoveringDesigns.AuditPointReduction
 
 #print axioms CoveringDesigns.TwoKMinusTwoTightening.thirteen_le_card
 
+#check (CoveringDesigns.TwoKMinusTwoCapacity.indexed_fourteen_le_card :
+  ∀ {α ι : Type*} [Fintype α] [Fintype ι] [DecidableEq α] {k : ℕ}
+    (B : ι → Finset α), Fintype.card α = 2*k-2 → 33 ≤ k →
+    (∀ i, (B i).card = k) →
+    (∀ x y, x ≠ y → 3 ≤ CoveringDesigns.indexedSubsetDegree B {x,y}) →
+    14 ≤ Fintype.card ι)
+
+#check (CoveringDesigns.TwoKMinusTwoCapacity.exactness :
+  ∀ {α : Type*} [Fintype α] {k : ℕ}, Fintype.card α = 2*k-2 → 33 ≤ k →
+    (∃ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C k 3 ∧ C.card = 14) ∧
+    (∀ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C k 3 → 14 ≤ C.card))
+
+#check (CoveringDesigns.covering_number_64_33_3 :
+    (∃ C : CoveringDesigns.Family (Fin 64), CoveringDesigns.IsCover C 33 3 ∧ C.card = 14) ∧
+    (∀ C : CoveringDesigns.Family (Fin 64), CoveringDesigns.IsCover C 33 3 → 14 ≤ C.card))
+
+#check (CoveringDesigns.covering_number_66_34_3 :
+    (∃ C : CoveringDesigns.Family (Fin 66), CoveringDesigns.IsCover C 34 3 ∧ C.card = 14) ∧
+    (∀ C : CoveringDesigns.Family (Fin 66), CoveringDesigns.IsCover C 34 3 → 14 ≤ C.card))
+
+#guard_standard_axioms CoveringDesigns.TwoKMinusTwoCapacity.indexed_fourteen_le_card
+  CoveringDesigns.TwoKMinusTwoCapacity.exactness
+  CoveringDesigns.covering_number_64_33_3
+  CoveringDesigns.covering_number_66_34_3
+
+#print axioms CoveringDesigns.TwoKMinusTwoCapacity.indexed_fourteen_le_card
+
+#print axioms CoveringDesigns.TwoKMinusTwoCapacity.exactness
+
+#print axioms CoveringDesigns.covering_number_64_33_3
+
+#print axioms CoveringDesigns.covering_number_66_34_3
+
+section SaturatedMatchingContracts
+universe u_1
+#check (@CoveringDesigns.TwoKMinusTwoMatching.fourteen_le_card : ∀ {α : Type u_1} [inst : Fintype α] {k : ℕ}
+  {C : CoveringDesigns.Family α},
+  Fintype.card α = 2 * k - 2 → 31 ≤ k → CoveringDesigns.IsCover C k 3 → 14 ≤ Finset.card C)
+
+#guard_standard_axioms CoveringDesigns.TwoKMinusTwoMatching.fourteen_le_card
+
+#print axioms CoveringDesigns.TwoKMinusTwoMatching.fourteen_le_card
+
+#check (@CoveringDesigns.TwoKMinusTwoMatching.attaining : ∀ {α : Type u_1} [inst : Fintype α] {k : ℕ},
+  Fintype.card α = 2 * k - 2 →
+    31 ≤ k → ∃ (C : CoveringDesigns.Family α), CoveringDesigns.IsCover C k 3 ∧ Finset.card C = 14)
+
+#guard_standard_axioms CoveringDesigns.TwoKMinusTwoMatching.attaining
+
+#print axioms CoveringDesigns.TwoKMinusTwoMatching.attaining
+
+#check (@CoveringDesigns.TwoKMinusTwoMatching.exactness_on : ∀ {α : Type u_1} [inst : Fintype α] {k : ℕ},
+  Fintype.card α = 2 * k - 2 →
+    31 ≤ k →
+      (∃ (C : CoveringDesigns.Family α), CoveringDesigns.IsCover C k 3 ∧ Finset.card C = 14) ∧
+        ∀ (C : CoveringDesigns.Family α), CoveringDesigns.IsCover C k 3 → 14 ≤ Finset.card C)
+
+#guard_standard_axioms CoveringDesigns.TwoKMinusTwoMatching.exactness_on
+
+#print axioms CoveringDesigns.TwoKMinusTwoMatching.exactness_on
+
+#check (@CoveringDesigns.TwoKMinusTwoMatching.covering_number : ∀ {k : ℕ},
+  31 ≤ k →
+    (∃ (C : CoveringDesigns.Family (Fin (2 * k - 2))), CoveringDesigns.IsCover C k 3 ∧ Finset.card C = 14) ∧
+      ∀ (C : CoveringDesigns.Family (Fin (2 * k - 2))), CoveringDesigns.IsCover C k 3 → 14 ≤ Finset.card C)
+
+#guard_standard_axioms CoveringDesigns.TwoKMinusTwoMatching.covering_number
+
+#print axioms CoveringDesigns.TwoKMinusTwoMatching.covering_number
+
+#check (@CoveringDesigns.covering_number_60_31_3 : (∃ (C : CoveringDesigns.Family (Fin 60)),
+    CoveringDesigns.IsCover C 31 3 ∧ Finset.card C = 14) ∧
+  ∀ (C : CoveringDesigns.Family (Fin 60)), CoveringDesigns.IsCover C 31 3 → 14 ≤ Finset.card C)
+
+#guard_standard_axioms CoveringDesigns.covering_number_60_31_3
+
+#print axioms CoveringDesigns.covering_number_60_31_3
+
+#check (@CoveringDesigns.covering_number_62_32_3 : (∃ (C : CoveringDesigns.Family (Fin 62)),
+    CoveringDesigns.IsCover C 32 3 ∧ Finset.card C = 14) ∧
+  ∀ (C : CoveringDesigns.Family (Fin 62)), CoveringDesigns.IsCover C 32 3 → 14 ≤ Finset.card C)
+
+#guard_standard_axioms CoveringDesigns.covering_number_62_32_3
+
+#print axioms CoveringDesigns.covering_number_62_32_3
+
+end SaturatedMatchingContracts
+
