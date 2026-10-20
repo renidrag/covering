@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you cite this proof package, please use this citation."
+type: software
+title: "Covering designs: structural proofs and Lean 4 verification"
+authors:
+  - family-names: Gardiner
+    given-names: Rob
+repository-code: "https://github.com/renidrag/covering"
+url: "https://github.com/renidrag/covering"
+license: MIT
+abstract: >-
+  Mathematical accounts, Lean 4 proofs and reproducible verification tools for
+  covering designs. Includes C(13,7,4)=30, C(20,11,3)=12, and lower bounds and
+  exact values for C(2k-c,k,3), together with supporting formalisations of
+  established results. OpenAI language models substantially assisted its
+  development, formalisation, checking and writing. The proof accounts and
+  third-party notices document mathematical attribution and historical
+  constructions.
+keywords:
+  - covering designs
+  - covering numbers
+  - combinatorics
+  - Lean 4
+  - formal verification
