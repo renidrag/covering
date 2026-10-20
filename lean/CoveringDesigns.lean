@@ -15,3 +15,4 @@ import CoveringDesigns.TwoKMinusTwo
 import CoveringDesigns.TwoKMinusTwoEquality
 import CoveringDesigns.TwoKMinusC
 import CoveringDesigns.TwoKMinusCGeneral
+import CoveringDesigns.TwoKMinusTwoTightening

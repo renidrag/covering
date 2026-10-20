@@ -777,3 +777,19 @@ end CoveringDesigns.AuditPointReduction
 
 #print axioms CoveringDesigns.TwoKMinusCGeneral.fourteen_le_card_uniform
 
+#check (CoveringDesigns.TwoKMinusTwoTightening.exactness :
+  ∀ {α : Type*} [Fintype α] {k : ℕ}, Fintype.card α = 2*k-2 → 35 ≤ k →
+    (∃ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C k 3 ∧ C.card = 14) ∧
+    (∀ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C k 3 → 14 ≤ C.card))
+
+#check (CoveringDesigns.TwoKMinusTwoTightening.thirteen_le_card :
+  ∀ {α : Type*} [Fintype α] {k : ℕ} {C : CoveringDesigns.Family α},
+    Fintype.card α = 2*k-2 → 17 ≤ k → CoveringDesigns.IsCover C k 3 → 13 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.TwoKMinusTwoTightening.exactness
+  CoveringDesigns.TwoKMinusTwoTightening.thirteen_le_card
+
+#print axioms CoveringDesigns.TwoKMinusTwoTightening.exactness
+
+#print axioms CoveringDesigns.TwoKMinusTwoTightening.thirteen_le_card
+

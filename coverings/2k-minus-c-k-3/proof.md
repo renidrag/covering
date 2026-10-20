@@ -5,13 +5,14 @@
 ## Abstract
 
 We prove $C(20,11,3)=12$ and quantitative bounds for $C(2k-c,k,3)$.
-In particular, $C(2k-2,k,3)\ge13$ for $k\ge18$,
-$C(2k-2,k,3)=14$ for $k\ge36$, $C(2k-3,k,3)=14$ for $k\ge59$, and
+In particular, $C(2k-2,k,3)\ge13$ for $k\ge17$,
+$C(2k-2,k,3)=14$ for $k\ge35$, $C(2k-3,k,3)=14$ for $k\ge59$, and
 $C(2k-c,k,3)=14$ for $c\ge2, k\ge25c$. Small block budgets force many
 low-degree points. Pairs occurring in exactly two blocks impose shared-block
 constraints; combining these with incidence Gram rank gives the exclusions.
 The twenty-point proof uses a boundary-rank argument, while the family bounds
-use partitioning or Caro–Tuza selection. Known constructions supply attainment.
+use partitioning or Caro–Tuza selection, with centered support completion at
+the two offset-two boundary cases. Known constructions supply attainment.
 The conclusions and structural prerequisites are formalised in Lean. Historical
 priority and optimality of the thresholds are not asserted.
 
@@ -61,7 +62,8 @@ of the same mechanism, not an induction from the numerical case.
 3. For twenty points, boundary rank forces such a pair, and a sharper
    shared-block count excludes it (§§4–5). For the families, saturation is
    excluded first; partitioned rank or selection and strict rank then force
-   more blocks (§§6–7).
+   more blocks (§§6–7). The two boundary cases use the small number of
+   possible high-point supports and a shared-support capacity bound (§7.4).
 4. A displayed twelve-block witness and weighted affine constructions give
    the upper bounds (§8). Section 10 assembles the main theorem.
 
@@ -78,15 +80,15 @@ commands and the included supporting modules.
 \[
 \begin{aligned}
 C(20,11,3)&=12,\\
-13\le C(2k-2,k,3)&\le14 &&(k\ge18),\\
-C(2k-2,k,3)&=14 &&(k\ge36),\\
+13\le C(2k-2,k,3)&\le14 &&(k\ge17),\\
+C(2k-2,k,3)&=14 &&(k\ge35),\\
 C(2k-3,k,3)&=14 &&(k\ge59),\\
 C(2k-c,k,3)&=14 &&(c\ge2,\ k\ge25c).
 \end{aligned}
 \]
 
 Every equality includes an actual attaining ordinary family, on arbitrary
-finite point labels. The interval at $k=18$ asserts no thirteen-block
+finite point labels. The interval at $k=17$ asserts no thirteen-block
 construction. These are sufficient ranges, with no assertion of optimal
 thresholds. In addition, every ordinary $(2k-2,k,3)$ covering satisfies
 
@@ -627,8 +629,8 @@ range, with strictness before integer rounding.
 For the first line assume $b\le12$; for the others assume $b\le13$.
 Section 3 excludes saturation at $k\ge17,33,57$, respectively. Together
 with §2 this supplies the actual floors for that hypothetical small family,
-and (13) contradicts its budget. These arguments prove the three sharpest
-listed exclusions. They do **not** say every covering has pair floor three.
+and (13) contradicts its budget. These arguments prove these three selection-based
+exclusions. They do **not** say every covering has pair floor three.
 Indeed, throughout these ranges the universal residual one-cover number
 $C(2k-c-2,k-2,1)=2$: its argument is strictly between one and two before
 rounding, or equals two at $c=2$. Indeed, for $m<n\le2m$, one $m$-set cannot
@@ -649,6 +651,84 @@ and saturation, using block floors 11, 12, 13 and 14 on the respective
 ranges $[9,12]$, $[13,19]$, $[20,40]$ and $[41,\infty)$.
 This rearranged exposition introduces no circular dependency: the
 saturation lemmas used in §7.3 do not use (1).
+
+### 7.4. Completing the two boundary cases
+
+**Proposition 10a.** Every ordinary $(32,17,3)$ covering has at least
+thirteen blocks, and every ordinary $(68,35,3)$ covering has at least
+fourteen blocks. Consequently the two offset-two thresholds in Corollary 10
+improve to $k\ge17$ and $k\ge35$.
+
+*Proof.* Suppose the respective block counts are at most twelve and thirteen.
+Inequality (1) and Corollary 10, respectively, force the counts to be exactly
+$b=12$ and $b=13$. The saturation exclusions in §3 give pair multiplicity
+at least three; §2 gives point degree at least six. We use the same argument
+for both $(v,k,b)=(32,17,12)$ and $(68,35,13)$.
+
+Let $L$ be the degree-six points, $\ell=|L|$, and $R$ their binary incidence
+matrix with the $b$ actual blocks as columns. Put $E_{xy}=\mu(x,y)-3$ for
+distinct low points, $E_{xx}=0$, and
+$\delta_x=\sum_{y\notin L}(\mu(x,y)-3)$. Counting the companions of a low
+point gives
+\[
+ RR^{\mathsf T}=3I+E+3J,\qquad \sum_yE_{xy}+\delta_x=3.
+\]
+In particular $0\le\delta_x\le3$. If $p$ counts the positive deficits,
+the nullity inequality in Lemma 5, before replacing rank by the number of
+columns, gives
+\[
+ \ell+p\le2\operatorname{rank}R. \tag{15}
+\]
+
+Centering preserves this rank. Indeed, set $A=3I+E$. The signless identity
+in Lemma 5 shows that $z\in\ker A$ satisfies $\delta_xz_x=0$. Summing
+$Az=0$ and using the row sums of $E$ then gives $6\sum_xz_x=0$.
+Thus $\ker A\subseteq\mathbf1^\perp$. Since $A$ is positive semidefinite,
+$\ker(A+\gamma J)=\ker A$ for every $\gamma\ge0$: a zero quadratic form
+for a sum of two positive semidefinite matrices belongs to both kernels.
+For $T=R-(6/b)J$ we have
+\[
+ TT^{\mathsf T}=A+(3-36/b)J,\qquad T\mathbf1=0.
+\]
+Here $b\ge12$, including equality, so $\operatorname{rank}T=
+\operatorname{rank}R$. Write $u=b-\operatorname{rank}R$; then $u\ge1$.
+Incidence gives $\ell\ge7v-kb$. Together with (15), this implies
+$1\le u\le2$ in both cases.
+
+Let $F$ consist of the degree-seven points having multiplicity exactly three
+with every low point. Put $\eta=\sum_{y\notin L}(d(y)-7)$, so
+$kb=7v-\ell+\eta$. At most $\eta$ high points have degree above seven,
+and at most $3p$ high points have positive excess with a low point, because
+the sum of all low-to-high excess is $\sum_x\delta_x\le3p$.
+Consequently
+\[
+ |F|\ge v-\ell-\eta-3p
+      \ge15v-2kb-6b+6u. \tag{16}
+\]
+The last inequality uses (15) and $\ell\ge7v-kb$. Thus $|F|\ge6u$ at
+$(32,17,12)$, and $|F|\ge32+6u\ge38$ at $(68,35,13)$.
+
+For $y\in F$, its actual binary block-support vector $w_y$ satisfies
+$Tw_y=(3-42/b)\mathbf1$ and $\sum_i(w_y)_i=7$. Differences of two such
+vectors lie in $\ker T\cap\mathbf1^\perp$, of dimension $u-1$: the
+nonzero vector $\mathbf1$ lies in $\ker T$ and has nonzero coordinate sum.
+When $u=1$ there is at most one support. When $u=2$ there are at most two,
+since an affine line meets $\{0,1\}^b$ in at most two points (a varying
+coordinate determines its line parameter and can take only two values).
+These are counts of supports; all points sharing a support are retained.
+
+Finally, a nonempty class of $g$ points with identical support of degree
+$h$ in a uniform $k$-family with pair multiplicity at least $\lambda$ obeys
+\[
+ \lambda(v-g)\le h(k-g). \tag{17}
+\]
+Choose a representative. Its $h$ blocks contain the entire class, and every
+outside point must occur in at least $\lambda$ of those blocks. Counting
+outside incidences proves (17); the argument also permits indexed repeated
+blocks. With $h=7,\lambda=3$, it gives $g\le5$ on 32 points and $g\le10$
+on 68 points. Hence the first case has $|F|\le5u<6u$, and the second has
+$|F|\le20<38$. Both contradict (16). Corollary 10 handles all larger $k$;
+Proposition 11 supplies the unchanged upper bound fourteen. $\square$
 
 ## 8. Attainment: a known witness and weighted affine planes
 
@@ -776,9 +856,9 @@ design at $k=12$ is asserted here. This optional equality insight is not a premi
 Proposition 6 gives the universal lower bound twelve on twenty points;
 Proposition 11 supplies the displayed twelve-block covering. This proves (a).
 
-For $k\ge18$, Corollary 10 gives the lower bound thirteen at offset two,
+For $k\ge17$, Proposition 10a gives the lower bound thirteen at offset two,
 and Proposition 11 gives the upper bound fourteen. This proves (b), without
-asserting a thirteen-block construction. For $k\ge36$, Corollary 10 improves
+asserting a thirteen-block construction. For $k\ge35$, Proposition 10a improves
 the lower bound to fourteen, proving (c). The offset-three exclusion for
 $k\ge59$ similarly combines with Proposition 11 to prove (d).
 
@@ -820,6 +900,7 @@ Audit keys below refer to full-contract checks and transitive axiom checks:
 **A20** = [C20_11_3](../../lean/audits/C20_11_3.lean),
 **A2** = [TwoKMinusTwo](../../lean/audits/TwoKMinusTwo.lean),
 **AE** = [TwoKMinusTwoEquality](../../lean/audits/TwoKMinusTwoEquality.lean),
+**AT** = [TwoKMinusTwoTightening](../../lean/audits/TwoKMinusTwoTightening.lean),
 **AC** = [TwoKMinusC](../../lean/audits/TwoKMinusC.lean),
 **AG** = [TwoKMinusCGeneral](../../lean/audits/TwoKMinusCGeneral.lean),
 **AS** = [CaroTuza](../../lean/audits/CaroTuza.lean),
@@ -836,10 +917,11 @@ Audit keys below refer to full-contract checks and transitive axiom checks:
 | Theorem 1(a), Proposition 6: twenty-point lower bound | [C20_11_3.LowerBound](../../lean/CoveringDesigns/C20_11_3/LowerBound.lean) | `lower_bound_20_11_3` | A20: 20 points, ordinary (11,3) cover imply at least 12 blocks. |
 | Theorem 1(a), Proposition 11: twenty-point attainment and exactness | [C20_11_3.Witness](../../lean/CoveringDesigns/C20_11_3/Witness.lean), [C20_11_3](../../lean/CoveringDesigns/C20_11_3.lean) | `upper_bound_20_11_3_on`, `covering_number_20_11_3_on`, `covering_number_20_11_3` | A20: arbitrary-label and Fin 20 exactness; expanded in Audit20_11_3.covering_number_explicit. |
 | Unconditional inequality (1) | [TwoKMinusTwo.Bounds](../../lean/CoveringDesigns/TwoKMinusTwo/Bounds.lean) | `TwoKMinusTwo.lower_inequality` | A2: $k\ge9$, $v=2k-2$, IsCover only; AuditTwoKMinusTwo.lower_explicit expands it. |
-| Theorem 1(b,c), Corollary 10: offset-two bounds | [TwoKMinusC.OffsetTwo](../../lean/CoveringDesigns/TwoKMinusC/OffsetTwo.lean) | `TwoKMinusC.OffsetTwo.thirteen_le_card`, `TwoKMinusC.OffsetTwo.fourteen_le_card`, `TwoKMinusC.OffsetTwo.exactness`, `TwoKMinusC.OffsetTwo.covering_number` | AC: $k\ge18$ / $k\ge36$, $v=2k-2$; exactness includes attainment. |
+| Theorem 1(b,c), Proposition 10a: sharpened offset-two bounds | [TwoKMinusTwoTightening.Bounds](../../lean/CoveringDesigns/TwoKMinusTwoTightening/Bounds.lean) | `TwoKMinusTwoTightening.thirteen_le_card`, `TwoKMinusTwoTightening.fourteen_le_card`, `TwoKMinusTwoTightening.exactness`, `TwoKMinusTwoTightening.covering_number` | AT: $k\ge17$ / $k\ge35$, $v=2k-2$; actual attainment and expanded covering conditions. |
+| Corollary 10: selection-based offset-two bounds | [TwoKMinusC.OffsetTwo](../../lean/CoveringDesigns/TwoKMinusC/OffsetTwo.lean) | `TwoKMinusC.OffsetTwo.thirteen_le_card`, `TwoKMinusC.OffsetTwo.fourteen_le_card`, `TwoKMinusC.OffsetTwo.exactness`, `TwoKMinusC.OffsetTwo.covering_number` | AC: $k\ge18$ / $k\ge36$, $v=2k-2$; exactness includes attainment. |
 | Theorem 1(e), §6: uniform-offset lower bound | [TwoKMinusCGeneral.UniformLower](../../lean/CoveringDesigns/TwoKMinusCGeneral/UniformLower.lean) | `TwoKMinusCGeneral.fourteen_le_card_uniform` | AG: $c\ge2$, $k\ge25c$, $v=2k-c$, IsCover only. |
 | Theorem 1(d), Corollary 10: offset-three lower bound | [TwoKMinusCGeneral.OffsetThreeLower](../../lean/CoveringDesigns/TwoKMinusCGeneral/OffsetThreeLower.lean) | `TwoKMinusCGeneral.fourteen_le_card_offset_three` | AG: $k\ge59$, $v=2k-3$, IsCover only. |
-| Theorem 1(c,d,e), Proposition 11: family exactness | [TwoKMinusCGeneral.Exactness](../../lean/CoveringDesigns/TwoKMinusCGeneral/Exactness.lean) | `TwoKMinusCGeneral.exactness_uniform`, `TwoKMinusCGeneral.covering_number_uniform`, `TwoKMinusCGeneral.exactness_offset_three`, `TwoKMinusCGeneral.covering_number_offset_three` | AG: both ranges with actual 14-block families; AuditTwoKMinusCGeneral.uniform_explicit and three_explicit expand the definitions. |
+| Theorem 1(d,e), Proposition 11: general family exactness | [TwoKMinusCGeneral.Exactness](../../lean/CoveringDesigns/TwoKMinusCGeneral/Exactness.lean) | `TwoKMinusCGeneral.exactness_uniform`, `TwoKMinusCGeneral.covering_number_uniform`, `TwoKMinusCGeneral.exactness_offset_three`, `TwoKMinusCGeneral.covering_number_offset_three` | AG: both ranges with actual 14-block families; AuditTwoKMinusCGeneral.uniform_explicit and three_explicit expand the definitions. |
 
 ### Pivotal lemmas
 
@@ -864,6 +946,10 @@ Audit keys below refer to full-contract checks and transitive axiom checks:
 | Selection-to-rank and two-level count | [MulticoverLargeDefect.Selection](../../lean/CoveringDesigns/MulticoverLargeDefect/Selection.lean), [MulticoverLargeDefect.Counting](../../lean/CoveringDesigns/MulticoverLargeDefect/Counting.lean) | `MulticoverLargeDefect.natExcess_degree`, `MulticoverLargeDefect.independent_card_le`, `MulticoverLargeDefect.potential_bound`, `MulticoverLargeDefect.selection_bound`, `MulticoverLargeDefect.two_level_bound` | AL: indexed actual subset floors and nonnegative coefficients; strict selected excess, then $A\ge2H\ge0$ for counting. Section 7.2 is their $s=1$ instance. |
 | Proposition 8: structural bound and actual-family adapter | [MulticoverLargeDefect.LowerBound](../../lean/CoveringDesigns/MulticoverLargeDefect/LowerBound.lean), [TwoKMinusC.LargeDefect](../../lean/CoveringDesigns/TwoKMinusC/LargeDefect.lean) | `MulticoverLargeDefect.lower_bound_of_multiplicities`, `TwoKMinusC.actual_subset_floors`, `TwoKMinusC.actual_floors_bound`, `TwoKMinusC.actual_floors_real`, `TwoKMinusC.actual_floors_inequality` | AL/AC: adapter needs exactly uniformity, $v+c=2k,c\ge2,c<k,k>6$ and actual point/pair floors six/three. Both counting branches retained. |
 | Corollary 10: coefficients and strict thresholds | [TwoKMinusC.Algebra](../../lean/CoveringDesigns/TwoKMinusC/Algebra.lean), [TwoKMinusC.OffsetTwoArithmetic](../../lean/CoveringDesigns/TwoKMinusC/OffsetTwoArithmetic.lean), [TwoKMinusCGeneral.OffsetThreeArithmetic](../../lean/CoveringDesigns/TwoKMinusCGeneral/OffsetThreeArithmetic.lean) | `TwoKMinusC.defect_eq`, `TwoKMinusC.denominator_pos`, `TwoKMinusC.value_eq_Q`, `TwoKMinusC.twelve_lt_Q_two`, `TwoKMinusC.thirteen_lt_Q_two`, `TwoKMinusCGeneral.thirteen_lt_Q_three` | AC/AG: signed defect and positive denominators; comparisons strictly greater than 12/13 before rounding. |
+| Proposition 10a: centering and retained rank budget | [BoundaryRank.Completion](../../lean/CoveringDesigns/BoundaryRank/Completion.lean) | `BoundaryRank.centered_completion` | AT: finite real matrix, nonempty columns, positive constant diagonal, symmetric nonnegative loopless excess, nonnegative deficits, constant row sum, exact Gram and $b\lambda\ge r^2$; empty row type allowed. |
+| Proposition 10a: few binary supports | [BoundaryRank.BinaryCompletion](../../lean/CoveringDesigns/BoundaryRank/BinaryCompletion.lean) | `BoundaryRank.completion_card_le_one`, `BoundaryRank.binary_completion_card_le_two` | AT: nonempty column type, T1=0, column corank at most one/two, fixed image and coordinate sum; second case requires binary coordinates. |
+| Proposition 10a: support-class capacity | [BoundaryRank.CloneCapacity](../../lean/CoveringDesigns/BoundaryRank/CloneCapacity.lean) | `BoundaryRank.indexed_clone_capacity`, `BoundaryRank.clone_card_le_five`, `BoundaryRank.clone_card_le_ten` | AT: uniform indexed blocks, nonempty identical-support class with stated degree and pair floor; empty classes handled in the endpoint corollaries. |
+| Proposition 10a: high-point count and endpoint exclusions | [TwoKMinusTwoTightening.Incidence](../../lean/CoveringDesigns/TwoKMinusTwoTightening/Incidence.lean), [TwoKMinusTwoTightening.Endpoints](../../lean/CoveringDesigns/TwoKMinusTwoTightening/Endpoints.lean) | `TwoKMinusTwoTightening.regularHigh_count_bound`, `TwoKMinusTwoTightening.no_twelve_32_17`, `TwoKMinusTwoTightening.no_thirteen_68_35` | AT: ordinary uniform families with actual point/pair floors six/three; final covering wrappers derive all floors. No full component classification. |
 | Occurrences and deduplication | [Multicover.Family](../../lean/CoveringDesigns/Multicover/Family.lean) | `Multicover.ofFamily_card`, `Multicover.ofFamily_subsetDegree`, `Multicover.ofFamily_uniform`, `Multicover.deduplicate_card_le`, `Multicover.deduplicate_isCover_one` | AM; AC.occurrence_transport: one occurrence per distinct original block preserves every multiplicity. Deduplication preserves ordinary coverage, not arbitrary higher multiplicity. |
 | Proposition 11: weighted expansion and upper construction | [TwoKMinusTwo.Expansion](../../lean/CoveringDesigns/TwoKMinusTwo/Expansion.lean), [TwoKMinusTwo.AffineWeights](../../lean/CoveringDesigns/TwoKMinusTwo/AffineWeights.lean), [TwoKMinusTwo.Construction](../../lean/CoveringDesigns/TwoKMinusTwo/Construction.lean) | `TwoKMinusTwo.pad_indexed`, `TwoKMinusTwo.weighted_expansion`, `TwoKMinusTwo.weight_sum`, `TwoKMinusTwo.weight_plane_le`, `TwoKMinusTwo.small_base_subset`, `TwoKMinusTwo.upper_bound` | A2: nonnegative fibres, projected sets of size at most three, block sizes at most k before padding, $k\ge3$; result has at most 14 distinct blocks. |
 | Reduction and general attainment | [PointReduction.Family](../../lean/CoveringDesigns/PointReduction/Family.lean), [TwoKMinusCGeneral.Attainment](../../lean/CoveringDesigns/TwoKMinusCGeneral/Attainment.lean) | `PointReduction.family_reduce_points`, `TwoKMinusCGeneral.upper_bound` | AR/AG: target size between k and source size. General upper bound uses $v+c=2k,2\le c\le k,k\ge3$ and arbitrary target labels. |
@@ -948,14 +1034,15 @@ the resulting records against the current inputs without recompiling.
 The full verification covers all included results. The guide also lists
 focused verification targets for these results and their prerequisites.
 
-The five public entry modules are
+The six public entry modules are
 [`C20_11_3`](../../lean/CoveringDesigns/C20_11_3.lean),
 [`TwoKMinusTwo`](../../lean/CoveringDesigns/TwoKMinusTwo.lean),
 [`TwoKMinusTwoEquality`](../../lean/CoveringDesigns/TwoKMinusTwoEquality.lean),
-[`TwoKMinusC`](../../lean/CoveringDesigns/TwoKMinusC.lean), and
+[`TwoKMinusC`](../../lean/CoveringDesigns/TwoKMinusC.lean),
+[`TwoKMinusTwoTightening`](../../lean/CoveringDesigns/TwoKMinusTwoTightening.lean), and
 [`TwoKMinusCGeneral`](../../lean/CoveringDesigns/TwoKMinusCGeneral.lean).
 Together with their transitive project imports they comprise the following
-89 included source modules. In this table paths are relative to
+96 included source modules. In this table paths are relative to
 `lean/CoveringDesigns/`; “entry” means the `.lean` file beside that directory.
 The equality entry supports optional §9 and the preserved component stages.
 
@@ -963,11 +1050,12 @@ The equality entry supports optional §9 and the preserved component stages.
 |---|---|
 | `C20_11_3` | entry, Incidence, LowerBound, Rank, Saturated, SaturatedAssignment, SaturatedBudget, SaturatedGeometry, SaturatedLoss, SaturatedPartition, Witness |
 | `TwoKMinusTwo` | entry, AffineWeights, Arithmetic, Bounds, Capacity, Construction, Expansion, Geometry, Incidence, Rank |
+| `TwoKMinusTwoTightening` | entry, Bounds, Endpoints, Incidence |
 | `TwoKMinusTwoEquality` | entry, Bounds, Matrix, Rigidity |
 | `TwoKMinusC` | entry, Algebra, LargeDefect, OffsetTwo, OffsetTwoArithmetic |
 | `TwoKMinusCGeneral` | entry, Arithmetic, Assignment, Attainment, Capacity, Exactness, Geometry, Incidence, OffsetThreeArithmetic, OffsetThreeLower, Rank, Saturation, UniformLower |
 | `Foundations` | Basic, Bounds, Intersecting, Links, Relabelling, StandardAxioms |
-| `BoundaryRank` | Equality, Nullity, Signless |
+| `BoundaryRank` | BinaryCompletion, CloneCapacity, Completion, Equality, Nullity, Signless |
 | `Weighted` | Counting, Matrix, PartitionedRank |
 | `Combinatorics` | WeightedPartition |
 | `CaroTuza` | Function, Graph, Selection |
@@ -983,7 +1071,7 @@ The equality entry supports optional §9 and the preserved component stages.
 | `PointReduction` | Basic, Bounds, Family |
 | `Schoenheim` | LowerBound |
 
-The eleven audit files linked in the proof appendix are included under
+The twelve audit files linked in the proof appendix are included under
 [`lean/audits/`](../../lean/audits/), together with their imports. These audits
 also exercise other applications and examples, so the repository includes
 23 additional project modules beyond the proof closure: `Applications.ZeroDefect`, `C17_9_5`

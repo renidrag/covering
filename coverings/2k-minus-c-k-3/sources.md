@@ -255,7 +255,8 @@ current combined proof:
 |---|---|
 | `TwoKMinusTwo` | Lower thirteen for $k\ge20$, exact fourteen for $k\ge41$, the unconditional inequality for $k\ge9$, and the upper construction for $k\ge3$. |
 | `TwoKMinusTwoEquality` | Lower thirteen for $k\ge19$, exact fourteen for $k\ge40$, and the optional equality rigidity in proof §9. |
-| `TwoKMinusC` / `TwoKMinusCGeneral` | The $18/36/59$ and $25c$ ranges presented here. |
+| `TwoKMinusC` / `TwoKMinusCGeneral` | The selection-based $18/36/59$ and uniform $25c$ ranges. |
+| `TwoKMinusTwoTightening` | Centered support completion adds the 17/35 offset-two endpoints; earlier modules are unchanged. |
 
 The Lean appendix gives the operative declarations. A stronger paper
 classification at the equality boundary is outside this account and is not

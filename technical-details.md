@@ -238,3 +238,4 @@ The full verification command above covers the first three results and all of th
 | `two-k-minus-two-equality` | `CoveringDesigns.TwoKMinusTwoEquality` |
 | `two-k-minus-c` | `CoveringDesigns.TwoKMinusC` |
 | `two-k-minus-c-general` | `CoveringDesigns.TwoKMinusCGeneral` |
+| `two-k-minus-two-tightening` | `CoveringDesigns.TwoKMinusTwoTightening` |

@@ -19,8 +19,8 @@ following results. Every equality includes an attaining ordinary covering.
 | Covering | Parameter range | Proved conclusion |
 |---|---|---|
 | $C(20,11,3)$ | — | $12$ |
-| $C(2k-2,k,3)$ | $18\le k\le35$ | $13\le C\le14$ |
-| $C(2k-2,k,3)$ | $k\ge36$ | $14$ |
+| $C(2k-2,k,3)$ | $17\le k\le34$ | $13\le C\le14$ |
+| $C(2k-2,k,3)$ | $k\ge35$ | $14$ |
 | $C(2k-3,k,3)$ | $k\ge59$ | $14$ |
 | $C(2k-c,k,3)$ | $c\ge2,\ k\ge25c$ | $14$ |
 
