@@ -94,8 +94,25 @@ first discovery or publication. The [source account](coverings/2k-minus-c-k-3/so
 records the provenance and retrieval limitations.
 
 The same source account attributes the established counting, selection,
-rank and affine-construction methods used in the proofs. No additional
-third-party paper or repository payload is included in this release.
+rank and affine-construction methods used in those proofs. No additional
+third-party paper or repository payload is needed for that account.
+
+## The C(18,10,3) construction
+
+The [twelve-block historical witness](data/c18103-historical-witness.json)
+comes from the La Jolla Covering Repository data described above, under
+CC BY 4.0 with attribution to Daniel M. Gordon / La Jolla Covering Repository.
+Its retained source metadata records “JCD article” and 14 November 1996;
+that incomplete credit does not identify the article or establish a discovery
+date. The [source account](coverings/18-10-3/sources.md) explains the limitation.
+
+The data retain the original one-based ordered blocks, source-archive hashes,
+licence and catalogue metadata. Archive filenames and identifiers describe
+that external source; they are not required local files.
+[Witness.lean](lean/CoveringDesigns/C18_10_3/Witness.lean) subtracts one from
+point labels and proves cardinality and complete coverage in Lean.
+The new lower proof and standard lifted consequences are separate project
+contributions credited in the result account.
 
 ## External software dependencies
 
