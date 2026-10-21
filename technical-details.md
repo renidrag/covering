@@ -7,8 +7,10 @@ This repository contains the following Lean components:
 | `CoveringDesigns.C11_5_2` | Minimum seven; exactly two minimum isomorphism types |
 | `CoveringDesigns.C12_6_3` | Minimum fifteen; structural alternatives; separate catalogue completeness |
 | `CoveringDesigns.C13_7_4` | Minimum thirty |
+| `CoveringDesigns.C18_10_3` | Minimum twelve |
+| `CoveringDesigns.Applications.C18103Lifts` | Five higher-strength lower bounds from that twelve-block minimum |
 
-Their structural dependency order is shared foundations, the eleven-point
+The Stanton–GPPT–C13 dependency order is shared foundations, the eleven-point
 classification, the twelve-point reduction, then the thirteen-point proof.
 The thirteen-point result uses arbitrary completions of GPPT's structural
 forms. It imports neither the catalogue nor completion-verification modules.
@@ -49,8 +51,10 @@ The recorded workflow uses Python **3.10+** and runs on **macOS or Linux**:
 
 `doctor` checks prerequisites. `check` checks source boundaries, input hashes,
 the explicit covering data and deterministic generated witnesses; it does
-not verify Lean proofs. `verify` recompiles the project modules serially and
-runs the component and combined Lean audits. It reuses dependency caches.
+not verify Lean proofs. `verify` recompiles every project module, with up to
+two compiler commands by default, then runs the component and combined Lean
+audits serially. It reuses upstream
+dependency caches, never project proof success on a fresh run.
 `audit` checks the resulting records against the current inputs without
 rebuilding.
 
@@ -60,8 +64,27 @@ prerequisites. `./covering status` reports progress; after a failed or
 interrupted run, use the resume command printed by the CLI. Changed proof
 inputs or verification scripts require a new verification.
 
-Commands have time limits and, by default, a sampled aggregate process-group
-memory limit of **8192 MiB**. The sampled limit can overshoot a brief peak.
+`./covering plan` and fresh `./covering verify` runs default to at most two
+compiler commands. Use `--workers 1` for a serial local run or `--workers 2`
+to choose two explicitly. The shared GitHub workflow pins `--workers 1`.
+Each build waits until every direct project prerequisite has passed; all audits
+run serially after the builds. Both modes use identical canonical step IDs,
+commands and contract/axiom checks. The serial prerequisite check loads Lake's configuration
+before any concurrent compiler commands. Every step has its own log and record;
+one coordinator owns the workspace lock and updates shared state atomically.
+
+On failure or interruption the CLI stops new work, cancels and drains all active
+commands, and records failed, cancelled and unstarted steps. Resume revalidates
+the canonical prefix's logs, snapshots and output hashes, then rebuilds the
+entire remaining tail, including any earlier out-of-order successes. Omitting
+`--workers` on resume preserves the recorded count, including one worker when
+fresh runs default to two. Changing the count or verification scripts requires a
+new run. A completed record still requires every theorem and exact axiom audit.
+
+Commands have time limits and, by default, a sampled process-group memory
+limit of **8192 MiB per command**. With two workers, two such groups can run
+concurrently: this is not a combined workspace memory cap. The sampled limit
+can overshoot a brief peak.
 Use `--no-memory-guard` with `doctor`, `run`, `plan` or `verify` to omit this
 optional watchdog. `--memory-mib` still sets Lean's own `-M` limit during
 verification. Logs explicitly record whether the watchdog was enabled;
@@ -82,9 +105,9 @@ the recorded workflow's command-by-command evidence.
 ## GitHub Actions
 
 The [Lean verification workflow](.github/workflows/lean-verification.yml)
-runs on pushes, pull requests and manual dispatch. It exports `ELAN_TOOLCHAIN`
-from `lean/lean-toolchain` for every later step, so commands launched from the
-repository root use the pin without requiring a configured Elan default.
+runs on pushes, pull requests and manual dispatch. Its proof job exports
+`ELAN_TOOLCHAIN` from `lean/lean-toolchain` for every later step, so commands
+launched from the repository root use the pin without a configured Elan default.
 It installs that toolchain and the checksum-verified dependency sources,
 then fetches Mathlib's upstream build cache for the imported dependencies.
 The cache downloader runs inside Mathlib to accommodate the archive-based
@@ -92,19 +115,26 @@ path dependencies; the workflow checks that their pinned revisions agree
 with Mathlib's own manifest and links the cache's standard package paths
 to those installed sources. It does not change either manifest.
 
-Each run starts with no project build cache or previous verification records.
-It runs the source checks, verification-tool tests and record-validation
-controls, then `./covering verify --no-memory-guard` and `./covering audit`. All published components,
-including the separate GPPT catalogue theorem, are compiled and audited.
-The exact standard-axiom guards and theorem contracts are the same as in
-local verification.
+Two required jobs run independently. The proof job starts with no project
+build cache or previous verification records. It runs the source checks,
+`./covering verify --workers 1 --no-memory-guard` and `./covering audit`. All published
+components, including the separate GPPT catalogue theorem, are compiled and
+audited. The exact standard-axiom guards and theorem contracts are the same
+as in local verification. The tools job needs only Python and runs the full
+verification-tool test suite and record-validation controls.
 
-The job runs on Ubuntu with two Lean threads and a 60-minute job limit.
+The existing **Lean proofs and audits** check waits for both jobs and passes
+only when both succeed. A failed, skipped or cancelled prerequisite cannot
+produce a passing check. This final gate aggregates their results; the proof
+job performs every compilation and Lean audit.
+
+The proof job runs one compiler command at a time on Ubuntu, with two Lean
+threads and a 60-minute job limit.
 Dependency downloads and proof verification omit the optional process-group
 memory watchdog. Lean retains its own `-M6144` setting; this is not an
 aggregate process-group RSS limit. Each module has 300 seconds and each
-Lean audit 60 seconds. Logs and verification
-records are attached to the workflow run as downloadable artifacts for
+Lean audit 60 seconds. The tools job has a 20-minute limit. Each job's logs
+and verification records are retained in separate downloadable artifacts for
 30 days, including records from failed runs when available.
 
 The README badge links to the workflow history and reports GitHub's live
@@ -159,6 +189,28 @@ The mathematical contracts and module correspondence are in the
 Use `CoveringDesigns.C12_6_3.Structural.Reduction` for the structural result
 without importing the separate catalogue calculation; the full public import
 is `CoveringDesigns.C12_6_3`.
+
+## C(18,10,3) and its lifted lower bounds
+
+Read the [result account](coverings/18-10-3/README.md), its
+[structural proof and Lean correspondence](coverings/18-10-3/proof.md), and
+[attribution and source discussion](coverings/18-10-3/sources.md).
+The exact eighteen-point result and the five lifted lower bounds are included
+in the full verification above. Focused verification uses:
+
+```sh
+./covering verify 18-10-3
+./covering audit 18-10-3
+./covering verify c18103-lifts
+./covering audit c18103-lifts
+```
+
+The public imports are `CoveringDesigns.C18_10_3` and
+`CoveringDesigns.Applications.C18103Lifts`. The seed audit also retains the
+reusable square-support lemmas; the simplified covering deduction and its
+lifts do not use them. The lifts depend only on the seed's lower bound and
+the existing iterated lifting theorem. They do not assume an attaining
+construction for the higher-strength parameters.
 
 ## Statements and trust checks
 

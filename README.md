@@ -11,6 +11,32 @@ A $(v,k,t)$ covering is a family of distinct $k$-element blocks on $v$ points
 that covers every $t$-element subset. The smallest possible number of blocks
 is $C(v,k,t)$.
 
+## New result: $C(18,10,3)=12$ and five lifted bounds
+
+**21 October 2026.** Covering every triple of 18 points with 10-element
+blocks requires at least 12 blocks. A known 12-block construction attains
+this bound. Applying Schönheim lifting gives five further lower bounds.
+All six conclusions are formalised in Lean 4.
+
+| Covering | Proved conclusion |
+|---|---|
+| $C(18,10,3)$ | $12$ (exact) |
+| $C(19,11,4)$ | $\ge21$ |
+| $C(20,12,5)$ | $\ge35$ |
+| $C(21,13,6)$ | $\ge57$ |
+| $C(22,14,7)$ | $\ge90$ |
+| $C(23,15,8)$ | $\ge138$ |
+
+My contribution is the structural lower-bound proof and its Lean
+formalisation, developed with AI assistance. The proof combines incidence
+counting, equality in a matrix-rank bound and constraints on shared block
+supports to force an uncovered triple. The higher-strength bounds follow
+by retaining each ceiling in Schönheim's lifting argument.
+
+- [Read the mathematical proof and Lean correspondence](coverings/18-10-3/proof.md).
+- [Read the proof outline and formal statements](coverings/18-10-3/README.md).
+- [Read the sources and construction attribution](coverings/18-10-3/sources.md).
+
 ## Lower bounds and exact values for $C(2k-c,k,3)$
 
 **19 October 2026.** Structural lower bounds, formalised in Lean 4, give the

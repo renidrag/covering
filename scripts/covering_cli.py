@@ -55,10 +55,12 @@ def parser_for_cli():
     add('check', 'Check sources, input hashes, explicit covers and generated data without Lean')
     add('audit', 'Validate recorded verification against current inputs without rebuilding', target=True)
     for name in ('plan', 'verify'):
-        command = add(name, 'Show the serial verification plan' if name == 'plan'
+        command = add(name, 'Show the canonical verification plan' if name == 'plan'
                       else 'Compile and audit a component or the whole library', target=True)
+        command.add_argument('--workers', type=int, choices=(1, 2),
+                             help='concurrent fresh build commands; audits stay serial (fresh default: 2; resume keeps recorded count)')
         command.add_argument('--memory-mib', type=positive_int,
-                             help='Lean -M limit and, when enabled, aggregate RSS limit (default: 8192 MiB)')
+                             help='per-command Lean -M and optional process-group RSS limit; up to two groups (default: 8192 MiB each)')
         guard_option(command, default=None)
         command.add_argument('--build-timeout', type=positive_float,
                              help='time limit per module (default: 180 seconds)')
@@ -191,7 +193,7 @@ def render(action, result):
         print(result['scope'])
     elif action == 'plan':
         mode = 'enabled' if result['limits']['memory_guard'] else 'disabled'
-        print(f'{result["target"]}: {len(result["steps"])} serial steps; '
+        print(f'{result["target"]}: {len(result["steps"])} steps; {result["limits"]["workers"]} build worker(s); '
               f'Lean -M{result["limits"]["memory_mib"]}; memory watchdog {mode}')
         for index, step in enumerate(result['steps'], 1):
             print(f'[{index}] ({step["timeout_seconds"]:g}s) {shlex.join(step["command"])}')

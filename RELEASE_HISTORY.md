@@ -2,9 +2,9 @@
 
 **Rob Gardiner**
 
-This records the first public GitHub snapshots of the project's main
-mathematical results. Dates use Europe/London time. The links identify each
-snapshot's mathematical account and successful Lean verification run.
+This records the project's main mathematical additions. Dates use
+Europe/London time. Historical links identify each public snapshot's
+mathematical account and successful Lean verification run.
 Every stated exact value includes an attaining ordinary covering.
 
 Releases are cumulative. The [collection DOI](https://doi.org/10.5281/zenodo.23511135)
@@ -12,42 +12,42 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 | Release | First public date | Archived snapshot | Version DOI |
 |---|---|---|---|
-| [v1.0.0](https://github.com/renidrag/covering/releases/tag/v1.0.0) | 15 October 2026 | [aee92cd704b6](https://github.com/renidrag/covering/tree/aee92cd704b6ac7dd2143459659c9e101d61d859) | [10.5281/zenodo.23511136](https://doi.org/10.5281/zenodo.23511136) |
-| [v1.1.0](https://github.com/renidrag/covering/releases/tag/v1.1.0) | 19 October 2026 | [9bc5a0f8d7e2](https://github.com/renidrag/covering/tree/9bc5a0f8d7e2d2b104bbed38eccad35b778fe46d) | [10.5281/zenodo.23511297](https://doi.org/10.5281/zenodo.23511297) |
 | [v1.2.0](https://github.com/renidrag/covering/releases/tag/v1.2.0) | 20 October 2026 | [d9886e4709b3](https://github.com/renidrag/covering/tree/d9886e4709b3987974e6920d98cb4df5345ef922) | [10.5281/zenodo.23512290](https://doi.org/10.5281/zenodo.23512290) |
+| [v1.1.0](https://github.com/renidrag/covering/releases/tag/v1.1.0) | 19 October 2026 | [9bc5a0f8d7e2](https://github.com/renidrag/covering/tree/9bc5a0f8d7e2d2b104bbed38eccad35b778fe46d) | [10.5281/zenodo.23511297](https://doi.org/10.5281/zenodo.23511297) |
+| [v1.0.0](https://github.com/renidrag/covering/releases/tag/v1.0.0) | 15 October 2026 | [aee92cd704b6](https://github.com/renidrag/covering/tree/aee92cd704b6ac7dd2143459659c9e101d61d859) | [10.5281/zenodo.23511136](https://doi.org/10.5281/zenodo.23511136) |
 
 All three releases were archived on Zenodo on 20 October 2026. The v1.1.0
 archive uses a same-day packaging cleanup with unchanged mathematics; the
 19 October account below retains the first public snapshot.
 
-## 15 October 2026 — $C(13,7,4)=30$
+## 21 October 2026 — $C(18,10,3)=12$ and five lifted lower bounds
 
-The proof establishes $C(13,7,4)=30$, supported by reconstructed proofs and
-Lean formalisations of Stanton's $C(11,5,2)=7$ classification and GPPT's
-$C(12,6,3)=15$ result and structural classification.
+**v1.3.0**
 
-[Snapshot aee92cd704b6](https://github.com/renidrag/covering/tree/aee92cd704b6ac7dd2143459659c9e101d61d859) ·
-[Mathematical account](https://github.com/renidrag/covering/blob/aee92cd704b6ac7dd2143459659c9e101d61d859/coverings/13-7-4/README.md) ·
-[Lean verification passed](https://github.com/renidrag/covering/actions/runs/38687834009).
+| Result |
+|---|
+| $C(18,10,3)=12$ |
+| $C(19,11,4)\ge21$ |
+| $C(20,12,5)\ge35$ |
+| $C(21,13,6)\ge57$ |
+| $C(22,14,7)\ge90$ |
+| $C(23,15,8)\ge138$ |
 
-The original repository README dates the result to 13 October; its first
-public GitHub snapshot is dated 15 October.
+The structural proof excludes an 11-block covering of the triples of 18
+points by 10-element blocks. A historical 12-block construction gives
+attainment. The five further lower bounds follow by Schönheim lifting,
+retaining every intermediate ceiling. All six conclusions are proved in
+Lean for arbitrary finite point types.
 
-## 19 October 2026 — $C(20,11,3)=12$ and family bounds $13$ and $14$
+[Mathematical account](coverings/18-10-3/README.md) ·
+[Proof and Lean correspondence](coverings/18-10-3/proof.md) ·
+[Sources and attribution](coverings/18-10-3/sources.md).
 
-| Result | Parameter range |
-|---|---|
-| $C(20,11,3)=12$ | $(v,k,t)=(20,11,3)$ |
-| $13\le C(2k-2,k,3)\le14$ | $k\ge18$ |
-| $C(2k-2,k,3)=14$ | $k\ge36$ |
-| $C(2k-3,k,3)=14$ | $k\ge59$ |
-| $C(2k-c,k,3)=14$ | $c\ge2$ and $k\ge25c$ |
-
-[Snapshot c99e30c5421c](https://github.com/renidrag/covering/tree/c99e30c5421c90de960df79e98050fa517ea492a) ·
-[Mathematical account](https://github.com/renidrag/covering/blob/c99e30c5421c90de960df79e98050fa517ea492a/coverings/2k-minus-c-k-3/README.md) ·
-[Lean verification passed](https://github.com/renidrag/covering/actions/runs/39330451817).
+These additions are not included in the v1.0.0–v1.2.0 archives.
 
 ## 20 October 2026 — improved thresholds for $C(2k-2,k,3)$
+
+**v1.2.0**
 
 | Result | Previous range | Improved range |
 |---|---|---|
@@ -62,6 +62,37 @@ The separate indexed threefold pair-covering theorem has threshold $k\ge33$.
 [Snapshot d9886e4709b3](https://github.com/renidrag/covering/tree/d9886e4709b3987974e6920d98cb4df5345ef922) ·
 [Mathematical account](https://github.com/renidrag/covering/blob/d9886e4709b3987974e6920d98cb4df5345ef922/coverings/2k-minus-c-k-3/README.md) ·
 [Lean verification passed](https://github.com/renidrag/covering/actions/runs/39462685475).
+
+## 19 October 2026 — $C(20,11,3)=12$ and family bounds $13$ and $14$
+
+**v1.1.0**
+
+| Result | Parameter range |
+|---|---|
+| $C(20,11,3)=12$ | $(v,k,t)=(20,11,3)$ |
+| $13\le C(2k-2,k,3)\le14$ | $k\ge18$ |
+| $C(2k-2,k,3)=14$ | $k\ge36$ |
+| $C(2k-3,k,3)=14$ | $k\ge59$ |
+| $C(2k-c,k,3)=14$ | $c\ge2$ and $k\ge25c$ |
+
+[Snapshot c99e30c5421c](https://github.com/renidrag/covering/tree/c99e30c5421c90de960df79e98050fa517ea492a) ·
+[Mathematical account](https://github.com/renidrag/covering/blob/c99e30c5421c90de960df79e98050fa517ea492a/coverings/2k-minus-c-k-3/README.md) ·
+[Lean verification passed](https://github.com/renidrag/covering/actions/runs/39330451817).
+
+## 15 October 2026 — $C(13,7,4)=30$
+
+**v1.0.0**
+
+The proof establishes $C(13,7,4)=30$, supported by reconstructed proofs and
+Lean formalisations of Stanton's $C(11,5,2)=7$ classification and GPPT's
+$C(12,6,3)=15$ result and structural classification.
+
+[Snapshot aee92cd704b6](https://github.com/renidrag/covering/tree/aee92cd704b6ac7dd2143459659c9e101d61d859) ·
+[Mathematical account](https://github.com/renidrag/covering/blob/aee92cd704b6ac7dd2143459659c9e101d61d859/coverings/13-7-4/README.md) ·
+[Lean verification passed](https://github.com/renidrag/covering/actions/runs/38687834009).
+
+The original repository README dates the result to 13 October; its first
+public GitHub snapshot is dated 15 October.
 
 The mathematical accounts credit the established constructions and supporting
 theorems. Rob Gardiner's reconstructed proofs, structural arguments and Lean

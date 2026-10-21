@@ -983,6 +983,182 @@ COMPONENTS['saturated-matching'] = {'entry': 'CoveringDesigns.SaturatedMatching'
           'admissions, extra axioms, search certificate, publication refresh or historical-priority claim. '
           'Rob Gardiner with AI assistance.'}
 
+# Additive C(18,10,3) exactness and reusable restricted equality/support helpers.
+COMPONENTS['18-10-3'] = {'entry': 'CoveringDesigns.C18_10_3.SquareSupport',
+ 'audit_name': 'c18-10-3-audit',
+ 'audit_file': 'C18_10_3.lean',
+ 'principal_theorem': 'CoveringDesigns.covering_number_18_10_3_on',
+ 'explicit_theorem': 'CoveringDesigns.Audit18_10_3.covering_number_explicit',
+ 'summary_path': 'results/c18-10-3-verification.json',
+ 'theorems': ['CoveringDesigns.SupportObstruction.exceptional_count',
+              'CoveringDesigns.SupportObstruction.paired_support_obstruction',
+              'CoveringDesigns.C18_10_3.core_equality',
+              'CoveringDesigns.C18_10_3.core_pairing',
+              'CoveringDesigns.C18_10_3.core_representatives',
+              'CoveringDesigns.C18_10_3.pointSupport_card',
+              'CoveringDesigns.C18_10_3.pointSupport_inter',
+              'CoveringDesigns.C18_10_3.row_support',
+              'CoveringDesigns.C18_10_3.zero_deficit_intersections',
+              'CoveringDesigns.C18_10_3.agreeing_high_intersections',
+              'CoveringDesigns.C18_10_3.two_high_impossible',
+              'CoveringDesigns.C18_10_3.lower_bound_17_9_2',
+              'CoveringDesigns.C18_10_3.degree_ge_six',
+              'CoveringDesigns.C18_10_3.pair_ge_two',
+              'CoveringDesigns.C18_10_3.eleven_le_card',
+              'CoveringDesigns.C18_10_3.degree_excess_sum',
+              'CoveringDesigns.C18_10_3.degree_bounds',
+              'CoveringDesigns.C18_10_3.degree_profiles',
+              'CoveringDesigns.C18_10_3.outside_card',
+              'CoveringDesigns.C18_10_3.pair_self',
+              'CoveringDesigns.C18_10_3.pair_sum_all',
+              'CoveringDesigns.C18_10_3.sum_outside',
+              'CoveringDesigns.C18_10_3.row_gram_entry',
+              'CoveringDesigns.C18_10_3.row_binary',
+              'CoveringDesigns.C18_10_3.row_sum',
+              'CoveringDesigns.C18_10_3.row_gram',
+              'CoveringDesigns.C18_10_3.rowExcess_symm',
+              'CoveringDesigns.C18_10_3.rowExcess_nonneg',
+              'CoveringDesigns.C18_10_3.rowExcess_diag',
+              'CoveringDesigns.C18_10_3.rowDeficit_add',
+              'CoveringDesigns.C18_10_3.row_balance',
+              'CoveringDesigns.C18_10_3.rowDeficit_le_three',
+              'CoveringDesigns.C18_10_3.deficit_total_identity',
+              'CoveringDesigns.C18_10_3.low_zero_bound',
+              'CoveringDesigns.lower_bound_18_10_3',
+              'CoveringDesigns.indexed_lower_bound_18_10_3',
+              'CoveringDesigns.C18_10_3.deficit_zero_budget',
+              'CoveringDesigns.C18_10_3.one_high_impossible',
+              'CoveringDesigns.C18_10_3.high_supports_equal',
+              'CoveringDesigns.C18_10_3.two_high_deficit_total',
+              'CoveringDesigns.C18_10_3.high_seven_deficits',
+              'CoveringDesigns.C18_10_3.high_pair_eq_six',
+              'CoveringDesigns.C18_10_3.saturated_degree_sum',
+              'CoveringDesigns.C18_10_3.saturated_low_endpoint',
+              'CoveringDesigns.C18_10_3.saturated_local',
+              'CoveringDesigns.C18_10_3.pair_filter',
+              'CoveringDesigns.C18_10_3.mem_saturatedEdges_pair',
+              'CoveringDesigns.C18_10_3.edge_cases',
+              'CoveringDesigns.C18_10_3.edge_partner',
+              'CoveringDesigns.C18_10_3.saturated_endpoints',
+              'CoveringDesigns.C18_10_3.saturated_no_second',
+              'CoveringDesigns.C18_10_3.edges_disjoint',
+              'CoveringDesigns.C18_10_3.edges_card_le_eight',
+              'CoveringDesigns.C18_10_3.all_other_edges_cross',
+              'CoveringDesigns.C18_10_3.supporting_index_unique',
+              'CoveringDesigns.C18_10_3.no_saturated_pair',
+              'CoveringDesigns.C18_10_3.pair_ge_three',
+              'CoveringDesigns.knownBlocks12_18_10_3_distinct',
+              'CoveringDesigns.knownCover12_18_10_3_card',
+              'CoveringDesigns.knownCover12_18_10_3_uniform',
+              'CoveringDesigns.knownCover12_18_10_3_covers',
+              'CoveringDesigns.knownCover12_18_10_3_isCover',
+              'CoveringDesigns.upper_bound_18_10_3',
+              'CoveringDesigns.knownCover12_18_10_3_on_card',
+              'CoveringDesigns.knownCover12_18_10_3_on_isCover',
+              'CoveringDesigns.upper_bound_18_10_3_on',
+              'CoveringDesigns.covering_number_18_10_3_on',
+              'CoveringDesigns.covering_number_18_10_3',
+              'CoveringDesigns.BoundaryRank.restricted_component_pairing',
+              'CoveringDesigns.BoundaryRank.restricted_kernel_pairing',
+              'CoveringDesigns.BoundaryRank.square_duality',
+              'CoveringDesigns.BoundaryRank.binary_sum',
+              'CoveringDesigns.BoundaryRank.binary_dot',
+              'CoveringDesigns.BoundaryRank.two_zero_rows',
+              'CoveringDesigns.BoundaryRank.exceptional_support',
+              'CoveringDesigns.SupportObstruction.intersection_identity',
+              'CoveringDesigns.SupportObstruction.empty_of_intersection_bound',
+              'CoveringDesigns.SupportObstruction.uncovered_triple',
+              'CoveringDesigns.SupportObstruction.single_differences',
+              'CoveringDesigns.SupportObstruction.intersections_eq_of_agree',
+              'CoveringDesigns.SupportObstruction.empty_of_subtraction_bound',
+              'CoveringDesigns.IncidencePacking.packing'],
+ 'milestones': ['CoveringDesigns.Audit18_10_3.indexed_explicit',
+                'CoveringDesigns.Audit18_10_3.core_equality_explicit'],
+ 'independent_of': ['caro-tuza',
+                    'horsley',
+                    'schoenheim',
+                    '11-5-2',
+                    '12-5-2',
+                    '12-6-3',
+                    '13-7-4',
+                    'horsley-lifts',
+                    'horsley-singh',
+                    'equality',
+                    '17-9-5',
+                    'higher-incidence',
+                    'weighted',
+                    '47-14-5',
+                    '42-15-5',
+                    'large-defect',
+                    'small-defect',
+                    'small-defect-b',
+                    'small-defect-c',
+                    'multicover',
+                    'multicover-incidence',
+                    'multicover-large-defect',
+                    'coefficient-positivity',
+                    'affine-constructions',
+                    'affine-schoenheim',
+                    'affine-optimality',
+                    'lifting-comparison',
+                    'schoenheim-improvement',
+                    'multicover-small-defect',
+                    'low-degree-selection',
+                    'seed-comparison',
+                    'exact-design',
+                    'point-reduction',
+                    'base-affine',
+                    'schoenheim-family-comparison',
+                    'max-degree-sequence',
+                    'max-guarantee',
+                    'max-covering',
+                    'max-higher-covering',
+                    '14-8-5',
+                    '59-17-5',
+                    '66-18-5',
+                    '79-22-5',
+                    '87-23-5',
+                    '98-22-5',
+                    'labelled-cliques',
+                    'turan-duality',
+                    'turan',
+                    'de-caen',
+                    'chvatal',
+                    'gkp-combination',
+                    'gkp-induced',
+                    'gkp-induced-averaging',
+                    'projective-hyperplanes',
+                    'finite-flat-geometry',
+                    'degree-selected',
+                    'two-k-minus-c',
+                    'two-k-minus-c-general',
+                    'two-k-minus-two-tightening',
+                    'rank-slack-capacity'],
+ 'scope': 'Unconditional C(18,10,3)=12 on arbitrary finite point labels; historical twelve-block '
+          'witness checked by the Lean kernel, with repeated-occurrence lower-bound adapter. '
+          'Direct paired-support incidence obstruction and restricted-kernel equality; '
+          'retained square-support interfaces are compiled for their audits, outside the covering '
+          'proof import route. No diagnostic matrix, classification, external certificate or new '
+          'historical-priority claim. Rob Gardiner with AI assistance.'}
+
+# Five standard lifting consequences of one independently verified structural seed.
+COMPONENTS['c18103-lifts'] = {
+    'entry': 'CoveringDesigns.Applications.C18103Lifts',
+    'audit_name': 'c18103-lifts-audit',
+    'audit_file': 'C18103Lifts.lean',
+    'explicit_theorem': 'CoveringDesigns.AuditC18103Lifts.lower_bound_23_15_8_explicit',
+    'principal_theorem': 'CoveringDesigns.Applications.C18103Lifts.lower_bound_23_15_8',
+    'summary_path': 'results/c18103-lifts-verification.json',
+    'theorems': ['CoveringDesigns.Applications.C18103Lifts.lower_bound', 'CoveringDesigns.Applications.C18103Lifts.ceilings', 'CoveringDesigns.Applications.C18103Lifts.lower_bound_19_11_4', 'CoveringDesigns.Applications.C18103Lifts.lower_bound_20_12_5', 'CoveringDesigns.Applications.C18103Lifts.lower_bound_21_13_6', 'CoveringDesigns.Applications.C18103Lifts.lower_bound_22_14_7', 'CoveringDesigns.Applications.C18103Lifts.lower_bound_23_15_8'],
+    'milestones': ['CoveringDesigns.AuditC18103Lifts.lower_bound_19_11_4_explicit', 'CoveringDesigns.AuditC18103Lifts.lower_bound_20_12_5_explicit', 'CoveringDesigns.AuditC18103Lifts.lower_bound_21_13_6_explicit', 'CoveringDesigns.AuditC18103Lifts.lower_bound_22_14_7_explicit'],
+    'independent_of': ['11-5-2', '12-5-2', '12-6-3', '13-7-4',
+                       'horsley-lifts', 'labelled-cliques', 'finite-flat-geometry'],
+    'scope': 'Ordinary arbitrary-label lower bounds 21,35,57,90,138 for (19,11,4) '
+             'through (23,15,8), retaining every intermediate ceiling from the '
+             'unconditional C(18,10,3) seed. Standard Schoenheim consequences; '
+             'no supplied seed hypothesis, new lifting foundation or higher exactness claim.',
+}
+
 def source(module):
     return ROOT / (module.replace('.', '/') + '.lean')
 
@@ -1096,44 +1272,155 @@ def project_imports(text, filename='<source>'):
             error('project-local imports must use CoveringDesigns or Explorations')
 
 
+class SourceGraph:
+    """One source-check operation's parsed imports and transitive closures.
+
+    Never retain this object across operations: a fresh check/plan must inspect
+    current source files, canonical paths and local import shadowing again.
+    These caches contain source dependencies only, never proof/audit outcomes.
+    """
+
+    def __init__(self):
+        self._imports = {}
+        self._closures = {}
+        self._directory_names = {}
+        self._canonical_paths = set()
+
+    def imports(self, module):
+        if module not in self._imports:
+            path = source(module)
+            assert path.is_file(), f'Missing local import: {path}'
+            # Check each path segment, retaining exact spelling and symlink
+            # rejection even on case-insensitive filesystems.
+            parent = ROOT
+            for part in path.relative_to(ROOT).parts:
+                child = parent / part
+                if child not in self._canonical_paths:
+                    if parent not in self._directory_names:
+                        self._directory_names[parent] = {entry.name for entry in parent.iterdir()}
+                    if part not in self._directory_names[parent] or child.is_symlink():
+                        raise ValueError(f'Cannot audit Lean imports in {path}: noncanonical local path')
+                    self._canonical_paths.add(child)
+                parent = child
+            self._imports[module] = tuple(project_imports(path.read_text(), path))
+        return self._imports[module]
+
+    def module_order(self, entries):
+        """Stable topological order, with a fresh cycle/visited set per walk."""
+        ordered, seen, active = [], set(), set()
+
+        def visit(module):
+            if module in seen:
+                return
+            assert module not in active, f'Import cycle at {module}'
+            active.add(module)
+            for dependency in self.imports(module):
+                visit(dependency)
+            active.remove(module)
+            seen.add(module)
+            ordered.append(module)
+
+        for entry in entries:
+            visit(entry)
+        return ordered
+
+    def closure(self, entry):
+        active = set()
+
+        def visit(module):
+            if module in self._closures:
+                return self._closures[module]
+            assert module not in active, f'Import cycle at {module}'
+            active.add(module)
+            paths = {source(module)}
+            for dependency in self.imports(module):
+                paths.update(visit(dependency))
+            active.remove(module)
+            self._closures[module] = frozenset(paths)
+            return self._closures[module]
+
+        # Callers build allowed sets with |= and add; never expose cached sets.
+        return set(visit(entry))
+
+
 def module_order(entries):
-    """Topological order of project imports; external dependencies are installed."""
-    ordered, seen, active = [], set(), set()
-
-    def visit(module):
-        if module in seen:
-            return
-        assert module not in active, f'Import cycle at {module}'
-        path = source(module)
-        assert path.is_file(), f'Missing local import: {path}'
-        # Case-insensitive filesystems and symlinks must not turn a different
-        # namespace spelling into an alias for a forbidden project module.
-        parent = ROOT
-        for part in path.relative_to(ROOT).parts:
-            if part not in {entry.name for entry in parent.iterdir()} or (parent / part).is_symlink():
-                raise ValueError(f'Cannot audit Lean imports in {path}: noncanonical local path')
-            parent /= part
-        active.add(module)
-        for dependency in project_imports(path.read_text(), path):
-            visit(dependency)
-        active.remove(module)
-        seen.add(module)
-        ordered.append(module)
-
-    for entry in entries:
-        visit(entry)
-    return ordered
+    """Topological order of current project imports; external dependencies are installed."""
+    return SourceGraph().module_order(entries)
 
 
 def closure(entry):
-    return {source(module) for module in module_order([entry])}
+    return SourceGraph().closure(entry)
 
 
-PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching'}
+PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching', '18-10-3': 'CoveringDesigns.C18_10_3.SquareSupport', 'c18103-lifts': 'CoveringDesigns.Applications.C18103Lifts'}
 
 def check_sources():
     publication_boundaries = PUBLICATION_BOUNDARIES
+    closure = SourceGraph().closure
     closures = {key: closure(item['entry']) for key, item in COMPONENTS.items()}
+    # The lifting application may use only the seed lower proof and the existing
+    # ordinary iterated-lifting interface. Every older component stays independent.
+    lift_parts = {
+        'Applications.C18103Lifts': ['Applications.C18103Lifts.Corollaries'],
+        'Applications.C18103Lifts.Corollaries': ['Applications.C18103Lifts.LowerBound'],
+        'Applications.C18103Lifts.LowerBound': ['C18_10_3.LowerBound', 'Multicover.Schoenheim'],
+    }
+    lift_sources = {source('CoveringDesigns.' + part) for part in lift_parts}
+    for key, paths in closures.items():
+        if key != 'c18103-lifts':
+            assert not paths & lift_sources, f'Established component {key} imports C18103 lifts'
+    for part, dependencies in lift_parts.items():
+        module = 'CoveringDesigns.' + part
+        expected = {source(module)}
+        for dependency in dependencies:
+            expected |= closure('CoveringDesigns.' + dependency)
+        assert closure(module) == expected, f'C18103 lifts {part} imports outside its declared interface'
+    assert source('CoveringDesigns.C18_10_3.Witness') not in closures['c18103-lifts'], \
+        'Lifting lower bounds must not depend on the attaining witness'
+    for part in ('LiftingComparison.Applications', 'LiftingComparison.Covering',
+                 'LiftingComparison.Iteration', 'MulticoverLargeDefect.Family',
+                 'BoundaryRank.SquareDuality', 'C18_10_3.SquareSupport'):
+        assert source('CoveringDesigns.' + part) not in closures['c18103-lifts'], \
+            f'C18103 lifts must avoid unused comparison/square stages: {part}'
+    assert source('CoveringDesigns.BoundaryRank.SquareDuality') not in closure(
+        'CoveringDesigns.C18_10_3'), 'The covering result must not import square duality'
+    # Existing components cannot acquire a dependency on the new result or helpers.
+    # The new result uses only the declared earlier helper interfaces.
+    c18_parts = {'C18_10_3': ['C18_10_3.LowerBound', 'C18_10_3.Witness', 'Foundations.StandardAxioms'],
+     'C18_10_3.Core': ['BoundaryRank.RestrictedEquality', 'TwoKMinusTwoEquality.Matrix'],
+     'C18_10_3.SquareSupport': ['C18_10_3', 'BoundaryRank.SquareDuality'],
+     'C18_10_3.Exceptional': ['C18_10_3.RankCases', 'Foundations.PairedSupportObstruction'],
+     'C18_10_3.Incidence': ['TwoKMinusTwo.Incidence'],
+     'C18_10_3.LowRows': ['C18_10_3.Incidence', 'C18_10_3.Core'],
+     'C18_10_3.LowerBound': ['C18_10_3.SaturatedMatching', 'C18_10_3.Exceptional'],
+     'C18_10_3.RankCases': ['C18_10_3.LowRows', 'BoundaryRank.DeficitCharging'],
+     'C18_10_3.SaturatedLocal': ['C18_10_3.Incidence',
+                                 'SaturatedMatching.Counting',
+                                 'SaturatedMatching.Geometry'],
+     'C18_10_3.SaturatedMatching': ['C18_10_3.SaturatedLocal', 'Foundations.IncidencePacking'],
+     'C18_10_3.Witness': ['Foundations.Relabelling'],
+     'BoundaryRank.RestrictedEquality': ['BoundaryRank.Equality'],
+     'BoundaryRank.SquareDuality': ['TwoKMinusTwoEquality.Matrix', 'Foundations.SupportObstruction'],
+     'Foundations.SupportObstruction': ['Foundations.Basic'],
+     'Foundations.SupportDifferences': ['Foundations.SupportObstruction'],
+     'Foundations.PairedSupportObstruction': ['Foundations.SupportDifferences'],
+     'Foundations.IncidencePacking': ['Foundations.Basic']}
+    c18_sources = {source('CoveringDesigns.' + part) for part in c18_parts}
+    for key, paths in closures.items():
+        if key not in ('18-10-3', 'c18103-lifts'):
+            assert not paths & c18_sources, f'Established component {key} imports C18_10_3'
+    for part, dependencies in c18_parts.items():
+        module = 'CoveringDesigns.' + part
+        expected = {source(module)}
+        for dependency in dependencies:
+            expected |= closure('CoveringDesigns.' + dependency)
+        assert closure(module) == expected, f'C18 {part} imports outside its declared interface'
+    for part in ('', '.Rank', '.Saturated', '.LowerBound', '.Witness'):
+        assert source('CoveringDesigns.C20_11_3' + part) not in closures['18-10-3'], \
+            'C18 imports the numerical C20 result or witness'
+    for part in ('Completion', 'BinaryCompletion', 'IndexedIncidence', 'Capacity'):
+        assert source('CoveringDesigns.BoundaryRank.' + part) not in closures['18-10-3'], \
+            'C18 imports an inapplicable completion or unrelated capacity interface'
     # New matching modules have fixed declared interfaces; no existing component
     # may import them. The abstract pattern proofs exclude numerical adapters.
     matching_parts = {'AffineCapacity.Boundary': ['AffineCapacity.Basic'],
@@ -1171,8 +1458,11 @@ def check_sources():
      'SaturatedMatching.Split': ['SaturatedMatching.Geometry', 'SaturatedMatching.Counting']}
     matching_sources = {source('CoveringDesigns.' + part) for part in matching_parts}
     for key, paths in closures.items():
-        if key != 'saturated-matching':
+        if key not in ('saturated-matching', '18-10-3', 'c18103-lifts'):
             assert not paths & matching_sources, f'Established component {key} imports saturated matching'
+    assert closures['18-10-3'] & matching_sources == {
+        source('CoveringDesigns.SaturatedMatching.' + p) for p in ('Counting', 'Geometry')}, \
+        'C18 imports matching machinery beyond the two generic counting/geometry interfaces'
     for part, dependencies in matching_parts.items():
         module = 'CoveringDesigns.' + part
         expected = {source(module)}
@@ -1203,8 +1493,11 @@ def check_sources():
     }
     capacity_sources = {source('CoveringDesigns.' + part) for part in capacity_parts}
     for key, paths in closures.items():
-        if key not in ('rank-slack-capacity', 'saturated-matching'):
+        if key not in ('rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts'):
             assert not paths & capacity_sources, f'Established component {key} imports rank-slack capacity'
+    assert closures['18-10-3'] & capacity_sources == {
+        source('CoveringDesigns.BoundaryRank.DeficitCharging')}, \
+        'C18 imports rank-slack capacity beyond integer deficit charging'
     for part, dependencies in capacity_parts.items():
         module = 'CoveringDesigns.' + part
         expected = {source(module)}
@@ -1299,13 +1592,13 @@ def check_sources():
                  ROOT / 'CoveringDesigns/BoundaryRank')
     c20_entry = source('CoveringDesigns.C20_11_3')
     for key, paths in closures.items():
-        if key not in ('20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching'):
+        if key not in ('20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts'):
             assert not any(p == c20_entry or any(p.is_relative_to(r) for r in c20_roots)
                            for p in paths), f'Established component {key} imports C20_11_3'
     family_root = ROOT / 'CoveringDesigns/TwoKMinusTwo'
     family_entry = source('CoveringDesigns.TwoKMinusTwo')
     for key, paths in closures.items():
-        if key not in ('two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching'):
+        if key not in ('two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts'):
             assert not any(p == family_entry or p.is_relative_to(family_root) for p in paths), \
                 f'Established component {key} imports TwoKMinusTwo'
     # The new family may reuse generic helpers, never the established C20 result.
@@ -1316,7 +1609,7 @@ def check_sources():
     equality_files = {source('CoveringDesigns.TwoKMinusTwoEquality'),
                       source('CoveringDesigns.BoundaryRank.Equality')}
     for key, paths in closures.items():
-        if key != 'two-k-minus-two-equality':
+        if key not in ('two-k-minus-two-equality', '18-10-3', 'c18103-lifts'):
             assert not any(p in equality_files or any(p.is_relative_to(r) for r in equality_roots)
                            for p in paths), f'Established component {key} imports equality refinement'
     for part in ('', '.Rank', '.SaturatedLoss', '.Saturated', '.LowerBound', '.Witness'):
@@ -1616,10 +1909,40 @@ def check_sources():
     return closures
 
 
+def check_c18103_witness(data_path=Path('data/c18103-historical-witness.json'),
+                         lean_path=Path('lean/CoveringDesigns/C18_10_3/Witness.lean')):
+    """Integrity and transcription check only; Lean proves the covering claims."""
+    from hashlib import sha256
+    from itertools import combinations
+
+    data = json.loads(data_path.read_text())
+    assert data['parameters'] == [18, 10, 3], 'C18 witness parameters'
+    blocks = data['blocks_one_based']
+    assert len(blocks) == 12, 'C18 witness block count'
+    assert all(len(b) == 10 and len(set(b)) == 10 for b in blocks), 'C18 block sizes'
+    assert all(type(x) is int and 1 <= x <= 18 for b in blocks for x in b), 'C18 labels'
+    raw_hash = sha256(bytes(x for b in blocks for x in b)).hexdigest()
+    assert raw_hash == '173e0a39baa3814f25da9156a861600b0a791ff4437708d55049c85698b3d28a', \
+        'C18 historical ordered block bytes changed'
+    assert data['source_artefact']['encoding']['raw_sha256'] == raw_hash, 'C18 raw provenance'
+    assert data['source_artefact']['licence'] == \
+        'CC BY 4.0; Daniel M. Gordon / La Jolla Covering Repository.', 'C18 licence'
+    assert len({frozenset(b) for b in blocks}) == 12, 'C18 repeated block'
+    assert all(any(set(t) <= set(b) for b in blocks)
+               for t in combinations(range(1, 19), 3)), 'C18 uncovered triple'
+    text = lean_path.read_text().split('def knownBlocks12_18_10_3', 1)[1].split(
+        '/-- Distinctness', 1)[0]
+    lean_blocks = [[int(x) for x in re.findall(r'\d+', b)]
+                   for b in re.findall(r'\{([^{}]+)\}', text)]
+    assert lean_blocks == [[x - 1 for x in b] for b in blocks], 'C18 Lean transcription'
+
+
 def check_manifests():
     for manifest in Path('coverings').glob('*/inputs.json'):
         for item in json.loads(manifest.read_text())['inputs']:
             assert sha(Path(item['path'])) == item['sha256'], item['path']
+        if manifest.parent.name == '18-10-3':
+            check_c18103_witness()
 
 
 def audit_name(key):

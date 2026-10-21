@@ -881,3 +881,69 @@ universe u_1
 
 end SaturatedMatchingContracts
 
+#check (@CoveringDesigns.lower_bound_18_10_3 :
+  ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 18 → CoveringDesigns.IsCover C 10 3 → 12 ≤ C.card)
+
+#check (@CoveringDesigns.covering_number_18_10_3_on :
+  ∀ {α : Type*} [Fintype α], Fintype.card α = 18 →
+    (∃ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C 10 3 ∧ C.card = 12) ∧
+    (∀ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C 10 3 → 12 ≤ C.card))
+
+#check (@CoveringDesigns.indexed_lower_bound_18_10_3 :
+  ∀ {α ι : Type*} [Fintype α] [Fintype ι] (B : ι → Finset α),
+    Fintype.card α = 18 → (∀ i, (B i).card = 10) →
+    (∀ T : Finset α, T.card = 3 → ∃ i, T ⊆ B i) → 12 ≤ Fintype.card ι)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_18_10_3
+  CoveringDesigns.covering_number_18_10_3_on
+  CoveringDesigns.covering_number_18_10_3
+  CoveringDesigns.indexed_lower_bound_18_10_3
+
+#print axioms CoveringDesigns.lower_bound_18_10_3
+
+#print axioms CoveringDesigns.covering_number_18_10_3_on
+
+#print axioms CoveringDesigns.covering_number_18_10_3
+
+#print axioms CoveringDesigns.indexed_lower_bound_18_10_3
+
+section C18103LiftsContracts
+universe u
+#check (@CoveringDesigns.Applications.C18103Lifts.lower_bound_19_11_4 : ∀ {α : Type u} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 19 → CoveringDesigns.IsCover C 11 4 → 21 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_19_11_4
+
+#print axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_19_11_4
+
+#check (@CoveringDesigns.Applications.C18103Lifts.lower_bound_20_12_5 : ∀ {α : Type u} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 20 → CoveringDesigns.IsCover C 12 5 → 35 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_20_12_5
+
+#print axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_20_12_5
+
+#check (@CoveringDesigns.Applications.C18103Lifts.lower_bound_21_13_6 : ∀ {α : Type u} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 21 → CoveringDesigns.IsCover C 13 6 → 57 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_21_13_6
+
+#print axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_21_13_6
+
+#check (@CoveringDesigns.Applications.C18103Lifts.lower_bound_22_14_7 : ∀ {α : Type u} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 22 → CoveringDesigns.IsCover C 14 7 → 90 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_22_14_7
+
+#print axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_22_14_7
+
+#check (@CoveringDesigns.Applications.C18103Lifts.lower_bound_23_15_8 : ∀ {α : Type u} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 23 → CoveringDesigns.IsCover C 15 8 → 138 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_23_15_8
+
+#print axioms CoveringDesigns.Applications.C18103Lifts.lower_bound_23_15_8
+
+end C18103LiftsContracts
+

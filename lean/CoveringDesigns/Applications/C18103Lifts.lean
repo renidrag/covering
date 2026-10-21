@@ -1,0 +1,1 @@
+import CoveringDesigns.Applications.C18103Lifts.Corollaries

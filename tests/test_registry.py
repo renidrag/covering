@@ -72,6 +72,16 @@ class Registry(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, 'Import cycle'):
             audit.module_order(['CoveringDesigns.ProbeA'])
 
+    def test_separate_source_checks_observe_changed_imports(self):
+        audit.check_sources()
+        path = self.root / 'lean/CoveringDesigns/C11_5_2.lean'
+        original = path.read_text()
+        path.write_text(original + 'import CoveringDesigns.C12_6_3\n')
+        with self.assertRaises((AssertionError, ValueError)):
+            audit.check_sources()
+        path.write_text(original)
+        self.assertEqual(set(audit.check_sources()), set(audit.COMPONENTS))
+
     def test_every_declared_independent_component_is_rejected(self):
         # This test isolates the boundary decision from graph traversal. Supply
         # fresh closure inputs calculated by the independent work-list oracle.
@@ -107,10 +117,10 @@ class Registry(unittest.TestCase):
                         graph[info['entry']] = (*self.graph[info['entry']], module)
                         path.write_text(original + 'import ' + module + '\n')
                         try:
-                            def supplied_closure(entry):
+                            def supplied_closure(_graph, entry):
                                 return {paths[m] for m in reachable(graph, entry)}
 
-                            with patch.object(audit, 'closure', supplied_closure), \
+                            with patch.object(audit.SourceGraph, 'closure', supplied_closure), \
                                     self.assertRaises((AssertionError, ValueError)):
                                 audit.check_sources()
                         finally:

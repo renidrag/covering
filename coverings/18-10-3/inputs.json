@@ -1,0 +1,22 @@
+{
+  "entry": "CoveringDesigns.C18_10_3",
+  "kind": "Unconditional ordinary C(18,10,3)=12, with arbitrary-label and indexed lower-bound adapters",
+  "depends_on": [
+    "CoveringDesigns.TwoKMinusTwo.Incidence",
+    "CoveringDesigns.SaturatedMatching.Counting",
+    "CoveringDesigns.SaturatedMatching.Geometry",
+    "CoveringDesigns.BoundaryRank.Nullity",
+    "CoveringDesigns.BoundaryRank.Equality",
+    "CoveringDesigns.BoundaryRank.DeficitCharging",
+    "CoveringDesigns.TwoKMinusTwoEquality.Matrix",
+    "CoveringDesigns.Foundations.Relabelling"
+  ],
+  "reuse_scope": "Imports generic incidence, saturated-pair counting, signless nullity and equality interfaces; no existing result entry, diagnostic core, classification or external proof certificate. New restricted equality, square duality, support obstruction and incidence-packing helpers are audited here.",
+  "inputs": [
+    {
+      "path": "data/c18103-historical-witness.json",
+      "sha256": "2c3916628806320759dfa1bc6bba2b5f8f5493f35610f0b3e85498624d081f9d"
+    }
+  ],
+  "path_convention": "Paths are relative to the repository root. The historical witness is proof input for integrity tracking; its mathematical properties are proved independently inside Lean."
+}

@@ -35,7 +35,8 @@ def memory_tree(contents):
     Production module_order, project_imports and check_sources run unchanged.
     Only their filesystem reads/writes are in memory. Real path aliases, missing
     files, fingerprints and process behaviour have separate disk/CLI tests.
-    No closure/result cache survives (or is used within) a validation call.
+    No closure/result cache survives a validation call; production may reuse
+    parsed imports and closures within that operation.
     """
     files, children = {}, {}
 

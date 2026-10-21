@@ -1,0 +1,196 @@
+{
+  "parameters": [
+    18,
+    10,
+    3
+  ],
+  "blocks_one_based": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    [
+      1,
+      2,
+      4,
+      6,
+      9,
+      10,
+      11,
+      13,
+      15,
+      18
+    ],
+    [
+      1,
+      2,
+      6,
+      7,
+      8,
+      10,
+      11,
+      15,
+      16,
+      17
+    ],
+    [
+      1,
+      3,
+      5,
+      6,
+      7,
+      10,
+      12,
+      14,
+      15,
+      16
+    ],
+    [
+      1,
+      3,
+      5,
+      8,
+      9,
+      10,
+      12,
+      14,
+      17,
+      18
+    ],
+    [
+      1,
+      4,
+      7,
+      8,
+      9,
+      10,
+      13,
+      16,
+      17,
+      18
+    ],
+    [
+      2,
+      3,
+      4,
+      7,
+      8,
+      11,
+      12,
+      13,
+      16,
+      17
+    ],
+    [
+      2,
+      3,
+      6,
+      8,
+      9,
+      11,
+      12,
+      15,
+      17,
+      18
+    ],
+    [
+      2,
+      4,
+      5,
+      6,
+      8,
+      11,
+      13,
+      14,
+      15,
+      17
+    ],
+    [
+      2,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      14,
+      16,
+      18
+    ],
+    [
+      3,
+      4,
+      6,
+      7,
+      9,
+      12,
+      13,
+      15,
+      16,
+      18
+    ],
+    [
+      5,
+      6,
+      7,
+      8,
+      9,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
+  ],
+  "source_artefact": {
+    "availability": "retained",
+    "download_name": "C-18-10-3.blocks.zst",
+    "encoding": {
+      "block_count": 12,
+      "codec": "zstd",
+      "k": 10,
+      "layout": "uint8-row-major",
+      "point_numbering": "one_based",
+      "raw_bytes": 120,
+      "raw_sha256": "173e0a39baa3814f25da9156a861600b0a791ff4437708d55049c85698b3d28a",
+      "v": 18
+    },
+    "format": "application/vnd.cvkt.blocks.uint8+zstd",
+    "format_version": 1,
+    "id": "artefact:dccc7344-e075-5e8f-9741-f2ff0db040d2",
+    "licence": "CC BY 4.0; Daniel M. Gordon / La Jolla Covering Repository.",
+    "provenance": [
+      {
+        "locator": "covers.json /C(18,10,3); original compressed archive frame",
+        "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+      }
+    ],
+    "record_type": "artefact",
+    "recorded_at": "2026-10-17T12:19:26Z",
+    "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+    "schema_version": "cvkt-pilot-2",
+    "sha256": "e18cffad8716391fe391e6a8c6afb841a71ece2e3b5f878ffbbe8d0855ffaabd",
+    "size_bytes": 85,
+    "storage_key": "artefact-store/blocks/e1/8c/e18cffad8716391fe391e6a8c6afb841a71ece2e3b5f878ffbbe8d0855ffaabd.blocks.zst"
+  },
+  "source_history": [
+    [
+      [
+        "12",
+        "",
+        "JCD article",
+        "1996-11-14 17:08:00"
+      ]
+    ]
+  ],
+  "historical_limitation": "The source timestamp and credit are retained metadata, not a verified discovery date or independently identified article.",
+  "proof_status": "Construction is transcribed and proved in CoveringDesigns.C18_10_3.Witness by ordinary kernel-checked finite reasoning. This data file is not a proof certificate."
+}

@@ -1,4 +1,5 @@
-"""Durable serial verification built on the project's existing trust checks."""
+"""Durable dependency-ordered verification with one or two build workers."""
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import json
 import os
@@ -8,6 +9,8 @@ import shutil
 import signal
 import subprocess
 import sys
+import tempfile
+import time
 import uuid
 
 import audit_library as audit
@@ -15,7 +18,7 @@ from lean_inputs import changed_paths, sha, snapshot, validate_snapshot
 from record_io import workspace_lock, write_json
 
 DEFAULT_LIMITS = {'memory_mib': 8192, 'build_timeout': 180.0, 'audit_timeout': 30.0,
-                  'memory_guard': True}
+                  'memory_guard': True, 'workers': 2}
 TARGETS = ('all', *audit.COMPONENTS)
 RUN_ID = re.compile(r'[A-Za-z0-9][A-Za-z0-9._-]*')
 
@@ -122,7 +125,12 @@ def checked_summary(path, current, closures):
     memory_guard = record['limits']['memory_guard']
     assert type(memory_mib) is int and memory_mib > 0, 'Invalid recorded Lean memory limit'
     assert type(memory_guard) is bool, 'Invalid recorded memory guard mode'
+    workers = record['limits'].get('workers', 1)
+    assert type(workers) is int and workers in (1, 2), 'Invalid recorded build worker count'
     plan = audit.verification_plan(keys, memory_mib)
+    for name in plan:
+        step_record = json.loads(audit.record_path(prefix, name).read_text())
+        assert step_record.get('verification_workers') == workers, 'Changed recorded build worker count'
     expected = audit.verification_record(keys, prefix, plan, current, closures, record['lean_version'],
                                          memory_guard=memory_guard)
     for field in ('components', 'verification_runs', 'no_admissions_or_custom_mathematical_axioms',
@@ -159,32 +167,230 @@ def verification_status(target='all'):
             'next_command': './covering verify' + ('' if target == 'all' else ' ' + target)}
 
 
-def logged_command(command, name, timeout, memory_mib, output_dir):
-    runner = [sys.executable, 'scripts/run_logged.py', '--name', name,
-              '--timeout', str(timeout), '--output-dir', str(output_dir)]
-    if memory_mib is not None:
-        runner.extend(['--memory-mib', str(memory_mib)])
-    runner.extend(['--', *command])
-    proc = subprocess.Popen(runner, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            text=True, start_new_session=True)
+INTERRUPTION_SIGNALS = (signal.SIGINT, signal.SIGTERM, signal.SIGHUP)
+
+
+@contextmanager
+def deferred_interruptions():
+    """Register a spawned child before Python can unwind on a signal.
+
+    Handlers, not signal masks: the logger/Lean child must not inherit blocked
+    signals. The original handler is invoked after the protected operation.
+    """
+    received = []
+    previous = {sig: signal.signal(sig, lambda signum, frame: received.append((signum, frame)))
+                for sig in INTERRUPTION_SIGNALS}
     try:
-        output, _ = proc.communicate()
-    except BaseException:
-        # run_logged handles TERM and cleans up the owned command group.
+        yield
+    finally:
+        for sig, handler in previous.items():
+            signal.signal(sig, handler)
+        if received:
+            signum, frame = received[0]
+            handler = previous[signum]
+            if callable(handler):
+                handler(signum, frame)
+            elif handler != signal.SIG_IGN:
+                raise InterruptedError(f'Interrupted by signal {signum}')
+
+
+@contextmanager
+def ignored_interruptions():
+    """Finish cleanup and terminal records despite repeated cancellation."""
+    previous = {sig: signal.signal(sig, signal.SIG_IGN) for sig in INTERRUPTION_SIGNALS}
+    try:
+        yield
+    finally:
+        for sig, handler in previous.items():
+            signal.signal(sig, handler)
+
+
+class LoggedCommand:
+    """One owned logger process; output is a file, never a blocking pipe."""
+
+    def __init__(self, command, name, timeout, memory_mib, output_dir):
+        runner = [sys.executable, 'scripts/run_logged.py', '--name', name,
+                  '--timeout', str(timeout), '--output-dir', str(output_dir)]
+        if memory_mib is not None:
+            runner.extend(['--memory-mib', str(memory_mib)])
+        runner.extend(['--', *command])
+        self.output = tempfile.TemporaryFile(mode='w+t')
         try:
-            os.killpg(proc.pid, signal.SIGTERM)
+            self.proc = subprocess.Popen(runner, stdout=self.output, stderr=subprocess.STDOUT,
+                                         text=True, start_new_session=True)
+        except BaseException:
+            self.output.close()
+            raise
+
+    def poll(self):
+        return self.proc.poll()
+
+    def result(self):
+        self.proc.wait()
+        self.output.seek(0)
+        return self.proc.returncode, self.output.read()
+
+    def close(self):
+        self.output.close()
+
+    def signal(self, signum):
+        try:
+            os.killpg(self.proc.pid, signum)
         except ProcessLookupError:
             pass
-        try:
-            proc.communicate(timeout=9)
-        except subprocess.TimeoutExpired:
+
+
+def stop_logged_commands(jobs):
+    """Signal every logger first; one cleanup error must not strand its peer."""
+    errors = []
+    with ignored_interruptions():
+        running = []
+        for job in jobs:
             try:
-                os.killpg(proc.pid, signal.SIGKILL)
-            except ProcessLookupError:
+                if job.poll() is None:
+                    running.append(job)
+            except OSError as exc:
+                errors.append(str(exc))
+                running.append(job)
+        for job in running:
+            try:
+                job.signal(signal.SIGTERM)
+            except OSError as exc:
+                errors.append(str(exc))
+        deadline = time.monotonic() + 9
+        for job in running:
+            try:
+                job.proc.wait(timeout=max(0, deadline - time.monotonic()))
+            except subprocess.TimeoutExpired:
                 pass
-            proc.communicate(timeout=3)
-        raise
-    return proc.returncode, output
+            except OSError as exc:
+                errors.append(str(exc))
+        remaining = []
+        for job in running:
+            try:
+                if job.poll() is None:
+                    remaining.append(job)
+            except OSError as exc:
+                errors.append(str(exc))
+                remaining.append(job)
+        for job in remaining:
+            try:
+                job.signal(signal.SIGKILL)
+            except OSError as exc:
+                errors.append(str(exc))
+        for job in remaining:
+            try:
+                job.proc.wait(timeout=3)
+            except (OSError, subprocess.TimeoutExpired) as exc:
+                errors.append(str(exc))
+        for job in jobs:
+            try:
+                job.close()
+            except OSError as exc:
+                errors.append(str(exc))
+    if errors:
+        raise ValueError('Logger cleanup reported errors: ' + '; '.join(errors))
+
+
+def logged_command(command, name, timeout, memory_mib, output_dir):
+    jobs = []
+    try:
+        with deferred_interruptions():
+            job = LoggedCommand(command, name, timeout, memory_mib, output_dir)
+            jobs.append(job)
+        return job.result()
+    finally:
+        stop_logged_commands(jobs)
+
+
+def build_dependencies(plan):
+    """Derive direct prerequisites without changing canonical plan identities."""
+    graph = audit.SourceGraph()
+    positions = {step['name']: index for index, step in enumerate(plan) if step['kind'] == 'build'}
+    dependencies = {}
+    for name, index in positions.items():
+        module = name.removeprefix('build-')
+        dependencies[name] = ['build-' + dep for dep in graph.imports(module)]
+        assert all(dep in positions and positions[dep] < index for dep in dependencies[name]), \
+            f'Build dependency missing or out of order: {name}'
+    return dependencies
+
+
+def execute_plan(plan, dependencies, workers, completed, start, finish, changed):
+    """A single coordinator owns launches, validation and durable state.
+
+    Ready builds are dispatched in canonical order. Audits form a serial
+    barrier after all builds, and no work is dispatched after an observed error.
+    """
+    assert type(workers) is int and workers in (1, 2), 'Expected one or two build workers'
+    completed = set(completed)
+    pending = [step for step in plan if step['name'] not in completed]
+    builds = set(dependencies)
+    active = {}
+    outcomes = {step['name']: 'reused' if step['name'] in completed else 'pending' for step in plan}
+
+    def update():
+        changed([step['name'] for step in plan if step['name'] in active],
+                [step['name'] for step in plan if step['name'] in completed], dict(outcomes))
+
+    try:
+        while pending or active:
+            # Drain every observed completion before dispatch. In particular a
+            # failed peer cannot be hidden by an earlier successful completion.
+            for name, (step, job) in list(active.items()):
+                if job.poll() is not None:
+                    try:
+                        finish(step, job)
+                    except BaseException:
+                        outcomes[name] = 'failed'
+                        raise
+                    completed.add(name)
+                    outcomes[name] = 'verified'
+                    del active[name]
+                    job.close()
+                    update()
+            ready = [step for step in pending if step['kind'] == 'build'
+                     and set(dependencies[step['name']]) <= completed]
+            if builds <= completed and not active:
+                ready = pending[:1]  # audits remain serial
+            for step in ready[:workers - len(active)]:
+                name = step['name']
+                try:
+                    with deferred_interruptions():
+                        job = start(step)
+                        active[name] = (step, job)
+                        pending.remove(step)
+                        outcomes[name] = 'running'
+                        update()
+                except (KeyboardInterrupt, InterruptedError):
+                    raise
+                except BaseException:
+                    outcomes[name] = 'failed'
+                    raise
+            if pending and not active:
+                raise ValueError('Verification scheduler has no ready step')
+            if active:
+                time.sleep(0.01)
+    finally:
+        with ignored_interruptions():
+            # No terminal state or lock release until every owned logger has
+            # been drained, or cleanup errors have been explicitly reported.
+            cleanup_error = None
+            try:
+                stop_logged_commands([job for _, job in active.values()])
+            except Exception as exc:
+                cleanup_error = exc
+            for name in active:
+                if outcomes[name] == 'running':
+                    outcomes[name] = 'cleanup-failed' if cleanup_error else 'cancelled'
+            for step in pending:
+                if outcomes[step['name']] == 'pending':
+                    outcomes[step['name']] = 'not-run'
+            if not cleanup_error:
+                active.clear()
+            update()
+            if cleanup_error:
+                raise cleanup_error
 
 
 class StepFailed(Exception):
@@ -208,13 +414,19 @@ def run_verification(target, limits, resume=None, report=print):
                 if not RUN_ID.fullmatch(resume):
                     raise ValueError('Invalid run ID; use the ID printed by ./covering status.')
                 state = json.loads((Path('results/runs') / resume / 'state.json').read_text())
+            # Runs without worker metadata predate parallel scheduling and are
+            # serial, independently of the default for fresh local runs.
+            recorded_limits = {**DEFAULT_LIMITS, 'workers': 1, **state['limits']}
             for name, value in requested_limits.items():
-                if value is not None and value != state['limits'].get(name, DEFAULT_LIMITS[name]):
+                if value is not None and value != recorded_limits[name]:
                     raise ValueError(f'--{name.replace("_", "-")} differs from the run; start a new verification')
-            limits = {'memory_guard': True, **state['limits']}
+            limits = recorded_limits
         else:
             limits = {name: requested_limits.get(name) if requested_limits.get(name) is not None else value
                       for name, value in DEFAULT_LIMITS.items()}
+        assert type(limits['workers']) is int and limits['workers'] in (1, 2), 'Expected one or two build workers'
+        # This serial Lake invocation also loads/warm-validates configuration
+        # caches before concurrent lake env commands (Lake owns cache locks).
         environment = doctor(memory_guard=limits['memory_guard'])
         if not environment['ready']:
             failures = '; '.join(c['name'] + ': ' + c['detail'] for c in environment['checks'] if c['required'] and not c['ok'])
@@ -229,13 +441,15 @@ def run_verification(target, limits, resume=None, report=print):
             assert state['verification_script_sha256'] == scripts, 'Verification scripts changed; start a new verification'
             assert state['lean_version'] == environment['lean_version'], 'Lean version changed; start a new verification'
             assert state['plan'] == plan_for(target, limits), 'Verification plan changed; start a new verification'
+            assert state['build_dependencies'] == build_dependencies(state['plan']), 'Build dependencies changed'
             report(f'Resuming {state["run_id"]}')
         else:
             run_id = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ') + '-' + uuid.uuid4().hex[:8]
-            state = {'schema_version': 1, 'run_id': run_id, 'target': target,
+            state = {'schema_version': 2, 'run_id': run_id, 'target': target,
                      'started_utc': now(), 'limits': limits, 'plan': plan_for(target, limits),
                      'proof_input_sha256': current, 'verification_script_sha256': scripts,
                      'lean_version': environment['lean_version'], 'completed': []}
+            state['build_dependencies'] = build_dependencies(state['plan'])
             report(f'Run {run_id}')
         directory = Path('results/runs') / state['run_id']
         prefix = str(directory.relative_to('results') / 'step')
@@ -245,23 +459,27 @@ def run_verification(target, limits, resume=None, report=print):
             state.update(status=status, updated_utc=now(), **values)
             write_json(state_path, state)
 
-        save('running', pid=os.getpid(), current_step=None, error=None, completed=[])
-        rebuild_tail = not bool(resume)
+        save('running', pid=os.getpid(), current_step=None, active_steps=[], error=None, completed=[])
         try:
-            for index, step in enumerate(state['plan'], 1):
-                name, kind, command = (step[k] for k in ('name', 'kind', 'command'))
-                save('running', current_step=name)
-                if not rebuild_tail:
+            # Preserve the conservative existing resume rule: reuse only the
+            # validated canonical prefix, then freshly rebuild the entire tail.
+            if resume:
+                for step in state['plan']:
+                    name, kind, command = (step[k] for k in ('name', 'kind', 'command'))
                     try:
                         audit.successful_run(prefix, name, kind, command, current,
-                                     memory_guard=limits['memory_guard'])
+                                             memory_guard=limits['memory_guard'])
+                        prior = json.loads(audit.record_path(prefix, name).read_text())
+                        assert prior.get('verification_workers') == limits['workers']
                     except (AssertionError, ValueError, OSError, KeyError, TypeError, StopIteration):
-                        rebuild_tail = True
-                    else:
-                        state['completed'].append(name)
-                        save('running')
-                        report(f'[{index}/{len(state["plan"])}] Reused {name}')
-                        continue
+                        break
+                    state['completed'].append(name)
+                    save('running')
+                    report(f'Reused {name}')
+            positions = {step['name']: index for index, step in enumerate(state['plan'], 1)}
+
+            def start(step):
+                name, kind, command = (step[k] for k in ('name', 'kind', 'command'))
                 if kind == 'build':
                     Path(command[command.index('-o') + 1]).parent.mkdir(parents=True, exist_ok=True)
                 old_files = [directory / ('step-' + name + suffix) for suffix in ('.log', '.run.json')]
@@ -271,9 +489,13 @@ def run_verification(target, limits, resume=None, report=print):
                     for path in old_files:
                         if path.exists():
                             shutil.copy2(path, attempt / path.name)
-                report(f'[{index}/{len(state["plan"])}] Checking {name}')
-                code, output = logged_command(command, 'step-' + name, step['timeout_seconds'],
-                                              limits['memory_mib'] if limits['memory_guard'] else None, directory)
+                report(f'[{positions[name]}/{len(state["plan"])}] Checking {name}')
+                return LoggedCommand(command, 'step-' + name, step['timeout_seconds'],
+                                     limits['memory_mib'] if limits['memory_guard'] else None, directory)
+
+            def finish(step, job):
+                name, kind, command = (step[k] for k in ('name', 'kind', 'command'))
+                code, output = job.result()
                 if code:
                     log = directory / ('step-' + name + '.log')
                     detail = '\n'.join(log.read_text().splitlines()[-15:]) if log.exists() else output.strip()
@@ -283,12 +505,18 @@ def run_verification(target, limits, resume=None, report=print):
                 if kind == 'build':
                     artifact = Path(command[command.index('-o') + 1])
                     record['output_sha256'] = {str(artifact): sha(artifact)}
-                    write_json(path, record)
+                record['verification_workers'] = limits['workers']
+                write_json(path, record)
                 audit.successful_run(prefix, name, kind, command, current,
                                      memory_guard=limits['memory_guard'])
-                state['completed'].append(name)
-                save('running')
-                report(f'[{index}/{len(state["plan"])}] Checked {name} ({record["elapsed_seconds"]:.2f}s)')
+                report(f'[{positions[name]}/{len(state["plan"])}] Checked {name} ({record["elapsed_seconds"]:.2f}s)')
+
+            def changed(active, completed, outcomes):
+                save('running', current_step=active[0] if active else None,
+                     active_steps=active, completed=completed, step_outcomes=outcomes)
+
+            execute_plan(state['plan'], state['build_dependencies'], limits['workers'],
+                         state['completed'], start, finish, changed)
             assert not changed_paths(current, snapshot()), 'Proof inputs changed during verification'
             assert scripts == runner_hashes(), 'Verification scripts changed during verification'
             plan = {s['name']: (s['kind'], s['command']) for s in state['plan']}
@@ -303,10 +531,12 @@ def run_verification(target, limits, resume=None, report=print):
                     'record': str(summary_path(target)), 'run_record': str(directory / 'verification.json'),
                     'steps': len(state['plan'])}
         except (KeyboardInterrupt, InterruptedError) as exc:
-            save('interrupted', error=str(exc) or 'Interrupted by user')
-            report(f'Resume with ./covering verify {target} --resume {state["run_id"]}')
+            with ignored_interruptions():
+                save('interrupted', error=str(exc) or 'Interrupted by user')
+                report(f'Resume with ./covering verify {target} --resume {state["run_id"]}')
             raise
         except Exception as exc:
-            save('failed', error=str(exc))
-            report(f'Resume with ./covering verify {target} --resume {state["run_id"]}')
+            with ignored_interruptions():
+                save('failed', error=str(exc))
+                report(f'Resume with ./covering verify {target} --resume {state["run_id"]}')
             raise

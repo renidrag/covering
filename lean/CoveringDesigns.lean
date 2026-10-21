@@ -18,3 +18,5 @@ import CoveringDesigns.TwoKMinusCGeneral
 import CoveringDesigns.TwoKMinusTwoTightening
 import CoveringDesigns.RankSlackCapacity
 import CoveringDesigns.SaturatedMatching
+import CoveringDesigns.C18_10_3.SquareSupport
+import CoveringDesigns.Applications.C18103Lifts
