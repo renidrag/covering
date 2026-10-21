@@ -4,6 +4,7 @@ type: software
 title: "Covering designs: structural proofs and Lean 4 verification"
 version: "1.3.0"
 date-released: "2026-10-21"
+doi: "10.5281/zenodo.23546184"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23511135"

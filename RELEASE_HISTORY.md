@@ -12,13 +12,15 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 | Release | First public date | Archived snapshot | Version DOI |
 |---|---|---|---|
+| [v1.3.0](https://github.com/renidrag/covering/releases/tag/v1.3.0) | 21 October 2026 | [78e2076b0cb0](https://github.com/renidrag/covering/tree/78e2076b0cb05b99aa83fc952832c6591ac47f80) | [10.5281/zenodo.23546184](https://doi.org/10.5281/zenodo.23546184) |
 | [v1.2.0](https://github.com/renidrag/covering/releases/tag/v1.2.0) | 20 October 2026 | [d9886e4709b3](https://github.com/renidrag/covering/tree/d9886e4709b3987974e6920d98cb4df5345ef922) | [10.5281/zenodo.23512290](https://doi.org/10.5281/zenodo.23512290) |
 | [v1.1.0](https://github.com/renidrag/covering/releases/tag/v1.1.0) | 19 October 2026 | [9bc5a0f8d7e2](https://github.com/renidrag/covering/tree/9bc5a0f8d7e2d2b104bbed38eccad35b778fe46d) | [10.5281/zenodo.23511297](https://doi.org/10.5281/zenodo.23511297) |
 | [v1.0.0](https://github.com/renidrag/covering/releases/tag/v1.0.0) | 15 October 2026 | [aee92cd704b6](https://github.com/renidrag/covering/tree/aee92cd704b6ac7dd2143459659c9e101d61d859) | [10.5281/zenodo.23511136](https://doi.org/10.5281/zenodo.23511136) |
 
-All three releases were archived on Zenodo on 20 October 2026. The v1.1.0
-archive uses a same-day packaging cleanup with unchanged mathematics; the
-19 October account below retains the first public snapshot.
+Versions v1.0.0–v1.2.0 were archived on Zenodo on 20 October 2026; v1.3.0
+was archived on 21 October 2026. The v1.1.0 archive uses a same-day packaging
+cleanup with unchanged mathematics; the 19 October account below retains
+the first public snapshot.
 
 ## 21 October 2026 — $C(18,10,3)=12$ and five lifted lower bounds
 
@@ -39,9 +41,11 @@ attainment. The five further lower bounds follow by Schönheim lifting,
 retaining every intermediate ceiling. All six conclusions are proved in
 Lean for arbitrary finite point types.
 
-[Mathematical account](coverings/18-10-3/README.md) ·
-[Proof and Lean correspondence](coverings/18-10-3/proof.md) ·
-[Sources and attribution](coverings/18-10-3/sources.md).
+[Snapshot 78e2076b0cb0](https://github.com/renidrag/covering/tree/78e2076b0cb05b99aa83fc952832c6591ac47f80) ·
+[Mathematical account](https://github.com/renidrag/covering/blob/78e2076b0cb05b99aa83fc952832c6591ac47f80/coverings/18-10-3/README.md) ·
+[Proof and Lean correspondence](https://github.com/renidrag/covering/blob/78e2076b0cb05b99aa83fc952832c6591ac47f80/coverings/18-10-3/proof.md) ·
+[Sources and attribution](https://github.com/renidrag/covering/blob/78e2076b0cb05b99aa83fc952832c6591ac47f80/coverings/18-10-3/sources.md) ·
+[Lean verification passed](https://github.com/renidrag/covering/actions/runs/39670689136).
 
 These additions are not included in the v1.0.0–v1.2.0 archives.
 
