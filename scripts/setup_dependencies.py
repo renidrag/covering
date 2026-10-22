@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Install the pinned Lean dependencies from source archives, without Git.
 
-Python 3.12+ is needed for tarfile's safe extraction filter. For a local replay,
+Python 3.14+ matches the verification runtime and supplies safe extraction. For a local replay,
 --reuse-existing links a previously installed dependency tree and its caches.
 """
 
@@ -63,8 +63,8 @@ def install(root, reuse_existing=None):
                 target.symlink_to(source, target_is_directory=True)
         print('Reused the pinned local dependency installation and caches.')
         return
-    if sys.version_info < (3, 12):
-        raise ValueError('Archive installation requires Python 3.12 or later')
+    if sys.version_info < (3, 14):
+        raise ValueError('Dependency installation and verification require Python 3.14 or later')
     for package in packages:
         target = vendor / package['directory']
         if target.exists() or target.is_symlink():

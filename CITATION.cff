@@ -2,9 +2,8 @@ cff-version: 1.2.0
 message: "If you cite this proof package, please use this citation."
 type: software
 title: "Covering designs: structural proofs and Lean 4 verification"
-version: "1.3.0"
-date-released: "2026-10-21"
-doi: "10.5281/zenodo.23546184"
+version: "1.4.0"
+date-released: "2026-10-22"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23511135"
@@ -19,7 +18,10 @@ abstract: >-
   Mathematical accounts, Lean 4 proofs and reproducible verification tools for
   covering designs. Includes C(13,7,4)=30, C(20,11,3)=12, lower bounds and
   exact values for C(2k-c,k,3), and C(18,10,3)=12 with five lifted lower bounds,
-  together with supporting formalisations of established results.
+  together with 41 <= C(14,5,3) <= 43 and the eight known exact values
+  C(12u+1,4,3)=(12u+1)(12u)^2/24 for 1 <= u <= 8. Includes explicit block
+  lists, their checked correspondence to Lean families, and supporting
+  formalisations of established results.
   OpenAI language models substantially assisted its
   development, formalisation, checking and writing. The proof accounts and
   third-party notices document mathematical attribution and historical

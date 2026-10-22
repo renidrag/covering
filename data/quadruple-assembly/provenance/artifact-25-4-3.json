@@ -1,0 +1,31 @@
+{
+  "availability": "retained",
+  "download_name": "C-25-4-3.blocks.zst",
+  "encoding": {
+    "block_count": 600,
+    "codec": "zstd",
+    "k": 4,
+    "layout": "uint8-row-major",
+    "point_numbering": "one_based",
+    "raw_bytes": 2400,
+    "raw_sha256": "3bbd515956e07c60d83292c0d516ecbecae7d91069910b32a34e270dff61cccf",
+    "v": 25
+  },
+  "format": "application/vnd.cvkt.blocks.uint8+zstd",
+  "format_version": 1,
+  "id": "artefact:7aacc415-956e-5ab7-8128-ede6fa83c35e",
+  "licence": "CC BY 4.0; Daniel M. Gordon / La Jolla Covering Repository.",
+  "provenance": [
+    {
+      "locator": "covers.json /C(25,4,3); original compressed archive frame",
+      "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+    }
+  ],
+  "record_type": "artefact",
+  "recorded_at": "2026-10-17T12:19:26Z",
+  "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+  "schema_version": "cvkt-pilot-2",
+  "sha256": "d85a3d73470ad85ee3bd2796e0f32107f2bf5b968482a8a924bf678ee5449381",
+  "size_bytes": 1448,
+  "storage_key": "artefact-store/blocks/d8/5a/d85a3d73470ad85ee3bd2796e0f32107f2bf5b968482a8a924bf678ee5449381.blocks.zst"
+}

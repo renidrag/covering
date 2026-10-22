@@ -1,0 +1,300 @@
+{
+  "annotations": [],
+  "assessments": [
+    {
+      "assessor": "contributor:9734529b-a7a6-5f25-8ded-da8e2bdc5408",
+      "basis_ids": [
+        "verification_run:443da7e7-2ca0-551b-9881-29428dde48a2"
+      ],
+      "conclusion": "supports",
+      "id": "assessment:443da7e7-2ca0-551b-9881-29428dde48a2",
+      "rationale": "A reproduced exact check validates every block, covers every required subset and meets this upper bound. It does not verify a lower bound or optimality.",
+      "record_type": "assessment",
+      "recorded_at": "2026-10-17T13:01:44Z",
+      "recorded_by": "contributor:9734529b-a7a6-5f25-8ded-da8e2bdc5408",
+      "schema_version": "cvkt-pilot-2",
+      "scope": "construction_check",
+      "subject_ids": [
+        "claim:169ad163-e530-503b-a25c-c595d93ca03e",
+        "evidence:2a6a4060-1e5e-5b4b-8016-c21d3f31ccdc"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "assistance": "unknown",
+      "contributor_roles": [
+        {
+          "contributor_id": "contributor:c637090a-f27b-5eee-a436-96866f8855a1",
+          "role": "source repository curator"
+        }
+      ],
+      "credit_text": null,
+      "id": "claim:feee515c-dd43-5e8c-8d38-b348e7a52af2",
+      "parameter_id": "parameter:25:4:3",
+      "provenance": [
+        {
+          "locator": "coverdata.json /C(25,4,3)/low_bd",
+          "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+        }
+      ],
+      "publication_refs": [
+        "reference:945005b8-5e2e-569a-9f4f-3134582070f6"
+      ],
+      "record_type": "claim",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "reported_date": null,
+      "schema_version": "cvkt-pilot-2",
+      "side": "lower",
+      "value": 600
+    },
+    {
+      "assistance": "unknown",
+      "contributor_roles": [
+        {
+          "contributor_id": "contributor:c637090a-f27b-5eee-a436-96866f8855a1",
+          "role": "source repository curator"
+        }
+      ],
+      "credit_text": null,
+      "id": "claim:169ad163-e530-503b-a25c-c595d93ca03e",
+      "parameter_id": "parameter:25:4:3",
+      "provenance": [
+        {
+          "locator": "coverdata.json /C(25,4,3)/size",
+          "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+        }
+      ],
+      "publication_refs": [
+        "reference:945005b8-5e2e-569a-9f4f-3134582070f6"
+      ],
+      "record_type": "claim",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "reported_date": null,
+      "schema_version": "cvkt-pilot-2",
+      "side": "upper",
+      "value": 600
+    }
+  ],
+  "editorial_events": [
+    {
+      "action": "admit",
+      "admission_route": "legacy_import",
+      "basis_ids": [
+        "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+      ],
+      "eligibility": "active",
+      "id": "editorial_event:1e206283-be12-56ae-8fbf-6c2460342a8e",
+      "reason": "Retain the audited legacy source assertion; import is not a mathematical verification.",
+      "record_type": "editorial_event",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "schema_version": "cvkt-pilot-2",
+      "sequence": 1,
+      "subject_ids": [
+        "claim:feee515c-dd43-5e8c-8d38-b348e7a52af2"
+      ]
+    },
+    {
+      "action": "admit",
+      "admission_route": "legacy_import",
+      "basis_ids": [
+        "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+      ],
+      "eligibility": "active",
+      "id": "editorial_event:9342166c-32c7-5e7d-875a-438daac21fcc",
+      "reason": "Retain the audited legacy source assertion; import is not a mathematical verification.",
+      "record_type": "editorial_event",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "schema_version": "cvkt-pilot-2",
+      "sequence": 2,
+      "subject_ids": [
+        "claim:169ad163-e530-503b-a25c-c595d93ca03e"
+      ]
+    },
+    {
+      "action": "accept_support",
+      "basis_ids": [
+        "assessment:443da7e7-2ca0-551b-9881-29428dde48a2"
+      ],
+      "id": "editorial_event:443da7e7-2ca0-551b-9881-29428dde48a2",
+      "reason": "A reproduced exact check validates every block, covers every required subset and meets this upper bound. It does not verify a lower bound or optimality.",
+      "record_type": "editorial_event",
+      "recorded_at": "2026-10-17T13:01:44Z",
+      "recorded_by": "contributor:9734529b-a7a6-5f25-8ded-da8e2bdc5408",
+      "schema_version": "cvkt-pilot-2",
+      "sequence": 3,
+      "subject_ids": [
+        "evidence_link:c1526b7e-d48d-5775-94f5-c55530b14196"
+      ]
+    }
+  ],
+  "evidence_links": [
+    {
+      "claim_id": "claim:feee515c-dd43-5e8c-8d38-b348e7a52af2",
+      "evidence_id": "evidence:1cc3e34e-d56b-5352-ab21-7576ac27911a",
+      "id": "evidence_link:c4ac493a-54af-58ee-8621-62f9120c9b63",
+      "rationale": "Exact current value reported by the identified LJCR snapshot.",
+      "record_type": "evidence_link",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "relation": "reported_by",
+      "schema_version": "cvkt-pilot-2"
+    },
+    {
+      "claim_id": "claim:169ad163-e530-503b-a25c-c595d93ca03e",
+      "evidence_id": "evidence:1cc3e34e-d56b-5352-ab21-7576ac27911a",
+      "id": "evidence_link:b92938ed-2dd2-5701-8e24-37d37568fe59",
+      "rationale": "Exact current value reported by the identified LJCR snapshot.",
+      "record_type": "evidence_link",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "relation": "reported_by",
+      "schema_version": "cvkt-pilot-2"
+    },
+    {
+      "claim_id": "claim:169ad163-e530-503b-a25c-c595d93ca03e",
+      "evidence_id": "evidence:2a6a4060-1e5e-5b4b-8016-c21d3f31ccdc",
+      "id": "evidence_link:c1526b7e-d48d-5775-94f5-c55530b14196",
+      "rationale": "The source supplies this block list for its upper bound. A reproduced full covering check is not recorded.",
+      "record_type": "evidence_link",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "relation": "supports",
+      "schema_version": "cvkt-pilot-2"
+    }
+  ],
+  "id": "parameter:25:4:3",
+  "parameters": {
+    "k": 4,
+    "t": 3,
+    "v": 25
+  },
+  "record_type": "parameter",
+  "recorded_at": "2026-10-17T12:19:26Z",
+  "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+  "relationships": [],
+  "revisions": [],
+  "schema_version": "cvkt-pilot-2",
+  "source_observations": [
+    {
+      "field": "size",
+      "id": "source_observation:4fbf00cd-50cb-5972-aa09-17be02aa440b",
+      "raw_value": 600,
+      "record_type": "source_observation",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "schema_version": "cvkt-pilot-2",
+      "source_ref": {
+        "locator": "coverdata.json /C(25,4,3)/size",
+        "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+      }
+    },
+    {
+      "field": "low_bd",
+      "id": "source_observation:f9040360-a07e-5f53-abc8-753f412d5b25",
+      "raw_value": 600,
+      "record_type": "source_observation",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "schema_version": "cvkt-pilot-2",
+      "source_ref": {
+        "locator": "coverdata.json /C(25,4,3)/low_bd",
+        "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+      }
+    },
+    {
+      "field": "imps",
+      "id": "source_observation:3d10132c-cbdf-5c0c-ad36-3d8b38008b94",
+      "raw_value": [
+        [
+          "600",
+          "",
+          "JCD article",
+          "1996-11-14 17:08:00"
+        ]
+      ],
+      "record_type": "source_observation",
+      "recorded_at": "2026-10-17T12:19:26Z",
+      "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+      "schema_version": "cvkt-pilot-2",
+      "source_ref": {
+        "locator": "coverdata.json /C(25,4,3)/imps",
+        "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+      }
+    }
+  ],
+  "verification_runs": [
+    {
+      "artefact_ids": [
+        "artefact:7aacc415-956e-5ab7-8128-ede6fa83c35e"
+      ],
+      "claim_ids": [
+        "claim:169ad163-e530-503b-a25c-c595d93ca03e"
+      ],
+      "evidence_id": "evidence:2a6a4060-1e5e-5b4b-8016-c21d3f31ccdc",
+      "id": "verification_run:443da7e7-2ca0-551b-9881-29428dde48a2",
+      "input_hashes": {
+        "artefact:7aacc415-956e-5ab7-8128-ede6fa83c35e": "d85a3d73470ad85ee3bd2796e0f32107f2bf5b968482a8a924bf678ee5449381"
+      },
+      "log_artefact_ids": [
+        "artefact:9ac09f76-4a2d-5562-92cb-c71d7d2424e1"
+      ],
+      "method": "Exact enumeration of covered subsets after validating every block",
+      "outcome": "pass",
+      "record_type": "verification_run",
+      "recorded_at": "2026-10-17T13:01:44Z",
+      "recorded_by": "contributor:9734529b-a7a6-5f25-8ded-da8e2bdc5408",
+      "report_origin": "reproduced",
+      "result": {
+        "block_count": 600,
+        "checker_version": "2",
+        "claimed_upper": 600,
+        "covered_subsets": 2300,
+        "encoding": {
+          "block_count": 600,
+          "codec": "zstd",
+          "k": 4,
+          "layout": "uint8-row-major",
+          "point_numbering": "one_based",
+          "raw_bytes": 2400,
+          "raw_sha256": "3bbd515956e07c60d83292c0d516ecbecae7d91069910b32a34e270dff61cccf",
+          "v": 25
+        },
+        "input_sha256": "d85a3d73470ad85ee3bd2796e0f32107f2bf5b968482a8a924bf678ee5449381",
+        "k": 4,
+        "limits": {
+          "block_subset_incidences": 2400,
+          "max_incidences": 2000000,
+          "max_subsets": 100000,
+          "required_subsets": 2300,
+          "within_limits": true
+        },
+        "missing_subsets": 0,
+        "missing_witness": null,
+        "outcome": "pass",
+        "required_subsets": 2300,
+        "t": 3,
+        "v": 25
+      },
+      "schema_version": "cvkt-pilot-2",
+      "scope": {
+        "claimed_upper": 600,
+        "k": 4,
+        "kind": "covering",
+        "t": 3,
+        "v": 25
+      },
+      "tool": {
+        "artefact_id": "artefact:3b9ffc42-e4be-50f5-8f8a-34d073a8b40d",
+        "name": "CVKT construction checker",
+        "python": "3.14.3",
+        "source_sha256": "6aa04d4f8c04dddea39e46964fa0f5dff9bbc0cc5277d92af44722e8ca0787bc",
+        "version": "2"
+      }
+    }
+  ]
+}

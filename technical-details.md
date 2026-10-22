@@ -17,10 +17,14 @@ forms. It imports neither the catalogue nor completion-verification modules.
 
 ## Set up dependencies
 
-Install Lean **4.34.1** with Lake available on the path. Initial dependency
-setup needs Python **3.12+**. From the repository root:
+Install Lean **4.34.1** with Lake available on the path. Dependency setup and verification need Python **3.14+** with the
+standard-library `compression.zstd` module. The tested CI series is declared in
+[.python-version](.python-version). No third-party Python packages are required
+for verification. Use a project virtual environment; do not replace system Python. From the repository root:
 
 ```sh
+python3.14 -m venv .venv
+. .venv/bin/activate
 export ELAN_TOOLCHAIN="$(cat lean/lean-toolchain)"
 python3 scripts/setup_dependencies.py
 lake -d lean build Mathlib
@@ -40,7 +44,9 @@ The installer validates its provenance before creating local links.
 
 ## Reproduce verification
 
-The recorded workflow uses Python **3.10+** and runs on **macOS or Linux**:
+The recorded workflow uses the same Python **3.14+** environment and runs on
+**macOS or Linux**. `doctor` rejects missing zstd support; the original compressed
+witness check is required and cannot be skipped:
 
 ```sh
 ./covering doctor
@@ -269,6 +275,46 @@ Original project material is available under the [MIT licence](LICENSE).
 The [third-party notices](THIRD_PARTY_NOTICES.md) identify the separate
 licences, editions and attributions for the reference papers, covering data
 and external dependencies.
+
+## Eight optimal quadruple coverings
+
+Read the [eight-case account](coverings/12u-plus-1-4-3/README.md), its
+[proof and Lean correspondence](coverings/12u-plus-1-4-3/proof.md), and
+[sources and data attribution](coverings/12u-plus-1-4-3/sources.md).
+The recommended interface is
+`CoveringDesigns.covering_number_one_mod_twelve_below_100_on` in
+[FiniteRange.lean](lean/CoveringDesigns/QuadrupleAssembly/FiniteRange.lean).
+It supplies an attaining ordinary family and a universal lower bound on
+arbitrary finite labels for 4≤n<100 and n%12=1. The general assembly remains
+conditional on explicit seeds; this is not an infinite-order exactness theorem.
+
+`./covering verify quadruple-assembly` and `./covering audit quadruple-assembly`
+provide focused compilation and separate record validation. Whole-library
+verification includes this account. `./covering check` independently compares
+all eight distributed witnesses with their Lean literals, checks the original
+25-point zstd frame through exact decompression and label conversion, and checks
+deterministic regeneration. The parsers and converter are external tools, not
+formally verified parsers. Lean checks the actual families and their structural
+correspondence. Historical source identifiers in comments and provenance JSON
+are documentary; the input manifest resolves all operational files locally.
+
+## The bound 41 ≤ C(14,5,3) ≤ 43
+
+Read the [result account](coverings/14-5-3/README.md), its
+[structural proof and Lean correspondence](coverings/14-5-3/proof.md), and
+[sources and construction attribution](coverings/14-5-3/sources.md).
+The principal interface is `CoveringDesigns.covering_interval_14_5_3_on`
+in [C14_5_3.lean](lean/CoveringDesigns/C14_5_3.lean). It proves the universal
+lower bound 41 and supplies an actual 43-block covering on arbitrary
+fourteen-point labels. A separate lower interface permits repeated block
+occurrences. The exact value remains undetermined.
+
+`./covering verify 14-5-3` compiles the component, its prerequisites and its
+complete theorem/axiom audit; `./covering audit 14-5-3` validates the recorded
+verification separately. Whole-library verification includes the component.
+`./covering check` also checks the retained historical block list against its
+Lean transcription and independently tests all 364 triples. Lean proves the
+attaining family's cardinality and coverage in the kernel.
 
 ## Lower bounds and exact values for $C(2k-c,k,3)$
 

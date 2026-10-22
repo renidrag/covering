@@ -114,6 +114,26 @@ point labels and proves cardinality and complete coverage in Lean.
 The new lower proof and standard lifted consequences are separate project
 contributions credited in the result account.
 
+## Quadruple-covering witnesses and seeds
+
+The [eight-case account](coverings/12u-plus-1-4-3/README.md) retains the
+13- and 25-point witnesses and relevant small designs from **Daniel M. Gordon /
+La Jolla Covering Repository**, version 1.2, published 24 April 2026,
+[Zenodo 19735294](https://zenodo.org/records/19735294), under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The notices and
+licence scope above apply to these data, including their Lean projections.
+The [source account](coverings/12u-plus-1-4-3/sources.md) gives the
+individual dependencies, historical qualifications and transformations:
+one-based to zero-based labels, sorting, derivation/deletion, inflation,
+substitution and explicit relabelling. The original 25-point compressed bytes
+and copied attribution records are retained. Historical archive paths and IDs
+in those records identify their source system, not extra local dependencies.
+
+The six reconstructed larger witnesses and the formalisation are credited to
+Rob Gardiner with the classical mathematical and seed-provider credits in that
+account. The known optima and dated snapshot improvements are distinguished;
+no source data are relabelled as wholly original project material.
+
 ## External software dependencies
 
 Lean, Mathlib and the other packages pinned in
@@ -122,3 +142,21 @@ upstream licences and notices. Their sources are installed separately by the
 [dependency installer](scripts/setup_dependencies.py), which retains the
 licence files in those archives. The project's MIT grant does not replace
 those licences.
+
+## The C(14,5,3) construction and deletion antecedent
+
+The [43-block historical witness](data/c1453-historical-witness.json) is from
+Daniel M. Gordon / La Jolla Coverings Repository, version 1.2,
+[Zenodo 19735294](https://zenodo.org/records/19735294), under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Its retained metadata credits **Nurmela and Östergård, simulated annealing**,
+with repository date **1 December 1996**. The original ordered one-based
+blocks are retained; the Lean witness subtracts one from each label and
+proves cardinality and full triple coverage.
+
+The [source account](coverings/14-5-3/sources.md) credits **Sharad S. Sane**
+for the general projective failed-design theorem. The needed deletion lemma
+is a self-contained reconstruction of its order-three special case.
+The structural lower-bound argument and Lean formalisation are credited to
+Rob Gardiner with AI assistance; the historical construction remains
+separately attributed. No additional reference paper is reproduced.

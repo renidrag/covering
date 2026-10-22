@@ -1,0 +1,22 @@
+{
+  "entry": "CoveringDesigns.C14_5_3",
+  "kind": "Unconditional interval 41 <= C(14,5,3) <= 43; no exactness assertion",
+  "depends_on": [
+    "CoveringDesigns.ExactDesign.Counting",
+    "CoveringDesigns.LabelledCliques.Extensions",
+    "CoveringDesigns.Multicover.Family",
+    "CoveringDesigns.Foundations.Relabelling"
+  ],
+  "reuse_scope": "Existing indexed incidence, links, exact-design counting, extension counting and label transport; no coordinates, classification or exploratory inputs.",
+  "inputs": [
+    {
+      "path": "data/c1453-historical-witness.json",
+      "sha256": "f7e07fd68bbddbec5c0563122fce143ac1f1c54a824dfb1d1965fc2d8825a2d5"
+    },
+    {
+      "path": "scripts/check_c1453_witness.py",
+      "sha256": "dd209bab75c0a4ab05c60c090785b4fbe10ca9a480bd71cd0585ebca162980fb"
+    }
+  ],
+  "path_convention": "Paths are relative to the repository root. Lean independently checks every mathematical property of the historical upper witness. The witness audit helper is fingerprinted as an input so changes invalidate prior records."
+}

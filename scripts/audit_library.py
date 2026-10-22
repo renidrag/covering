@@ -1159,6 +1159,291 @@ COMPONENTS['c18103-lifts'] = {
              'no supplied seed hypothesis, new lifting foundation or higher exactness claim.',
 }
 
+# Structural C(14,5,3) interval; separately named modules and audits.
+COMPONENTS['14-5-3'] = {'entry': 'CoveringDesigns.C14_5_3.Examples',
+ 'audit_name': 'c14-5-3-audit',
+ 'audit_file': 'C14_5_3.lean',
+ 'principal_theorem': 'CoveringDesigns.covering_interval_14_5_3_on',
+ 'explicit_theorem': 'CoveringDesigns.Audit14_5_3.covering_interval_explicit',
+ 'summary_path': 'results/c14-5-3-verification.json',
+ 'theorems': ['CoveringDesigns.C14_5_3.linkPairExcess_self',
+              'CoveringDesigns.C14_5_3.linkPairExcess_comm',
+              'CoveringDesigns.C14_5_3.pair_link_point_floor',
+              'CoveringDesigns.C14_5_3.link_excess_sum',
+              'CoveringDesigns.C14_5_3.link_excess_row',
+              'CoveringDesigns.C14_5_3.link_pair_excess_zero',
+              'CoveringDesigns.C14_5_3.high_excess_sum',
+              'CoveringDesigns.C14_5_3.high_excess_row',
+              'CoveringDesigns.C14_5_3.high_excess_pos',
+              'CoveringDesigns.C14_5_3.pair_support_union',
+              'CoveringDesigns.C14_5_3.high_points_card',
+              'CoveringDesigns.C14_5_3.high_degree_five',
+              'CoveringDesigns.C14_5_3.low_degree_four',
+              'CoveringDesigns.C14_5_3.low_pair_exact',
+              'CoveringDesigns.C14_5_3.almost_small_intersections',
+              'CoveringDesigns.C14_5_3.almost_intersection_sum',
+              'CoveringDesigns.C14_5_3.small_intersection_balance',
+              'CoveringDesigns.C14_5_3.one_high_meets_all',
+              'CoveringDesigns.C14_5_3.low_block_unique_disjoint',
+              'CoveringDesigns.C14_5_3.one_high_pair_two',
+              'CoveringDesigns.C14_5_3.four_point_regular',
+              'CoveringDesigns.C14_5_3.high_pair_excess_one',
+              'CoveringDesigns.C14_5_3.almost_pair_profile',
+              'CoveringDesigns.C14_5_3.almost_high_block',
+              'CoveringDesigns.C14_5_3.delete_index_balance',
+              'CoveringDesigns.C14_5_3.almost_exact_deletion',
+              'CoveringDesigns.C14_5_3.subset_filter_powerset',
+              'CoveringDesigns.C14_5_3.low_pair_exact_of_not_subset',
+              'CoveringDesigns.C14_5_3.high_pair_sum',
+              'CoveringDesigns.C14_5_3.bounded_fiber_sum',
+              'CoveringDesigns.C14_5_3.high_trace_moments',
+              'CoveringDesigns.C14_5_3.exists_one_high_block',
+              'CoveringDesigns.C14_5_3.exists_low_block_of_no_high_block',
+              'CoveringDesigns.C14_5_3.collinearCount_pos',
+              'CoveringDesigns.C14_5_3.collinear_sum',
+              'CoveringDesigns.C14_5_3.triple_sum_split',
+              'CoveringDesigns.C14_5_3.completion_slack',
+              'CoveringDesigns.C14_5_3.completion_capacity',
+              'CoveringDesigns.C14_5_3.completion_equality',
+              'CoveringDesigns.C14_5_3.collinear_pair_count',
+              'CoveringDesigns.C14_5_3.noncollinear_pair_count',
+              'CoveringDesigns.C14_5_3.completion_pair_identity',
+              'CoveringDesigns.C14_5_3.extensions_inside_pair',
+              'CoveringDesigns.C14_5_3.collinear_extensions_eq',
+              'CoveringDesigns.C14_5_3.line_pair_sum',
+              'CoveringDesigns.C14_5_3.linewise_divisibility',
+              'CoveringDesigns.C14_5_3.completion_at_least_27',
+              'CoveringDesigns.C14_5_3.completed_uniform',
+              'CoveringDesigns.C14_5_3.completed_covers_new',
+              'CoveringDesigns.C14_5_3.completed_covers_collinear',
+              'CoveringDesigns.C14_5_3.completed_covers_noncollinear',
+              'CoveringDesigns.C14_5_3.completed_isCover',
+              'CoveringDesigns.C14_5_3.completion_at_least_28',
+              'CoveringDesigns.C14_5_3.block_charge_capacity',
+              'CoveringDesigns.C14_5_3.block_charge_five',
+              'CoveringDesigns.C14_5_3.block_charge_eight',
+              'CoveringDesigns.C14_5_3.disjoint_charge_budget',
+              'CoveringDesigns.C14_5_3.exact_line_count',
+              'CoveringDesigns.C14_5_3.exact_point_count',
+              'CoveringDesigns.C14_5_3.exact_unique_line',
+              'CoveringDesigns.C14_5_3.exact_line_intersection',
+              'CoveringDesigns.C14_5_3.exact_multiplicity_le_one',
+              'CoveringDesigns.C14_5_3.exact_lines_injective',
+              'CoveringDesigns.C14_5_3.exact_lines_meet',
+              'CoveringDesigns.C14_5_3.collinear_card',
+              'CoveringDesigns.C14_5_3.noncollinear_card',
+              'CoveringDesigns.C14_5_3.degree_through_point',
+              'CoveringDesigns.C14_5_3.no_five_arc',
+              'CoveringDesigns.C14_5_3.Boundary.repeated_cover',
+              'CoveringDesigns.C14_5_3.Boundary.repeated_not_irredundant',
+              'CoveringDesigns.C14_5_3.Boundary.delete_one_still_covers',
+              'CoveringDesigns.C14_5_3.Boundary.delete_all_copies_fails',
+              'CoveringDesigns.C14_5_3.Boundary.deletion_counts_one_occurrence',
+              'CoveringDesigns.C14_5_3.Boundary.almost_exact_without_injectivity',
+              'CoveringDesigns.C14_5_3.Boundary.forty_private_without_structural_premises',
+              'CoveringDesigns.C14_5_3.exact_of_capacity',
+              'CoveringDesigns.C14_5_3.point_floor',
+              'CoveringDesigns.C14_5_3.pair_floor',
+              'CoveringDesigns.C14_5_3.minimum_link_exact',
+              'CoveringDesigns.C14_5_3.residual_card',
+              'CoveringDesigns.C14_5_3.residual_uniform',
+              'CoveringDesigns.C14_5_3.residual_completion',
+              'CoveringDesigns.C14_5_3.lower_bound_40',
+              'CoveringDesigns.C14_5_3.forty_irredundant',
+              'CoveringDesigns.C14_5_3.Irredundant.injective',
+              'CoveringDesigns.C14_5_3.Irredundant.private_multiplicity',
+              'CoveringDesigns.C14_5_3.tight_extensions',
+              'CoveringDesigns.C14_5_3.minimum_pair_exact',
+              'CoveringDesigns.C14_5_3.minimum_triple_exact',
+              'CoveringDesigns.C14_5_3.selected_trace_count',
+              'CoveringDesigns.C14_5_3.trace_complement_card',
+              'CoveringDesigns.C14_5_3.four_minimum_forces_sixteen',
+              'CoveringDesigns.C14_5_3.multiplicity_mono',
+              'CoveringDesigns.C14_5_3.multiplicity_pos_iff',
+              'CoveringDesigns.C14_5_3.multiplicity_one_iff',
+              'CoveringDesigns.C14_5_3.multiplicity_ge_two',
+              'CoveringDesigns.C14_5_3.trace_count',
+              'CoveringDesigns.C14_5_3.intersection_sum',
+              'CoveringDesigns.C14_5_3.selected_subset_count',
+              'CoveringDesigns.C14_5_3.restrict_multiplicity',
+              'CoveringDesigns.C14_5_3.restrict_add_complement',
+              'CoveringDesigns.C14_5_3.forty_has_minimum',
+              'CoveringDesigns.C14_5_3.degree_profile_bound',
+              'CoveringDesigns.C14_5_3.not_forty',
+              'CoveringDesigns.C14_5_3.indexed_lower_bound',
+              'CoveringDesigns.C14_5_3.lower_bound',
+              'CoveringDesigns.C14_5_3.minimum_pair_trace_sum',
+              'CoveringDesigns.C14_5_3.no_five_minimum',
+              'CoveringDesigns.C14_5_3.minimum_points_le_four',
+              'CoveringDesigns.C14_5_3.four_minimum_frame',
+              'CoveringDesigns.C14_5_3.missed_minimum_triple',
+              'CoveringDesigns.C14_5_3.minimum_trace_restriction',
+              'CoveringDesigns.C14_5_3.minimum_frame',
+              'CoveringDesigns.C14_5_3.minimum_trace_moments',
+              'CoveringDesigns.C14_5_3.frame_trace_counts',
+              'CoveringDesigns.C14_5_3.containing_trace_sum',
+              'CoveringDesigns.C14_5_3.subtype_map_subset',
+              'CoveringDesigns.C14_5_3.subtype_values_multiplicity',
+              'CoveringDesigns.C14_5_3.residual_multiplicity_split',
+              'CoveringDesigns.C14_5_3.residual_specials_card',
+              'CoveringDesigns.C14_5_3.residual_marks_nonempty',
+              'CoveringDesigns.C14_5_3.residual_charges_disjoint',
+              'CoveringDesigns.C14_5_3.residual_charge_excess',
+              'CoveringDesigns.C14_5_3.residual_marks_card',
+              'CoveringDesigns.C14_5_3.special_charge_eight',
+              'CoveringDesigns.C14_5_3.minimum_special_count',
+              'CoveringDesigns.C14_5_3.without_point_card',
+              'CoveringDesigns.C14_5_3.insert_without_point',
+              'CoveringDesigns.C14_5_3.link_parent_multiplicity',
+              'CoveringDesigns.C14_5_3.without_point_subset_iff',
+              'CoveringDesigns.C14_5_3.exists_special',
+              'CoveringDesigns.C14_5_3.SpecialAt.duplicate',
+              'CoveringDesigns.C14_5_3.special_blocks_equal',
+              'CoveringDesigns.C14_5_3.special_avoids_minimum',
+              'CoveringDesigns.C14_5_3.mem_specialIndices',
+              'CoveringDesigns.C14_5_3.special_at_member',
+              'CoveringDesigns.C14_5_3.special_group_unique',
+              'CoveringDesigns.C14_5_3.private_high',
+              'CoveringDesigns.C14_5_3.special_middle_le_two',
+              'CoveringDesigns.C14_5_3.selected_intersection_sum',
+              'CoveringDesigns.C14_5_3.special_group_count',
+              'CoveringDesigns.C14_5_3.middle_le_twice_special',
+              'CoveringDesigns.C14_5_3.distinct_private_triples',
+              'CoveringDesigns.knownBlocks43_14_5_3_distinct',
+              'CoveringDesigns.knownCover43_14_5_3_card',
+              'CoveringDesigns.knownCover43_14_5_3_uniform',
+              'CoveringDesigns.knownCover43_14_5_3_covers',
+              'CoveringDesigns.knownCover43_14_5_3_isCover',
+              'CoveringDesigns.upper_bound_14_5_3',
+              'CoveringDesigns.knownCover43_14_5_3_on_card',
+              'CoveringDesigns.knownCover43_14_5_3_on_isCover',
+              'CoveringDesigns.upper_bound_14_5_3_on',
+              'CoveringDesigns.lower_bound_14_5_3',
+              'CoveringDesigns.indexed_lower_bound_14_5_3',
+              'CoveringDesigns.covering_interval_14_5_3_on',
+              'CoveringDesigns.covering_interval_14_5_3'],
+ 'milestones': ['CoveringDesigns.Audit14_5_3.indexed_explicit',
+                'CoveringDesigns.Audit14_5_3.completion_explicit'],
+ 'scope': 'Unconditional interval 41 <= C(14,5,3) <= 43 on arbitrary finite labels; indexed repetitions '
+          'permitted. Structural exact-link completion27 precedes lower40, irredundancy and exclusion40; '
+          'completion28 is downstream. Self-contained order-three deletion special case, with Sane '
+          'antecedent credited; historical Nurmela-Ostergard witness kernel checked. No classification, '
+          'external exclusion certificate, exactness or first-discovery claim. Rob Gardiner with AI '
+          'assistance.'}
+COMPONENTS['14-5-3']['independent_of'] = [key for key in ['caro-tuza', 'horsley', 'schoenheim', '11-5-2', '12-5-2', '12-6-3', '13-7-4', 'horsley-lifts', 'horsley-singh', 'equality', '17-9-5', 'higher-incidence', 'weighted', '47-14-5', '42-15-5', 'large-defect', 'small-defect', 'small-defect-b', 'small-defect-c', 'multicover', 'multicover-incidence', 'multicover-large-defect', 'coefficient-positivity', 'affine-constructions', 'affine-schoenheim', 'affine-optimality', 'lifting-comparison', 'schoenheim-improvement', 'multicover-small-defect', 'low-degree-selection', 'seed-comparison', 'exact-design', 'point-reduction', 'base-affine', 'schoenheim-family-comparison', 'max-degree-sequence', 'max-guarantee', 'max-covering', 'max-higher-covering', '14-8-5', '59-17-5', '66-18-5', '79-22-5', '87-23-5', '98-22-5', 'labelled-cliques', 'turan-duality', 'turan', 'de-caen', 'chvatal', 'gkp-combination', 'gkp-induced', 'gkp-induced-averaging', 'projective-hyperplanes', 'finite-flat-geometry', 'degree-selected', '20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts', '14-5-3'] if key not in
+    ('14-5-3', 'schoenheim', 'horsley-singh', 'multicover', 'exact-design', 'labelled-cliques')]
+
+# One shared quadruple assembly, its six witnesses and two small base cases.
+COMPONENTS['quadruple-assembly'] = {'entry': 'CoveringDesigns.QuadrupleAssembly',
+ 'audit_name': 'quadruple-assembly-audit',
+ 'audit_file': 'QuadrupleAssembly.lean',
+ 'principal_theorem': 'CoveringDesigns.QuadrupleAssembly.assembly_optimal',
+ 'explicit_theorem': 'CoveringDesigns.AuditQuadrupleAssembly.assembly_explicit',
+ 'summary_path': 'results/quadruple-assembly-verification.json',
+ 'theorems': ['CoveringDesigns.QuadrupleAssembly.assembly_optimal',
+              'CoveringDesigns.QuadrupleAssembly.assembly_sharp',
+              'CoveringDesigns.QuadrupleAssembly.sources_injective',
+              'CoveringDesigns.QuadrupleAssembly.classes_disjoint',
+              'CoveringDesigns.QuadrupleAssembly.ceilings',
+              'CoveringDesigns.QuadrupleAssembly.lower_bound',
+              'CoveringDesigns.QuadrupleAssembly.h_seed_card',
+              'CoveringDesigns.QuadrupleAssembly.gdd_seed_card',
+              'CoveringDesigns.QuadrupleAssembly.h_valid',
+              'CoveringDesigns.QuadrupleAssembly.g_valid',
+              'CoveringDesigns.QuadrupleAssembly.filling_valid',
+              'CoveringDesigns.QuadrupleAssembly.filling_card',
+              'CoveringDesigns.QuadrupleAssembly.factors_valid',
+              'CoveringDesigns.QuadrupleAssembly.label_some',
+              'CoveringDesigns.QuadrupleAssembly.productSubstitute_valid',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V37.rows_eq',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V37.correspondence',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V37.optimal',
+              'CoveringDesigns.knownCover1998_37_4_3_optimal',
+              'CoveringDesigns.knownCover1998_37_4_3_on_optimal',
+              'CoveringDesigns.lower_bound_37_4_3',
+              'CoveringDesigns.covering_number_37_4_3_on',
+              'CoveringDesigns.covering_number_37_4_3',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V49.rows_eq',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V49.correspondence',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V49.optimal',
+              'CoveringDesigns.knownCover4704_49_4_3_optimal',
+              'CoveringDesigns.knownCover4704_49_4_3_on_optimal',
+              'CoveringDesigns.lower_bound_49_4_3',
+              'CoveringDesigns.covering_number_49_4_3_on',
+              'CoveringDesigns.covering_number_49_4_3',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V61.rows_eq',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V61.correspondence',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V61.optimal',
+              'CoveringDesigns.knownCover9150_61_4_3_optimal',
+              'CoveringDesigns.knownCover9150_61_4_3_on_optimal',
+              'CoveringDesigns.lower_bound_61_4_3',
+              'CoveringDesigns.covering_number_61_4_3_on',
+              'CoveringDesigns.covering_number_61_4_3',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V73.rows_eq',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V73.correspondence',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V73.optimal',
+              'CoveringDesigns.knownCover15768_73_4_3_optimal',
+              'CoveringDesigns.knownCover15768_73_4_3_on_optimal',
+              'CoveringDesigns.lower_bound_73_4_3',
+              'CoveringDesigns.covering_number_73_4_3_on',
+              'CoveringDesigns.covering_number_73_4_3',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V85.rows_eq',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V85.correspondence',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V85.optimal',
+              'CoveringDesigns.knownCover24990_85_4_3_optimal',
+              'CoveringDesigns.knownCover24990_85_4_3_on_optimal',
+              'CoveringDesigns.lower_bound_85_4_3',
+              'CoveringDesigns.covering_number_85_4_3_on',
+              'CoveringDesigns.covering_number_85_4_3',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V97.rows_eq',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V97.correspondence',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V97.optimal',
+              'CoveringDesigns.knownCover37248_97_4_3_optimal',
+              'CoveringDesigns.knownCover37248_97_4_3_on_optimal',
+              'CoveringDesigns.lower_bound_97_4_3',
+              'CoveringDesigns.covering_number_97_4_3_on',
+              'CoveringDesigns.covering_number_97_4_3',
+              'CoveringDesigns.QuadrupleAssembly.ceilings_13',
+              'CoveringDesigns.QuadrupleAssembly.ceilings_25',
+              'CoveringDesigns.QuadrupleAssembly.schoenheim_13',
+              'CoveringDesigns.QuadrupleAssembly.schoenheim_25',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V25.checked',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V25.valid',
+              'CoveringDesigns.QuadrupleAssembly.WitnessData.V25.size',
+              'CoveringDesigns.knownCover78_13_4_3_correspondence',
+              'CoveringDesigns.knownCover78_13_4_3_optimal',
+              'CoveringDesigns.knownCover78_13_4_3_on_optimal',
+              'CoveringDesigns.lower_bound_13_4_3',
+              'CoveringDesigns.covering_number_13_4_3_on',
+              'CoveringDesigns.covering_number_13_4_3',
+              'CoveringDesigns.knownCover600_25_4_3_correspondence',
+              'CoveringDesigns.knownCover600_25_4_3_optimal',
+              'CoveringDesigns.knownCover600_25_4_3_on_optimal',
+              'CoveringDesigns.lower_bound_25_4_3',
+              'CoveringDesigns.covering_number_25_4_3_on',
+              'CoveringDesigns.covering_number_25_4_3',
+              'CoveringDesigns.QuadrupleAssembly.admissible_below_100_iff',
+              'CoveringDesigns.QuadrupleAssembly.formula_divisible_below_100',
+              'CoveringDesigns.covering_number_one_mod_twelve_below_100_on',
+              'CoveringDesigns.covering_number_one_mod_twelve_below_100'],
+ 'milestones': ['CoveringDesigns.AuditQuadrupleAssembly.exact_37_explicit',
+                'CoveringDesigns.AuditQuadrupleAssembly.exact_49_explicit',
+                'CoveringDesigns.AuditQuadrupleAssembly.exact_61_explicit',
+                'CoveringDesigns.AuditQuadrupleAssembly.exact_73_explicit',
+                'CoveringDesigns.AuditQuadrupleAssembly.exact_85_explicit',
+                'CoveringDesigns.AuditQuadrupleAssembly.exact_97_explicit',
+                'CoveringDesigns.AuditQuadrupleAssembly.exact_13_explicit',
+                'CoveringDesigns.AuditQuadrupleAssembly.exact_25_explicit',
+                'CoveringDesigns.AuditQuadrupleAssembly.finite_range_explicit'],
+ 'scope': 'Direct even-case HMM adaptation, actual ordinary-family assembly, kernel-checked small bases and '
+          'structural substitution, two small exact base cases and an unconditional eight-case theorem '
+          'for admissible orders congruent to one mod twelve below 100. Named families are lossless '
+          'projections of the six preserved witnesses, reused thirteen-point filling and recovered '
+          'historical twenty-five-point file. Rob Gardiner with AI assistance; LJCR-derived data '
+          'retain Daniel M. Gordon/LJCR CC BY 4.0 credit. No all-order seed-existence or new-discovery '
+          'claim.'}
+COMPONENTS['quadruple-assembly']['independent_of'] = [key for key in ['caro-tuza', 'horsley', 'schoenheim', '11-5-2', '12-5-2', '12-6-3', '13-7-4', 'horsley-lifts', 'horsley-singh', 'equality', '17-9-5', 'higher-incidence', 'weighted', '47-14-5', '42-15-5', 'large-defect', 'small-defect', 'small-defect-b', 'small-defect-c', 'multicover', 'multicover-incidence', 'multicover-large-defect', 'coefficient-positivity', 'affine-constructions', 'affine-schoenheim', 'affine-optimality', 'lifting-comparison', 'schoenheim-improvement', 'multicover-small-defect', 'low-degree-selection', 'seed-comparison', 'exact-design', 'point-reduction', 'base-affine', 'schoenheim-family-comparison', 'max-degree-sequence', 'max-guarantee', 'max-covering', 'max-higher-covering', '14-8-5', '59-17-5', '66-18-5', '79-22-5', '87-23-5', '98-22-5', 'labelled-cliques', 'turan-duality', 'turan', 'de-caen', 'chvatal', 'gkp-combination', 'gkp-induced', 'gkp-induced-averaging', 'projective-hyperplanes', 'finite-flat-geometry', 'degree-selected', '20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts', '14-5-3', 'quadruple-assembly'] if key not in ('quadruple-assembly', 'schoenheim')]
+
 def source(module):
     return ROOT / (module.replace('.', '/') + '.lean')
 
@@ -1352,12 +1637,69 @@ def closure(entry):
     return SourceGraph().closure(entry)
 
 
-PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching', '18-10-3': 'CoveringDesigns.C18_10_3.SquareSupport', 'c18103-lifts': 'CoveringDesigns.Applications.C18103Lifts'}
+PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching', '18-10-3': 'CoveringDesigns.C18_10_3.SquareSupport', 'c18103-lifts': 'CoveringDesigns.Applications.C18103Lifts', '14-5-3': 'CoveringDesigns.C14_5_3.Examples', 'quadruple-assembly': 'CoveringDesigns.QuadrupleAssembly'}
 
 def check_sources():
     publication_boundaries = PUBLICATION_BOUNDARIES
     closure = SourceGraph().closure
     closures = {key: closure(item['entry']) for key, item in COMPONENTS.items()}
+    # Earlier components cannot acquire the new seed/data construction.
+    quad_entry = 'CoveringDesigns.QuadrupleAssembly'
+    quad_sources = {p for p in closures['quadruple-assembly']
+                    if p == source(quad_entry) or 'QuadrupleAssembly' in p.parts}
+    for key, paths in closures.items():
+        if key != 'quadruple-assembly':
+            assert not paths & quad_sources, f'Established component {key} imports quadruple assembly'
+    for module in ('Budget', 'Distinctness', 'Coverage', 'ProductSubstitution'):
+        assert not any('SeedData' in p.parts or 'WitnessData' in p.parts or p.stem == 'SeedInstances'
+                       for p in closure(quad_entry + '.' + module)), 'General assembly depends on instances'
+    assert not any('WitnessData' in p.parts for p in closure(quad_entry + '.SeedInstances')), 'Seed chain depends on final files'
+    # Exact C14 dependency graph: no old component may acquire these modules.
+    c1453_parts = {'CoveringDesigns.C14_5_3.AlmostExactCounts': ['CoveringDesigns.C14_5_3.Incidence'],
+     'CoveringDesigns.C14_5_3.AlmostExactIntersections': ['CoveringDesigns.C14_5_3.AlmostExactTraces',
+                                                          'CoveringDesigns.C14_5_3.ExactLink'],
+     'CoveringDesigns.C14_5_3.AlmostExactLink': ['CoveringDesigns.C14_5_3.AlmostExactIntersections'],
+     'CoveringDesigns.C14_5_3.AlmostExactTraces': ['CoveringDesigns.C14_5_3.AlmostExactCounts'],
+     'CoveringDesigns.C14_5_3.Completion': ['CoveringDesigns.C14_5_3.ExactLink'],
+     'CoveringDesigns.C14_5_3.Completion28': ['CoveringDesigns.C14_5_3.LowerBound'],
+     'CoveringDesigns.C14_5_3.CompletionCharges': ['CoveringDesigns.C14_5_3.Completion'],
+     'CoveringDesigns.C14_5_3.ExactLink': ['CoveringDesigns.C14_5_3.Incidence'],
+     'CoveringDesigns.C14_5_3.Examples': ['CoveringDesigns.C14_5_3'],
+     'CoveringDesigns.C14_5_3.Forty': ['CoveringDesigns.C14_5_3.Completion'],
+     'CoveringDesigns.C14_5_3.FourMinimum': ['CoveringDesigns.C14_5_3.MinimumCompatibility'],
+     'CoveringDesigns.C14_5_3.Incidence': ['CoveringDesigns.ExactDesign.Counting',
+                                           'CoveringDesigns.LabelledCliques.Extensions'],
+     'CoveringDesigns.C14_5_3.LowerBound': ['CoveringDesigns.C14_5_3.ParentCharges',
+                                            'CoveringDesigns.C14_5_3.FourMinimum',
+                                            'CoveringDesigns.Multicover.Family'],
+     'CoveringDesigns.C14_5_3.MinimumCompatibility': ['CoveringDesigns.C14_5_3.MinimumTraces'],
+     'CoveringDesigns.C14_5_3.MinimumTraces': ['CoveringDesigns.C14_5_3.SpecialBlocks'],
+     'CoveringDesigns.C14_5_3.ParentCharges': ['CoveringDesigns.C14_5_3.SpecialBlocks',
+                                               'CoveringDesigns.C14_5_3.CompletionCharges'],
+     'CoveringDesigns.C14_5_3.ParentLinks': ['CoveringDesigns.C14_5_3.Forty',
+                                             'CoveringDesigns.C14_5_3.AlmostExactLink'],
+     'CoveringDesigns.C14_5_3.SpecialBlocks': ['CoveringDesigns.C14_5_3.ParentLinks'],
+     'CoveringDesigns.C14_5_3.Witness': ['CoveringDesigns.Foundations.Relabelling'],
+     'CoveringDesigns.C14_5_3': ['CoveringDesigns.C14_5_3.LowerBound',
+                                 'CoveringDesigns.C14_5_3.Completion28',
+                                 'CoveringDesigns.C14_5_3.Witness',
+                                 'CoveringDesigns.Foundations.StandardAxioms']}
+    c1453_sources = {source(module) for module in c1453_parts}
+    for key, paths in closures.items():
+        if key != '14-5-3':
+            assert not paths & c1453_sources, f'Established component {key} imports C14_5_3'
+    for module, dependencies in c1453_parts.items():
+        expected = {source(module)}
+        for dependency in dependencies:
+            expected |= closure(dependency)
+        assert closure(module) == expected, f'C14 interface imports changed: {module}'
+    c1453_lower = closure('CoveringDesigns.C14_5_3.LowerBound')
+    for part in ('Completion28', 'Witness', 'Examples'):
+        assert source('CoveringDesigns.C14_5_3.' + part) not in c1453_lower, \
+            f'C14 lower bound depends on a downstream or unrelated stage: {part}'
+    for stage, forbidden in (('Completion', 'Forty'), ('Forty', 'ParentLinks')):
+        assert source('CoveringDesigns.C14_5_3.' + forbidden) not in closure(
+            'CoveringDesigns.C14_5_3.' + stage), f'C14 logical order reversed: {stage}'
     # The lifting application may use only the seed lower proof and the existing
     # ordinary iterated-lifting interface. Every older component stays independent.
     lift_parts = {
@@ -1742,9 +2084,29 @@ def check_sources():
         if key in (*discovery_keys, 'labelled-cliques'):
             continue
         for path in paths:
+            # The C14 exact-link proof reuses only the generic extension count.
+            if key == '14-5-3' and path == source('CoveringDesigns.LabelledCliques.Extensions'):
+                continue
             module = '.'.join(path.relative_to(ROOT).with_suffix('').parts)
             assert not any(module == name or module.startswith(name + '.') for name in new_roots), \
                 f'Established component {key} imports a new discovery consequence: {path}'
+    structural_allowed = closure('CoveringDesigns.Multicover.Family') | \
+        closure('CoveringDesigns.HorsleySingh.Parameters')
+    for path in set().union(closure('CoveringDesigns.LabelledCliques.Extensions')):
+        assert path in structural_allowed or path == source('CoveringDesigns.LabelledCliques') or \
+            path.is_relative_to(ROOT / 'CoveringDesigns/LabelledCliques'), \
+            f'Labelled cliques import rank, selection or an application: {path}'
+    for part in ('Extensions',):
+        allowed = closure('CoveringDesigns.Multicover.Counting') | \
+            {source('CoveringDesigns.LabelledCliques.Extensions'),
+             source('CoveringDesigns.LabelledCliques.Propagation')}
+        assert closure('CoveringDesigns.LabelledCliques.' + part) <= allowed, \
+            f'Labelled {part} must use only occurrence links/counting'
+    for key in ():
+        for path in closures[key]:
+            assert path != source('CoveringDesigns.LabelledCliques') and not \
+                path.is_relative_to(ROOT / 'CoveringDesigns/LabelledCliques'), \
+                f'Numerical consequence {key} imports labelled-clique propagation'
     large_algebra = 'CoveringDesigns.LargeDefect.Algebra'
     assert closure(large_algebra) == {source(large_algebra)}, \
         'Large-defect coefficient algebra must be independent of covering-design modules'
@@ -1889,6 +2251,15 @@ def check_sources():
         assert closure(module) == affine_allowed, \
             f'Affine {name} imports a specialised bound, example or later construction: {module}'
     # Lemma 9 arithmetic may use only the existing Schonheim recurrence.
+    # Exact designs: numerical counting and binomial cores have no rank dependency.
+    exact_design_dependencies = {'Basic': ['CoveringDesigns.Multicover.Links'], 'Counting': ['CoveringDesigns.ExactDesign.Basic', 'CoveringDesigns.Multicover.Schoenheim']}
+    for part, dependencies in exact_design_dependencies.items():
+        module = 'CoveringDesigns.ExactDesign' + ('.' + part if part else '')
+        expected = {source(module)}
+        for dependency in dependencies:
+            expected |= closure(dependency)
+        assert closure(module) == expected, \
+            f'Exact design {part or "entry"} imports an unrelated theorem or example'
     # PointReduction: exact local module boundaries preserve the intended separation.
     point_reduction_dependencies = {'Basic': ['CoveringDesigns.Multicover.Basic'],
  'Bounds': ['CoveringDesigns.PointReduction.Basic', 'CoveringDesigns.Multicover.Links'],
@@ -1943,6 +2314,18 @@ def check_manifests():
             assert sha(Path(item['path'])) == item['sha256'], item['path']
         if manifest.parent.name == '18-10-3':
             check_c18103_witness()
+        if manifest.parent.name == '12u-plus-1-4-3':
+            from check_quadruple_data import check
+            from quadruple_data import generate_bases, generate_witnesses, generate_small_cover
+            check()
+            projections = generate_bases()
+            projections.update(generate_small_cover())
+            projections.update(generate_witnesses(range(3, 9)))
+            for path, expected in projections.items():
+                assert path.read_text() == expected, f'Stale quadruple projection: {path}'
+        if manifest.parent.name == '14-5-3':
+            from check_c1453_witness import check
+            check()
 
 
 def audit_name(key):

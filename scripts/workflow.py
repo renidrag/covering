@@ -57,8 +57,14 @@ def doctor(*, memory_guard=True):
     def add(name, ok, detail, required=True):
         checks.append({'name': name, 'ok': bool(ok), 'detail': detail, 'required': required})
 
-    add('python', sys.version_info >= (3, 10) and __debug__,
-        f'{sys.version.split()[0]}; Python 3.10+ without -O is required')
+    add('python', sys.version_info >= (3, 14) and __debug__,
+        f'{sys.version.split()[0]}; Python 3.14+ without -O is required')
+    try:
+        from compression import zstd
+        add('zstd support', True, f'standard-library compression.zstd {zstd.zstd_version}')
+    except ImportError:
+        add('zstd support', False,
+            'Install Python 3.14+ with compression.zstd; compressed provenance checks are required')
     add('platform', sys.platform == 'darwin' or sys.platform.startswith('linux'), sys.platform)
     if memory_guard:
         try:

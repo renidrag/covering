@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "Daniel M. Gordon"
+  ],
+  "citation": "Daniel M. Gordon, La Jolla Covering Repository, retained 2026 snapshot, Zenodo record 19735294.",
+  "id": "reference:945005b8-5e2e-569a-9f4f-3134582070f6",
+  "links": [
+    {
+      "label": "Zenodo archive",
+      "url": "https://zenodo.org/records/19735294"
+    }
+  ],
+  "locator": "covers.json and coverdata.json",
+  "provenance": [
+    {
+      "locator": "Source inspected during the 16 October 2026 page study",
+      "source_id": "source:e9ed87cc-1c19-568a-86cd-7715ab4f6fc5"
+    }
+  ],
+  "record_type": "reference",
+  "recorded_at": "2026-10-16T21:07:39Z",
+  "recorded_by": "contributor:3e590218-1d10-5386-b15a-78bc6e2c1b6f",
+  "schema_version": "cvkt-pilot-1",
+  "title": "La Jolla Covering Repository",
+  "version": "Zenodo 19735294",
+  "year": 2026
+}

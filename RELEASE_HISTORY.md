@@ -22,6 +22,49 @@ was archived on 21 October 2026. The v1.1.0 archive uses a same-day packaging
 cleanup with unchanged mathematics; the 19 October account below retains
 the first public snapshot.
 
+## 22 October 2026 — $41\le C(14,5,3)\le43$ and exact values for $C(12u+1,4,3)$, $1\le u\le8$
+
+**v1.4.0**
+
+The two contributions have separate mathematical accounts.
+
+**Stronger lower bound:** $41\le C(14,5,3)\le43$, improving the 37–43
+interval displayed in the repository entry inspected on 21 October 2026.
+The structural lower proof combines exact point links, completion counts,
+a removable-block lemma and compatibility between links. The historical
+43-block construction is credited to Nurmela and Östergård and checked in
+Lean. The exact value remains undetermined.
+
+[Result and proof outline](coverings/14-5-3/README.md) ·
+[Proof and Lean correspondence](coverings/14-5-3/proof.md) ·
+[Sources](coverings/14-5-3/sources.md).
+
+**Known exact values, reconstructed lists and Lean verification:**
+$C(12u+1,4,3)=(12u+1)(12u)^2/24$ for $1\le u\le8$.
+
+| $v$ | $C(v,4,3)$ |
+|---:|---:|
+| 13 | 78 |
+| 25 | 600 |
+| 37 | 1,998 |
+| 49 | 4,704 |
+| 61 | 9,150 |
+| 73 | 15,768 |
+| 85 | 24,990 |
+| 97 | 37,248 |
+
+These exact values were proved in earlier work. This project reconstructs
+the six larger optimal block lists, retains historical witnesses for 13 and
+25, and proves all eight exact values and their correspondence to the
+included lists in Lean. The six larger lists are smaller than those in the
+inspected La Jolla snapshot; the mathematical exactness predates this package.
+
+[Result and block lists](coverings/12u-plus-1-4-3/README.md) ·
+[Proof and Lean correspondence](coverings/12u-plus-1-4-3/proof.md) ·
+[Sources and attribution](coverings/12u-plus-1-4-3/sources.md).
+
+All earlier mathematical results are retained unchanged.
+
 ## 21 October 2026 — $C(18,10,3)=12$ and five lifted lower bounds
 
 **v1.3.0**

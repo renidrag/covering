@@ -947,3 +947,208 @@ universe u
 
 end C18103LiftsContracts
 
+namespace C1453Contracts
+universe u v
+#check (@CoveringDesigns.covering_interval_14_5_3_on : ∀ {α : Type u} [Fintype α],
+  Fintype.card α = 14 →
+  (∀ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C 5 3 → 41 ≤ C.card) ∧
+  (∃ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C 5 3 ∧ C.card = 43))
+
+#guard_standard_axioms CoveringDesigns.covering_interval_14_5_3_on
+
+#print axioms CoveringDesigns.covering_interval_14_5_3_on
+
+#check (@CoveringDesigns.indexed_lower_bound_14_5_3 : ∀ {α : Type u} {ι : Type v}
+  [Fintype α] [Fintype ι] (B : ι → Finset α), Fintype.card α = 14 →
+  (∀ i, (B i).card = 5) → (∀ T : Finset α, T.card = 3 → ∃ i, T ⊆ B i) → 41 ≤ Fintype.card ι)
+
+#guard_standard_axioms CoveringDesigns.indexed_lower_bound_14_5_3
+
+#print axioms CoveringDesigns.indexed_lower_bound_14_5_3
+
+end C1453Contracts
+
+#check CoveringDesigns.QuadrupleAssembly.assembly_optimal
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.assembly_optimal
+
+#print axioms CoveringDesigns.QuadrupleAssembly.assembly_optimal
+
+#check CoveringDesigns.covering_number_37_4_3
+
+#guard_standard_axioms CoveringDesigns.covering_number_37_4_3
+
+#print axioms CoveringDesigns.covering_number_37_4_3
+
+#check CoveringDesigns.covering_number_49_4_3
+
+#guard_standard_axioms CoveringDesigns.covering_number_49_4_3
+
+#print axioms CoveringDesigns.covering_number_49_4_3
+
+#check CoveringDesigns.covering_number_61_4_3
+
+#guard_standard_axioms CoveringDesigns.covering_number_61_4_3
+
+#print axioms CoveringDesigns.covering_number_61_4_3
+
+#check CoveringDesigns.covering_number_73_4_3
+
+#guard_standard_axioms CoveringDesigns.covering_number_73_4_3
+
+#print axioms CoveringDesigns.covering_number_73_4_3
+
+#check CoveringDesigns.covering_number_85_4_3
+
+#guard_standard_axioms CoveringDesigns.covering_number_85_4_3
+
+#print axioms CoveringDesigns.covering_number_85_4_3
+
+#check CoveringDesigns.covering_number_97_4_3
+
+#guard_standard_axioms CoveringDesigns.covering_number_97_4_3
+
+#print axioms CoveringDesigns.covering_number_97_4_3
+
+namespace QuadrupleFiniteContracts
+open CoveringDesigns CoveringDesigns.QuadrupleAssembly
+#check (@CoveringDesigns.QuadrupleAssembly.ceilings_13 : Schoenheim.ceilDiv 11 2 = 6 ∧ Schoenheim.ceilDiv (12*6) 3 = 24 ∧ Schoenheim.ceilDiv (13*24) 4 = 78)
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.ceilings_13
+
+#print axioms CoveringDesigns.QuadrupleAssembly.ceilings_13
+
+#check (@CoveringDesigns.QuadrupleAssembly.schoenheim_13 : Schoenheim.bound 13 4 3 = 78)
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.schoenheim_13
+
+#print axioms CoveringDesigns.QuadrupleAssembly.schoenheim_13
+
+#check (@CoveringDesigns.QuadrupleAssembly.ceilings_25 : Schoenheim.ceilDiv 23 2 = 12 ∧ Schoenheim.ceilDiv (24*12) 3 = 96 ∧ Schoenheim.ceilDiv (25*96) 4 = 600)
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.ceilings_25
+
+#print axioms CoveringDesigns.QuadrupleAssembly.ceilings_25
+
+#check (@CoveringDesigns.QuadrupleAssembly.schoenheim_25 : Schoenheim.bound 25 4 3 = 600)
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.schoenheim_25
+
+#print axioms CoveringDesigns.QuadrupleAssembly.schoenheim_25
+
+#check (@CoveringDesigns.QuadrupleAssembly.WitnessData.V25.checked : selectorCoverCheck id 3 WitnessData.V25.rows WitnessData.V25.ownerIndex = true)
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.WitnessData.V25.checked
+
+#print axioms CoveringDesigns.QuadrupleAssembly.WitnessData.V25.checked
+
+#check (@CoveringDesigns.QuadrupleAssembly.WitnessData.V25.valid : IsCover WitnessData.V25.blocks 4 3)
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.WitnessData.V25.valid
+
+#print axioms CoveringDesigns.QuadrupleAssembly.WitnessData.V25.valid
+
+#check (@CoveringDesigns.QuadrupleAssembly.WitnessData.V25.size : WitnessData.V25.blocks.card = 600)
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.WitnessData.V25.size
+
+#print axioms CoveringDesigns.QuadrupleAssembly.WitnessData.V25.size
+
+#check (@CoveringDesigns.knownCover78_13_4_3_correspondence : knownCover78_13_4_3 = SeedData.Filling.rows.toFinset)
+
+#guard_standard_axioms CoveringDesigns.knownCover78_13_4_3_correspondence
+
+#print axioms CoveringDesigns.knownCover78_13_4_3_correspondence
+
+#check (@CoveringDesigns.knownCover78_13_4_3_optimal : IsCover knownCover78_13_4_3 4 3 ∧ knownCover78_13_4_3.card = 78)
+
+#guard_standard_axioms CoveringDesigns.knownCover78_13_4_3_optimal
+
+#print axioms CoveringDesigns.knownCover78_13_4_3_optimal
+
+#check (@CoveringDesigns.knownCover78_13_4_3_on_optimal : ∀ {α : Type*} [Fintype α] [DecidableEq α] (hv : Fintype.card α = 13), IsCover (knownCover78_13_4_3_on hv) 4 3 ∧ (knownCover78_13_4_3_on hv).card = 78)
+
+#guard_standard_axioms CoveringDesigns.knownCover78_13_4_3_on_optimal
+
+#print axioms CoveringDesigns.knownCover78_13_4_3_on_optimal
+
+#check (@CoveringDesigns.lower_bound_13_4_3 : ∀ {α : Type*} [Fintype α] {C : Family α}, Fintype.card α = 13 → IsCover C 4 3 → 78 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_13_4_3
+
+#print axioms CoveringDesigns.lower_bound_13_4_3
+
+#check (@CoveringDesigns.covering_number_13_4_3_on : ∀ {α : Type*} [Fintype α], Fintype.card α = 13 → (∃ C : Family α, IsCover C 4 3 ∧ C.card = 78) ∧ (∀ C : Family α, IsCover C 4 3 → 78 ≤ C.card))
+
+#guard_standard_axioms CoveringDesigns.covering_number_13_4_3_on
+
+#print axioms CoveringDesigns.covering_number_13_4_3_on
+
+#check (@CoveringDesigns.covering_number_13_4_3 : (∃ C : Family (Fin 13), IsCover C 4 3 ∧ C.card = 78) ∧ (∀ C : Family (Fin 13), IsCover C 4 3 → 78 ≤ C.card))
+
+#guard_standard_axioms CoveringDesigns.covering_number_13_4_3
+
+#print axioms CoveringDesigns.covering_number_13_4_3
+
+#check (@CoveringDesigns.knownCover600_25_4_3_correspondence : knownCover600_25_4_3 = WitnessData.V25.rows.toFinset)
+
+#guard_standard_axioms CoveringDesigns.knownCover600_25_4_3_correspondence
+
+#print axioms CoveringDesigns.knownCover600_25_4_3_correspondence
+
+#check (@CoveringDesigns.knownCover600_25_4_3_optimal : IsCover knownCover600_25_4_3 4 3 ∧ knownCover600_25_4_3.card = 600)
+
+#guard_standard_axioms CoveringDesigns.knownCover600_25_4_3_optimal
+
+#print axioms CoveringDesigns.knownCover600_25_4_3_optimal
+
+#check (@CoveringDesigns.knownCover600_25_4_3_on_optimal : ∀ {α : Type*} [Fintype α] [DecidableEq α] (hv : Fintype.card α = 25), IsCover (knownCover600_25_4_3_on hv) 4 3 ∧ (knownCover600_25_4_3_on hv).card = 600)
+
+#guard_standard_axioms CoveringDesigns.knownCover600_25_4_3_on_optimal
+
+#print axioms CoveringDesigns.knownCover600_25_4_3_on_optimal
+
+#check (@CoveringDesigns.lower_bound_25_4_3 : ∀ {α : Type*} [Fintype α] {C : Family α}, Fintype.card α = 25 → IsCover C 4 3 → 600 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_25_4_3
+
+#print axioms CoveringDesigns.lower_bound_25_4_3
+
+#check (@CoveringDesigns.covering_number_25_4_3_on : ∀ {α : Type*} [Fintype α], Fintype.card α = 25 → (∃ C : Family α, IsCover C 4 3 ∧ C.card = 600) ∧ (∀ C : Family α, IsCover C 4 3 → 600 ≤ C.card))
+
+#guard_standard_axioms CoveringDesigns.covering_number_25_4_3_on
+
+#print axioms CoveringDesigns.covering_number_25_4_3_on
+
+#check (@CoveringDesigns.covering_number_25_4_3 : (∃ C : Family (Fin 25), IsCover C 4 3 ∧ C.card = 600) ∧ (∀ C : Family (Fin 25), IsCover C 4 3 → 600 ≤ C.card))
+
+#guard_standard_axioms CoveringDesigns.covering_number_25_4_3
+
+#print axioms CoveringDesigns.covering_number_25_4_3
+
+#check (@CoveringDesigns.QuadrupleAssembly.admissible_below_100_iff : ∀ n : ℕ, (4 ≤ n ∧ n < 100 ∧ n % 12 = 1) ↔ (n = 13 ∨ n = 25 ∨ n = 37 ∨ n = 49 ∨ n = 61 ∨ n = 73 ∨ n = 85 ∨ n = 97))
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.admissible_below_100_iff
+
+#print axioms CoveringDesigns.QuadrupleAssembly.admissible_below_100_iff
+
+#check (@CoveringDesigns.QuadrupleAssembly.formula_divisible_below_100 : ∀ {n : ℕ}, 4 ≤ n → n < 100 → n % 12 = 1 → 24 ∣ n * (n-1)^2)
+
+#guard_standard_axioms CoveringDesigns.QuadrupleAssembly.formula_divisible_below_100
+
+#print axioms CoveringDesigns.QuadrupleAssembly.formula_divisible_below_100
+
+#check (@CoveringDesigns.covering_number_one_mod_twelve_below_100_on : ∀ {α : Type*} [Fintype α] {n : ℕ}, Fintype.card α = n → 4 ≤ n → n < 100 → n % 12 = 1 → (∃ C : Family α, IsCover C 4 3 ∧ C.card = n * (n-1)^2 / 24) ∧ (∀ C : Family α, IsCover C 4 3 → n * (n-1)^2 / 24 ≤ C.card))
+
+#guard_standard_axioms CoveringDesigns.covering_number_one_mod_twelve_below_100_on
+
+#print axioms CoveringDesigns.covering_number_one_mod_twelve_below_100_on
+
+#check (@CoveringDesigns.covering_number_one_mod_twelve_below_100 : ∀ {n : ℕ}, 4 ≤ n → n < 100 → n % 12 = 1 → (∃ C : Family (Fin n), IsCover C 4 3 ∧ C.card = n * (n-1)^2 / 24) ∧ (∀ C : Family (Fin n), IsCover C 4 3 → n * (n-1)^2 / 24 ≤ C.card))
+
+#guard_standard_axioms CoveringDesigns.covering_number_one_mod_twelve_below_100
+
+#print axioms CoveringDesigns.covering_number_one_mod_twelve_below_100
+
+end QuadrupleFiniteContracts
+

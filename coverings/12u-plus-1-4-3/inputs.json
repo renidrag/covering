@@ -1,0 +1,434 @@
+{
+  "entry": "CoveringDesigns.QuadrupleAssembly",
+  "kind": "Eight unconditional classical exact values below 100 and exact distributed-family correspondence",
+  "depends_on": [
+    "CoveringDesigns.Schoenheim.LowerBound",
+    "CoveringDesigns.Foundations.Relabelling"
+  ],
+  "path_convention": "All input paths are relative to this package. input_locations maps historical source identifiers to selected local files; the identifiers also remain in unchanged Lean provenance comments and are not external filesystem dependencies.",
+  "inputs": [
+    {
+      "path": "data/quadruple-assembly/witnesses/blocks-37-4-3-1998.json",
+      "sha256": "0ae8ce6798238027f0326e9e7adcf92b5a6f6923b5deca95f2d6a8f4ebe2209c"
+    },
+    {
+      "path": "data/quadruple-assembly/witnesses/blocks-13-4-3-78.json",
+      "sha256": "76459cb3bd5b6441f5e9e36f560cfdbf60126558ac77d2bcda02e097a5df79a5"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/h6-3-hanani.json",
+      "sha256": "7ccb02b0f582371880f41e6da79858c8aa1641ba5a34ea3217ac24a99710b046"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/gdd-12-3-calibration.json",
+      "sha256": "0db060e831441a3285017d121c8429fae94661b7bbd1edd7fd1230b49eb864c9"
+    },
+    {
+      "path": "data/quadruple-assembly/witnesses/blocks-49-4-3-4704.json",
+      "sha256": "c789d77622aef513c5986510b95d459e46fdb4a2a3444e010b4b33aafccd45ba"
+    },
+    {
+      "path": "data/quadruple-assembly/witnesses/blocks-61-4-3-9150.json",
+      "sha256": "ae173a51122f09945d3a5e969629de76369072dcaa9a24b8b123a5458063eb3c"
+    },
+    {
+      "path": "data/quadruple-assembly/witnesses/blocks-73-4-3-15768.json",
+      "sha256": "06575112e73253d18dfb5fb9f1d7d0a924e5d85893716c82e2e2a96144515f4f"
+    },
+    {
+      "path": "data/quadruple-assembly/witnesses/blocks-85-4-3-24990.json",
+      "sha256": "000b065cd51631b6425b052268967f8135815851256dbe9cdfbd8403dfe0dcf7"
+    },
+    {
+      "path": "data/quadruple-assembly/witnesses/blocks-97-4-3-37248.json",
+      "sha256": "8d5a6558f5660fd5d7847cf3f358c32fefd1385de26e370006e1cc3ec3b94023"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/4gdd-3-5.json",
+      "sha256": "dd43444919e09da17b1878794941e9a6ae94a869cf8ee3acb939c5d85cb0030c"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/4gdd-3-8.json",
+      "sha256": "aee481238b16ea5b036ea246a147ca79509a5412c2172459f24ba809550f0436"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/factors-6.json",
+      "sha256": "86e0aa875b1cd52261c9e1a3a7c6c427f130a482786c08eaee372f7c561cf3ca"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/gdd-2-4.json",
+      "sha256": "aab0bb9bf2440d63e2220f351a8413c02617820d9fd0a137581d487a6b8b2dea"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/gdd-2-6.json",
+      "sha256": "5fcc49b9b711a0d9ef85ac7dba041e1d6601270c12eb6b2b4a7464820a5cc623"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/gdd-2-7.json",
+      "sha256": "b38693e0a019c110f327001c35a16ba55ff436af5715426902256f3353dfc147"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/gdd-4-4.json",
+      "sha256": "8f1bc92a871ab9002c37f594c88b3b2f6091d564bb80264504c85fb818091f7d"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/h-4-6.json",
+      "sha256": "122317f82f18d98f9a3a1e689120a7eab97d3d972aba17a745bb1e013af17918"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/sqs-16.json",
+      "sha256": "9f6546d1a0bfb51c90c1454cf341653525cb3c6f6a108f8ce23c577301b34ba2"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/sqs-8.json",
+      "sha256": "b725b390d8b0041610e6c4237731b4a59c5afa4d8ceb4700c5ece07b3d4a39f1"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/twb-12.json",
+      "sha256": "d29feae3a70f7ec79c333b574bf997781270848125c0ad2f07845c27efba19dd"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/sqs-10.json",
+      "sha256": "efa27687b7209319550c0bd4e284b594047cb99876f0922196d17e7cf9268d4b"
+    },
+    {
+      "path": "data/quadruple-assembly/seeds/sqs-14.json",
+      "sha256": "ae527bb459b16d5b54b5b90efc14bb38f8ceefe1761cfd07ddf0e2b4bb8f4fd0"
+    },
+    {
+      "path": "scripts/check_quadruple_data.py",
+      "sha256": "5207acbecfb3af8e62c1b230711c6c19213f3ff789df68721c954b7ba527a644"
+    },
+    {
+      "path": "scripts/quadruple_data.py",
+      "sha256": "154cf7a745d3876d9f5d65a0b899a12e1fcd186553100ffab91d6f3548ffbff7"
+    },
+    {
+      "path": "data/quadruple-assembly/C-25-4-3.blocks.zst",
+      "sha256": "d85a3d73470ad85ee3bd2796e0f32107f2bf5b968482a8a924bf678ee5449381"
+    },
+    {
+      "path": "data/quadruple-assembly/blocks-25-4-3-600.json",
+      "sha256": "5261671fe9e41cc5367c73511e195b2a7004a96b17595b0c3b788536c450455a"
+    },
+    {
+      "path": "data/quadruple-assembly/provenance/artifact-25-4-3.json",
+      "sha256": "c8ea4b3429fe9f8f2d84d9564773e6b2e780c9318a3e518a78fbf9dda37c64c0"
+    },
+    {
+      "path": "data/quadruple-assembly/provenance/catalogue-25-4-3.json",
+      "sha256": "f2609f89e7bf51ef2199dc1fe3c32096f56ecbc68f2f29de971adf416a050607"
+    },
+    {
+      "path": "data/quadruple-assembly/provenance/contributor-gordon.json",
+      "sha256": "08c0d1fcdb587b71baf43e5634f4c1e96e5e5e62efb533348113d93846166ff9"
+    },
+    {
+      "path": "data/quadruple-assembly/provenance/reference-ljcr.json",
+      "sha256": "2e6e243ee7792dcdb40325e2a87962bef1a440ee7922fa0456d24ce496afd35f"
+    },
+    {
+      "path": "data/quadruple-assembly/provenance/source-ljcr.json",
+      "sha256": "5cd53d476a0b197eb5b6517723afd2f396d694080d5efc4b708d2a4ca693cdb3"
+    }
+  ],
+  "projections": [
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/sqs-8.json",
+      "points": 8,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/Master8.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/sqs-10.json",
+      "points": 10,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/Master10.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/twb-12.json",
+      "points": 12,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/Master12.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/sqs-14.json",
+      "points": 14,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/Master14.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/sqs-16.json",
+      "points": 16,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/Master16.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/h6-3-hanani.json",
+      "points": 18,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/Hanani.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/h-4-6.json",
+      "points": 24,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/H4Six.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/gdd-2-4.json",
+      "points": 8,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/GDD2_4.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/gdd-2-6.json",
+      "points": 12,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/GDD2_6.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/gdd-2-7.json",
+      "points": 14,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/GDD2_7.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/gdd-4-4.json",
+      "points": 16,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/GDD4_4.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/4gdd-3-5.json",
+      "points": 15,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/FourGDD3_5.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/4gdd-3-8.json",
+      "points": 24,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/FourGDD3_8.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/seeds/gdd-12-3-calibration.json",
+      "points": 36,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/PilotGDD.lean"
+    },
+    {
+      "kind": "seed",
+      "source": "data/quadruple-assembly/witnesses/blocks-13-4-3-78.json",
+      "points": 13,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedData/Filling.lean"
+    },
+    {
+      "kind": "witness",
+      "source": "data/quadruple-assembly/witnesses/blocks-37-4-3-1998.json",
+      "points": 37,
+      "blocks": 1998,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V37.lean",
+      "parts": [
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V37/Part0.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V37/Part1.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V37/Part2.lean"
+      ]
+    },
+    {
+      "kind": "witness",
+      "source": "data/quadruple-assembly/witnesses/blocks-49-4-3-4704.json",
+      "points": 49,
+      "blocks": 4704,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V49.lean",
+      "parts": [
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V49/Part0.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V49/Part1.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V49/Part2.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V49/Part3.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V49/Part4.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V49/Part5.lean"
+      ]
+    },
+    {
+      "kind": "witness",
+      "source": "data/quadruple-assembly/witnesses/blocks-61-4-3-9150.json",
+      "points": 61,
+      "blocks": 9150,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61.lean",
+      "parts": [
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part0.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part1.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part2.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part3.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part4.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part5.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part6.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part7.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part8.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part9.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V61/Part10.lean"
+      ]
+    },
+    {
+      "kind": "witness",
+      "source": "data/quadruple-assembly/witnesses/blocks-73-4-3-15768.json",
+      "points": 73,
+      "blocks": 15768,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73.lean",
+      "parts": [
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part0.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part1.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part2.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part3.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part4.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part5.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part6.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part7.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part8.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part9.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part10.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part11.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part12.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part13.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part14.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part15.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part16.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part17.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V73/Part18.lean"
+      ]
+    },
+    {
+      "kind": "witness",
+      "source": "data/quadruple-assembly/witnesses/blocks-85-4-3-24990.json",
+      "points": 85,
+      "blocks": 24990,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85.lean",
+      "parts": [
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part0.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part1.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part2.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part3.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part4.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part5.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part6.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part7.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part8.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part9.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part10.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part11.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part12.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part13.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part14.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part15.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part16.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part17.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part18.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part19.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part20.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part21.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part22.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part23.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part24.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part25.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part26.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part27.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V85/Part28.lean"
+      ]
+    },
+    {
+      "kind": "witness",
+      "source": "data/quadruple-assembly/witnesses/blocks-97-4-3-37248.json",
+      "points": 97,
+      "blocks": 37248,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97.lean",
+      "parts": [
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part0.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part1.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part2.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part3.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part4.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part5.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part6.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part7.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part8.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part9.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part10.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part11.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part12.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part13.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part14.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part15.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part16.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part17.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part18.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part19.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part20.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part21.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part22.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part23.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part24.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part25.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part26.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part27.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part28.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part29.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part30.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part31.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part32.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part33.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part34.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part35.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part36.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part37.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part38.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part39.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part40.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part41.lean",
+        "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V97/Part42.lean"
+      ]
+    },
+    {
+      "kind": "cover",
+      "source": "data/quadruple-assembly/blocks-25-4-3-600.json",
+      "points": 25,
+      "blocks": 600,
+      "lean": "lean/CoveringDesigns/QuadrupleAssembly/WitnessData/V25/Data.lean"
+    }
+  ],
+  "factors": {
+    "source": "data/quadruple-assembly/seeds/factors-6.json",
+    "lean": "lean/CoveringDesigns/QuadrupleAssembly/SeedInstances.lean"
+  },
+  "historical_witnesses": [
+    {
+      "source": "data/quadruple-assembly/blocks-25-4-3-600.json",
+      "original": "data/quadruple-assembly/C-25-4-3.blocks.zst",
+      "record": "data/quadruple-assembly/provenance/artifact-25-4-3.json"
+    }
+  ],
+  "input_locations": {
+    "research/c3743-construction-2026-10-22/blocks-37-4-3-1998.json": "data/quadruple-assembly/witnesses/blocks-37-4-3-1998.json",
+    "research/c3743-construction-2026-10-22/seeds/c13-ljcr.json": "data/quadruple-assembly/witnesses/blocks-13-4-3-78.json",
+    "research/c3743-construction-2026-10-22/seeds/h6-3-hanani.json": "data/quadruple-assembly/seeds/h6-3-hanani.json",
+    "research/cv43-constructions-2026-10-22/gdd-12-3-calibration.json": "data/quadruple-assembly/seeds/gdd-12-3-calibration.json",
+    "research/cv43-constructions-2026-10-22/witnesses/blocks-49-4-3-4704.json": "data/quadruple-assembly/witnesses/blocks-49-4-3-4704.json",
+    "research/cv43-constructions-2026-10-22/witnesses/blocks-61-4-3-9150.json": "data/quadruple-assembly/witnesses/blocks-61-4-3-9150.json",
+    "research/cv43-constructions-2026-10-22/witnesses/blocks-73-4-3-15768.json": "data/quadruple-assembly/witnesses/blocks-73-4-3-15768.json",
+    "research/cv43-constructions-2026-10-22/witnesses/blocks-85-4-3-24990.json": "data/quadruple-assembly/witnesses/blocks-85-4-3-24990.json",
+    "research/cv43-constructions-2026-10-22/witnesses/blocks-97-4-3-37248.json": "data/quadruple-assembly/witnesses/blocks-97-4-3-37248.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/4gdd-3-5.json": "data/quadruple-assembly/seeds/4gdd-3-5.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/4gdd-3-8.json": "data/quadruple-assembly/seeds/4gdd-3-8.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/factors-6.json": "data/quadruple-assembly/seeds/factors-6.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/gdd-2-4.json": "data/quadruple-assembly/seeds/gdd-2-4.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/gdd-2-6.json": "data/quadruple-assembly/seeds/gdd-2-6.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/gdd-2-7.json": "data/quadruple-assembly/seeds/gdd-2-7.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/gdd-4-4.json": "data/quadruple-assembly/seeds/gdd-4-4.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/h-4-6.json": "data/quadruple-assembly/seeds/h-4-6.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/sqs-16.json": "data/quadruple-assembly/seeds/sqs-16.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/sqs-8.json": "data/quadruple-assembly/seeds/sqs-8.json",
+    "research/cv43-seed-assessment-2026-10-22/bases/twb-12.json": "data/quadruple-assembly/seeds/twb-12.json",
+    "research/cv43-seed-assessment-2026-10-22/inputs/sqs-10.json": "data/quadruple-assembly/seeds/sqs-10.json",
+    "research/cv43-seed-assessment-2026-10-22/inputs/sqs-14.json": "data/quadruple-assembly/seeds/sqs-14.json"
+  }
+}

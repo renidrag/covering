@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "filename": "coverdata.json",
+      "sha256": "9e7da3710921066b10234fdc95379a18df3a7d3ae0f8a08ae188ea6bbca92f87",
+      "size_bytes": 8319503
+    }
+  ],
+  "id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9",
+  "licence": "CC BY 4.0; retain Daniel M. Gordon / LJCR attribution.",
+  "name": "La Jolla Covering Repository · 2026 snapshot",
+  "notes": "Original files remain in the preserved sibling archive. This bounded import retains the selected raw metadata fields and exact block/point order.",
+  "record_type": "source",
+  "recorded_at": "2026-10-16T21:07:39Z",
+  "recorded_by": "contributor:3e590218-1d10-5386-b15a-78bc6e2c1b6f",
+  "reference_ids": [
+    "reference:945005b8-5e2e-569a-9f4f-3134582070f6"
+  ],
+  "schema_version": "cvkt-pilot-1",
+  "source_kind": "legacy_archive",
+  "version": "Zenodo 19735294"
+}

@@ -5,11 +5,67 @@
 **Rob Gardiner**
 
 This project publishes new covering-number results that I have found,
-together with supporting proofs of established results.
+together with reconstructed proofs and explicit constructions of established
+results.
 
 A $(v,k,t)$ covering is a family of distinct $k$-element blocks on $v$ points
 that covers every $t$-element subset. The smallest possible number of blocks
 is $C(v,k,t)$.
+
+## Lower bound: $C(14,5,3)\ge41$
+
+Every covering of the triples of fourteen points by five-element blocks
+requires at least **41 blocks**. A known **43-block construction** gives
+$41\le C(14,5,3)\le43$, improving the 37–43 interval in the repository
+entry inspected on 21 October 2026. The exact value is not yet determined.
+
+My contribution, developed with AI assistance, is the structural lower-bound
+argument and Lean formalisation. The proof combines exact point links,
+completion counts, a removable-block lemma and compatibility between links.
+The historical upper construction is credited to Nurmela and Östergård and
+is independently checked in Lean.
+
+- [Read the result and proof outline](coverings/14-5-3/README.md).
+- [Read the structural proof and Lean correspondence](coverings/14-5-3/proof.md).
+- [Read the sources and attribution](coverings/14-5-3/sources.md).
+
+## Exact values for $C(12u+1,4,3)$, $1\le u\le8$
+
+For $n=12u+1$ with $1\le u\le8$, the library proves
+$C(n,4,3)=n(n-1)^2/24$. These are all admissible orders below 100 in this
+congruence class. Each result includes a universal lower bound and an
+attaining family, formalised in Lean 4 and connected to its downloadable
+block list.
+
+| Covering | Exact value |
+|---|---:|
+| $C(13,4,3)$ | 78 |
+| $C(25,4,3)$ | 600 |
+| $C(37,4,3)$ | 1,998 |
+| $C(49,4,3)$ | 4,704 |
+| $C(61,4,3)$ | 9,150 |
+| $C(73,4,3)$ | 15,768 |
+| $C(85,4,3)$ | 24,990 |
+| $C(97,4,3)$ | 37,248 |
+
+These exact values were proved in earlier work. Mills's 1974 attainment
+result, explicitly reported by Hartman–Mills–Mullin, covers this entire
+congruence class; Schönheim's bound proves optimality. My contribution,
+developed with AI assistance, is the reconstructed assembly, six generated
+optimal block lists and Lean verification of all eight values, including
+the two recovered historical lists. Each formal attaining family is
+connected to its actual distributed block list.
+
+The preserved La Jolla Covering Repository (LJCR) snapshot listed larger
+constructions for $n=37,49,61,73,85,97$, although the exact values were already
+known. In the sources inspected, I found construction recipes but did not
+locate complete optimal block lists for those six orders. The reconstructed
+lists use 3, 4, 5, 6, 7 and 8 fewer blocks respectively. The linked sources
+account gives the comparison and search scope.
+
+- [Read the eight cases and download the block lists](coverings/12u-plus-1-4-3/README.md).
+- [Read the mathematical proof and Lean correspondence](coverings/12u-plus-1-4-3/proof.md).
+- [Read the sources, attribution and dated comparison](coverings/12u-plus-1-4-3/sources.md).
 
 ## New result: $C(18,10,3)=12$ and five lifted bounds
 
