@@ -2,6 +2,17 @@ name: Lean verification
 
 on:
   push:
+    # Skip only reader-documentation and citation changes on branch pushes.
+    # Unknown paths, proof/data/tool changes and mixed pushes still verify.
+    # Tag pushes are not path-filtered by GitHub.
+    paths-ignore:
+      - 'CITATION.cff'
+      - 'README.md'
+      - 'RELEASE_HISTORY.md'
+      - 'THIRD_PARTY_NOTICES.md'
+      - 'technical-details.md'
+      - 'coverings/**/*.md'
+  # Keep PR checks unconditional so required checks cannot remain pending.
   pull_request:
   workflow_dispatch:
 

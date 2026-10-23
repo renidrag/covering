@@ -110,8 +110,18 @@ the recorded workflow's command-by-command evidence.
 
 ## GitHub Actions
 
+Branch pushes changing only citation metadata, release history, the root
+README, attribution notices, this guide or the Markdown result accounts
+skip the workflow. Changes to proofs, witnesses, manifests, tools, tests,
+dependency pins or the workflow still run full verification, including when
+mixed with documentation changes. Pull requests, tag pushes and manual
+**Run workflow** requests retain full verification. For a release snapshot
+whose documentation-only push was skipped, run the workflow manually on
+that revision before recording its verification. A skipped push does not
+create a fresh proof-verification result.
+
 The [Lean verification workflow](.github/workflows/lean-verification.yml)
-runs on pushes, pull requests and manual dispatch. Its proof job exports
+runs on the events described above. Its proof job exports
 `ELAN_TOOLCHAIN` from `lean/lean-toolchain` for every later step, so commands
 launched from the repository root use the pin without a configured Elan default.
 It installs that toolchain and the checksum-verified dependency sources,

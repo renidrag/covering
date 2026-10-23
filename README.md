@@ -166,10 +166,15 @@ twelve-point page.
 ## Verification
 
 [GitHub Actions](.github/workflows/lean-verification.yml) rebuilds and verifies
-all included Lean proofs on every push and pull request, including their
-theorem, axiom and dependency audits. The badge above reports the workflow's live
-status; a passing run confirms successful verification of that run's revision.
-Click it to inspect the run and download its verification records and logs.
+all included Lean proofs, including their theorem, axiom and dependency audits.
+Branch pushes changing only citation metadata or the documentation listed in
+the [verification guide](technical-details.md#github-actions) skip the workflow,
+including DOI and release-history updates.
+Changes to proofs, construction data, manifests, tools or workflow configuration
+still run verification. Pull requests, tag pushes and manual runs also verify.
+The badge above reports the workflow's live status; a passing run confirms
+successful verification of that run's revision. Click it to inspect the run
+and download its verification records and logs.
 
 The [verification guide](technical-details.md) explains how to build and
 check the published Lean proofs, including their axiom and dependency audits.

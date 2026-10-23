@@ -12,19 +12,25 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 | Release | First public date | Archived snapshot | Version DOI |
 |---|---|---|---|
+| [v1.4.0](https://github.com/renidrag/covering/releases/tag/v1.4.0) | 22 October 2026 | [a2a726abb7ae](https://github.com/renidrag/covering/tree/a2a726abb7ae1e26a37841f730abb90a34469c11) | [10.5281/zenodo.23576357](https://doi.org/10.5281/zenodo.23576357) |
 | [v1.3.0](https://github.com/renidrag/covering/releases/tag/v1.3.0) | 21 October 2026 | [78e2076b0cb0](https://github.com/renidrag/covering/tree/78e2076b0cb05b99aa83fc952832c6591ac47f80) | [10.5281/zenodo.23546184](https://doi.org/10.5281/zenodo.23546184) |
 | [v1.2.0](https://github.com/renidrag/covering/releases/tag/v1.2.0) | 20 October 2026 | [d9886e4709b3](https://github.com/renidrag/covering/tree/d9886e4709b3987974e6920d98cb4df5345ef922) | [10.5281/zenodo.23512290](https://doi.org/10.5281/zenodo.23512290) |
 | [v1.1.0](https://github.com/renidrag/covering/releases/tag/v1.1.0) | 19 October 2026 | [9bc5a0f8d7e2](https://github.com/renidrag/covering/tree/9bc5a0f8d7e2d2b104bbed38eccad35b778fe46d) | [10.5281/zenodo.23511297](https://doi.org/10.5281/zenodo.23511297) |
 | [v1.0.0](https://github.com/renidrag/covering/releases/tag/v1.0.0) | 15 October 2026 | [aee92cd704b6](https://github.com/renidrag/covering/tree/aee92cd704b6ac7dd2143459659c9e101d61d859) | [10.5281/zenodo.23511136](https://doi.org/10.5281/zenodo.23511136) |
 
 Versions v1.0.0–v1.2.0 were archived on Zenodo on 20 October 2026; v1.3.0
-was archived on 21 October 2026. The v1.1.0 archive uses a same-day packaging
+was archived on 21 October 2026 and v1.4.0 on 22 October 2026.
+The v1.1.0 archive uses a same-day packaging
 cleanup with unchanged mathematics; the 19 October account below retains
 the first public snapshot.
 
 ## 22 October 2026 — $41\le C(14,5,3)\le43$ and exact values for $C(12u+1,4,3)$, $1\le u\le8$
 
 **v1.4.0**
+
+[Snapshot a2a726abb7ae](https://github.com/renidrag/covering/tree/a2a726abb7ae1e26a37841f730abb90a34469c11) ·
+[Lean verification passed](https://github.com/renidrag/covering/actions/runs/39836729509) ·
+[Zenodo archive — DOI 10.5281/zenodo.23576357](https://doi.org/10.5281/zenodo.23576357).
 
 The two contributions have separate mathematical accounts.
 
@@ -35,9 +41,9 @@ a removable-block lemma and compatibility between links. The historical
 43-block construction is credited to Nurmela and Östergård and checked in
 Lean. The exact value remains undetermined.
 
-[Result and proof outline](coverings/14-5-3/README.md) ·
-[Proof and Lean correspondence](coverings/14-5-3/proof.md) ·
-[Sources](coverings/14-5-3/sources.md).
+[Result and proof outline](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/14-5-3/README.md) ·
+[Proof and Lean correspondence](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/14-5-3/proof.md) ·
+[Sources](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/14-5-3/sources.md).
 
 **Known exact values, reconstructed lists and Lean verification:**
 $C(12u+1,4,3)=(12u+1)(12u)^2/24$ for $1\le u\le8$.
@@ -59,9 +65,9 @@ the six larger optimal block lists, retains historical witnesses for 13 and
 included lists in Lean. The six larger lists are smaller than those in the
 inspected La Jolla snapshot; the mathematical exactness predates this package.
 
-[Result and block lists](coverings/12u-plus-1-4-3/README.md) ·
-[Proof and Lean correspondence](coverings/12u-plus-1-4-3/proof.md) ·
-[Sources and attribution](coverings/12u-plus-1-4-3/sources.md).
+[Result and block lists](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/12u-plus-1-4-3/README.md) ·
+[Proof and Lean correspondence](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/12u-plus-1-4-3/proof.md) ·
+[Sources and attribution](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/12u-plus-1-4-3/sources.md).
 
 All earlier mathematical results are retained unchanged.
 
