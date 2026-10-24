@@ -12,6 +12,7 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 | Release | First public date | Archived snapshot | Version DOI |
 |---|---|---|---|
+| [v1.5.0](https://github.com/renidrag/covering/releases/tag/v1.5.0) | 24 October 2026 | [d8e27cb77c77](https://github.com/renidrag/covering/tree/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1) | [10.5281/zenodo.23616283](https://doi.org/10.5281/zenodo.23616283) |
 | [v1.4.0](https://github.com/renidrag/covering/releases/tag/v1.4.0) | 22 October 2026 | [a2a726abb7ae](https://github.com/renidrag/covering/tree/a2a726abb7ae1e26a37841f730abb90a34469c11) | [10.5281/zenodo.23576357](https://doi.org/10.5281/zenodo.23576357) |
 | [v1.3.0](https://github.com/renidrag/covering/releases/tag/v1.3.0) | 21 October 2026 | [78e2076b0cb0](https://github.com/renidrag/covering/tree/78e2076b0cb05b99aa83fc952832c6591ac47f80) | [10.5281/zenodo.23546184](https://doi.org/10.5281/zenodo.23546184) |
 | [v1.2.0](https://github.com/renidrag/covering/releases/tag/v1.2.0) | 20 October 2026 | [d9886e4709b3](https://github.com/renidrag/covering/tree/d9886e4709b3987974e6920d98cb4df5345ef922) | [10.5281/zenodo.23512290](https://doi.org/10.5281/zenodo.23512290) |
@@ -19,7 +20,8 @@ represents all versions; use a version DOI below to cite a particular archive.
 | [v1.0.0](https://github.com/renidrag/covering/releases/tag/v1.0.0) | 15 October 2026 | [aee92cd704b6](https://github.com/renidrag/covering/tree/aee92cd704b6ac7dd2143459659c9e101d61d859) | [10.5281/zenodo.23511136](https://doi.org/10.5281/zenodo.23511136) |
 
 Versions v1.0.0–v1.2.0 were archived on Zenodo on 20 October 2026; v1.3.0
-was archived on 21 October 2026 and v1.4.0 on 22 October 2026.
+was archived on 21 October 2026, v1.4.0 on 22 October 2026 and v1.5.0
+on 24 October 2026.
 The v1.1.0 archive uses a same-day packaging
 cleanup with unchanged mathematics; the 19 October account below retains
 the first public snapshot.
@@ -28,22 +30,26 @@ the first public snapshot.
 
 **v1.5.0**
 
+[Snapshot d8e27cb77c77](https://github.com/renidrag/covering/tree/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1) ·
+[Lean verification passed](https://github.com/renidrag/covering/actions/runs/40086303290) ·
+[Zenodo archive — DOI 10.5281/zenodo.23616283](https://doi.org/10.5281/zenodo.23616283).
+
 This release adds a Lean proof of $C(34,18,3)=13$, including the historical
 attaining construction, and ten lower bounds obtained by Schönheim lifting.
 
 | Result | Mathematical account |
 |---|---|
-| C(34,18,3)=13 | [Exactness and historical attaining family](coverings/34-18-3/proof.md) |
-| C(15,6,4)≥103 | [Direct corollary](coverings/15-6-4/proof.md) |
-| C(16,7,5)≥236 | [Direct corollary](coverings/16-7-5/proof.md) |
-| C(17,8,6)≥502 | [Direct corollary](coverings/17-8-6/proof.md) |
-| C(18,9,7)≥1004 | [Direct corollary](coverings/18-9-7/proof.md) |
-| C(19,10,8)≥1908 | [Direct corollary and first chain](coverings/19-10-8/proof.md) |
-| C(35,19,4)≥24 | [Direct corollary](coverings/35-19-4/proof.md) |
-| C(36,20,5)≥44 | [Direct corollary](coverings/36-20-5/proof.md) |
-| C(37,21,6)≥78 | [Direct corollary](coverings/37-21-6/proof.md) |
-| C(38,22,7)≥135 | [Direct corollary](coverings/38-22-7/proof.md) |
-| C(39,23,8)≥229 | [Direct corollary and second chain](coverings/39-23-8/proof.md) |
+| C(34,18,3)=13 | [Exactness and historical attaining family](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/34-18-3/proof.md) |
+| C(15,6,4)≥103 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/15-6-4/proof.md) |
+| C(16,7,5)≥236 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/16-7-5/proof.md) |
+| C(17,8,6)≥502 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/17-8-6/proof.md) |
+| C(18,9,7)≥1004 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/18-9-7/proof.md) |
+| C(19,10,8)≥1908 | [Direct corollary and first chain](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/19-10-8/proof.md) |
+| C(35,19,4)≥24 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/35-19-4/proof.md) |
+| C(36,20,5)≥44 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/36-20-5/proof.md) |
+| C(37,21,6)≥78 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/37-21-6/proof.md) |
+| C(38,22,7)≥135 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/38-22-7/proof.md) |
+| C(39,23,8)≥229 | [Direct corollary and second chain](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/39-23-8/proof.md) |
 
 The exact value $C(34,18,3)=13$ combines the project's existing lower bound
 with the historical LJCR 13-block family, recorded on 20 January 2009 as

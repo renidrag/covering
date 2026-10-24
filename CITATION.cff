@@ -5,6 +5,7 @@ title: "Covering designs: structural proofs and Lean 4 verification"
 # Prepared release date; reconcile before release if publication occurs later.
 version: "1.5.0"
 date-released: "2026-10-24"
+doi: "10.5281/zenodo.23616283"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23511135"
