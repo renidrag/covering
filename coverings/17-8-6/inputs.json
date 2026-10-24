@@ -1,0 +1,10 @@
+{
+  "entry": "CoveringDesigns.C17_8_6",
+  "kind": "Direct ordinary Schoenheim lower-bound corollary of C(14,5,3)>=41",
+  "depends_on": [
+    "CoveringDesigns.C16_7_5.LowerBound",
+    "CoveringDesigns.Schoenheim.LowerBound"
+  ],
+  "inputs": [],
+  "path_convention": "Paths are relative to the repository root. All public Lean sources are included by the verification snapshot. External data are provenance, never an assumed mathematical theorem."
+}

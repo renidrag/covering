@@ -1152,3 +1152,82 @@ open CoveringDesigns CoveringDesigns.QuadrupleAssembly
 
 end QuadrupleFiniteContracts
 
+#check (@CoveringDesigns.covering_number_34_18_3_on : ∀ {α : Type*} [Fintype α],
+    Fintype.card α = 34 →
+    (∃ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C 18 3 ∧ C.card = 13) ∧
+    (∀ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C 18 3 → 13 ≤ C.card))
+
+#guard_standard_axioms CoveringDesigns.covering_number_34_18_3_on
+
+#print axioms CoveringDesigns.covering_number_34_18_3_on
+
+#check (@CoveringDesigns.lower_bound_15_6_4 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 15 → CoveringDesigns.IsCover C 6 4 → 103 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_15_6_4
+
+#print axioms CoveringDesigns.lower_bound_15_6_4
+
+#check (@CoveringDesigns.lower_bound_16_7_5 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 16 → CoveringDesigns.IsCover C 7 5 → 236 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_16_7_5
+
+#print axioms CoveringDesigns.lower_bound_16_7_5
+
+#check (@CoveringDesigns.lower_bound_17_8_6 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 17 → CoveringDesigns.IsCover C 8 6 → 502 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_17_8_6
+
+#print axioms CoveringDesigns.lower_bound_17_8_6
+
+#check (@CoveringDesigns.lower_bound_18_9_7 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 18 → CoveringDesigns.IsCover C 9 7 → 1004 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_18_9_7
+
+#print axioms CoveringDesigns.lower_bound_18_9_7
+
+#check (@CoveringDesigns.lower_bound_19_10_8 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 19 → CoveringDesigns.IsCover C 10 8 → 1908 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_19_10_8
+
+#print axioms CoveringDesigns.lower_bound_19_10_8
+
+#check (@CoveringDesigns.lower_bound_35_19_4 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 35 → CoveringDesigns.IsCover C 19 4 → 24 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_35_19_4
+
+#print axioms CoveringDesigns.lower_bound_35_19_4
+
+#check (@CoveringDesigns.lower_bound_36_20_5 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 36 → CoveringDesigns.IsCover C 20 5 → 44 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_36_20_5
+
+#print axioms CoveringDesigns.lower_bound_36_20_5
+
+#check (@CoveringDesigns.lower_bound_37_21_6 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 37 → CoveringDesigns.IsCover C 21 6 → 78 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_37_21_6
+
+#print axioms CoveringDesigns.lower_bound_37_21_6
+
+#check (@CoveringDesigns.lower_bound_38_22_7 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 38 → CoveringDesigns.IsCover C 22 7 → 135 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_38_22_7
+
+#print axioms CoveringDesigns.lower_bound_38_22_7
+
+#check (@CoveringDesigns.lower_bound_39_23_8 : ∀ {α : Type*} [Fintype α] {C : CoveringDesigns.Family α},
+    Fintype.card α = 39 → CoveringDesigns.IsCover C 23 8 → 229 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.lower_bound_39_23_8
+
+#print axioms CoveringDesigns.lower_bound_39_23_8
+

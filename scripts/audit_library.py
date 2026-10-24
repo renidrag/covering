@@ -1444,6 +1444,244 @@ COMPONENTS['quadruple-assembly'] = {'entry': 'CoveringDesigns.QuadrupleAssembly'
           'claim.'}
 COMPONENTS['quadruple-assembly']['independent_of'] = [key for key in ['caro-tuza', 'horsley', 'schoenheim', '11-5-2', '12-5-2', '12-6-3', '13-7-4', 'horsley-lifts', 'horsley-singh', 'equality', '17-9-5', 'higher-incidence', 'weighted', '47-14-5', '42-15-5', 'large-defect', 'small-defect', 'small-defect-b', 'small-defect-c', 'multicover', 'multicover-incidence', 'multicover-large-defect', 'coefficient-positivity', 'affine-constructions', 'affine-schoenheim', 'affine-optimality', 'lifting-comparison', 'schoenheim-improvement', 'multicover-small-defect', 'low-degree-selection', 'seed-comparison', 'exact-design', 'point-reduction', 'base-affine', 'schoenheim-family-comparison', 'max-degree-sequence', 'max-guarantee', 'max-covering', 'max-higher-covering', '14-8-5', '59-17-5', '66-18-5', '79-22-5', '87-23-5', '98-22-5', 'labelled-cliques', 'turan-duality', 'turan', 'de-caen', 'chvatal', 'gkp-combination', 'gkp-induced', 'gkp-induced-averaging', 'projective-hyperplanes', 'finite-flat-geometry', 'degree-selected', '20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts', '14-5-3', 'quadruple-assembly'] if key not in ('quadruple-assembly', 'schoenheim')]
 
+
+# Six assessed consequences, preserving all earlier proof modules and contracts.
+C1453_LIFT_KEYS = ('15-6-4', '16-7-5', '17-8-6', '18-9-7', '19-10-8')
+COMPONENTS.update({
+    '34-18-3': {
+        "entry": "CoveringDesigns.C34_18_3",
+        "audit_name": "c34-18-3-audit",
+        "audit_file": "C34_18_3.lean",
+        "principal_theorem": "CoveringDesigns.covering_number_34_18_3_on",
+        "explicit_theorem": "CoveringDesigns.Audit34_18_3.covering_number_explicit",
+        "summary_path": "results/c34-18-3-verification.json",
+        "theorems": [
+            "CoveringDesigns.knownBlocks13_34_18_3_distinct",
+            "CoveringDesigns.knownCover13_34_18_3_card",
+            "CoveringDesigns.knownCover13_34_18_3_uniform",
+            "CoveringDesigns.knownCover13_34_18_3_covers",
+            "CoveringDesigns.knownCover13_34_18_3_isCover",
+            "CoveringDesigns.upper_bound_34_18_3",
+            "CoveringDesigns.knownCover13_34_18_3_on_card",
+            "CoveringDesigns.knownCover13_34_18_3_on_isCover",
+            "CoveringDesigns.upper_bound_34_18_3_on",
+            "CoveringDesigns.lower_bound_34_18_3",
+            "CoveringDesigns.covering_number_34_18_3_on",
+            "CoveringDesigns.covering_number_34_18_3"
+        ],
+        "milestones": [],
+        "independent_of": [
+            "11-5-2",
+            "12-5-2",
+            "12-6-3",
+            "13-7-4",
+            "14-5-3",
+            "15-6-4",
+            "16-7-5",
+            "17-8-6",
+            "18-9-7",
+            "19-10-8",
+            "quadruple-assembly"
+        ],
+        "scope": "Exact C(34,18,3)=13 on arbitrary finite labels. The preserved unconditional offset-two theorem supplies lower thirteen; ordinary kernel reduction verifies the historical LJCR multiple of (17,9,3), recorded in 2009, with thirteen distinct blocks. No new construction or historical-priority claim."
+    },
+    '15-6-4': {
+        "entry": "CoveringDesigns.C15_6_4",
+        "audit_name": "c15-6-4-audit",
+        "audit_file": "C15_6_4.lean",
+        "principal_theorem": "CoveringDesigns.lower_bound_15_6_4",
+        "explicit_theorem": "CoveringDesigns.Audit15_6_4.lower_bound_explicit",
+        "summary_path": "results/c15-6-4-verification.json",
+        "theorems": [
+            "CoveringDesigns.lower_bound_15_6_4"
+        ],
+        "milestones": [],
+        "independent_of": [
+            "11-5-2",
+            "12-5-2",
+            "12-6-3",
+            "13-7-4",
+            "18-10-3",
+            "c18103-lifts",
+            "34-18-3",
+            "quadruple-assembly"
+        ],
+        "scope": "Universal ordinary C(15,6,4) >= 103, by direct Schoenheim lifting of the universal 41 lower bound at (14,5,3). A consequence of the existing C(14,5,3)>=41 proof, retaining every ceiling. No supplied seed hypothesis, new mechanism or exactness claim."
+    },
+    '16-7-5': {
+        "entry": "CoveringDesigns.C16_7_5",
+        "audit_name": "c16-7-5-audit",
+        "audit_file": "C16_7_5.lean",
+        "principal_theorem": "CoveringDesigns.lower_bound_16_7_5",
+        "explicit_theorem": "CoveringDesigns.Audit16_7_5.lower_bound_explicit",
+        "summary_path": "results/c16-7-5-verification.json",
+        "theorems": [
+            "CoveringDesigns.lower_bound_16_7_5"
+        ],
+        "milestones": [],
+        "independent_of": [
+            "11-5-2",
+            "12-5-2",
+            "12-6-3",
+            "13-7-4",
+            "18-10-3",
+            "c18103-lifts",
+            "34-18-3",
+            "quadruple-assembly"
+        ],
+        "scope": "Universal ordinary C(16,7,5) >= 236, by direct Schoenheim lifting of the universal 103 lower bound at (15,6,4). A consequence of the existing C(14,5,3)>=41 proof, retaining every ceiling. No supplied seed hypothesis, new mechanism or exactness claim."
+    },
+    '17-8-6': {
+        "entry": "CoveringDesigns.C17_8_6",
+        "audit_name": "c17-8-6-audit",
+        "audit_file": "C17_8_6.lean",
+        "principal_theorem": "CoveringDesigns.lower_bound_17_8_6",
+        "explicit_theorem": "CoveringDesigns.Audit17_8_6.lower_bound_explicit",
+        "summary_path": "results/c17-8-6-verification.json",
+        "theorems": [
+            "CoveringDesigns.lower_bound_17_8_6"
+        ],
+        "milestones": [],
+        "independent_of": [
+            "11-5-2",
+            "12-5-2",
+            "12-6-3",
+            "13-7-4",
+            "18-10-3",
+            "c18103-lifts",
+            "34-18-3",
+            "quadruple-assembly"
+        ],
+        "scope": "Universal ordinary C(17,8,6) >= 502, by direct Schoenheim lifting of the universal 236 lower bound at (16,7,5). A consequence of the existing C(14,5,3)>=41 proof, retaining every ceiling. No supplied seed hypothesis, new mechanism or exactness claim."
+    },
+    '18-9-7': {
+        "entry": "CoveringDesigns.C18_9_7",
+        "audit_name": "c18-9-7-audit",
+        "audit_file": "C18_9_7.lean",
+        "principal_theorem": "CoveringDesigns.lower_bound_18_9_7",
+        "explicit_theorem": "CoveringDesigns.Audit18_9_7.lower_bound_explicit",
+        "summary_path": "results/c18-9-7-verification.json",
+        "theorems": [
+            "CoveringDesigns.lower_bound_18_9_7"
+        ],
+        "milestones": [],
+        "independent_of": [
+            "11-5-2",
+            "12-5-2",
+            "12-6-3",
+            "13-7-4",
+            "18-10-3",
+            "c18103-lifts",
+            "34-18-3",
+            "quadruple-assembly"
+        ],
+        "scope": "Universal ordinary C(18,9,7) >= 1004, by direct Schoenheim lifting of the universal 502 lower bound at (17,8,6). A consequence of the existing C(14,5,3)>=41 proof, retaining every ceiling. No supplied seed hypothesis, new mechanism or exactness claim."
+    },
+    '19-10-8': {
+        "entry": "CoveringDesigns.C19_10_8",
+        "audit_name": "c19-10-8-audit",
+        "audit_file": "C19_10_8.lean",
+        "principal_theorem": "CoveringDesigns.lower_bound_19_10_8",
+        "explicit_theorem": "CoveringDesigns.Audit19_10_8.lower_bound_explicit",
+        "summary_path": "results/c19-10-8-verification.json",
+        "theorems": [
+            "CoveringDesigns.lower_bound_19_10_8"
+        ],
+        "milestones": [],
+        "independent_of": [
+            "11-5-2",
+            "12-5-2",
+            "12-6-3",
+            "13-7-4",
+            "18-10-3",
+            "c18103-lifts",
+            "34-18-3",
+            "quadruple-assembly"
+        ],
+        "scope": "Universal ordinary C(19,10,8) >= 1908, by direct Schoenheim lifting of the universal 1004 lower bound at (18,9,7). A consequence of the existing C(14,5,3)>=41 proof, retaining every ceiling. No supplied seed hypothesis, new mechanism or exactness claim."
+    },
+})
+SIX_CONSEQUENCE_PARTS = {
+    "C34_18_3": [
+        "C34_18_3.LowerBound",
+        "C34_18_3.Witness",
+        "Foundations.StandardAxioms"
+    ],
+    "C34_18_3.LowerBound": [
+        "TwoKMinusC.OffsetTwo"
+    ],
+    "C34_18_3.Witness": [
+        "Foundations.Relabelling"
+    ],
+    "C15_6_4": [
+        "C15_6_4.LowerBound",
+        "Foundations.StandardAxioms"
+    ],
+    "C15_6_4.LowerBound": [
+        "C14_5_3.LowerBound",
+        "Schoenheim.LowerBound"
+    ],
+    "C16_7_5": [
+        "C16_7_5.LowerBound",
+        "Foundations.StandardAxioms"
+    ],
+    "C16_7_5.LowerBound": [
+        "C15_6_4.LowerBound"
+    ],
+    "C17_8_6": [
+        "C17_8_6.LowerBound",
+        "Foundations.StandardAxioms"
+    ],
+    "C17_8_6.LowerBound": [
+        "C16_7_5.LowerBound"
+    ],
+    "C18_9_7": [
+        "C18_9_7.LowerBound",
+        "Foundations.StandardAxioms"
+    ],
+    "C18_9_7.LowerBound": [
+        "C17_8_6.LowerBound"
+    ],
+    "C19_10_8": [
+        "C19_10_8.LowerBound",
+        "Foundations.StandardAxioms"
+    ],
+    "C19_10_8.LowerBound": [
+        "C18_9_7.LowerBound"
+    ]
+}
+
+# Five direct lifts of the preserved C(34,18,3) lower theorem.
+C34183_LIFTS = ((35, 19, 4, 24, 13), (36, 20, 5, 44, 24),
+               (37, 21, 6, 78, 44), (38, 22, 7, 135, 78), (39, 23, 8, 229, 135))
+C34183_LIFT_KEYS = tuple(f'{v}-{k}-{t}' for v, k, t, _, _ in C34183_LIFTS)
+C34183_LIFT_PARTS = {}
+for _v, _k, _t, _bound, _premise in C34183_LIFTS:
+    _key = f'{_v}-{_k}-{_t}'
+    _suffix = f'{_v}_{_k}_{_t}'
+    _module = 'C' + _suffix
+    _previous = f'C{_v-1}_{_k-1}_{_t-1}.LowerBound'
+    COMPONENTS[_key] = {
+        'entry': 'CoveringDesigns.' + _module,
+        'audit_name': 'c' + _key + '-audit',
+        'audit_file': _module + '.lean',
+        'principal_theorem': 'CoveringDesigns.lower_bound_' + _suffix,
+        'explicit_theorem': 'CoveringDesigns.Audit' + _suffix + '.lower_bound_explicit',
+        'summary_path': 'results/c' + _key + '-verification.json',
+        'theorems': ['CoveringDesigns.lower_bound_' + _suffix],
+        'milestones': [],
+        'independent_of': list(COMPONENTS['34-18-3']['independent_of']),
+        'scope': f'Universal ordinary C({_v},{_k},{_t}) >= {_bound}, by direct '
+                 f'Schoenheim lifting of the universal {_premise} lower bound at '
+                 f'({_v-1},{_k-1},{_t-1}). A consequence of the existing '
+                 'C(34,18,3)>=13 theorem, retaining every ceiling. No supplied '
+                 'seed hypothesis, attaining-family premise or exactness claim.'
+    }
+    C34183_LIFT_PARTS[_module] = [_module + '.LowerBound', 'Foundations.StandardAxioms']
+    C34183_LIFT_PARTS[_module + '.LowerBound'] = [_previous] + (
+        ['Schoenheim.LowerBound'] if _v == 35 else [])
+
+
 def source(module):
     return ROOT / (module.replace('.', '/') + '.lean')
 
@@ -1637,12 +1875,35 @@ def closure(entry):
     return SourceGraph().closure(entry)
 
 
-PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching', '18-10-3': 'CoveringDesigns.C18_10_3.SquareSupport', 'c18103-lifts': 'CoveringDesigns.Applications.C18103Lifts', '14-5-3': 'CoveringDesigns.C14_5_3.Examples', 'quadruple-assembly': 'CoveringDesigns.QuadrupleAssembly'}
+PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching', '18-10-3': 'CoveringDesigns.C18_10_3.SquareSupport', 'c18103-lifts': 'CoveringDesigns.Applications.C18103Lifts', '14-5-3': 'CoveringDesigns.C14_5_3.Examples', 'quadruple-assembly': 'CoveringDesigns.QuadrupleAssembly', '34-18-3': 'CoveringDesigns.C34_18_3', '15-6-4': 'CoveringDesigns.C15_6_4', '16-7-5': 'CoveringDesigns.C16_7_5', '17-8-6': 'CoveringDesigns.C17_8_6', '18-9-7': 'CoveringDesigns.C18_9_7', '19-10-8': 'CoveringDesigns.C19_10_8', '35-19-4': 'CoveringDesigns.C35_19_4', '36-20-5': 'CoveringDesigns.C36_20_5', '37-21-6': 'CoveringDesigns.C37_21_6', '38-22-7': 'CoveringDesigns.C38_22_7', '39-23-8': 'CoveringDesigns.C39_23_8'}
 
 def check_sources():
     publication_boundaries = PUBLICATION_BOUNDARIES
     closure = SourceGraph().closure
     closures = {key: closure(item['entry']) for key, item in COMPONENTS.items()}
+    # Existing components cannot acquire a dependency on the five new lifts.
+    lift_sources = {source('CoveringDesigns.' + part) for part in C34183_LIFT_PARTS}
+    for key, paths in closures.items():
+        if key not in C34183_LIFT_KEYS:
+            assert not paths & lift_sources, f'Established component {key} imports a C34 lift'
+    for part, dependencies in C34183_LIFT_PARTS.items():
+        module = 'CoveringDesigns.' + part
+        expected = {source(module)}
+        for dependency in dependencies:
+            expected |= closure('CoveringDesigns.' + dependency)
+        assert closure(module) == expected, f'C34 lift {part} imports outside its declared interface'
+    # The six numerical consequences reuse only their declared earlier inputs.
+    # Only the five authorised C34 lifts additionally consume the lower seed.
+    consequence_sources = {source('CoveringDesigns.' + part) for part in SIX_CONSEQUENCE_PARTS}
+    for key, paths in closures.items():
+        if key not in ('34-18-3', *C1453_LIFT_KEYS, *C34183_LIFT_KEYS):
+            assert not paths & consequence_sources, f'Established component {key} imports a six-consequence module'
+    for part, dependencies in SIX_CONSEQUENCE_PARTS.items():
+        module = 'CoveringDesigns.' + part
+        expected = {source(module)}
+        for dependency in dependencies:
+            expected |= closure('CoveringDesigns.' + dependency)
+        assert closure(module) == expected, f'Six-consequence {part} imports outside its declared interface'
     # Earlier components cannot acquire the new seed/data construction.
     quad_entry = 'CoveringDesigns.QuadrupleAssembly'
     quad_sources = {p for p in closures['quadruple-assembly']
@@ -1686,7 +1947,7 @@ def check_sources():
                                  'CoveringDesigns.Foundations.StandardAxioms']}
     c1453_sources = {source(module) for module in c1453_parts}
     for key, paths in closures.items():
-        if key != '14-5-3':
+        if key not in ('14-5-3', *C1453_LIFT_KEYS):
             assert not paths & c1453_sources, f'Established component {key} imports C14_5_3'
     for module, dependencies in c1453_parts.items():
         expected = {source(module)}
@@ -1909,7 +2170,7 @@ def check_sources():
     offset_root = ROOT / 'CoveringDesigns/TwoKMinusC'
     offset_entry = source('CoveringDesigns.TwoKMinusC')
     for key, paths in closures.items():
-        if key not in ('two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'saturated-matching'):
+        if key not in ('two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'saturated-matching', '34-18-3', *C34183_LIFT_KEYS):
             assert not any(p == offset_entry or p.is_relative_to(offset_root) for p in paths), \
                 f'Established component {key} imports TwoKMinusC'
     for part in ('', '.Rank', '.SaturatedLoss', '.Saturated', '.LowerBound', '.Witness'):
@@ -1934,13 +2195,13 @@ def check_sources():
                  ROOT / 'CoveringDesigns/BoundaryRank')
     c20_entry = source('CoveringDesigns.C20_11_3')
     for key, paths in closures.items():
-        if key not in ('20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts'):
+        if key not in ('20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts', '34-18-3', *C34183_LIFT_KEYS):
             assert not any(p == c20_entry or any(p.is_relative_to(r) for r in c20_roots)
                            for p in paths), f'Established component {key} imports C20_11_3'
     family_root = ROOT / 'CoveringDesigns/TwoKMinusTwo'
     family_entry = source('CoveringDesigns.TwoKMinusTwo')
     for key, paths in closures.items():
-        if key not in ('two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts'):
+        if key not in ('two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts', '34-18-3', *C34183_LIFT_KEYS):
             assert not any(p == family_entry or p.is_relative_to(family_root) for p in paths), \
                 f'Established component {key} imports TwoKMinusTwo'
     # The new family may reuse generic helpers, never the established C20 result.
@@ -2085,7 +2346,7 @@ def check_sources():
             continue
         for path in paths:
             # The C14 exact-link proof reuses only the generic extension count.
-            if key == '14-5-3' and path == source('CoveringDesigns.LabelledCliques.Extensions'):
+            if key in ('14-5-3', *C1453_LIFT_KEYS) and path == source('CoveringDesigns.LabelledCliques.Extensions'):
                 continue
             module = '.'.join(path.relative_to(ROOT).with_suffix('').parts)
             assert not any(module == name or module.startswith(name + '.') for name in new_roots), \
@@ -2325,6 +2586,9 @@ def check_manifests():
                 assert path.read_text() == expected, f'Stale quadruple projection: {path}'
         if manifest.parent.name == '14-5-3':
             from check_c1453_witness import check
+            check()
+        if manifest.parent.name == '34-18-3':
+            from check_c34183_witness import check
             check()
 
 

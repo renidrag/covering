@@ -2,9 +2,9 @@ cff-version: 1.2.0
 message: "If you cite this proof package, please use this citation."
 type: software
 title: "Covering designs: structural proofs and Lean 4 verification"
-version: "1.4.0"
-date-released: "2026-10-22"
-doi: "10.5281/zenodo.23576357"
+# Prepared release date; reconcile before release if publication occurs later.
+version: "1.5.0"
+date-released: "2026-10-24"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23511135"
@@ -21,7 +21,9 @@ abstract: >-
   exact values for C(2k-c,k,3), and C(18,10,3)=12 with five lifted lower bounds,
   together with 41 <= C(14,5,3) <= 43 and the eight known exact values
   C(12u+1,4,3)=(12u+1)(12u)^2/24 for 1 <= u <= 8. Includes explicit block
-  lists, their checked correspondence to Lean families, and supporting
+  lists, their checked correspondence to Lean families, C(34,18,3)=13 using
+  the historical LJCR witness, and ten explicit Schoenheim corollaries of
+  the published lower seeds at (14,5,3) and (34,18,3), together with supporting
   formalisations of established results.
   OpenAI language models substantially assisted its
   development, formalisation, checking and writing. The proof accounts and

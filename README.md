@@ -12,6 +12,36 @@ A $(v,k,t)$ covering is a family of distinct $k$-element blocks on $v$ points
 that covers every $t$-element subset. The smallest possible number of blocks
 is $C(v,k,t)$.
 
+## $C(34,18,3)=13$ and ten Schönheim corollaries
+
+Exactly **13 blocks of size 18** are needed to cover all triples of a
+34-point set. The lower bound follows from my existing offset-two theorem.
+The attaining family is the historical LJCR construction recorded in 2009
+as a multiple of a (17,9,3) covering. With AI assistance, I have combined
+these matching bounds and verified the exact value and construction in
+Lean on arbitrary point labels.
+
+Two chains of Schönheim corollaries make the consequences of the previously
+published lower seeds explicit:
+
+| From $C(14,5,3)\ge41$ | From $C(34,18,3)\ge13$ |
+|---|---|
+| $C(15,6,4)\ge103$ | $C(35,19,4)\ge24$ |
+| $C(16,7,5)\ge236$ | $C(36,20,5)\ge44$ |
+| $C(17,8,6)\ge502$ | $C(37,21,6)\ge78$ |
+| $C(18,9,7)\ge1004$ | $C(38,22,7)\ge135$ |
+| $C(19,10,8)\ge1908$ | $C(39,23,8)\ge229$ |
+
+Each step uses the preceding universal lower bound and retains its ceiling.
+These ten lower bounds use Schönheim's classical method. The accounts
+include complete proofs, source attribution and comparisons with the
+repository entries inspected on 23 October 2026.
+
+- [Read the C(34,18,3) exactness proof](coverings/34-18-3/proof.md) and
+  [historical construction provenance](coverings/34-18-3/sources.md).
+- [Read the five corollaries from the 41 seed](coverings/19-10-8/README.md).
+- [Read the five corollaries from the 13 seed](coverings/39-23-8/README.md).
+
 ## Lower bound: $C(14,5,3)\ge41$
 
 Every covering of the triples of fourteen points by five-element blocks

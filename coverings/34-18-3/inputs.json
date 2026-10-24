@@ -1,0 +1,19 @@
+{
+  "entry": "CoveringDesigns.C34_18_3",
+  "kind": "Exact C(34,18,3)=13, with the historical LJCR thirteen-block family",
+  "depends_on": [
+    "CoveringDesigns.TwoKMinusC.OffsetTwo",
+    "CoveringDesigns.Foundations.Relabelling"
+  ],
+  "inputs": [
+    {
+      "path": "data/c34183-historical-witness.json",
+      "sha256": "7c53a2dac8bc6059a90c29fcebc2bbcdaaf16e6e702d2e53fc6796ebfb38db8f"
+    },
+    {
+      "path": "scripts/check_c34183_witness.py",
+      "sha256": "58db419a34d8d481f4fc6c5526fe162731d84a083ec1eff8e5be064227f46142"
+    }
+  ],
+  "path_convention": "Paths are relative to the repository root. All public Lean sources are included by the verification snapshot. External data are provenance, never an assumed mathematical theorem."
+}

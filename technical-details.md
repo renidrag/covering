@@ -15,6 +15,31 @@ classification, the twelve-point reduction, then the thirteen-point proof.
 The thirteen-point result uses arbitrary completions of GPPT's structural
 forms. It imports neither the catalogue nor completion-verification modules.
 
+## C(34,18,3)=13 and two direct lifting chains
+
+The [C34 account](coverings/34-18-3/README.md) connects the earlier universal
+lower theorem to the historical LJCR thirteen-block family. Import
+`CoveringDesigns.C34_18_3` and use `covering_number_34_18_3_on` for necessity
+and an actual attaining family on arbitrary finite labels. The
+[witness](data/c34183-historical-witness.json) and
+[checker](scripts/check_c34183_witness.py) retain its source correspondence.
+
+The [first chain](coverings/19-10-8/README.md) gives lower bounds
+103,236,502,1004,1908 at (15,6,4) through (19,10,8), starting from 41 at
+(14,5,3). The [second chain](coverings/39-23-8/README.md) gives
+24,44,78,135,229 at (35,19,4) through (39,23,8), starting from 13 at
+(34,18,3). Every step uses the preceding universal lower theorem and
+retains its ceiling. Each result has its own `CoveringDesigns.Cv_k_t`
+entry, `.LowerBound` module and full-contract audit. The lower chains do
+not depend on the C34 historical witness or an attaining-family hypothesis.
+
+For a focused check, use `./covering verify 34-18-3`,
+`./covering verify 19-10-8` or `./covering verify 39-23-8`, followed by the
+matching `./covering audit` command. Every intermediate parameter is also
+a target; whole-library verification includes all eleven components.
+`./covering check` validates the C34 historical data and Lean transcription;
+the Lean kernel separately proves the family's covering properties.
+
 ## Set up dependencies
 
 Install Lean **4.34.1** with Lake available on the path. Dependency setup and verification need Python **3.14+** with the
@@ -349,3 +374,14 @@ The full verification command above covers the first three results and all of th
 | `two-k-minus-two-tightening` | `CoveringDesigns.TwoKMinusTwoTightening` |
 | `rank-slack-capacity` | `CoveringDesigns.RankSlackCapacity` |
 | `saturated-matching` | `CoveringDesigns.SaturatedMatching` |
+| `34-18-3` | `CoveringDesigns.C34_18_3` |
+| `15-6-4` | `CoveringDesigns.C15_6_4` |
+| `16-7-5` | `CoveringDesigns.C16_7_5` |
+| `17-8-6` | `CoveringDesigns.C17_8_6` |
+| `18-9-7` | `CoveringDesigns.C18_9_7` |
+| `19-10-8` | `CoveringDesigns.C19_10_8` |
+| `35-19-4` | `CoveringDesigns.C35_19_4` |
+| `36-20-5` | `CoveringDesigns.C36_20_5` |
+| `37-21-6` | `CoveringDesigns.C37_21_6` |
+| `38-22-7` | `CoveringDesigns.C38_22_7` |
+| `39-23-8` | `CoveringDesigns.C39_23_8` |

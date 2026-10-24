@@ -24,6 +24,41 @@ The v1.1.0 archive uses a same-day packaging
 cleanup with unchanged mathematics; the 19 October account below retains
 the first public snapshot.
 
+## 24 October 2026 — $C(34,18,3)=13$ and ten Schönheim corollaries
+
+**v1.5.0**
+
+This release adds a Lean proof of $C(34,18,3)=13$, including the historical
+attaining construction, and ten lower bounds obtained by Schönheim lifting.
+
+| Result | Mathematical account |
+|---|---|
+| C(34,18,3)=13 | [Exactness and historical attaining family](coverings/34-18-3/proof.md) |
+| C(15,6,4)≥103 | [Direct corollary](coverings/15-6-4/proof.md) |
+| C(16,7,5)≥236 | [Direct corollary](coverings/16-7-5/proof.md) |
+| C(17,8,6)≥502 | [Direct corollary](coverings/17-8-6/proof.md) |
+| C(18,9,7)≥1004 | [Direct corollary](coverings/18-9-7/proof.md) |
+| C(19,10,8)≥1908 | [Direct corollary and first chain](coverings/19-10-8/proof.md) |
+| C(35,19,4)≥24 | [Direct corollary](coverings/35-19-4/proof.md) |
+| C(36,20,5)≥44 | [Direct corollary](coverings/36-20-5/proof.md) |
+| C(37,21,6)≥78 | [Direct corollary](coverings/37-21-6/proof.md) |
+| C(38,22,7)≥135 | [Direct corollary](coverings/38-22-7/proof.md) |
+| C(39,23,8)≥229 | [Direct corollary and second chain](coverings/39-23-8/proof.md) |
+
+The exact value $C(34,18,3)=13$ combines the project's existing lower bound
+with the historical LJCR 13-block family, recorded on 20 January 2009 as
+a multiple of a (17,9,3) covering. Lean verifies that family and its
+transport to arbitrary point labels. The construction retains its LJCR credit.
+
+The first five inequalities lift C(14,5,3)≥41, first published here on
+22 October 2026. The second five lift C(34,18,3)≥13, already a consequence
+of the offset-two theorem first published on 19 October. Every intermediate
+ceiling is retained. The proofs apply Schönheim's point-link argument to
+these previously published bounds. The ten lifting results are lower
+bounds; the accounts link their proofs, attribution and dated comparisons.
+
+All previously published result-specific proofs and accounts are retained.
+
 ## 22 October 2026 — $41\le C(14,5,3)\le43$ and exact values for $C(12u+1,4,3)$, $1\le u\le8$
 
 **v1.4.0**

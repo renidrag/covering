@@ -122,12 +122,20 @@ class AuditPolicy(unittest.TestCase):
     def test_no_axioms_output_spelling(self):
         for key in audit.COMPONENTS:
             exact = {audit.principal_theorem(key), audit.explicit_theorem(key)}
-            name = next(n for n in required_names(key) if n not in exact)
+            # A direct corollary may have no auxiliary declaration. Its main
+            # theorem must still reject the no-axioms spelling, while an
+            # auxiliary theorem is allowed to have no foundational axioms.
+            name = next((n for n in required_names(key) if n not in exact),
+                        audit.principal_theorem(key))
             log = audit_log(key, theorem=name, axioms='').replace(
                 "'" + name + "' depends on axioms: []",
                 "'" + name + "' does not depend on any axioms")
             with self.subTest(component=key, theorem=name):
-                self.assertEqual(audit.component_axioms(key, log)[name], [])
+                if name in exact:
+                    with self.assertRaises(AssertionError):
+                        audit.component_axioms(key, log)
+                else:
+                    self.assertEqual(audit.component_axioms(key, log)[name], [])
 
 
 

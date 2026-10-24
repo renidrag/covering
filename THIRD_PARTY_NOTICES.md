@@ -160,3 +160,25 @@ is a self-contained reconstruction of its order-three special case.
 The structural lower-bound argument and Lean formalisation are credited to
 Rob Gardiner with AI assistance; the historical construction remains
 separately attributed. No additional reference paper is reproduced.
+
+## The C(34,18,3) historical construction and lifting corollaries
+
+The [thirteen-block witness](data/c34183-historical-witness.json) comes from
+**Daniel M. Gordon / La Jolla Coverings Repository**, version 1.2,
+[Zenodo 19735294](https://zenodo.org/records/19735294), under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The entry credits **LJCR; Multiple of (17,9,3) covering**, recorded on
+**20 January 2009**. Its original ordered one-based labels are retained;
+the Lean witness subtracts one from each label and independently proves
+block distinctness, size and complete triple coverage. The
+[source account](coverings/34-18-3/sources.md) identifies the artifact and hashes.
+The historical construction is separate from this project's exactness
+deduction and Lean connection to the earlier lower theorem.
+
+The two new five-result chains apply the point-link argument in
+**J. Schönheim, “On coverings,” Pacific Journal of Mathematics 14 (1964),
+1405–1411**, proof of Theorem I, to this project's previously published
+lower bounds at (14,5,3) and (34,18,3). Rob Gardiner, with AI assistance,
+is credited for the explicit deductions and formalisation. The individual
+accounts retain dated comparisons and unresolved historical priority.
+No additional reference paper is reproduced.

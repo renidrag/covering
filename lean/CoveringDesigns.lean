@@ -23,3 +23,16 @@ import CoveringDesigns.Applications.C18103Lifts
 import CoveringDesigns.C14_5_3.Examples
 
 import CoveringDesigns.QuadrupleAssembly
+
+import CoveringDesigns.C34_18_3
+import CoveringDesigns.C15_6_4
+import CoveringDesigns.C16_7_5
+import CoveringDesigns.C17_8_6
+import CoveringDesigns.C18_9_7
+import CoveringDesigns.C19_10_8
+
+import CoveringDesigns.C35_19_4
+import CoveringDesigns.C36_20_5
+import CoveringDesigns.C37_21_6
+import CoveringDesigns.C38_22_7
+import CoveringDesigns.C39_23_8
