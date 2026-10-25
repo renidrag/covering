@@ -19,8 +19,7 @@ assisted the development, formalisation, checking and writing.
 “Published here” records the first public appearance of the stated result
 in this repository. For a strengthened range, it dates that range.
 The [release history](RELEASE_HISTORY.md) links earlier statements, exact
-snapshots and archived versions. “Next release” marks additions prepared
-for publication.
+snapshots and archived versions.
 
 ## Exact values
 
@@ -52,16 +51,16 @@ Each equality includes a checked construction with the stated number of blocks.
 | $C(21,13,6)\ge57$ | 21 Oct 2026 | [v1.3.0] | [Account](coverings/18-10-3/README.md) · [Proof](coverings/18-10-3/proof.md#9-schönheim-lifting-and-the-five-consequences) |
 | $C(22,14,7)\ge90$ | 21 Oct 2026 | [v1.3.0] | [Account](coverings/18-10-3/README.md) · [Proof](coverings/18-10-3/proof.md#9-schönheim-lifting-and-the-five-consequences) |
 | $C(23,15,8)\ge138$ | 21 Oct 2026 | [v1.3.0] | [Account](coverings/18-10-3/README.md) · [Proof](coverings/18-10-3/proof.md#9-schönheim-lifting-and-the-five-consequences) |
-| $C(32,7,3)\ge149$ | — | Next release | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
+| $C(32,7,3)\ge149$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
 | $C(35,19,4)\ge24$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/35-19-4/README.md) · [Proof](coverings/35-19-4/proof.md) |
 | $C(36,20,5)\ge44$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/36-20-5/README.md) · [Proof](coverings/36-20-5/proof.md) |
 | $C(37,21,6)\ge78$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/37-21-6/README.md) · [Proof](coverings/37-21-6/proof.md) |
 | $C(38,22,7)\ge135$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/38-22-7/README.md) · [Proof](coverings/38-22-7/proof.md) |
 | $C(39,23,8)\ge229$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/39-23-8/README.md) · [Proof](coverings/39-23-8/proof.md) |
-| $C(58,9,3)\ge375$ | — | Next release | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
-| $C(92,11,3)\ge774$ | — | Next release | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
+| $C(58,9,3)\ge375$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
+| $C(92,11,3)\ge774$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
 | $13\le C(2k-2,k,3)\le14,\quad k\ge17$ | 20 Oct 2026 | [v1.2.0] | [Account](coverings/2k-minus-c-k-3/README.md) · [Proof](coverings/2k-minus-c-k-3/proof.md) |
-| $C(n+1,q+2,3)\ge n+\lceil N/M\rceil,\quad q\ge3\text{ odd}$ | — | Next release | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
+| $C(n+1,q+2,3)\ge n+\lceil N/M\rceil,\quad q\ge3\text{ odd}$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
 
 In the final row, $n=q^2+q+1$, $N=nq^3(q+1)/6$ and
 $M=\binom{q+2}{3}-\lceil q/4\rceil$. The
@@ -110,7 +109,8 @@ included in this repository.
 
 ## Citation and release history
 
-Use the [citation metadata](CITATION.cff) to cite the package. The
+Use the [citation metadata](CITATION.cff) or the
+[v1.7.0 DOI](https://doi.org/10.5281/zenodo.23652462) to cite this version. The
 [collection DOI](https://doi.org/10.5281/zenodo.23511135) covers all versions;
 the [release history](RELEASE_HISTORY.md) gives the dates, exact snapshots and
 version DOIs for individual results.
@@ -122,3 +122,5 @@ version DOIs for individual results.
 [v1.4.0]: https://github.com/renidrag/covering/releases/tag/v1.4.0
 [v1.5.0]: https://github.com/renidrag/covering/releases/tag/v1.5.0
 [v1.6.0]: https://github.com/renidrag/covering/releases/tag/v1.6.0
+
+[v1.7.0]: https://github.com/renidrag/covering/releases/tag/v1.7.0

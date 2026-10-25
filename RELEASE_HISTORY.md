@@ -4,7 +4,7 @@
 
 This records the project's main mathematical additions. Dates use
 Europe/London time. Historical links identify each public snapshot's
-mathematical account and successful Lean verification run.
+mathematical account and Lean verification run.
 Each exact value includes a construction with that number of distinct blocks.
 
 Releases are cumulative. The [collection DOI](https://doi.org/10.5281/zenodo.23511135)
@@ -12,6 +12,7 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 | Release | First public date | Archived snapshot | Version DOI |
 |---|---|---|---|
+| [v1.7.0](https://github.com/renidrag/covering/releases/tag/v1.7.0) | 25 October 2026 | [5f6e50d69982](https://github.com/renidrag/covering/tree/5f6e50d699824ff72233d38e6250fb71915a5be6) | [10.5281/zenodo.23652462](https://doi.org/10.5281/zenodo.23652462) |
 | [v1.6.0](https://github.com/renidrag/covering/releases/tag/v1.6.0) | 25 October 2026 | [6b31c1407457](https://github.com/renidrag/covering/tree/6b31c1407457709b335baf346a29962701d8b6e6) | [10.5281/zenodo.23638382](https://doi.org/10.5281/zenodo.23638382) |
 | [v1.5.0](https://github.com/renidrag/covering/releases/tag/v1.5.0) | 24 October 2026 | [d8e27cb77c77](https://github.com/renidrag/covering/tree/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1) | [10.5281/zenodo.23616283](https://doi.org/10.5281/zenodo.23616283) |
 | [v1.4.0](https://github.com/renidrag/covering/releases/tag/v1.4.0) | 22 October 2026 | [a2a726abb7ae](https://github.com/renidrag/covering/tree/a2a726abb7ae1e26a37841f730abb90a34469c11) | [10.5281/zenodo.23576357](https://doi.org/10.5281/zenodo.23576357) |
@@ -22,10 +23,37 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 Versions v1.0.0–v1.2.0 were archived on Zenodo on 20 October 2026; v1.3.0
 was archived on 21 October 2026, v1.4.0 on 22 October 2026 and v1.5.0
-on 24 October 2026. v1.6.0 was published and archived on 25 October 2026.
+on 24 October 2026. v1.6.0 and v1.7.0 were published and archived on
+25 October 2026.
 The v1.1.0 archive uses a same-day packaging
 cleanup with unchanged mathematics; the 19 October account below retains
 the first public snapshot.
+
+## 25 October 2026 — Lower bounds for $C(q^2+q+2,q+2,3)$
+
+**v1.7.0**
+
+[Snapshot 5f6e50d69982](https://github.com/renidrag/covering/tree/5f6e50d699824ff72233d38e6250fb71915a5be6) ·
+[GitHub verification](https://github.com/renidrag/covering/actions/runs/40244817024) ·
+[Zenodo archive — DOI 10.5281/zenodo.23652462](https://doi.org/10.5281/zenodo.23652462).
+
+This release proves **C(32,7,3)≥149**, **C(58,9,3)≥375** and
+**C(92,11,3)≥774**, together with a general lower bound for
+C(q²+q+2,q+2,3) for every odd integer q≥3. The theorem allows repeated
+block occurrences and requires no prime-power or projective-plane existence
+assumption.
+
+The proof combines a parity count in projective-plane links, the
+Füredi–Sane deletion theorem and a count of the triples remaining to cover.
+Published geometric arguments already imply 149 and 375. The parity estimate
+strengthens the corresponding deduction for C(92,11,3) from 770 to 774.
+The complete mathematical argument and supporting lemmas are verified in Lean.
+
+[Result and proof outline](https://github.com/renidrag/covering/blob/5f6e50d699824ff72233d38e6250fb71915a5be6/coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) ·
+[Mathematical proof and Lean correspondence](https://github.com/renidrag/covering/blob/5f6e50d699824ff72233d38e6250fb71915a5be6/coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) ·
+[Sources and attribution](https://github.com/renidrag/covering/blob/5f6e50d699824ff72233d38e6250fb71915a5be6/coverings/q2-plus-q-plus-2-q-plus-2-3/sources.md).
+
+All earlier mathematical results and constructions are retained.
 
 ## 25 October 2026 — $C(19,9,3)=17$
 

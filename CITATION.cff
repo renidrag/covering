@@ -2,9 +2,9 @@ cff-version: 1.2.0
 message: "If you cite this proof package, please use this citation."
 type: software
 title: "Covering designs: structural proofs and Lean 4 verification"
-version: "1.6.0"
-date-released: "2026-10-24"
-doi: "10.5281/zenodo.23638382"
+version: "1.7.0"
+date-released: "2026-10-25"
+doi: "10.5281/zenodo.23652462"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23511135"
@@ -24,9 +24,11 @@ abstract: >-
   lists, their checked correspondence to Lean families, C(34,18,3)=13 using
   the historical LJCR witness, and ten explicit Schoenheim corollaries of
   the published lower seeds at (14,5,3) and (34,18,3), together with supporting
-  formalisations of established results. Adds a proof of C(19,9,3)=17 by
+  formalisations of established results. Includes a proof of C(19,9,3)=17 by
   ruling out 16 blocks and verifying Rade Belic's known 17-block construction.
   The supporting classification of minimum pair coverings is proved in Lean.
+  It also proves C(32,7,3) >= 149, C(58,9,3) >= 375 and C(92,11,3) >= 774,
+  with a general lower bound for C(q^2+q+2,q+2,3) for every odd integer q >= 3.
   OpenAI language models substantially assisted its
   development, formalisation, checking and writing. The proof accounts and
   third-party notices document mathematical attribution and historical
