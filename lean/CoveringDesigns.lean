@@ -39,3 +39,5 @@ import CoveringDesigns.C39_23_8
 
 import CoveringDesigns.SevenBlock
 import CoveringDesigns.C19_9_3
+
+import CoveringDesigns.ProjectiveLinkBounds

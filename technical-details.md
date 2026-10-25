@@ -72,6 +72,27 @@ including exact agreement of the retained original text, the attributed
 label shift. Every input resolves inside the package. These integrity and
 coverage checks are separate from the Lean theorem and axiom audits.
 
+## Lower bounds for C(q²+q+2,q+2,3), odd q≥3
+
+The [account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) proves
+C(32,7,3)≥149, C(58,9,3)≥375 and C(92,11,3)≥774 as instances of one
+family theorem. Import `CoveringDesigns.ProjectiveLinkBounds` and use
+`indexed_completion_lower_bound` for indexed blocks or
+`completion_lower_bound` for ordinary families. Both require only the
+stated parameters and covering conditions.
+
+```sh
+./covering verify projective-link-bounds
+./covering audit projective-link-bounds
+```
+
+The [proof appendix](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md#appendix-lean-correspondence)
+identifies the parity, deletion and completion interfaces. The dedicated
+audit checks full theorem types, expanded covering assumptions and
+transitive axioms. Source checks preserve the independent proof without
+deletion and prohibit dependencies from older components on this addition.
+There is no construction data or external certificate in this component.
+
 ## Set up dependencies
 
 Install Lean **4.34.1** with Lake available on the path. Dependency setup and verification need Python **3.14+** with the
@@ -420,3 +441,4 @@ The full verification command above covers the first three results and all of th
 | `seven-block-core` | `CoveringDesigns.SevenBlock.Core` |
 | `seven-block` | `CoveringDesigns.SevenBlock` |
 | `19-9-3` | `CoveringDesigns.C19_9_3` |
+| `projective-link-bounds` | `CoveringDesigns.ProjectiveLinkBounds` |

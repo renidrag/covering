@@ -1357,3 +1357,41 @@ universe u_1 u_2
 
 end CoveringDesigns.AuditSevenC1993All
 
+namespace CoveringDesigns.AuditProjectiveLinkAll
+universe u v
+#check (@ProjectiveLinkBounds.indexed_lower_bound :
+  ∀ {α : Type u} {ι : Type v} [Fintype α] [DecidableEq α] [Fintype ι]
+    {q : ℕ}, 3 ≤ q → Odd q → ∀ {B : ι → Finset α},
+    Fintype.card α = q^2+q+2 → Multicover.IsCover B (q+2) 3 1 →
+    ProjectiveLinkBounds.familyBound q ≤ Fintype.card ι)
+
+#guard_standard_axioms CoveringDesigns.ProjectiveLinkBounds.indexed_lower_bound
+
+#print axioms CoveringDesigns.ProjectiveLinkBounds.indexed_lower_bound
+
+#check (@ProjectiveLinkBounds.indexed_weak_lower_bound :
+  ∀ {α : Type u} {ι : Type v} [Fintype α] [DecidableEq α] [Fintype ι]
+    {q : ℕ}, 5 ≤ q → Odd q → ∀ {B : ι → Finset α},
+    Fintype.card α = q^2+q+2 → Multicover.IsCover B (q+2) 3 1 →
+    ProjectiveLinkBounds.weakBound q ≤ Fintype.card ι)
+
+#guard_standard_axioms CoveringDesigns.ProjectiveLinkBounds.indexed_weak_lower_bound
+
+#print axioms CoveringDesigns.ProjectiveLinkBounds.indexed_weak_lower_bound
+
+end CoveringDesigns.AuditProjectiveLinkAll
+
+namespace CoveringDesigns.AuditProjectiveLinkDirectAll
+#check (@ProjectiveLinkBounds.indexed_completion_lower_bound :
+  ∀ {α : Type*} {ι : Type*} [Fintype α] [DecidableEq α] [Fintype ι]
+    {q : ℕ}, 3 ≤ q → Odd q → ∀ {B : ι → Finset α},
+    Fintype.card α = q^2+q+2 → Multicover.IsCover B (q+2) 3 1 →
+    ProjectiveLinkBounds.pointCount q + Schoenheim.ceilDiv
+      (ProjectiveLinkBounds.tripleDemand q) (ProjectiveLinkBounds.capacity q) ≤ Fintype.card ι)
+
+#guard_standard_axioms CoveringDesigns.ProjectiveLinkBounds.indexed_completion_lower_bound
+
+#print axioms CoveringDesigns.ProjectiveLinkBounds.indexed_completion_lower_bound
+
+end CoveringDesigns.AuditProjectiveLinkDirectAll
+

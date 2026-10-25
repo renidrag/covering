@@ -2068,6 +2068,115 @@ SEVEN_C1993_IMPORTS = {
 }
 
 
+# One occurrence-preserving projective-link component; no geometric model inputs.
+PROJECTIVE_LINK_IMPORTS = {
+    "CoveringDesigns.ProjectiveLinkBounds": [
+        "CoveringDesigns.ProjectiveLinkBounds.Bounds"
+    ],
+    "CoveringDesigns.ProjectiveLinkBounds.Arithmetic": [
+        "CoveringDesigns.Equality.FiniteSum"
+    ],
+    "CoveringDesigns.ProjectiveLinkBounds.Bounds": [
+        "CoveringDesigns.ProjectiveLinkBounds.Weak",
+        "CoveringDesigns.ProjectiveLinkBounds.Deletion"
+    ],
+    "CoveringDesigns.ProjectiveLinkBounds.Completion": [
+        "CoveringDesigns.ProjectiveLinkBounds.Parity"
+    ],
+    "CoveringDesigns.ProjectiveLinkBounds.Deletion": [
+        "CoveringDesigns.ProjectiveLinkBounds.Incidence"
+    ],
+    "CoveringDesigns.ProjectiveLinkBounds.Incidence": [
+        "CoveringDesigns.ExactDesign.Counting",
+        "CoveringDesigns.ProjectiveLinkBounds.Arithmetic"
+    ],
+    "CoveringDesigns.ProjectiveLinkBounds.Parity": [
+        "CoveringDesigns.ProjectiveLinkBounds.Incidence"
+    ],
+    "CoveringDesigns.ProjectiveLinkBounds.Weak": [
+        "CoveringDesigns.ProjectiveLinkBounds.Completion",
+        "CoveringDesigns.Multicover.Family"
+    ]
+}
+COMPONENTS['projective-link-bounds'] = {
+    "entry": "CoveringDesigns.ProjectiveLinkBounds",
+    "verification_entries": ["CoveringDesigns.Foundations.StandardAxioms"],
+    "audit_name": "projective-link-bounds-audit",
+    "audit_file": "ProjectiveLinkBounds.lean",
+    "principal_theorem": "CoveringDesigns.ProjectiveLinkBounds.indexed_lower_bound",
+    "explicit_theorem": "CoveringDesigns.AuditProjectiveLinkBounds.indexed_explicit",
+    "summary_path": "results/projective-link-bounds-verification.json",
+    "theorems": [
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.choose_two_int",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.choose_three_int",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.floor_bounds",
+        "CoveringDesigns.ProjectiveLinkBounds.collinearFloor_eq",
+        "CoveringDesigns.ProjectiveLinkBounds.capacity_ge",
+        "CoveringDesigns.ProjectiveLinkBounds.capacity_pos",
+        "CoveringDesigns.ProjectiveLinkBounds.capacity_balance",
+        "CoveringDesigns.ProjectiveLinkBounds.demand_balance",
+        "CoveringDesigns.ProjectiveLinkBounds.demand_six",
+        "CoveringDesigns.ProjectiveLinkBounds.familyBound_eq_completion",
+        "CoveringDesigns.ProjectiveLinkBounds.indexed_completion_lower_bound",
+        "CoveringDesigns.ProjectiveLinkBounds.completion_lower_bound",
+        "CoveringDesigns.ProjectiveLinkBounds.indexed_lower_bound",
+        "CoveringDesigns.ProjectiveLinkBounds.lower_bound",
+        "CoveringDesigns.ProjectiveLinkBounds.indexed_lower_bound_32_7_3",
+        "CoveringDesigns.ProjectiveLinkBounds.indexed_lower_bound_58_9_3",
+        "CoveringDesigns.ProjectiveLinkBounds.indexed_lower_bound_92_11_3",
+        "CoveringDesigns.ProjectiveLinkBounds.lower_bound_32_7_3",
+        "CoveringDesigns.ProjectiveLinkBounds.lower_bound_58_9_3",
+        "CoveringDesigns.ProjectiveLinkBounds.lower_bound_92_11_3",
+        "CoveringDesigns.ProjectiveLinkBounds.indexed_weak_bound_32_7_3",
+        "CoveringDesigns.ProjectiveLinkBounds.indexed_weak_bound_58_9_3",
+        "CoveringDesigns.ProjectiveLinkBounds.indexed_weak_bound_92_11_3",
+        "CoveringDesigns.ProjectiveLinkBounds.weak_bound_32_7_3",
+        "CoveringDesigns.ProjectiveLinkBounds.weak_bound_58_9_3",
+        "CoveringDesigns.ProjectiveLinkBounds.weak_bound_92_11_3",
+        "CoveringDesigns.ProjectiveLinkBounds.calibration_three",
+        "CoveringDesigns.ProjectiveLinkBounds.noncollinear_card",
+        "CoveringDesigns.ProjectiveLinkBounds.completion_count",
+        "CoveringDesigns.ProjectiveLinkBounds.completion_bound",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.completion_of_link_selection",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.completion_of_exact_link",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.parent_degree_floor",
+        "CoveringDesigns.ProjectiveLinkBounds.furedi_sane_deletion",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.multiplicity_mono",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.multiplicity_pos_iff",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.multiplicity_ge_two",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.trace_count",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.intersection_sum",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.selected_subset_count",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.restrict_multiplicity",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.degree_through_point",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.pair_point_floor",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.regular_pair",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.pair_cover_lower",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.pair_cover_exact",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.exact_point_count",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.exact_line_count",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.exact_multiplicity_le_one",
+        "CoveringDesigns.ProjectiveLinkBounds.Internal.exact_line_intersection",
+        "CoveringDesigns.ProjectiveLinkBounds.collinear_count",
+        "CoveringDesigns.ProjectiveLinkBounds.parity_bound",
+        "CoveringDesigns.ProjectiveLinkBounds.collinear_lower_bound",
+        "CoveringDesigns.ProjectiveLinkBounds.indexed_weak_lower_bound",
+        "CoveringDesigns.ProjectiveLinkBounds.weak_lower_bound"
+    ],
+    "milestones": [
+        "CoveringDesigns.AuditProjectiveLinkBounds.ordinary_explicit",
+        "CoveringDesigns.AuditProjectiveLinkBounds.weak_indexed_explicit",
+        "CoveringDesigns.AuditProjectiveLinkBounds.weak_ordinary_explicit",
+        "CoveringDesigns.AuditProjectiveLinkBounds.completion_indexed_explicit",
+        "CoveringDesigns.AuditProjectiveLinkBounds.completion_ordinary_explicit"
+    ],
+    "scope": "Odd-order abstract exact-pair-design parity, actual selected point-link completion, Furedi-Sane occurrence deletion for q >= 2, unconditional indexed and ordinary family bounds, numerical 149/375/774 and independent weak 147/374/770. No plane-existence, prime-power, rank, injectivity, minimum-degree or supplied-link premise in the final contracts."
+}
+COMPONENTS['projective-link-bounds']['independent_of'] = [
+    key for key in ['caro-tuza', 'horsley', 'schoenheim', '11-5-2', '12-5-2', '12-6-3', '13-7-4', 'horsley-lifts', 'horsley-singh', 'equality', '17-9-5', 'higher-incidence', 'weighted', '47-14-5', '42-15-5', 'large-defect', 'small-defect', 'small-defect-b', 'small-defect-c', 'multicover', 'multicover-incidence', 'multicover-large-defect', 'coefficient-positivity', 'affine-constructions', 'affine-schoenheim', 'affine-optimality', 'lifting-comparison', 'schoenheim-improvement', 'multicover-small-defect', 'low-degree-selection', 'seed-comparison', 'exact-design', 'point-reduction', 'base-affine', 'schoenheim-family-comparison', 'max-degree-sequence', 'max-guarantee', 'max-covering', 'max-higher-covering', '14-8-5', '59-17-5', '66-18-5', '79-22-5', '87-23-5', '98-22-5', 'labelled-cliques', 'turan-duality', 'turan', 'de-caen', 'chvatal', 'gkp-combination', 'gkp-induced', 'gkp-induced-averaging', 'projective-hyperplanes', 'finite-flat-geometry', 'degree-selected', '20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts', '14-5-3', 'quadruple-assembly', '34-18-3', '15-6-4', '16-7-5', '17-8-6', '18-9-7', '19-10-8', '35-19-4', '36-20-5', '37-21-6', '38-22-7', '39-23-8', 'seven-block-core', 'seven-block', '19-9-3', 'projective-link-bounds'] if key not in
+    ('projective-link-bounds', 'schoenheim', 'horsley-singh', 'equality', 'multicover', 'exact-design')]
+
+
 def source(module):
     return ROOT / (module.replace('.', '/') + '.lean')
 
@@ -2261,12 +2370,28 @@ def closure(entry):
     return SourceGraph().closure(entry)
 
 
-PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching', '18-10-3': 'CoveringDesigns.C18_10_3.SquareSupport', 'c18103-lifts': 'CoveringDesigns.Applications.C18103Lifts', '14-5-3': 'CoveringDesigns.C14_5_3.Examples', 'quadruple-assembly': 'CoveringDesigns.QuadrupleAssembly', '34-18-3': 'CoveringDesigns.C34_18_3', '15-6-4': 'CoveringDesigns.C15_6_4', '16-7-5': 'CoveringDesigns.C16_7_5', '17-8-6': 'CoveringDesigns.C17_8_6', '18-9-7': 'CoveringDesigns.C18_9_7', '19-10-8': 'CoveringDesigns.C19_10_8', '35-19-4': 'CoveringDesigns.C35_19_4', '36-20-5': 'CoveringDesigns.C36_20_5', '37-21-6': 'CoveringDesigns.C37_21_6', '38-22-7': 'CoveringDesigns.C38_22_7', '39-23-8': 'CoveringDesigns.C39_23_8', 'seven-block-core': 'CoveringDesigns.SevenBlock.Core', 'seven-block': 'CoveringDesigns.SevenBlock', '19-9-3': 'CoveringDesigns.C19_9_3'}
+PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching', '18-10-3': 'CoveringDesigns.C18_10_3.SquareSupport', 'c18103-lifts': 'CoveringDesigns.Applications.C18103Lifts', '14-5-3': 'CoveringDesigns.C14_5_3.Examples', 'quadruple-assembly': 'CoveringDesigns.QuadrupleAssembly', '34-18-3': 'CoveringDesigns.C34_18_3', '15-6-4': 'CoveringDesigns.C15_6_4', '16-7-5': 'CoveringDesigns.C16_7_5', '17-8-6': 'CoveringDesigns.C17_8_6', '18-9-7': 'CoveringDesigns.C18_9_7', '19-10-8': 'CoveringDesigns.C19_10_8', '35-19-4': 'CoveringDesigns.C35_19_4', '36-20-5': 'CoveringDesigns.C36_20_5', '37-21-6': 'CoveringDesigns.C37_21_6', '38-22-7': 'CoveringDesigns.C38_22_7', '39-23-8': 'CoveringDesigns.C39_23_8', 'seven-block-core': 'CoveringDesigns.SevenBlock.Core', 'seven-block': 'CoveringDesigns.SevenBlock', '19-9-3': 'CoveringDesigns.C19_9_3', 'projective-link-bounds': 'CoveringDesigns.ProjectiveLinkBounds'}
 
 def check_sources():
     publication_boundaries = PUBLICATION_BOUNDARIES
     closure = SourceGraph().closure
     closures = {key: closure(item['entry']) for key, item in COMPONENTS.items()}
+    # The weak family cannot acquire deletion; existing components stay independent.
+    projective_sources = {source(module) for module in PROJECTIVE_LINK_IMPORTS}
+    for key, paths in closures.items():
+        if key != 'projective-link-bounds':
+            assert not paths & projective_sources, \
+                f'Established component {key} imports projective-link additions'
+    for module, dependencies in PROJECTIVE_LINK_IMPORTS.items():
+        actual = project_imports(source(module).read_text(), str(source(module)))
+        assert actual == dependencies, f'Projective-link direct interface changed: {module}'
+    weak = closure('CoveringDesigns.ProjectiveLinkBounds.Weak')
+    assert source('CoveringDesigns.ProjectiveLinkBounds.Deletion') not in weak, \
+        'Projective-link weak bound acquired deletion'
+    for part in ('Parity', 'Completion', 'Weak', 'Bounds'):
+        assert source('CoveringDesigns.ProjectiveLinkBounds.' + part) not in \
+            closure('CoveringDesigns.ProjectiveLinkBounds.Deletion'), \
+            'Projective-link deletion acquired parity or family bounds'
     # The new branches consume earlier interfaces without changing their owners.
     new_sources = {source(module) for module in SEVEN_C1993_IMPORTS}
     for key, paths in closures.items():
