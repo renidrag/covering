@@ -36,3 +36,6 @@ import CoveringDesigns.C36_20_5
 import CoveringDesigns.C37_21_6
 import CoveringDesigns.C38_22_7
 import CoveringDesigns.C39_23_8
+
+import CoveringDesigns.SevenBlock
+import CoveringDesigns.C19_9_3

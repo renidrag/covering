@@ -31,14 +31,16 @@ class Registry(unittest.TestCase):
                 steps = workflow.plan_for(key, workflow.DEFAULT_LIMITS)
                 builds = [s for s in steps if s['kind'] == 'build']
                 modules = [s['name'].removeprefix('build-') for s in builds]
-                expected = reachable(self.graph, info['entry'])
+                roots = [info['entry'], *info.get('verification_entries', [])]
+                expected = set().union(*(reachable(self.graph, root) for root in roots))
                 self.assertEqual(set(modules), expected)
                 self.assertEqual(len(modules), len(expected))
                 positions = {module: index for index, module in enumerate(modules)}
                 for module in expected:
                     for dependency in self.graph[module]:
                         self.assertLess(positions[dependency], positions[module])
-                self.assertEqual(modules[-1], info['entry'])
+                if not info.get('verification_entries'):
+                    self.assertEqual(modules[-1], info['entry'])
                 expected_name = info.get('audit_name', 'c' + key.split('-')[0] + '-audit')
                 expected_file = info.get('audit_file', 'C' + key.replace('-', '_') + '.lean')
                 self.assertEqual(steps[-1]['name'], expected_name)

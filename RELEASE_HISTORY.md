@@ -5,7 +5,7 @@
 This records the project's main mathematical additions. Dates use
 Europe/London time. Historical links identify each public snapshot's
 mathematical account and successful Lean verification run.
-Every stated exact value includes an attaining ordinary covering.
+Each exact value includes a construction with that number of distinct blocks.
 
 Releases are cumulative. The [collection DOI](https://doi.org/10.5281/zenodo.23511135)
 represents all versions; use a version DOI below to cite a particular archive.
@@ -26,7 +26,31 @@ The v1.1.0 archive uses a same-day packaging
 cleanup with unchanged mathematics; the 19 October account below retains
 the first public snapshot.
 
-## 24 October 2026 — $C(34,18,3)=13$ and ten Schönheim corollaries
+## v1.6.0 — $C(19,9,3)=17$
+
+This release proves C(19,9,3)=17. The new argument rules out 16 blocks;
+Rade Belic's known construction uses 17. Both are verified in Lean.
+
+The proof shows that the links of minimum-degree points must fit together
+in a particular way: 8 points have the plane structure of AG(3,2).
+Counting the supports of the other 11 points then forces an uncovered
+triple. The argument allows repeated block occurrences and works on any
+set of 19 points.
+
+The package includes a proof of the supporting pair-covering classification
+and credits its earlier sources. LJCR recorded Belic's construction on
+11 June 1997. Its 17 distinct blocks cover all 969 triples; the distributed
+block list is checked against the Lean construction.
+
+[Result and proof outline](coverings/19-9-3/README.md) ·
+[Mathematical proof and Lean correspondence](coverings/19-9-3/proof.md) ·
+[Sources and construction attribution](coverings/19-9-3/sources.md) ·
+[Supporting classification](coverings/seven-block/proof.md) ·
+[Belic's block list](data/c1993-belic-17.blocks.txt).
+
+All earlier mathematical results and constructions are retained.
+
+## 24 October 2026 — $C(34,18,3)=13$ and 10 improved lower bounds
 
 **v1.5.0**
 
@@ -34,34 +58,35 @@ the first public snapshot.
 [Lean verification passed](https://github.com/renidrag/covering/actions/runs/40086303290) ·
 [Zenodo archive — DOI 10.5281/zenodo.23616283](https://doi.org/10.5281/zenodo.23616283).
 
-This release adds a Lean proof of $C(34,18,3)=13$, including the historical
-attaining construction, and ten lower bounds obtained by Schönheim lifting.
+This release proves $C(34,18,3)=13$ in Lean, including the known 13-block
+construction. It also proves 10 lower bounds by applying Schönheim's bound
+repeatedly.
 
 | Result | Mathematical account |
 |---|---|
-| C(34,18,3)=13 | [Exactness and historical attaining family](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/34-18-3/proof.md) |
-| C(15,6,4)≥103 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/15-6-4/proof.md) |
-| C(16,7,5)≥236 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/16-7-5/proof.md) |
-| C(17,8,6)≥502 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/17-8-6/proof.md) |
-| C(18,9,7)≥1004 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/18-9-7/proof.md) |
-| C(19,10,8)≥1908 | [Direct corollary and first chain](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/19-10-8/proof.md) |
-| C(35,19,4)≥24 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/35-19-4/proof.md) |
-| C(36,20,5)≥44 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/36-20-5/proof.md) |
-| C(37,21,6)≥78 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/37-21-6/proof.md) |
-| C(38,22,7)≥135 | [Direct corollary](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/38-22-7/proof.md) |
-| C(39,23,8)≥229 | [Direct corollary and second chain](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/39-23-8/proof.md) |
+| C(34,18,3)=13 | [Proof and 13-block construction](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/34-18-3/proof.md) |
+| C(15,6,4)≥103 | [Proof](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/15-6-4/proof.md) |
+| C(16,7,5)≥236 | [Proof](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/16-7-5/proof.md) |
+| C(17,8,6)≥502 | [Proof](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/17-8-6/proof.md) |
+| C(18,9,7)≥1004 | [Proof](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/18-9-7/proof.md) |
+| C(19,10,8)≥1908 | [Proofs of the first 5 bounds](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/19-10-8/proof.md) |
+| C(35,19,4)≥24 | [Proof](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/35-19-4/proof.md) |
+| C(36,20,5)≥44 | [Proof](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/36-20-5/proof.md) |
+| C(37,21,6)≥78 | [Proof](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/37-21-6/proof.md) |
+| C(38,22,7)≥135 | [Proof](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/38-22-7/proof.md) |
+| C(39,23,8)≥229 | [Proofs of the other 5 bounds](https://github.com/renidrag/covering/blob/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1/coverings/39-23-8/proof.md) |
 
-The exact value $C(34,18,3)=13$ combines the project's existing lower bound
-with the historical LJCR 13-block family, recorded on 20 January 2009 as
-a multiple of a (17,9,3) covering. Lean verifies that family and its
-transport to arbitrary point labels. The construction retains its LJCR credit.
+The proof of $C(34,18,3)=13$ combines the project's lower bound with a
+known 13-block construction. LJCR recorded it on 20 January 2009 as a
+multiple of a (17,9,3) covering. Lean verifies the construction on any set
+of 34 points. Its LJCR credit is preserved.
 
-The first five inequalities lift C(14,5,3)≥41, first published here on
-22 October 2026. The second five lift C(34,18,3)≥13, already a consequence
-of the offset-two theorem first published on 19 October. Every intermediate
-ceiling is retained. The proofs apply Schönheim's point-link argument to
-these previously published bounds. The ten lifting results are lower
-bounds; the accounts link their proofs, attribution and dated comparisons.
+The first 5 inequalities follow from C(14,5,3)≥41, first published here on
+22 October 2026. The other 5 follow from C(34,18,3)≥13, already covered
+by the C(2k−2,k,3) theorem first published on 19 October. Each step applies
+Schönheim's point-link argument and rounds up to an integer. These are
+lower bounds; the linked accounts give the proofs, credits and dated
+comparisons.
 
 All previously published result-specific proofs and accounts are retained.
 
@@ -77,10 +102,10 @@ The two contributions have separate mathematical accounts.
 
 **Stronger lower bound:** $41\le C(14,5,3)\le43$, improving the 37–43
 interval displayed in the repository entry inspected on 21 October 2026.
-The structural lower proof combines exact point links, completion counts,
+The lower-bound proof combines exact point links, completion counts,
 a removable-block lemma and compatibility between links. The historical
 43-block construction is credited to Nurmela and Östergård and checked in
-Lean. The exact value remains undetermined.
+Lean. The exact value is not yet known.
 
 [Result and proof outline](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/14-5-3/README.md) ·
 [Proof and Lean correspondence](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/14-5-3/proof.md) ·
@@ -101,10 +126,10 @@ $C(12u+1,4,3)=(12u+1)(12u)^2/24$ for $1\le u\le8$.
 | 97 | 37,248 |
 
 These exact values were proved in earlier work. This project reconstructs
-the six larger optimal block lists, retains historical witnesses for 13 and
-25, and proves all eight exact values and their correspondence to the
-included lists in Lean. The six larger lists are smaller than those in the
-inspected La Jolla snapshot; the mathematical exactness predates this package.
+the 6 larger optimal block lists and uses known lists for 13 and 25 points.
+Lean verifies all 8 values and checks that the constructions match the
+included lists. The 6 reconstructed lists use fewer blocks than those in
+the inspected La Jolla snapshot; the exact values were already known.
 
 [Result and block lists](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/12u-plus-1-4-3/README.md) ·
 [Proof and Lean correspondence](https://github.com/renidrag/covering/blob/a2a726abb7ae1e26a37841f730abb90a34469c11/coverings/12u-plus-1-4-3/proof.md) ·
@@ -112,7 +137,7 @@ inspected La Jolla snapshot; the mathematical exactness predates this package.
 
 All earlier mathematical results are retained unchanged.
 
-## 21 October 2026 — $C(18,10,3)=12$ and five lifted lower bounds
+## 21 October 2026 — $C(18,10,3)=12$ and 5 further lower bounds
 
 **v1.3.0**
 
@@ -125,11 +150,10 @@ All earlier mathematical results are retained unchanged.
 | $C(22,14,7)\ge90$ |
 | $C(23,15,8)\ge138$ |
 
-The structural proof excludes an 11-block covering of the triples of 18
-points by 10-element blocks. A historical 12-block construction gives
-attainment. The five further lower bounds follow by Schönheim lifting,
-retaining every intermediate ceiling. All six conclusions are proved in
-Lean for arbitrary finite point types.
+The proof rules out 11 blocks for C(18,10,3). A known construction uses
+12, proving C(18,10,3)=12. The 5 further lower bounds follow by applying
+Schönheim's bound repeatedly, with rounding at each step. All 6 results
+are proved in Lean for any point sets of the stated sizes.
 
 [Snapshot 78e2076b0cb0](https://github.com/renidrag/covering/tree/78e2076b0cb05b99aa83fc952832c6591ac47f80) ·
 [Mathematical account](https://github.com/renidrag/covering/blob/78e2076b0cb05b99aa83fc952832c6591ac47f80/coverings/18-10-3/README.md) ·
@@ -177,7 +201,7 @@ The separate indexed threefold pair-covering theorem has threshold $k\ge33$.
 
 **v1.0.0**
 
-The proof establishes $C(13,7,4)=30$, supported by reconstructed proofs and
+This release proves $C(13,7,4)=30$, using reconstructed proofs and
 Lean formalisations of Stanton's $C(11,5,2)=7$ classification and GPPT's
 $C(12,6,3)=15$ result and structural classification.
 

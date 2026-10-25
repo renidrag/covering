@@ -1,0 +1,27 @@
+{
+  "entry": "CoveringDesigns.C19_9_3",
+  "kind": "Unconditional indexed lower seventeen and ordinary C(19,9,3)=17, with arbitrary-label and Fin 19 attainment by Rade Belic's historical witness",
+  "depends_on": [
+    "CoveringDesigns.SevenBlock.Core",
+    "CoveringDesigns.Multicover.Links",
+    "CoveringDesigns.LabelledCliques.Extensions",
+    "CoveringDesigns.Foundations.IndexedPadding",
+    "CoveringDesigns.Foundations.Relabelling"
+  ],
+  "reuse_scope": "Actual shared-occurrence link compatibility, affine recognition and the weak completion obstruction are derived internally. The main deduction omits the independent fifteen-block rank exclusion and permits repeated block images. No small-case Stanton adapter, result-specific C18/C20 source, exploratory script or external proof certificate is imported.",
+  "inputs": [
+    {
+      "path": "data/c1993-belic-witness.json",
+      "sha256": "e67eaa867f712fe62b5c8f3f0cff891891a8d12cdce7fd20cf389d7110b8f1e4"
+    },
+    {
+      "path": "scripts/check_c1993_witness.py",
+      "sha256": "011d76b8811c5b1c109e8de2a8b6cac4bf3b12b4b37eb1eb1389ccd1cbaa457a"
+    },
+    {
+      "path": "data/c1993-belic-17.blocks.txt",
+      "sha256": "d18d3854fa404732347cc5ecdbde804c41a21d02664b0c15b0319b29a9bf9947"
+    }
+  ],
+  "path_convention": "Paths are relative to the repository root. The retained original and canonical JSON are integrity inputs. External checks prove exact ordered transcription, not mathematical truth; Lean independently verifies the literal family and its relabelling."
+}

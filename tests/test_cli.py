@@ -516,8 +516,10 @@ class WholeLibraryControls(WorkflowFixture, unittest.TestCase):
         self.assertEqual(self.state()['status'], 'complete')
         record = json.loads((self.root / 'results/library-verification.json').read_text())
         graph = header_graph(source_headers(whole=True))
+        entries = ['CoveringDesigns'] + [entry for info in audit.COMPONENTS.values()
+                                      for entry in info.get('verification_entries', [])]
         expected_builds = {'lean/' + m.replace('.', '/') + '.lean'
-                           for m in reachable(graph, 'CoveringDesigns')}
+                           for entry in entries for m in reachable(graph, entry)}
         compiled = [args[-1] for args in self.invocations() if '-o' in args]
         self.assertEqual(set(compiled), expected_builds)
         self.assertEqual(len(compiled), len(expected_builds))

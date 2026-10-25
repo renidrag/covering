@@ -1231,3 +1231,129 @@ end QuadrupleFiniteContracts
 
 #print axioms CoveringDesigns.lower_bound_39_23_8
 
+namespace CoveringDesigns.AuditSevenC1993All
+universe u_1 u_2
+#check (@CoveringDesigns.SevenBlock.classification_ge_two : ∀ {V : Type u_1} {I : Type u_2} [inst : Fintype V]
+  [inst_1 : DecidableEq V] [inst_2 : Fintype I] [DecidableEq I] {a : ℕ},
+  2 ≤ a →
+    ∀ {B : I → Finset V},
+      Fintype.card V = 7 * a + 4 →
+        CoveringDesigns.Multicover.IsCover B (3 * a + 2) 2 1 →
+          Fintype.card I = 7 →
+            ∃ (tag : Bool),
+              CoveringDesigns.SevenBlock.IndexedIsomorphic B (CoveringDesigns.SevenBlock.templateBlock a tag))
+
+#guard_standard_axioms CoveringDesigns.SevenBlock.classification_ge_two
+
+#print axioms CoveringDesigns.SevenBlock.classification_ge_two
+
+#check (@CoveringDesigns.SevenBlock.classification : ∀ {V : Type u_1} {I : Type u_2} [inst : Fintype V] [inst_1 : DecidableEq V]
+  [inst_2 : Fintype I] [DecidableEq I] {a : ℕ},
+  1 ≤ a →
+    ∀ {B : I → Finset V},
+      Fintype.card V = 7 * a + 4 →
+        CoveringDesigns.Multicover.IsCover B (3 * a + 2) 2 1 →
+          Fintype.card I = 7 →
+            ∃! tag : Bool,
+              CoveringDesigns.SevenBlock.IndexedIsomorphic B (CoveringDesigns.SevenBlock.templateBlock a tag))
+
+#guard_standard_axioms CoveringDesigns.SevenBlock.classification
+
+#print axioms CoveringDesigns.SevenBlock.classification
+
+#check (@CoveringDesigns.covering_number_19_9_3 : (∃ (C : CoveringDesigns.Family (Fin 19)),
+    CoveringDesigns.IsCover C 9 3 ∧ Finset.card C = 17) ∧
+  ∀ (C : CoveringDesigns.Family (Fin 19)), CoveringDesigns.IsCover C 9 3 → 17 ≤ Finset.card C)
+
+#guard_standard_axioms CoveringDesigns.covering_number_19_9_3
+
+#print axioms CoveringDesigns.covering_number_19_9_3
+
+#check (@CoveringDesigns.SevenBlock.classification_ge_two_expanded : ∀ {V : Type u_1} {I : Type u_2} [inst : Fintype V]
+  [DecidableEq V] [inst_2 : Fintype I] [DecidableEq I] {a : ℕ},
+  2 ≤ a →
+    ∀ (B : I → Finset V),
+      Fintype.card V = 7 * a + 4 →
+        Fintype.card I = 7 →
+          (∀ (i : I), (B i).card = 3 * a + 2) →
+            (∀ (T : Finset V), T.card = 2 → ∃ (i : I), T ⊆ B i) →
+              ∃ (tag : Bool) (e : V ≃ CoveringDesigns.SevenBlock.TemplatePoint a tag) (f : I ≃ Fin 7),
+                ∀ (x : V) (i : I), x ∈ B i ↔ e x ∈ CoveringDesigns.SevenBlock.templateBlock a tag (f i))
+
+#guard_standard_axioms CoveringDesigns.SevenBlock.classification_ge_two_expanded
+
+#print axioms CoveringDesigns.SevenBlock.classification_ge_two_expanded
+
+#check (@CoveringDesigns.SevenBlock.classification_expanded : ∀ {V : Type u_1} {I : Type u_2} [inst : Fintype V] [DecidableEq V]
+  [inst_2 : Fintype I] [DecidableEq I] {a : ℕ},
+  1 ≤ a →
+    ∀ (B : I → Finset V),
+      Fintype.card V = 7 * a + 4 →
+        Fintype.card I = 7 →
+          (∀ (i : I), (B i).card = 3 * a + 2) →
+            (∀ (T : Finset V), T.card = 2 → ∃ (i : I), T ⊆ B i) →
+              ∃! tag : Bool,
+                ∃ (e : V ≃ CoveringDesigns.SevenBlock.TemplatePoint a tag) (f : I ≃ Fin 7),
+                  ∀ (x : V) (i : I), x ∈ B i ↔ e x ∈ CoveringDesigns.SevenBlock.templateBlock a tag (f i))
+
+#guard_standard_axioms CoveringDesigns.SevenBlock.classification_expanded
+
+#print axioms CoveringDesigns.SevenBlock.classification_expanded
+
+#check (@CoveringDesigns.covering_number_19_9_3_expanded_on : ∀ {V : Type u_1} [inst : Fintype V] [DecidableEq V],
+  Fintype.card V = 19 →
+    (∃ (C : Finset (Finset V)), C.card = 17 ∧ (∀ B ∈ C, B.card = 9) ∧ ∀ (T : Finset V), T.card = 3 → ∃ B ∈ C, T ⊆ B) ∧
+      ∀ (C : Finset (Finset V)), (∀ B ∈ C, B.card = 9) → (∀ (T : Finset V), T.card = 3 → ∃ B ∈ C, T ⊆ B) → 17 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.covering_number_19_9_3_expanded_on
+
+#print axioms CoveringDesigns.covering_number_19_9_3_expanded_on
+
+#check (@CoveringDesigns.C19_9_3.seventeen_le_card_expanded : ∀ {V : Type u_1} {I : Type u_2} [inst : Fintype V] [DecidableEq V]
+  [inst_2 : Fintype I] (B : I → Finset V),
+  Fintype.card V = 19 →
+    (∀ (i : I), (B i).card = 9) → (∀ (T : Finset V), T.card = 3 → ∃ (i : I), T ⊆ B i) → 17 ≤ Fintype.card I)
+
+#guard_standard_axioms CoveringDesigns.C19_9_3.seventeen_le_card_expanded
+
+#print axioms CoveringDesigns.C19_9_3.seventeen_le_card_expanded
+
+#check (@CoveringDesigns.SevenBlock.covering_number_on : ∀ {V : Type u_1} [inst : Fintype V] [DecidableEq V] {a : ℕ},
+  1 ≤ a →
+    Fintype.card V = 7 * a + 4 →
+      (∃ (C : CoveringDesigns.Family V), CoveringDesigns.IsCover C (3 * a + 2) 2 ∧ Finset.card C = 7) ∧
+        ∀ (C : CoveringDesigns.Family V), CoveringDesigns.IsCover C (3 * a + 2) 2 → 7 ≤ Finset.card C)
+
+#guard_standard_axioms CoveringDesigns.SevenBlock.covering_number_on
+
+#print axioms CoveringDesigns.SevenBlock.covering_number_on
+
+#check (@CoveringDesigns.SevenBlock.templates_not_isomorphic : ∀ (a : ℕ),
+  ¬CoveringDesigns.SevenBlock.IndexedIsomorphic (CoveringDesigns.SevenBlock.templateBlock a Bool.false)
+      (CoveringDesigns.SevenBlock.templateBlock a Bool.true))
+
+#guard_standard_axioms CoveringDesigns.SevenBlock.templates_not_isomorphic
+
+#print axioms CoveringDesigns.SevenBlock.templates_not_isomorphic
+
+#check (@CoveringDesigns.knownCover17_19_9_3_on_isCover : ∀ {α : Type u_1} [inst : Fintype α] [inst_1 : DecidableEq α]
+  (hv : Fintype.card α = 19), CoveringDesigns.IsCover (CoveringDesigns.knownCover17_19_9_3_on hv) 9 3)
+
+#guard_standard_axioms CoveringDesigns.knownCover17_19_9_3_on_isCover
+
+#print axioms CoveringDesigns.knownCover17_19_9_3_on_isCover
+
+#check (@CoveringDesigns.knownBlocks17_19_9_3_distinct : CoveringDesigns.knownBlocks17_19_9_3.Nodup)
+
+#guard_standard_axioms CoveringDesigns.knownBlocks17_19_9_3_distinct
+
+#print axioms CoveringDesigns.knownBlocks17_19_9_3_distinct
+
+#check (@CoveringDesigns.triple_count_19_9_3 : (Finset.powersetCard 3 Finset.univ).card = 969)
+
+#guard_standard_axioms CoveringDesigns.triple_count_19_9_3
+
+#print axioms CoveringDesigns.triple_count_19_9_3
+
+end CoveringDesigns.AuditSevenC1993All
+

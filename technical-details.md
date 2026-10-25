@@ -40,6 +40,38 @@ a target; whole-library verification includes all eleven components.
 `./covering check` validates the C34 historical data and Lean transcription;
 the Lean kernel separately proves the family's covering properties.
 
+## C(19,9,3)=17 and the seven-block classification
+
+Read the [C19 account](coverings/19-9-3/README.md) for the proof that 16
+blocks cannot suffice and for Belic's known 17-block construction. The
+[supporting account](coverings/seven-block/README.md) proves the two forms
+of minimum pair coverings and credits the earlier results. Both of its
+documented targets are included:
+
+```sh
+./covering verify seven-block-core
+./covering audit seven-block-core
+./covering verify seven-block
+./covering audit seven-block
+./covering verify 19-9-3
+./covering audit 19-9-3
+```
+
+The core proves the general a≥2 classification independently of Stanton;
+the all-a adapter adds a=1. C19 uses only a=2. Its main lower-bound import
+closure has 45 project modules. The full C19 target has 69 steps because
+its unchanged audit also checks the witness and retained older completion
+and fifteen-block rank results through separate verification roots. Those
+alternatives are not prerequisites of the shorter lower-bound theorem.
+Whole-package verification includes all three targets without duplicate
+module compilations.
+
+`./covering check` verifies the [witness inputs](coverings/19-9-3/inputs.json),
+including exact agreement of the retained original text, the attributed
+[JSON witness](data/c1993-belic-witness.json) and the Lean literal after its
+label shift. Every input resolves inside the package. These integrity and
+coverage checks are separate from the Lean theorem and axiom audits.
+
 ## Set up dependencies
 
 Install Lean **4.34.1** with Lake available on the path. Dependency setup and verification need Python **3.14+** with the
@@ -385,3 +417,6 @@ The full verification command above covers the first three results and all of th
 | `37-21-6` | `CoveringDesigns.C37_21_6` |
 | `38-22-7` | `CoveringDesigns.C38_22_7` |
 | `39-23-8` | `CoveringDesigns.C39_23_8` |
+| `seven-block-core` | `CoveringDesigns.SevenBlock.Core` |
+| `seven-block` | `CoveringDesigns.SevenBlock` |
+| `19-9-3` | `CoveringDesigns.C19_9_3` |

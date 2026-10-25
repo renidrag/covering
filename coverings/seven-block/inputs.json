@@ -1,0 +1,14 @@
+{
+  "entry": "CoveringDesigns.SevenBlock",
+  "kind": "Exhaustive indexed seven-block classification for all a>=1, two actual weighted Fano forms, and the known exact family C(7a+4,3a+2,2)=7",
+  "depends_on": [
+    "CoveringDesigns.Foundations.Intersecting",
+    "CoveringDesigns.Multicover.Family",
+    "CoveringDesigns.Foundations.Relabelling",
+    "CoveringDesigns.Equality.FiniteSum",
+    "CoveringDesigns.C11_5_2.Classification"
+  ],
+  "reuse_scope": "SevenBlock.Core contains the general a>=2 branch and both constructions without Stanton. SevenBlock adds only the a=1 ordinary/indexed adapter. Templates retain actual point fibres, including the empty Type-II fibre at a=1. Universal proofs do not use a diagnostic catalogue or external certificate.",
+  "inputs": [],
+  "path_convention": "Paths are relative to the repository root. All public Lean sources and audit sources are fingerprinted by the shared workflow."
+}
