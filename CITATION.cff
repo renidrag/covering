@@ -2,9 +2,9 @@ cff-version: 1.2.0
 message: "If you cite this proof package, please use this citation."
 type: software
 title: "Covering designs: structural proofs and Lean 4 verification"
-# Prepared release date; reconcile before release if publication occurs later.
 version: "1.6.0"
 date-released: "2026-10-24"
+doi: "10.5281/zenodo.23638382"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23511135"

@@ -12,6 +12,7 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 | Release | First public date | Archived snapshot | Version DOI |
 |---|---|---|---|
+| [v1.6.0](https://github.com/renidrag/covering/releases/tag/v1.6.0) | 25 October 2026 | [6b31c1407457](https://github.com/renidrag/covering/tree/6b31c1407457709b335baf346a29962701d8b6e6) | [10.5281/zenodo.23638382](https://doi.org/10.5281/zenodo.23638382) |
 | [v1.5.0](https://github.com/renidrag/covering/releases/tag/v1.5.0) | 24 October 2026 | [d8e27cb77c77](https://github.com/renidrag/covering/tree/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1) | [10.5281/zenodo.23616283](https://doi.org/10.5281/zenodo.23616283) |
 | [v1.4.0](https://github.com/renidrag/covering/releases/tag/v1.4.0) | 22 October 2026 | [a2a726abb7ae](https://github.com/renidrag/covering/tree/a2a726abb7ae1e26a37841f730abb90a34469c11) | [10.5281/zenodo.23576357](https://doi.org/10.5281/zenodo.23576357) |
 | [v1.3.0](https://github.com/renidrag/covering/releases/tag/v1.3.0) | 21 October 2026 | [78e2076b0cb0](https://github.com/renidrag/covering/tree/78e2076b0cb05b99aa83fc952832c6591ac47f80) | [10.5281/zenodo.23546184](https://doi.org/10.5281/zenodo.23546184) |
@@ -21,12 +22,18 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 Versions v1.0.0–v1.2.0 were archived on Zenodo on 20 October 2026; v1.3.0
 was archived on 21 October 2026, v1.4.0 on 22 October 2026 and v1.5.0
-on 24 October 2026.
+on 24 October 2026. v1.6.0 was published and archived on 25 October 2026.
 The v1.1.0 archive uses a same-day packaging
 cleanup with unchanged mathematics; the 19 October account below retains
 the first public snapshot.
 
-## v1.6.0 — $C(19,9,3)=17$
+## 25 October 2026 — $C(19,9,3)=17$
+
+**v1.6.0**
+
+[Snapshot 6b31c1407457](https://github.com/renidrag/covering/tree/6b31c1407457709b335baf346a29962701d8b6e6) ·
+[Lean verification passed](https://github.com/renidrag/covering/actions/runs/40177073143) ·
+[Zenodo archive — DOI 10.5281/zenodo.23638382](https://doi.org/10.5281/zenodo.23638382).
 
 This release proves C(19,9,3)=17. The new argument rules out 16 blocks;
 Rade Belic's known construction uses 17. Both are verified in Lean.
@@ -42,11 +49,11 @@ and credits its earlier sources. LJCR recorded Belic's construction on
 11 June 1997. Its 17 distinct blocks cover all 969 triples; the distributed
 block list is checked against the Lean construction.
 
-[Result and proof outline](coverings/19-9-3/README.md) ·
-[Mathematical proof and Lean correspondence](coverings/19-9-3/proof.md) ·
-[Sources and construction attribution](coverings/19-9-3/sources.md) ·
-[Supporting classification](coverings/seven-block/proof.md) ·
-[Belic's block list](data/c1993-belic-17.blocks.txt).
+[Result and proof outline](https://github.com/renidrag/covering/blob/6b31c1407457709b335baf346a29962701d8b6e6/coverings/19-9-3/README.md) ·
+[Mathematical proof and Lean correspondence](https://github.com/renidrag/covering/blob/6b31c1407457709b335baf346a29962701d8b6e6/coverings/19-9-3/proof.md) ·
+[Sources and construction attribution](https://github.com/renidrag/covering/blob/6b31c1407457709b335baf346a29962701d8b6e6/coverings/19-9-3/sources.md) ·
+[Supporting classification](https://github.com/renidrag/covering/blob/6b31c1407457709b335baf346a29962701d8b6e6/coverings/seven-block/proof.md) ·
+[Belic's block list](https://github.com/renidrag/covering/blob/6b31c1407457709b335baf346a29962701d8b6e6/data/c1993-belic-17.blocks.txt).
 
 All earlier mathematical results and constructions are retained.
 
