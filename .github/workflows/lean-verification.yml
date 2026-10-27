@@ -2,9 +2,11 @@ name: Lean verification
 
 on:
   push:
+    # Verify every branch; creating a release tag does not repeat the same build.
+    branches:
+      - '**'
     # Skip only reader-documentation and citation changes on branch pushes.
     # Unknown paths, proof/data/tool changes and mixed pushes still verify.
-    # Tag pushes are not path-filtered by GitHub.
     paths-ignore:
       - 'CITATION.cff'
       - 'README.md'

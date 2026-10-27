@@ -193,11 +193,17 @@ README, the numerical indexes `RESULTS.md` and `RESULTS.json`, attribution
 notices, this guide or the Markdown result accounts skip the workflow.
 Changes to proofs, witnesses, manifests, tools, tests,
 dependency pins or the workflow still run full verification, including when
-mixed with documentation changes. Pull requests, tag pushes and manual
-**Run workflow** requests retain full verification. For a release snapshot
-whose documentation-only push was skipped, run the workflow manually on
-that revision before recording its verification. A skipped push does not
-create a fresh proof-verification result.
+mixed with documentation changes. Automatic push runs cover every branch;
+creating a tag or publishing a release does not start another run. Pull requests
+and manual **Run workflow** requests retain full verification.
+
+Before publishing a release, require a successful complete workflow run on its
+exact commit SHA. A successful branch run on that SHA is sufficient; tag creation
+need not repeat it. If the intended release commit has no successful run because
+its documentation-only push was skipped, run the workflow manually and confirm
+its commit SHA before releasing. An earlier commit's result or a skipped push
+is not verification of the release commit. Keep the successful run linked from
+the release description.
 
 The [Lean verification workflow](.github/workflows/lean-verification.yml)
 runs on the events described above. Its proof job exports
