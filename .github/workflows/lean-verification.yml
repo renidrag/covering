@@ -8,6 +8,8 @@ on:
     paths-ignore:
       - 'CITATION.cff'
       - 'README.md'
+      - 'RESULTS.md'
+      - 'RESULTS.json'
       - 'RELEASE_HISTORY.md'
       - 'THIRD_PARTY_NOTICES.md'
       - 'technical-details.md'

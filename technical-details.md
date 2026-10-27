@@ -189,8 +189,9 @@ the recorded workflow's command-by-command evidence.
 ## GitHub Actions
 
 Branch pushes changing only citation metadata, release history, the root
-README, attribution notices, this guide or the Markdown result accounts
-skip the workflow. Changes to proofs, witnesses, manifests, tools, tests,
+README, the numerical indexes `RESULTS.md` and `RESULTS.json`, attribution
+notices, this guide or the Markdown result accounts skip the workflow.
+Changes to proofs, witnesses, manifests, tools, tests,
 dependency pins or the workflow still run full verification, including when
 mixed with documentation changes. Pull requests, tag pushes and manual
 **Run workflow** requests retain full verification. For a release snapshot

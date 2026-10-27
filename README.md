@@ -23,9 +23,9 @@ provides proof references, methods, seeds, ceiling chains and dated comparisons
 for research and ablation studies. The principal results and families are below.
 
 “Published here” dates the first appearance of the precise statement in this
-repository. The v2.0.0 entries are prepared for publication; their public dates
-will be recorded after release. The [release history](RELEASE_HISTORY.md)
-retains earlier statements, exact snapshots and archived versions.
+repository. The v2.0.0 results first appeared on 27 October 2026.
+The [release history](RELEASE_HISTORY.md) retains earlier statements,
+exact snapshots and archived versions.
 
 ## Exact values and families
 
@@ -41,15 +41,15 @@ Each equality includes an attaining construction.
 | $C(2k-2,k,3)=14,\quad k\ge31$ | 20 Oct 2026 | [v1.2.0] | [Account](coverings/2k-minus-c-k-3/README.md) · [Proof](coverings/2k-minus-c-k-3/proof.md) |
 | $C(2k-3,k,3)=14,\quad k\ge59$ | 19 Oct 2026 | [v1.1.0] | [Account](coverings/2k-minus-c-k-3/README.md) · [Proof](coverings/2k-minus-c-k-3/proof.md) |
 | $C(2k-c,k,3)=14,\quad c\ge2,\ k\ge25c$ | 19 Oct 2026 | [v1.1.0] | [Account](coverings/2k-minus-c-k-3/README.md) · [Proof](coverings/2k-minus-c-k-3/proof.md) |
-| $C(4k,k,2)=20$ if $4\mid k$, otherwise $21$, for $k\ge8$ | — | v2.0.0 (prepared) | [Account](coverings/4k-k-2/README.md) · [Proof](coverings/4k-k-2/proof.md) |
-| $C(55,11,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
-| $C(56,8,2)=57$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
-| $C(65,13,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
-| $C(80,16,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
-| $C(85,17,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
-| $C(90,10,2)=91$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
-| $C(95,19,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
-| $C(v,k,2)=q^2+q+1,\quad qk<v\le qk+r$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#3-actual-constructions-and-exact-intervals) |
+| $C(4k,k,2)=20$ if $4\mid k$, otherwise $21$, for $k\ge8$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/4k-k-2/README.md) · [Proof](coverings/4k-k-2/proof.md) |
+| $C(55,11,2)=31$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(56,8,2)=57$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(65,13,2)=31$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(80,16,2)=31$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(85,17,2)=31$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(90,10,2)=91$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(95,19,2)=31$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(v,k,2)=q^2+q+1,\quad qk<v\le qk+r$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#3-actual-constructions-and-exact-intervals) |
 
 For the weighted interval, q is a prime power with q≥2, k=qu+r and 1≤r≤u.
 The endpoint v=qk has separate hypotheses in the linked proof.
@@ -65,8 +65,8 @@ applications of the C(4k,k,2) family in the current batch.
 | $C(32,7,3)\ge149$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
 | $C(58,9,3)\ge375$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
 | $C(92,11,3)\ge774$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
-| $C(70,14,2)\ge31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md) |
-| $C(6k,k,2)\ge43,\quad k\ge6$ | — | v2.0.0 (prepared) | [Account](coverings/6k-k-2/README.md) · [Proof](coverings/6k-k-2/proof.md) |
+| $C(70,14,2)\ge31$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md) |
+| $C(6k,k,2)\ge43,\quad k\ge6$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/6k-k-2/README.md) · [Proof](coverings/6k-k-2/proof.md) |
 
 The [projective-link account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md)
 proves the odd-q family underlying 149, 375 and 774. The
@@ -87,7 +87,7 @@ These accounts reconstruct established results and record their attribution.
 | $C(12,6,3)=15\text{; minimum coverings classified}$ | 15 Oct 2026 | [v1.0.0] | [Account](coverings/12-6-3/README.md) · [Proof](coverings/12-6-3/proof.md) |
 | $C(n,4,3)=n(n-1)^2/24$, for $n=12u+1$, $1\le u\le8$ | 22 Oct 2026 | [v1.4.0] | [Account and block lists](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
 | $C(7a+4,3a+2,2)=7,\ a\ge1\text{; 2 minimum forms}$ | 25 Oct 2026 | [v1.6.0] | [Account](coverings/seven-block/README.md) · [Proof](coverings/seven-block/proof.md) |
-| $C(qk,k,2)=q(q+1),\quad k\ge q,\ q\mid k$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#3-actual-constructions-and-exact-intervals) |
+| $C(qk,k,2)=q(q+1),\quad k\ge q,\ q\mid k$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#3-actual-constructions-and-exact-intervals) |
 
 The eight included block lists correspond to n=13,25,37,49,61,73,85,97.
 Six were reconstructed from published methods and two recovered from historical
@@ -98,8 +98,8 @@ In the final family, q is a prime power with q≥2.
 
 | Result | Published here | Release | Account and proof |
 |---|---|---|---|
-| $C(qk,k,2)=q(q+1)\Longrightarrow q\mid k\text{ or }(q+1)\mid k,\quad q\ge4,\ k\ge q$ | — | v2.0.0 (prepared) | [Account](coverings/4k-k-2/README.md) · [Proof](coverings/4k-k-2/proof.md) |
-| $20\text{-block }(16t,4t,2)\text{ coverings: complete description and converse},\quad t\ge1$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#5-all-20-block-16t4t2-coverings) |
+| $C(qk,k,2)=q(q+1)\Longrightarrow q\mid k\text{ or }(q+1)\mid k,\quad q\ge4,\ k\ge q$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/4k-k-2/README.md) · [Proof](coverings/4k-k-2/proof.md) |
+| $20\text{-block }(16t,4t,2)\text{ coverings: complete description and converse},\quad t\ge1$ | 27 Oct 2026 | [v2.0.0] | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#5-all-20-block-16t4t2-coverings) |
 
 The [general account](coverings/qk-k-2/proof.md) also includes the determinant
 criterion, positive-load classification and the primitive quotient with its
@@ -135,4 +135,4 @@ version DOIs for individual results.
 [v1.6.0]: https://github.com/renidrag/covering/releases/tag/v1.6.0
 
 [v1.7.0]: https://github.com/renidrag/covering/releases/tag/v1.7.0
-
+[v2.0.0]: https://github.com/renidrag/covering/releases/tag/v2.0.0
