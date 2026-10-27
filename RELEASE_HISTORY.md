@@ -12,7 +12,7 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 | Release | First public date | Archived snapshot | Version DOI |
 |---|---|---|---|
-| [v2.0.0](https://github.com/renidrag/covering/releases/tag/v2.0.0) | 27 October 2026 | — | — |
+| [v2.0.0](https://github.com/renidrag/covering/releases/tag/v2.0.0) | 27 October 2026 | [149421abb3f9](https://github.com/renidrag/covering/tree/149421abb3f939f7095c64fb9b4b42c482cfa9d8) | [10.5281/zenodo.23699809](https://doi.org/10.5281/zenodo.23699809) |
 | [v1.7.0](https://github.com/renidrag/covering/releases/tag/v1.7.0) | 25 October 2026 | [5f6e50d69982](https://github.com/renidrag/covering/tree/5f6e50d699824ff72233d38e6250fb71915a5be6) | [10.5281/zenodo.23652462](https://doi.org/10.5281/zenodo.23652462) |
 | [v1.6.0](https://github.com/renidrag/covering/releases/tag/v1.6.0) | 25 October 2026 | [6b31c1407457](https://github.com/renidrag/covering/tree/6b31c1407457709b335baf346a29962701d8b6e6) | [10.5281/zenodo.23638382](https://doi.org/10.5281/zenodo.23638382) |
 | [v1.5.0](https://github.com/renidrag/covering/releases/tag/v1.5.0) | 24 October 2026 | [d8e27cb77c77](https://github.com/renidrag/covering/tree/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1) | [10.5281/zenodo.23616283](https://doi.org/10.5281/zenodo.23616283) |
@@ -33,6 +33,10 @@ the first public snapshot.
 ## 27 October 2026 — Exact values and lower bounds for pair coverings
 
 **v2.0.0**
+
+[Snapshot 149421abb3f9](https://github.com/renidrag/covering/tree/149421abb3f939f7095c64fb9b4b42c482cfa9d8) ·
+[GitHub verification](https://github.com/renidrag/covering/actions/runs/40564017400) ·
+[Zenodo archive — DOI 10.5281/zenodo.23699809](https://doi.org/10.5281/zenodo.23699809).
 
 For every integer k≥8:
 
