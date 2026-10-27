@@ -41,3 +41,16 @@ import CoveringDesigns.SevenBlock
 import CoveringDesigns.C19_9_3
 
 import CoveringDesigns.ProjectiveLinkBounds
+
+import CoveringDesigns.TruncatedPlaneLoads
+import CoveringDesigns.PairEquality
+import CoveringDesigns.PairDivisibility
+import CoveringDesigns.TwistedArithmetic
+import CoveringDesigns.PairConstructions
+import CoveringDesigns.C4k_K_2.Examples
+
+import CoveringDesigns.Qk_K_2
+
+import CoveringDesigns.PairConsequences
+
+import CoveringDesigns.C6k_K_2

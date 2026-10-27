@@ -1,0 +1,36 @@
+Historical covering witnesses and catalogue metadata
+===================================================
+
+witnesses/65-13-2.json preserves the 31-block La Jolla Covering Repository
+construction credited to Flavio Perona, 21 May 2011, 03:32:48 (method blank).
+witnesses/95-19-2.json preserves the 31-block construction credited to
+Jan de Heer and Steve Muir, "Private tools", 16 March 2011, 12:50:04.
+LJCR is curated by Daniel M. Gordon.
+
+The historical witnesses were recovered from the read-only CVKT archive.
+The adaptation changes compressed uint8 rows to JSON and adds provenance
+fields; original labels and block order are unchanged. These are not new
+constructions by this project. Original compressed bytes, metadata and
+source observations are retained under inputs/. The full LJCR metadata
+snapshot is retained unchanged as inputs/coverdata.json.
+
+Creative Commons Attribution 4.0 (International) License (CC-BY-4.0)
+https://creativecommons.org/licenses/by/4.0/
+Copyright (c) 2024, Daniel M. Gordon
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Source repository: https://github.com/dmgordo/LJCR
+Metadata: https://raw.githubusercontent.com/dmgordo/LJCR/main/coverings/coverdata.json
+
+The other five witnesses are deterministic geometric instances prepared
+for Rob Gardiner's research project with Codex assistance. Source articles
+linked from this account retain their authors' copyright; the LJCR licence
+does not purport to license those articles.
+

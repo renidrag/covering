@@ -1,0 +1,21 @@
+{
+  "entry": "CoveringDesigns.TruncatedPlaneLoads",
+  "kind": "Positive equal-load classification relative to any supplied truncated plane",
+  "depends_on": [
+    "CoveringDesigns.Foundations.Basic",
+    "CoveringDesigns.Foundations.Relabelling",
+    "CoveringDesigns.Multicover.Basic"
+  ],
+  "reuse_scope": "Real classification and converse, positive natural multiplicities, actual incidence families; no fractional classification. The order-four seed is checked in Lean.",
+  "inputs": [
+    {
+      "path": "data/pair-family/controls/positive-controls.json",
+      "sha256": "420c0aadb5304df4bc489895e48b79eb28f161bd940d9822c993c65f850b3a66"
+    },
+    {
+      "path": "scripts/check_truncated_plane_loads.py",
+      "sha256": "991fd04bd2dd9d17811c5e964c1dfc9f028b340740a66710ec2a193df799513f"
+    }
+  ],
+  "path_convention": "Input paths resolve inside this package. Witness bytes are copied unchanged; metadata locators, checker path literals and their hashes are projected. Historical locators within retained provenance are identifiers, not runtime inputs."
+}

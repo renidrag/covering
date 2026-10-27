@@ -1,0 +1,58 @@
+{
+  "entry": "CoveringDesigns.Qk_K_2",
+  "kind": "Reviewed pair-covering consequences and preserved witnesses",
+  "inputs": [
+    {
+      "path": "data/pair-family/extensions/historical-provenance.json",
+      "sha256": "0d603e8e574def6b61aa7d2459aa9c9c90bb0834c39e09c999c62f96b4fa4607"
+    },
+    {
+      "path": "data/pair-family/extensions/NOTICES.txt",
+      "sha256": "d2a7efa7de6fb45a9985a6167dc96150351f97d3930ecf68a33e01e287be83c8"
+    },
+    {
+      "path": "data/pair-family/extensions/lift-inventory.json",
+      "sha256": "edaa15edd3ce02b99c5bccdb10fd750934832b598d497d1ae5b6e0f2a253a30a"
+    },
+    {
+      "path": "data/pair-family/extensions/lifting.md",
+      "sha256": "f1bf38d6ae976a9bf4f0ddd441b184e47cbc289408a19687d55d2d4607055933"
+    },
+    {
+      "path": "data/pair-family/extensions/inputs/coverdata.json",
+      "sha256": "0984bb8b4c89fe07268569b9814794e3c8852302d075f0794140f202e83d7fef"
+    },
+    {
+      "path": "scripts/check_qk_data.py",
+      "sha256": "8f3bfd74830cbad55d9cdf8865141d27e2154ac06f100d84595cc5dbb18b7d32"
+    },
+    {
+      "path": "data/pair-family/extensions/witnesses/65-13-2.json",
+      "sha256": "48ca0c73694402f4d3a047b2708358bb24245463074da56d6e341bacd9d55ea8"
+    },
+    {
+      "path": "data/pair-family/extensions/inputs/65-13-2.blocks.zst",
+      "sha256": "c384aa5d3e8f9e7645bbf9225bf3fc6cfbb787d478db309865a95c04cf4ec32a"
+    },
+    {
+      "path": "data/pair-family/extensions/witnesses/95-19-2.json",
+      "sha256": "93bc633ad3715b0ca9edbd7fa86b33b39528d76a15c64173146cbab7028c9a28"
+    },
+    {
+      "path": "data/pair-family/extensions/inputs/95-19-2.blocks.zst",
+      "sha256": "31d847886d5b7b215b10eee36b179025b3c69dff8251d2f2698637dbf564b3dd"
+    },
+    {
+      "path": "data/pair-family/consequences/proposed-additions.json",
+      "sha256": "4d609517fd2fc216af82afb20379f2642930be25db9cc92500a9fee85d216435"
+    },
+    {
+      "path": "scripts/pair_consequence_data.py",
+      "sha256": "03c3c71b302f5450b3e8c53fe6c498b47ae966a84f5feed782a4c6d2a89e0094"
+    }
+  ],
+  "path_convention": "Input paths resolve inside this package. Witness bytes are copied unchanged; metadata locators, checker path literals and their hashes are projected. Historical locators within retained provenance are identifiers, not runtime inputs.",
+  "additional_entries": [
+    "CoveringDesigns.PairConsequences"
+  ]
+}

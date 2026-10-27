@@ -1,0 +1,5 @@
+import CoveringDesigns.TwistedArithmetic.OrderFour
+import CoveringDesigns.Foundations.StandardAxioms
+
+#guard_standard_axioms CoveringDesigns.TwistedArithmetic.order_four_determinant
+  CoveringDesigns.TwistedArithmetic.no_twisted_four

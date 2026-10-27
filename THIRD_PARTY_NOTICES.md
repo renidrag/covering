@@ -182,3 +182,25 @@ lower bounds at (14,5,3) and (34,18,3). Rob Gardiner, with AI assistance,
 is credited for the explicit deductions and formalisation. The individual
 accounts retain dated comparisons and unresolved historical priority.
 No additional reference paper is reproduced.
+
+## Pair-covering witnesses and comparison records
+
+The pair accounts retain three La Jolla Covering Repository constructions:
+**Colin Barker**, C(44,11,2)≤21 (1 December 2008);
+**Flavio Perona**, C(65,13,2)≤31 (21 May 2011); and
+**Jan de Heer and Steve Muir**, C(95,19,2)≤31 (16 March 2011).
+Daniel M. Gordon's LJCR records and original compressed block lists retain
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+The [Barker notice](data/pair-family/barker/NOTICES.txt) and
+[Perona/de Heer–Muir notice](data/pair-family/extensions/NOTICES.txt)
+accompany their original data and provenance. Label shifts into Lean are
+checked separately; the constructions are not attributed to this project.
+The 26 October LJCR snapshot and 27 October comparison inventory retain their
+dated categories. Metadata projections replace private filesystem locators
+with selected public files or explicitly historical identifiers; all numerical
+observations, credits, dates and witness hashes are preserved.
+
+Mathematical antecedents and the project's structural additions are distinguished
+in the [pair source account](coverings/qk-k-2/sources.md). No reference PDFs or
+third-party articles are distributed in this package.

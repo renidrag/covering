@@ -4,7 +4,7 @@
 
 **Rob Gardiner**
 
-This project publishes new covering-number results that I have found,
+This project publishes new covering-number results that I have proved,
 together with reconstructed proofs and explicit constructions of established
 results.
 
@@ -13,17 +13,23 @@ that covers every $t$-element subset. The smallest possible number of blocks
 is $C(v,k,t)$.
 
 The results below are proved in Lean. Each account gives the mathematical
-argument, construction provenance and attribution. OpenAI language models
+proof, construction provenance and attribution. OpenAI language models
 assisted the development, formalisation, checking and writing.
 
-“Published here” records the first public appearance of the stated result
-in this repository. For a strengthened range, it dates that range.
-The [release history](RELEASE_HISTORY.md) links earlier statements, exact
-snapshots and archived versions.
+The catalogue contains **205 Lean-verified numerical results for \(v<100\), \(k<25\) and \(t<9\), including 34 exact values**. It brings together improved bounds and exactness proofs, alongside reconstructed proofs and explicit constructions of established results.
 
-## Exact values
+The [numerical index](RESULTS.md) lists all results ordered by strength and parameters. Its [JSON inventory](RESULTS.json)
+provides proof references, methods, seeds, ceiling chains and dated comparisons
+for research and ablation studies. The principal results and families are below.
 
-Each equality includes a checked construction with the stated number of blocks.
+“Published here” dates the first appearance of the precise statement in this
+repository. The v2.0.0 entries are prepared for publication; their public dates
+will be recorded after release. The [release history](RELEASE_HISTORY.md)
+retains earlier statements, exact snapshots and archived versions.
+
+## Exact values and families
+
+Each equality includes an attaining construction.
 
 | Result | Published here | Release | Account and proof |
 |---|---|---|---|
@@ -35,63 +41,69 @@ Each equality includes a checked construction with the stated number of blocks.
 | $C(2k-2,k,3)=14,\quad k\ge31$ | 20 Oct 2026 | [v1.2.0] | [Account](coverings/2k-minus-c-k-3/README.md) · [Proof](coverings/2k-minus-c-k-3/proof.md) |
 | $C(2k-3,k,3)=14,\quad k\ge59$ | 19 Oct 2026 | [v1.1.0] | [Account](coverings/2k-minus-c-k-3/README.md) · [Proof](coverings/2k-minus-c-k-3/proof.md) |
 | $C(2k-c,k,3)=14,\quad c\ge2,\ k\ge25c$ | 19 Oct 2026 | [v1.1.0] | [Account](coverings/2k-minus-c-k-3/README.md) · [Proof](coverings/2k-minus-c-k-3/proof.md) |
+| $C(4k,k,2)=20$ if $4\mid k$, otherwise $21$, for $k\ge8$ | — | v2.0.0 (prepared) | [Account](coverings/4k-k-2/README.md) · [Proof](coverings/4k-k-2/proof.md) |
+| $C(55,11,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(56,8,2)=57$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(65,13,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(80,16,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(85,17,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(90,10,2)=91$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(95,19,2)=31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#4-seven-exact-values-and-the-separate-bound) |
+| $C(v,k,2)=q^2+q+1,\quad qk<v\le qk+r$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#3-actual-constructions-and-exact-intervals) |
+
+For the weighted interval, q is a prime power with q≥2, k=qu+r and 1≤r≤u.
+The endpoint v=qk has separate hypotheses in the linked proof.
+The [pair-results index](RESULTS.md#strength-2) also lists the twelve numerical
+applications of the C(4k,k,2) family in the current batch.
 
 ## Lower bounds
 
 | Result | Published here | Release | Account and proof |
 |---|---|---|---|
 | $C(14,5,3)\ge41$ | 22 Oct 2026 | [v1.4.0] | [Account](coverings/14-5-3/README.md) · [Proof](coverings/14-5-3/proof.md) |
-| $C(15,6,4)\ge103$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/15-6-4/README.md) · [Proof](coverings/15-6-4/proof.md) |
-| $C(16,7,5)\ge236$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/16-7-5/README.md) · [Proof](coverings/16-7-5/proof.md) |
-| $C(17,8,6)\ge502$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/17-8-6/README.md) · [Proof](coverings/17-8-6/proof.md) |
-| $C(18,9,7)\ge1004$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/18-9-7/README.md) · [Proof](coverings/18-9-7/proof.md) |
-| $C(19,10,8)\ge1908$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/19-10-8/README.md) · [Proof](coverings/19-10-8/proof.md) |
-| $C(19,11,4)\ge21$ | 21 Oct 2026 | [v1.3.0] | [Account](coverings/18-10-3/README.md) · [Proof](coverings/18-10-3/proof.md#9-schönheim-lifting-and-the-five-consequences) |
-| $C(20,12,5)\ge35$ | 21 Oct 2026 | [v1.3.0] | [Account](coverings/18-10-3/README.md) · [Proof](coverings/18-10-3/proof.md#9-schönheim-lifting-and-the-five-consequences) |
-| $C(21,13,6)\ge57$ | 21 Oct 2026 | [v1.3.0] | [Account](coverings/18-10-3/README.md) · [Proof](coverings/18-10-3/proof.md#9-schönheim-lifting-and-the-five-consequences) |
-| $C(22,14,7)\ge90$ | 21 Oct 2026 | [v1.3.0] | [Account](coverings/18-10-3/README.md) · [Proof](coverings/18-10-3/proof.md#9-schönheim-lifting-and-the-five-consequences) |
-| $C(23,15,8)\ge138$ | 21 Oct 2026 | [v1.3.0] | [Account](coverings/18-10-3/README.md) · [Proof](coverings/18-10-3/proof.md#9-schönheim-lifting-and-the-five-consequences) |
+| $13\le C(2k-2,k,3)\le14,\quad k\ge17$ | 20 Oct 2026 | [v1.2.0] | [Account](coverings/2k-minus-c-k-3/README.md) · [Proof](coverings/2k-minus-c-k-3/proof.md) |
 | $C(32,7,3)\ge149$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
-| $C(35,19,4)\ge24$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/35-19-4/README.md) · [Proof](coverings/35-19-4/proof.md) |
-| $C(36,20,5)\ge44$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/36-20-5/README.md) · [Proof](coverings/36-20-5/proof.md) |
-| $C(37,21,6)\ge78$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/37-21-6/README.md) · [Proof](coverings/37-21-6/proof.md) |
-| $C(38,22,7)\ge135$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/38-22-7/README.md) · [Proof](coverings/38-22-7/proof.md) |
-| $C(39,23,8)\ge229$ | 24 Oct 2026 | [v1.5.0] | [Account](coverings/39-23-8/README.md) · [Proof](coverings/39-23-8/proof.md) |
 | $C(58,9,3)\ge375$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
 | $C(92,11,3)\ge774$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
-| $13\le C(2k-2,k,3)\le14,\quad k\ge17$ | 20 Oct 2026 | [v1.2.0] | [Account](coverings/2k-minus-c-k-3/README.md) · [Proof](coverings/2k-minus-c-k-3/proof.md) |
-| $C(n+1,q+2,3)\ge n+\lceil N/M\rceil,\quad q\ge3\text{ odd}$ | 25 Oct 2026 | [v1.7.0] | [Account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) · [Proof](coverings/q2-plus-q-plus-2-q-plus-2-3/proof.md) |
+| $C(70,14,2)\ge31$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md) |
+| $C(6k,k,2)\ge43,\quad k\ge6$ | — | v2.0.0 (prepared) | [Account](coverings/6k-k-2/README.md) · [Proof](coverings/6k-k-2/proof.md) |
 
-In the final row, $n=q^2+q+1$, $N=nq^3(q+1)/6$ and
-$M=\binom{q+2}{3}-\lceil q/4\rceil$. The
-[account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md) gives the general
-proof and the three numerical applications. Published geometric arguments
-already imply 149 and 375; the parity estimate strengthens the corresponding
-deduction for $C(92,11,3)$ from 770 to 774.
+The [projective-link account](coverings/q2-plus-q-plus-2-q-plus-2-3/README.md)
+proves the odd-q family underlying 149, 375 and 774. The
+[C(2k−c,k,3) account](coverings/2k-minus-c-k-3/README.md) includes
+the general inequalities behind its numerical thresholds.
+
+The [full index](RESULTS.md) includes the five lifts from each of
+C(18,10,3)≥12, C(14,5,3)≥41 and C(34,18,3)≥13, and the
+[151 pair-derived bounds](coverings/qk-k-2/bounds.md).
 
 ## Reconstructed results and supporting proofs
 
-These results were established in earlier work. The accounts give reconstructed
-proofs, Lean verification and attribution.
-
-For $n=12u+1$ with $1\le u\le8$, the exact value is $n(n-1)^2/24$.
-The [8 block lists](coverings/12u-plus-1-4-3/README.md) are included: 6
-were reconstructed from published methods and 2 recovered from historical
-sources. Each list is checked against its Lean construction.
+These accounts reconstruct established results and record their attribution.
 
 | Result | Published here | Release | Account and proof |
 |---|---|---|---|
-| $C(13,4,3)=78$ | 22 Oct 2026 | [v1.4.0] | [Account](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
-| $C(25,4,3)=600$ | 22 Oct 2026 | [v1.4.0] | [Account](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
-| $C(37,4,3)=1{,}998$ | 22 Oct 2026 | [v1.4.0] | [Account](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
-| $C(49,4,3)=4{,}704$ | 22 Oct 2026 | [v1.4.0] | [Account](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
-| $C(61,4,3)=9{,}150$ | 22 Oct 2026 | [v1.4.0] | [Account](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
-| $C(73,4,3)=15{,}768$ | 22 Oct 2026 | [v1.4.0] | [Account](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
-| $C(85,4,3)=24{,}990$ | 22 Oct 2026 | [v1.4.0] | [Account](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
-| $C(97,4,3)=37{,}248$ | 22 Oct 2026 | [v1.4.0] | [Account](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
 | $C(11,5,2)=7\text{; 2 minimum forms}$ | 15 Oct 2026 | [v1.0.0] | [Account](coverings/11-5-2/README.md) · [Proof](coverings/11-5-2/proof.md) |
 | $C(12,6,3)=15\text{; minimum coverings classified}$ | 15 Oct 2026 | [v1.0.0] | [Account](coverings/12-6-3/README.md) · [Proof](coverings/12-6-3/proof.md) |
+| $C(n,4,3)=n(n-1)^2/24$, for $n=12u+1$, $1\le u\le8$ | 22 Oct 2026 | [v1.4.0] | [Account and block lists](coverings/12u-plus-1-4-3/README.md) · [Proof](coverings/12u-plus-1-4-3/proof.md) |
 | $C(7a+4,3a+2,2)=7,\ a\ge1\text{; 2 minimum forms}$ | 25 Oct 2026 | [v1.6.0] | [Account](coverings/seven-block/README.md) · [Proof](coverings/seven-block/proof.md) |
+| $C(qk,k,2)=q(q+1),\quad k\ge q,\ q\mid k$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#3-actual-constructions-and-exact-intervals) |
+
+The eight included block lists correspond to n=13,25,37,49,61,73,85,97.
+Six were reconstructed from published methods and two recovered from historical
+sources; each list is checked against its Lean construction.
+In the final family, q is a prime power with q≥2.
+
+## Equality and structural results
+
+| Result | Published here | Release | Account and proof |
+|---|---|---|---|
+| $C(qk,k,2)=q(q+1)\Longrightarrow q\mid k\text{ or }(q+1)\mid k,\quad q\ge4,\ k\ge q$ | — | v2.0.0 (prepared) | [Account](coverings/4k-k-2/README.md) · [Proof](coverings/4k-k-2/proof.md) |
+| $20\text{-block }(16t,4t,2)\text{ coverings: complete description and converse},\quad t\ge1$ | — | v2.0.0 (prepared) | [Account](coverings/qk-k-2/README.md) · [Proof](coverings/qk-k-2/proof.md#5-all-20-block-16t4t2-coverings) |
+
+The [general account](coverings/qk-k-2/proof.md) also includes the determinant
+criterion, positive-load classification and the primitive quotient with its
+replication converse. Their precise hypotheses and original sources are included.
 
 ## Verification
 
@@ -109,8 +121,7 @@ included in this repository.
 
 ## Citation and release history
 
-Use the [citation metadata](CITATION.cff) or the
-[v1.7.0 DOI](https://doi.org/10.5281/zenodo.23652462) to cite this version. The
+Use the [citation metadata](CITATION.cff) to cite this package. The
 [collection DOI](https://doi.org/10.5281/zenodo.23511135) covers all versions;
 the [release history](RELEASE_HISTORY.md) gives the dates, exact snapshots and
 version DOIs for individual results.
@@ -124,3 +135,4 @@ version DOIs for individual results.
 [v1.6.0]: https://github.com/renidrag/covering/releases/tag/v1.6.0
 
 [v1.7.0]: https://github.com/renidrag/covering/releases/tag/v1.7.0
+

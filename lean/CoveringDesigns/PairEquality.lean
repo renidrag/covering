@@ -1,0 +1,3 @@
+import CoveringDesigns.PairEquality.Compatibility
+import CoveringDesigns.PairEquality.Examples
+import CoveringDesigns.Foundations.StandardAxioms

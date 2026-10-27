@@ -1,0 +1,5 @@
+import CoveringDesigns.PairConstructions.Weighted
+import CoveringDesigns.Foundations.StandardAxioms
+
+#guard_standard_axioms CoveringDesigns.PairConstructions.projective_line_intersection
+  CoveringDesigns.PairConstructions.weighted_projective

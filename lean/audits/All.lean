@@ -1395,3 +1395,98 @@ namespace CoveringDesigns.AuditProjectiveLinkDirectAll
 
 end CoveringDesigns.AuditProjectiveLinkDirectAll
 
+#check (@CoveringDesigns.TruncatedPlaneLoads.real_classification_iff :
+  ∀ {V G : Type*} [Fintype V] [DecidableEq V] [Fintype G] [DecidableEq G]
+    {q : ℕ} (P : CoveringDesigns.TruncatedPlaneLoads.Plane q V G), 4 ≤ q →
+    ∀ {H : Finset (Finset V)} {w : Finset V → ℝ} {K : ℝ}, 0 < K →
+      (CoveringDesigns.TruncatedPlaneLoads.Admissible P H w K ↔
+        CoveringDesigns.TruncatedPlaneLoads.Description P H w (K/q)))
+
+#guard_standard_axioms CoveringDesigns.TruncatedPlaneLoads.real_classification_iff
+
+#print axioms CoveringDesigns.TruncatedPlaneLoads.real_classification_iff
+
+#check (@CoveringDesigns.PairEquality.geometric_dichotomy :
+  ∀ {I : Type*} [Fintype I] [DecidableEq I] {q : ℕ}, 4 ≤ q →
+    ∀ {H : Finset (Finset I)} {w : Finset I → ℝ},
+      CoveringDesigns.PairEquality.PositiveUnitLoads q H w →
+      (∃ P : CoveringDesigns.TruncatedPlaneLoads.Plane q I (Fin (q+1)), P.core ⊆ H) ∨
+        CoveringDesigns.PairEquality.IsTwistedPlane q H)
+
+#guard_standard_axioms CoveringDesigns.PairEquality.geometric_dichotomy
+
+#print axioms CoveringDesigns.PairEquality.geometric_dichotomy
+
+namespace CoveringDesigns.AuditC4kAll
+universe u_1 u_2
+#check (@CoveringDesigns.PairDivisibility.divisibility :
+∀ {I : Type u_1} {X : Type u_2} [inst : Fintype I] [DecidableEq I] [inst_2 : Fintype X] [inst_3 : DecidableEq X]
+  {q k : ℕ} {B : I → Finset X},
+  4 ≤ q →
+    q ≤ k →
+      Fintype.card X = q * k →
+        Fintype.card I = q * (q + 1) → CoveringDesigns.Multicover.IsCover B k 2 1 → q ∣ k ∨ q + 1 ∣ k)
+
+#guard_standard_axioms CoveringDesigns.PairDivisibility.divisibility
+
+#print axioms CoveringDesigns.PairDivisibility.divisibility
+
+#check (@CoveringDesigns.TwistedArithmetic.no_twisted_four :
+∀ {I : Type u_1} [inst : Fintype I] [inst_1 : DecidableEq I] {H : Finset (Finset I)},
+  CoveringDesigns.PairEquality.IsTwistedPlane 4 H → False)
+
+#guard_standard_axioms CoveringDesigns.TwistedArithmetic.no_twisted_four
+
+#print axioms CoveringDesigns.TwistedArithmetic.no_twisted_four
+
+#check (@CoveringDesigns.PairConstructions.weighted_projective :
+∀ {α : Type u_1} [inst : Fintype α] {q u r : ℕ},
+  IsPrimePow q →
+    2 ≤ q →
+      1 ≤ r →
+        r ≤ u →
+          Fintype.card α = q * (q * u + r) →
+            ∃ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C (q * u + r) 2 ∧ Finset.card C ≤ q * q + q + 1)
+
+#guard_standard_axioms CoveringDesigns.PairConstructions.weighted_projective
+
+#print axioms CoveringDesigns.PairConstructions.weighted_projective
+
+#check (@CoveringDesigns.C4k_K_2.exactness :
+∀ {α : Type u_1} [inst : Fintype α] {k : ℕ},
+  8 ≤ k →
+    Fintype.card α = 4 * k →
+      (∃ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C k 2 ∧ Finset.card C = if 4 ∣ k then 20 else 21) ∧
+        ∀ (C : CoveringDesigns.Family α), CoveringDesigns.IsCover C k 2 → (if 4 ∣ k then 20 else 21) ≤ Finset.card C)
+
+#guard_standard_axioms CoveringDesigns.C4k_K_2.exactness
+
+#print axioms CoveringDesigns.C4k_K_2.exactness
+
+end CoveringDesigns.AuditC4kAll
+
+#check (@CoveringDesigns.Qk_K_2.exact_90_10_2 :
+  ∀ {α : Type*} [Fintype α], Fintype.card α = 90 →
+    (∃ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C 10 2 ∧ C.card = 91) ∧
+      ∀ C : CoveringDesigns.Family α, CoveringDesigns.IsCover C 10 2 → 91 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.Qk_K_2.exact_90_10_2
+
+#print axioms CoveringDesigns.Qk_K_2.exact_90_10_2
+
+#check (@CoveringDesigns.PairConsequences.lower_bound_99_23_6 :
+  ∀ {X : Type*} [Fintype X] {C : CoveringDesigns.Family X}, Fintype.card X = 99 →
+    CoveringDesigns.IsCover C 23 6 → 13215 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.PairConsequences.lower_bound_99_23_6
+
+#print axioms CoveringDesigns.PairConsequences.lower_bound_99_23_6
+
+#check (@CoveringDesigns.C6k_K_2.lower_bound :
+  ∀ {X : Type*} [Fintype X] {C : CoveringDesigns.Family X} {k : ℕ},
+    6 ≤ k → Fintype.card X = 6*k → CoveringDesigns.IsCover C k 2 → 43 ≤ C.card)
+
+#guard_standard_axioms CoveringDesigns.C6k_K_2.lower_bound
+
+#print axioms CoveringDesigns.C6k_K_2.lower_bound
+

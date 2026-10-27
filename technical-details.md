@@ -404,6 +404,41 @@ verification separately. Whole-library verification includes the component.
 Lean transcription and independently tests all 364 triples. Lean proves the
 attaining family's cardinality and coverage in the kernel.
 
+## Pair coverings: exact values, equality and lifted bounds
+
+Start with [C(4k,k,2)](coverings/4k-k-2/README.md), then the
+[general pair account](coverings/qk-k-2/README.md) and the separate
+[order-six bound](coverings/6k-k-2/README.md). The
+[combined numerical table](coverings/qk-k-2/bounds.md) lists 151 distinct
+parameter triples, retaining every intermediate ceiling and dated comparison.
+
+The complete dependency chain is included: truncated-plane loads, fractional
+support classification, covering-to-support divisibility, twisted-plane
+arithmetic, constructions and numerical consequences. Historical witnesses
+retain their original labels and credits; their checkers compare compressed
+bytes, JSON and Lean literals. The [third-party notices](THIRD_PARTY_NOTICES.md)
+identify the licences. Retained comparison identifiers are historical metadata;
+verification reads only files in this package.
+
+| Target | Scope |
+|---|---|
+| `truncated-plane-loads` | Real and integer loads, classification and converse on an actual truncated plane |
+| `pair-equality` | Original-coordinate geometric dichotomy and both mate relations |
+| `pair-divisibility` | Indexed covering adapter and general divisibility alternative |
+| `twisted-arithmetic` | Mate equations, determinant and order-four obstruction |
+| `pair-constructions` | Actual weighted projective constructions |
+| `4k-k-2` | C(4k,k,2)=20 or 21 for k≥8, including attainment |
+| `qk-k-2` | Seven further exact values, C(70,14,2)≥31 and the earlier lifting chain |
+| `pair-consequences` | Determinant parity, primitive quotient, replication, weighted intervals and 78 direct additions |
+| `6k-k-2` | C(6k,k,2)≥43 for k≥6 and fourteen numerical consequences |
+
+For a focused run use `./covering verify qk-k-2`,
+`./covering verify pair-consequences` or `./covering verify 6k-k-2`,
+followed by the matching `./covering audit` command. Whole-package verification
+includes every target above, compiles each project module once and checks the
+individual and combined full-contract axiom audits. `./covering check` checks
+all retained inputs and witness/table correspondence separately from Lean.
+
 ## Lower bounds and exact values for $C(2k-c,k,3)$
 
 Read the [canonical account](coverings/2k-minus-c-k-3/README.md), then its [proof and Lean correspondence](coverings/2k-minus-c-k-3/proof.md) and [sources](coverings/2k-minus-c-k-3/sources.md). The supporting proofs, audit contracts and verification inputs are included in this repository.
@@ -442,3 +477,12 @@ The full verification command above covers the first three results and all of th
 | `seven-block` | `CoveringDesigns.SevenBlock` |
 | `19-9-3` | `CoveringDesigns.C19_9_3` |
 | `projective-link-bounds` | `CoveringDesigns.ProjectiveLinkBounds` |
+| `truncated-plane-loads` | `CoveringDesigns.TruncatedPlaneLoads` |
+| `pair-equality` | `CoveringDesigns.PairEquality` |
+| `pair-divisibility` | `CoveringDesigns.PairDivisibility` |
+| `twisted-arithmetic` | `CoveringDesigns.TwistedArithmetic` |
+| `pair-constructions` | `CoveringDesigns.PairConstructions` |
+| `4k-k-2` | `CoveringDesigns.C4k_K_2.Examples` |
+| `qk-k-2` | `CoveringDesigns.Qk_K_2` |
+| `pair-consequences` | `CoveringDesigns.PairConsequences` |
+| `6k-k-2` | `CoveringDesigns.C6k_K_2` |

@@ -1,0 +1,195 @@
+{
+  "date": "2026-10-26",
+  "witnesses": [
+    {
+      "compressed_bytes": 334,
+      "compressed_sha256": "c384aa5d3e8f9e7645bbf9225bf3fc6cfbb787d478db309865a95c04cf4ec32a",
+      "credit": [
+        "31",
+        "",
+        "Flavio Perona",
+        "2011-05-21 03:32:48"
+      ],
+      "licence": "CC BY 4.0; Daniel M. Gordon / La Jolla Covering Repository.",
+      "parameters": [
+        65,
+        13,
+        2
+      ],
+      "raw_bytes": 403,
+      "raw_sha256": "e3a90d45e3c09454e0f28b74ae9fc6d2566427d538374cc06440ce4f24d04251",
+      "source_observations": [
+        {
+          "field": "size",
+          "id": "source_observation:6a9a8a5a-95b5-53c6-88b6-7b87b59d3ce9",
+          "raw_value": 31,
+          "record_type": "source_observation",
+          "recorded_at": "2026-10-17T12:19:26Z",
+          "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+          "schema_version": "cvkt-pilot-2",
+          "source_ref": {
+            "locator": "coverdata.json /C(65,13,2)/size",
+            "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+          }
+        },
+        {
+          "field": "low_bd",
+          "id": "source_observation:d698f34d-ae36-5547-8ed8-893b53e045ce",
+          "raw_value": 30,
+          "record_type": "source_observation",
+          "recorded_at": "2026-10-17T12:19:26Z",
+          "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+          "schema_version": "cvkt-pilot-2",
+          "source_ref": {
+            "locator": "coverdata.json /C(65,13,2)/low_bd",
+            "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+          }
+        },
+        {
+          "field": "imps",
+          "id": "source_observation:3576903f-14ab-5169-b52c-2ec4d42d0ba0",
+          "raw_value": [
+            [
+              "31",
+              "",
+              "Flavio Perona",
+              "2011-05-21 03:32:48"
+            ],
+            [
+              "32",
+              "Simple construction from (66,13,2)",
+              "LJCR",
+              "2009-07-06 10:11:19"
+            ],
+            [
+              "32",
+              "Simulated Annealing",
+              "Michael Dambmann",
+              "2009-01-16 10:42:03"
+            ],
+            [
+              "36",
+              "",
+              "Kinski and Genivaldo Pereira",
+              "2009-01-12 05:39:21"
+            ],
+            [
+              "38",
+              "Simple construction from (64,12,2)",
+              "LJCR",
+              "2009-01-08 21:41:58"
+            ],
+            [
+              "40",
+              "Simple construction from (66,13,2)",
+              "LJCR",
+              "2009-01-08 21:12:14"
+            ]
+          ],
+          "record_type": "source_observation",
+          "recorded_at": "2026-10-17T12:19:26Z",
+          "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+          "schema_version": "cvkt-pilot-2",
+          "source_ref": {
+            "locator": "coverdata.json /C(65,13,2)/imps",
+            "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+          }
+        }
+      ],
+      "source_paths_sha256": {
+        "data/pair-family/extensions/inputs/65-13-2.blocks.zst": "c384aa5d3e8f9e7645bbf9225bf3fc6cfbb787d478db309865a95c04cf4ec32a",
+        "historical CVKT identifier: catalogue/65/13/2.json": "6b1f80d9207bf9a18678e6091d057b5ff3dccacf5d93f0fc8e365c12d3c38596",
+        "historical CVKT identifier: catalogue/artefacts/55a6116f-8238-5b25-a582-37f4ba87b161.json": "7f104dc0ffff7a9bf1b37f3ebe37c21c132161bbcfbead52ac7123b598b2ef51"
+      }
+    },
+    {
+      "compressed_bytes": 528,
+      "compressed_sha256": "31d847886d5b7b215b10eee36b179025b3c69dff8251d2f2698637dbf564b3dd",
+      "credit": [
+        "31",
+        "Private tools",
+        "Jan de Heer and Steve Muir",
+        "2011-03-16 12:50:04"
+      ],
+      "licence": "CC BY 4.0; Daniel M. Gordon / La Jolla Covering Repository.",
+      "parameters": [
+        95,
+        19,
+        2
+      ],
+      "raw_bytes": 589,
+      "raw_sha256": "737d45c06ddb51ff1062b9c5ee0ce4bda1f485ac9f8fe68656b5958145ad9cb3",
+      "source_observations": [
+        {
+          "field": "size",
+          "id": "source_observation:e632f3e6-2a62-5fac-ab77-bfb85a7586bb",
+          "raw_value": 31,
+          "record_type": "source_observation",
+          "recorded_at": "2026-10-17T12:19:26Z",
+          "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+          "schema_version": "cvkt-pilot-2",
+          "source_ref": {
+            "locator": "coverdata.json /C(95,19,2)/size",
+            "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+          }
+        },
+        {
+          "field": "low_bd",
+          "id": "source_observation:6f1e2f99-f5c4-56c0-830f-fa0cf6760030",
+          "raw_value": 30,
+          "record_type": "source_observation",
+          "recorded_at": "2026-10-17T12:19:26Z",
+          "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+          "schema_version": "cvkt-pilot-2",
+          "source_ref": {
+            "locator": "coverdata.json /C(95,19,2)/low_bd",
+            "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+          }
+        },
+        {
+          "field": "imps",
+          "id": "source_observation:7add5ddf-7a95-543a-8baf-19a8d863a9ea",
+          "raw_value": [
+            [
+              "31",
+              "Private tools",
+              "Jan de Heer and Steve Muir",
+              "2011-03-16 12:50:04"
+            ],
+            [
+              "32",
+              "Simple construction from (96,19,2)",
+              "Terenzio Lazzarotto",
+              "2009-06-27 10:54:01"
+            ],
+            [
+              "35",
+              "Simple construction from (94,18,2)",
+              "LJCR",
+              "2009-01-08 22:20:36"
+            ],
+            [
+              "37",
+              "Simple construction from (96,19,2)",
+              "LJCR",
+              "2009-01-07 13:57:19"
+            ]
+          ],
+          "record_type": "source_observation",
+          "recorded_at": "2026-10-17T12:19:26Z",
+          "recorded_by": "contributor:9ece865c-0b2d-57bb-a449-a22bad199425",
+          "schema_version": "cvkt-pilot-2",
+          "source_ref": {
+            "locator": "coverdata.json /C(95,19,2)/imps",
+            "source_id": "source:7bfe07ca-154a-5735-bf2a-50e27b2f1fd9"
+          }
+        }
+      ],
+      "source_paths_sha256": {
+        "data/pair-family/extensions/inputs/95-19-2.blocks.zst": "31d847886d5b7b215b10eee36b179025b3c69dff8251d2f2698637dbf564b3dd",
+        "historical CVKT identifier: catalogue/95/19/2.json": "5a724c3de48e5cf0cc5a3b23d884e20a2e50bb97015c4a978afdd324467b5dbb",
+        "historical CVKT identifier: catalogue/artefacts/0747edb4-6d1b-52c5-8bae-89a6a0611cb2.json": "2a6591c08fc34b8c3ea5cdc8cf85ab666457840c23980be00f916e54a7c38d51"
+      }
+    }
+  ]
+}

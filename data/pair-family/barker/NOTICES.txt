@@ -1,0 +1,33 @@
+Historical covering witness
+===========================
+
+witnesses/44-11-2.json preserves the twenty-one-block La Jolla Covering
+Repository construction credited to Colin Barker, "Simulated Annealing",
+1 December 2008, 09:10:02. LJCR is curated by Daniel M. Gordon.
+It was recovered from the read-only CVKT archive. The adaptation changes
+compressed uint8 rows to JSON and adds provenance fields; original labels
+and block order are unchanged. It is not a new construction by this project.
+The archived source bytes and metadata are retained under inputs/.
+
+Creative Commons Attribution 4.0 (International) License (CC-BY-4.0)
+https://creativecommons.org/licenses/by/4.0/
+Copyright (c) 2024, Daniel M. Gordon
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Source repository: https://github.com/dmgordo/LJCR
+Metadata: https://raw.githubusercontent.com/dmgordo/LJCR/main/coverings/coverdata.json
+
+The other witnesses in witnesses/ are deterministic geometric instantiations
+prepared for Rob Gardiner's project with Codex assistance.
+
+The source articles retained or linked in this research account keep their
+respective authorship and copyright. The LJCR licence above is not asserted
+to license Füredi's article, the Bierbrauer–Marcugini–Pambianco manuscript or
+the Hall–Horsley–Stinson manuscript. Their retained sources are for inspection.

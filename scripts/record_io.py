@@ -12,7 +12,7 @@ def write_json(path, value):
     with tempfile.NamedTemporaryFile(mode='w', dir=path.parent, delete=False) as stream:
         temporary = Path(stream.name)
         try:
-            json.dump(value, stream, indent=2)
+            stream.write(json.dumps(value, indent=2))
             stream.write('\n')
             stream.flush()
             os.fsync(stream.fileno())

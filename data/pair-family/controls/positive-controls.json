@@ -1,0 +1,378 @@
+[
+  {
+    "name": "q4-t1-h0",
+    "v": 16,
+    "k": 4,
+    "occurrences": 20,
+    "supports": [
+      {
+        "support": [
+          0,
+          4,
+          8,
+          12,
+          16
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          0,
+          5,
+          10,
+          15,
+          17
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          0,
+          6,
+          11,
+          13,
+          18
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          0,
+          7,
+          9,
+          14,
+          19
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          1,
+          4,
+          11,
+          14,
+          17
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          1,
+          5,
+          9,
+          13,
+          16
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          1,
+          6,
+          8,
+          15,
+          19
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          1,
+          7,
+          10,
+          12,
+          18
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          2,
+          4,
+          9,
+          15,
+          18
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          2,
+          5,
+          11,
+          12,
+          19
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          2,
+          6,
+          10,
+          14,
+          16
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          2,
+          7,
+          8,
+          13,
+          17
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          3,
+          4,
+          10,
+          13,
+          19
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          3,
+          5,
+          8,
+          14,
+          18
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          3,
+          6,
+          9,
+          12,
+          17
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          3,
+          7,
+          11,
+          15,
+          16
+        ],
+        "multiplicity": 1
+      }
+    ]
+  },
+  {
+    "name": "q4-t2-h1",
+    "v": 32,
+    "k": 8,
+    "occurrences": 20,
+    "supports": [
+      {
+        "support": [
+          0,
+          4,
+          8,
+          12,
+          16
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          0,
+          5,
+          10,
+          15,
+          17
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          0,
+          6,
+          11,
+          13,
+          18
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          0,
+          7,
+          9,
+          14,
+          19
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          1,
+          4,
+          11,
+          14,
+          17
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          1,
+          5,
+          9,
+          13,
+          16
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          1,
+          6,
+          8,
+          15,
+          19
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          1,
+          7,
+          10,
+          12,
+          18
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          2,
+          4,
+          9,
+          15,
+          18
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          2,
+          5,
+          11,
+          12,
+          19
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          2,
+          6,
+          10,
+          14,
+          16
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          2,
+          7,
+          8,
+          13,
+          17
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          3,
+          4,
+          10,
+          13,
+          19
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          3,
+          5,
+          8,
+          14,
+          18
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          3,
+          6,
+          9,
+          12,
+          17
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          3,
+          7,
+          11,
+          15,
+          16
+        ],
+        "multiplicity": 2
+      },
+      {
+        "support": [
+          0,
+          4,
+          5,
+          6,
+          7
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          0,
+          8,
+          9,
+          10,
+          11
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          0,
+          12,
+          13,
+          14,
+          15
+        ],
+        "multiplicity": 1
+      },
+      {
+        "support": [
+          0,
+          16,
+          17,
+          18,
+          19
+        ],
+        "multiplicity": 1
+      }
+    ]
+  }
+]

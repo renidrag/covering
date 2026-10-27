@@ -1,0 +1,5 @@
+import CoveringDesigns.PairDivisibility.Classification
+import CoveringDesigns.Foundations.StandardAxioms
+
+#guard_standard_axioms CoveringDesigns.PairDivisibility.divisibility
+  CoveringDesigns.PairDivisibility.twisted_of_not_dvd

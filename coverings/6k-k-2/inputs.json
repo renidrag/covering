@@ -1,0 +1,19 @@
+{
+  "entry": "CoveringDesigns.C6k_K_2",
+  "kind": "Retained numerical correspondence; comparisons are not mathematical premises",
+  "inputs": [
+    {
+      "path": "data/pair-family/consequences/proposed-additions.json",
+      "sha256": "4d609517fd2fc216af82afb20379f2642930be25db9cc92500a9fee85d216435"
+    },
+    {
+      "path": "data/pair-family/extensions/lift-inventory.json",
+      "sha256": "edaa15edd3ce02b99c5bccdb10fd750934832b598d497d1ae5b6e0f2a253a30a"
+    },
+    {
+      "path": "scripts/order_six_data.py",
+      "sha256": "697a3b32097a38014ea6a2066ac6ce70983d510a28f8115b9917edabe018bf96"
+    }
+  ],
+  "path_convention": "Input paths resolve inside this package. Witness bytes are copied unchanged; metadata locators, checker path literals and their hashes are projected. Historical locators within retained provenance are identifiers, not runtime inputs."
+}

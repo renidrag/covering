@@ -12,6 +12,7 @@ represents all versions; use a version DOI below to cite a particular archive.
 
 | Release | First public date | Archived snapshot | Version DOI |
 |---|---|---|---|
+| [v2.0.0](https://github.com/renidrag/covering/releases/tag/v2.0.0) | 27 October 2026 | — | — |
 | [v1.7.0](https://github.com/renidrag/covering/releases/tag/v1.7.0) | 25 October 2026 | [5f6e50d69982](https://github.com/renidrag/covering/tree/5f6e50d699824ff72233d38e6250fb71915a5be6) | [10.5281/zenodo.23652462](https://doi.org/10.5281/zenodo.23652462) |
 | [v1.6.0](https://github.com/renidrag/covering/releases/tag/v1.6.0) | 25 October 2026 | [6b31c1407457](https://github.com/renidrag/covering/tree/6b31c1407457709b335baf346a29962701d8b6e6) | [10.5281/zenodo.23638382](https://doi.org/10.5281/zenodo.23638382) |
 | [v1.5.0](https://github.com/renidrag/covering/releases/tag/v1.5.0) | 24 October 2026 | [d8e27cb77c77](https://github.com/renidrag/covering/tree/d8e27cb77c77e91b7657fdc9d7ca14552e1ee2c1) | [10.5281/zenodo.23616283](https://doi.org/10.5281/zenodo.23616283) |
@@ -28,6 +29,58 @@ on 24 October 2026. v1.6.0 and v1.7.0 were published and archived on
 The v1.1.0 archive uses a same-day packaging
 cleanup with unchanged mathematics; the 19 October account below retains
 the first public snapshot.
+
+## 27 October 2026 — Exact values and lower bounds for pair coverings
+
+**v2.0.0**
+
+For every integer k≥8:
+
+- **C(4k,k,2)=20 when 4 divides k.**
+- **C(4k,k,2)=21 otherwise.**
+
+The theorem gives exact value 21 at k=9,10,11,13,14,15,17,18,19,21,22,23,
+closing twelve intervals in the LJCR snapshot of 26 October 2026.
+
+| Covering number | Exact value |
+|---|---:|
+| C(55,11,2) | 31 |
+| C(56,8,2) | 57 |
+| C(65,13,2) | 31 |
+| C(80,16,2) | 31 |
+| C(85,17,2) | 31 |
+| C(90,10,2) | 91 |
+| C(95,19,2) | 31 |
+
+Each exact value includes an attaining construction. The release also proves
+**C(70,14,2)≥31** and **C(6k,k,2)≥43 for every k≥6**.
+
+The [combined table](coverings/qk-k-2/bounds.md) gives **151 lower bounds**:
+7 pair seeds and 144 bounds at higher strength. It records 112 improvements
+over dated LJCR entries, 7 over retained cvkt claims and 32 without a retained
+external comparison. Examples are C(37,10,3)≥78, C(56,12,3)≥145,
+C(66,14,3)≥147, C(59,17,5)≥1007 and C(98,22,5)≥3070.
+
+The general results include divisibility at equality, the complete positive-load
+classification for truncated-plane extensions, the determinant criterion,
+primitive quotients and replication, and weighted construction intervals.
+For prime-power q≥2 and k=qu+r with 1≤r≤u,
+C(v,k,2)=q²+q+1 throughout qk<v≤qk+r. Endpoint conditions are stated separately
+in the [general account](coverings/qk-k-2/README.md).
+
+The proof reconstructs Füredi's geometric equality classification and determines
+all compatible positive loads on the truncated-plane core. The order-six result
+includes a specialised proof of projective-plane nonexistence, following the
+classical Bruck–Ryser obstruction. Finite-plane constructions and the historical
+block lists of Barker, Perona and de Heer–Muir retain their attribution;
+Schönheim's recurrence gives the higher-strength bounds.
+
+[Exact values of C(4k,k,2)](coverings/4k-k-2/README.md) ·
+[General pair results and constructions](coverings/qk-k-2/README.md) ·
+[The order-six bound](coverings/6k-k-2/README.md) ·
+[Sources and attribution](coverings/qk-k-2/sources.md).
+
+All earlier mathematical results and constructions are retained.
 
 ## 25 October 2026 — Lower bounds for $C(q^2+q+2,q+2,3)$
 

@@ -1,0 +1,42 @@
+{
+  "entry": "CoveringDesigns.C4k_K_2",
+  "kind": "Exact values of C(4k,k,2), k>=8, with historical Barker exception",
+  "depends_on": [
+    "CoveringDesigns.PairEquality",
+    "CoveringDesigns.TruncatedPlaneLoads",
+    "CoveringDesigns.AffineConstructions.Construction",
+    "CoveringDesigns.TwoKMinusTwo.Expansion",
+    "CoveringDesigns.PointReduction.Family"
+  ],
+  "inputs": [
+    {
+      "path": "data/pair-family/barker/witnesses/44-11-2.json",
+      "sha256": "0ee62241734f735cecb28db28400dbf90ab9dc4a617a12b3587abca15dffeb4b"
+    },
+    {
+      "path": "data/pair-family/barker/inputs/C-44-11-2.blocks.zst",
+      "sha256": "a97881d397f3396d29ae38c91dd8fb5735098fe836e6135305a74bf17972a914"
+    },
+    {
+      "path": "data/pair-family/barker/provenance-44-11-2.json",
+      "sha256": "d522ff0ccc33cb1846d08ae5535b040968316b2c002ec4e7db3985115e996e09"
+    },
+    {
+      "path": "data/pair-family/barker/inputs/catalogue-44-11-2.json",
+      "sha256": "310433a337f18781e7a9a6d3c56ce11fce9f2b0e8cd267fc336b756b0a97cde4"
+    },
+    {
+      "path": "data/pair-family/barker/inputs/artefact-44-11-2.json",
+      "sha256": "0c32e5925e124862d2c8572610e91d9c221ae4a1a19f29b19d3e531ba1d95d2e"
+    },
+    {
+      "path": "data/pair-family/barker/NOTICES.txt",
+      "sha256": "8d99c2e344c6bb6076b400b0ec836eef680c01349fbf8e2a0a83edcc13b84104"
+    },
+    {
+      "path": "scripts/check_c4k_barker.py",
+      "sha256": "35e0aac5591f7e8bfab08bc5c5f1b65ee6ab559cb0c34142324af35f5432431f"
+    }
+  ],
+  "path_convention": "Input paths resolve inside this package. Witness bytes are copied unchanged; metadata locators, checker path literals and their hashes are projected. Historical locators within retained provenance are identifiers, not runtime inputs."
+}

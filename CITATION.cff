@@ -2,9 +2,8 @@ cff-version: 1.2.0
 message: "If you cite this proof package, please use this citation."
 type: software
 title: "Covering designs: structural proofs and Lean 4 verification"
-version: "1.7.0"
-date-released: "2026-10-25"
-doi: "10.5281/zenodo.23652462"
+version: "2.0.0"
+date-released: "2026-10-27"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23511135"
@@ -29,6 +28,11 @@ abstract: >-
   The supporting classification of minimum pair coverings is proved in Lean.
   It also proves C(32,7,3) >= 149, C(58,9,3) >= 375 and C(92,11,3) >= 774,
   with a general lower bound for C(q^2+q+2,q+2,3) for every odd integer q >= 3.
+  This version proves C(4k,k,2)=20 when 4 divides k and 21 otherwise, for
+  every k >= 8, seven further exact pair-covering values, and C(6k,k,2) >= 43
+  for every k >= 6. It includes general divisibility and equality results,
+  weighted construction intervals, and a table of 151 lower bounds with
+  their dated catalogue comparisons.
   OpenAI language models substantially assisted its
   development, formalisation, checking and writing. The proof accounts and
   third-party notices document mathematical attribution and historical

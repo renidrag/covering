@@ -31,7 +31,9 @@ _LOCAL_IMPORT_ROOTS = {'CoveringDesigns', 'Explorations'}
 RUNNER_INPUTS = [Path('scripts') / name for name in (
     'audit_library.py', 'verify_c13_structural.py', 'lean_inputs.py',
     'run_logged.py', 'run_memory_guard.py', 'workflow.py',
-    'covering_cli.py', 'record_io.py')] + [Path('covering')]
+    'covering_cli.py', 'record_io.py', 'qk_registration.py',
+    'pair_consequences_registration.py', 'pair_consequence_data.py',
+    'order_six_registration.py', 'order_six_data.py')] + [Path('covering')]
 COMPONENTS = {
     'caro-tuza': {
         'entry': 'CoveringDesigns.CaroTuza',
@@ -2177,6 +2179,687 @@ COMPONENTS['projective-link-bounds']['independent_of'] = [
     ('projective-link-bounds', 'schoenheim', 'horsley-singh', 'equality', 'multicover', 'exact-design')]
 
 
+# Truncated-plane load classification: narrowly additive registration.
+TRUNCATED_PLANE_LOAD_IMPORTS = {'CoveringDesigns.TruncatedPlaneLoads.Actual': ['CoveringDesigns.TruncatedPlaneLoads.Covering'],
+ 'CoveringDesigns.TruncatedPlaneLoads.Classification': ['CoveringDesigns.TruncatedPlaneLoads.Counting'],
+ 'CoveringDesigns.TruncatedPlaneLoads.CommonCoordinate': ['CoveringDesigns.TruncatedPlaneLoads.Supports'],
+ 'CoveringDesigns.TruncatedPlaneLoads.Converse': ['CoveringDesigns.TruncatedPlaneLoads.Family'],
+ 'CoveringDesigns.TruncatedPlaneLoads.Counting': ['CoveringDesigns.TruncatedPlaneLoads.CommonCoordinate'],
+ 'CoveringDesigns.TruncatedPlaneLoads.Covering': ['CoveringDesigns.TruncatedPlaneLoads.Integer',
+                                                  'CoveringDesigns.Multicover.Basic',
+                                                  'CoveringDesigns.Foundations.Relabelling'],
+ 'CoveringDesigns.TruncatedPlaneLoads.Examples': ['CoveringDesigns.TruncatedPlaneLoads.Actual'],
+ 'CoveringDesigns.TruncatedPlaneLoads.Family': ['CoveringDesigns.TruncatedPlaneLoads.Classification'],
+ 'CoveringDesigns.TruncatedPlaneLoads.Incidence': ['CoveringDesigns.Foundations.Basic'],
+ 'CoveringDesigns.TruncatedPlaneLoads.Integer': ['CoveringDesigns.TruncatedPlaneLoads.Converse'],
+ 'CoveringDesigns.TruncatedPlaneLoads.Supports': ['CoveringDesigns.TruncatedPlaneLoads.Incidence'],
+ 'CoveringDesigns.TruncatedPlaneLoads': ['CoveringDesigns.TruncatedPlaneLoads.Examples',
+                                         'CoveringDesigns.Foundations.StandardAxioms']}
+COMPONENTS['truncated-plane-loads'] = {'entry': 'CoveringDesigns.TruncatedPlaneLoads',
+ 'audit_name': 'truncated-plane-loads-audit',
+ 'audit_file': 'TruncatedPlaneLoads.lean',
+ 'principal_theorem': 'CoveringDesigns.TruncatedPlaneLoads.real_classification_iff',
+ 'explicit_theorem': 'CoveringDesigns.AuditTruncatedPlaneLoads.real_explicit',
+ 'summary_path': 'results/truncated-plane-loads-verification.json',
+ 'theorems': ['CoveringDesigns.TruncatedPlaneLoads.real_classification',
+              'CoveringDesigns.TruncatedPlaneLoads.real_classification_iff',
+              'CoveringDesigns.TruncatedPlaneLoads.integer_classification',
+              'CoveringDesigns.TruncatedPlaneLoads.integer_converse',
+              'CoveringDesigns.TruncatedPlaneLoads.actual_classification',
+              'CoveringDesigns.TruncatedPlaneLoads.expanded_family_cover'],
+ 'milestones': ['CoveringDesigns.AuditTruncatedPlaneLoads.integer_explicit',
+                'CoveringDesigns.TruncatedPlaneLoads.support',
+                'CoveringDesigns.TruncatedPlaneLoads.occupied',
+                'CoveringDesigns.TruncatedPlaneLoads.multiplicity',
+                'CoveringDesigns.TruncatedPlaneLoads.mem_support',
+                'CoveringDesigns.TruncatedPlaneLoads.support_occupied',
+                'CoveringDesigns.TruncatedPlaneLoads.multiplicity_pos',
+                'CoveringDesigns.TruncatedPlaneLoads.actual_load',
+                'CoveringDesigns.TruncatedPlaneLoads.actual_support_size',
+                'CoveringDesigns.TruncatedPlaneLoads.actual_admissible',
+                'CoveringDesigns.TruncatedPlaneLoads.actualEquiv',
+                'CoveringDesigns.TruncatedPlaneLoads.actualEquiv_support',
+                'CoveringDesigns.TruncatedPlaneLoads.actualEquiv_incidence',
+                'CoveringDesigns.TruncatedPlaneLoads.support_reindex',
+                'CoveringDesigns.TruncatedPlaneLoads.support_relabel',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.classify',
+                'CoveringDesigns.TruncatedPlaneLoads.common_coordinate',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extension',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.mem_extension',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extra_base_injective',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extension_sum',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.core_intersects',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extension_intersects',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extensionWeight',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.pure_converse',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extension_converse',
+                'CoveringDesigns.TruncatedPlaneLoads.description_converse',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extra_group_card',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extra_edge_card',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.coreMass',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.extraMass',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.baseMass',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.tipMass',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.edgeMass',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.sum_load',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.total_mass',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.group_equation',
+                'CoveringDesigns.TruncatedPlaneLoads.Internal.Loads.core_equation',
+                'CoveringDesigns.TruncatedPlaneLoads.Point',
+                'CoveringDesigns.TruncatedPlaneLoads.block',
+                'CoveringDesigns.TruncatedPlaneLoads.mem_block',
+                'CoveringDesigns.TruncatedPlaneLoads.point_card',
+                'CoveringDesigns.TruncatedPlaneLoads.block_card',
+                'CoveringDesigns.TruncatedPlaneLoads.expanded_cover',
+                'CoveringDesigns.TruncatedPlaneLoads.blocks_injective',
+                'CoveringDesigns.TruncatedPlaneLoads.expandedFamily',
+                'CoveringDesigns.TruncatedPlaneLoads.expanded_family_card',
+                'CoveringDesigns.TruncatedPlaneLoads.expanded_on',
+                'CoveringDesigns.TruncatedPlaneLoads.expanded_reindex',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.coreEdge',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.group4',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.core4',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.plane4',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.pure4',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.multiplicity4',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.extended4',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.pure_counts',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.extended_counts',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.two_coordinate_intersection',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.unit_case',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.relabelled_extended',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.permuted_occurrences',
+                'CoveringDesigns.TruncatedPlaneLoads.Examples.twins_exist',
+                'CoveringDesigns.TruncatedPlaneLoads.Admissible',
+                'CoveringDesigns.TruncatedPlaneLoads.Description',
+                'CoveringDesigns.TruncatedPlaneLoads.total_weight',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.groupSet',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.mem_groupSet',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.groupSet_card',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.coordinates_card',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.core_size',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.core_card',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.same_group',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.join',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.core_avoiding',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.distinguish',
+                'CoveringDesigns.TruncatedPlaneLoads.NatAdmissible',
+                'CoveringDesigns.TruncatedPlaneLoads.NatDescription',
+                'CoveringDesigns.TruncatedPlaneLoads.NatAdmissible.toReal',
+                'CoveringDesigns.TruncatedPlaneLoads.NatAdmissible.mass',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.other_group',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.core_nonempty',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extension_ne_core',
+                'CoveringDesigns.TruncatedPlaneLoads.load_divisible',
+                'CoveringDesigns.TruncatedPlaneLoads.unit_load_pure',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.naturalWeight',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.natural_pure',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.natural_extension',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extra',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.mem_extra',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extra_size',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extra_core_meet',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extra_not_core',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.extra_intersection',
+                'CoveringDesigns.TruncatedPlaneLoads.Plane.support_classification'],
+ 'independent_of': [],
+ 'scope': 'Complete positive real equal-load classification and converse for every supplied abstract '
+          'truncated plane of order q >= 4; natural divisibility and multiplicities; actual point '
+          'expansion, distinct blocks, relabelling and a conditional existing-cover adapter. No '
+          'fractional or Furedi classification and no unconditional covering-number bound.'}
+COMPONENTS['truncated-plane-loads']['independent_of'] = [
+    key for key in ['caro-tuza', 'horsley', 'schoenheim', '11-5-2', '12-5-2', '12-6-3', '13-7-4', 'horsley-lifts', 'horsley-singh', 'equality', '17-9-5', 'higher-incidence', 'weighted', '47-14-5', '42-15-5', 'large-defect', 'small-defect', 'small-defect-b', 'small-defect-c', 'multicover', 'multicover-incidence', 'multicover-large-defect', 'coefficient-positivity', 'affine-constructions', 'affine-schoenheim', 'affine-optimality', 'lifting-comparison', 'schoenheim-improvement', 'multicover-small-defect', 'low-degree-selection', 'seed-comparison', 'exact-design', 'point-reduction', 'base-affine', 'schoenheim-family-comparison', 'max-degree-sequence', 'max-guarantee', 'max-covering', 'max-higher-covering', '14-8-5', '59-17-5', '66-18-5', '79-22-5', '87-23-5', '98-22-5', 'labelled-cliques', 'turan-duality', 'turan', 'de-caen', 'chvatal', 'gkp-combination', 'gkp-induced', 'gkp-induced-averaging', 'projective-hyperplanes', 'finite-flat-geometry', 'degree-selected', '20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts', '14-5-3', 'quadruple-assembly', '34-18-3', '15-6-4', '16-7-5', '17-8-6', '18-9-7', '19-10-8', '35-19-4', '36-20-5', '37-21-6', '38-22-7', '39-23-8', 'seven-block-core', 'seven-block', '19-9-3', 'projective-link-bounds', 'truncated-plane-loads'] if key not in ('truncated-plane-loads', 'multicover')]
+
+
+# Pair equality: additive registration of the historical geometric bridge.
+PAIR_EQUALITY_IMPORTS = {'CoveringDesigns.PairEquality.Basic': ['CoveringDesigns.TruncatedPlaneLoads.Incidence'],
+ 'CoveringDesigns.PairEquality.Classification': ['CoveringDesigns.PairEquality.Extraction',
+                                                 'CoveringDesigns.PairEquality.Core',
+                                                 'CoveringDesigns.PairEquality.Twisted'],
+ 'CoveringDesigns.PairEquality.Compatibility': ['CoveringDesigns.PairEquality.Classification',
+                                                'CoveringDesigns.TruncatedPlaneLoads.Family'],
+ 'CoveringDesigns.PairEquality.Core': ['CoveringDesigns.PairEquality.Dimension'],
+ 'CoveringDesigns.PairEquality.Dimension': ['CoveringDesigns.PairEquality.Groups'],
+ 'CoveringDesigns.PairEquality.Examples': ['CoveringDesigns.PairEquality.Compatibility',
+                                           'CoveringDesigns.TruncatedPlaneLoads.Examples'],
+ 'CoveringDesigns.PairEquality.Extraction': ['CoveringDesigns.PairEquality.Basic'],
+ 'CoveringDesigns.PairEquality.Groups': ['CoveringDesigns.PairEquality.Basic'],
+ 'CoveringDesigns.PairEquality.Twisted': ['CoveringDesigns.PairEquality.Basic'],
+ 'CoveringDesigns.PairEquality': ['CoveringDesigns.PairEquality.Compatibility',
+                                  'CoveringDesigns.PairEquality.Examples',
+                                  'CoveringDesigns.Foundations.StandardAxioms']}
+COMPONENTS['pair-equality'] = {'entry': 'CoveringDesigns.PairEquality',
+ 'audit_name': 'pair-equality-audit',
+ 'audit_file': 'PairEquality.lean',
+ 'principal_theorem': 'CoveringDesigns.PairEquality.geometric_dichotomy',
+ 'explicit_theorem': 'CoveringDesigns.AuditPairEquality.geometric_explicit',
+ 'summary_path': 'results/pair-equality-verification.json',
+ 'theorems': ['CoveringDesigns.PairEquality.geometric_dichotomy',
+              'CoveringDesigns.PairEquality.independent_subfamily',
+              'CoveringDesigns.PairEquality.admissible_or_twisted',
+              'CoveringDesigns.PairEquality.IsTwistedPlane.maximal',
+              'CoveringDesigns.PairEquality.IsTwistedPlane.coordinate_codegree',
+              'CoveringDesigns.PairEquality.IsTwistedPlane.support_intersection'],
+ 'milestones': ['CoveringDesigns.AuditPairEquality.twisted_explicit',
+                'CoveringDesigns.PairEquality.indicator',
+                'CoveringDesigns.PairEquality.indicator_injective',
+                'CoveringDesigns.PairEquality.indicator_sum',
+                'CoveringDesigns.PairEquality.PositiveUnitLoads',
+                'CoveringDesigns.PairEquality.degree',
+                'CoveringDesigns.PairEquality.codegree',
+                'CoveringDesigns.PairEquality.degree_sum',
+                'CoveringDesigns.PairEquality.PositiveUnitLoads.meets',
+                'CoveringDesigns.PairEquality.PositiveUnitLoads.total_weight',
+                'CoveringDesigns.PairEquality.PositiveUnitLoads.weight_bound',
+                'CoveringDesigns.PairEquality.PositiveUnitLoads.degree_lower',
+                'CoveringDesigns.PairEquality.PositiveUnitLoads.card_lower',
+                'CoveringDesigns.PairEquality.PositiveUnitLoads.saturated_of_degree',
+                'CoveringDesigns.PairEquality.PositiveUnitLoads.saturated_intersection',
+                'CoveringDesigns.PairEquality.admissible_of_core',
+                'CoveringDesigns.PairEquality.plane_of_degree_q',
+                'CoveringDesigns.PairEquality.Internal.degree_q_everywhere',
+                'CoveringDesigns.PairEquality.Examples.pureWeight',
+                'CoveringDesigns.PairEquality.Examples.extendedWeight',
+                'CoveringDesigns.PairEquality.Examples.pure_unit_loads',
+                'CoveringDesigns.PairEquality.Examples.extended_unit_loads',
+                'CoveringDesigns.PairEquality.Examples.pure_core_branch',
+                'CoveringDesigns.PairEquality.Examples.extended_degrees',
+                'CoveringDesigns.PairEquality.Examples.extended_core_branch',
+                'CoveringDesigns.PairEquality.Examples.positive_extra_retained',
+                'CoveringDesigns.PairEquality.Examples.double_intersection_allowed',
+                'CoveringDesigns.PairEquality.Internal.starGroup',
+                'CoveringDesigns.PairEquality.Internal.mem_starGroup',
+                'CoveringDesigns.PairEquality.Internal.starGroup_card',
+                'CoveringDesigns.PairEquality.Internal.starGroup_codegree',
+                'CoveringDesigns.PairEquality.Internal.starGroup_transversal',
+                'CoveringDesigns.PairEquality.Internal.starGroup_equal_or_disjoint',
+                'CoveringDesigns.PairEquality.IsTwistedPlane',
+                'CoveringDesigns.PairEquality.twisted_of_no_degree_q',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.supportMate',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.supportMate_ne',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.supportMate_intersection',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.support_mate_unique',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.supportMate_involutive',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.coordinateMate',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.coordinateMate_ne',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.coordinateMate_codegree',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.coordinate_mate_unique',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.coordinateMate_involutive',
+                'CoveringDesigns.PairEquality.IsTwistedPlane.pair_covered'],
+ 'independent_of': [],
+ 'scope': 'Furedi geometric equality for positive real unit loads on an intersecting (q+1)-uniform '
+          'family on exactly q(q+1) original coordinates, q >= 4: occupied unchanged Plane core or '
+          'the entire actual twisted family. Support-preserving Caratheodory extraction, both '
+          'derived mate involutions, pair coverage and twisted maximality. Original weights '
+          'retained in load compatibility. No arithmetic exclusion, covering-number application or '
+          'attainment.'}
+COMPONENTS['pair-equality']['independent_of'] = [
+    key for key in ['caro-tuza', 'horsley', 'schoenheim', '11-5-2', '12-5-2', '12-6-3', '13-7-4', 'horsley-lifts', 'horsley-singh', 'equality', '17-9-5', 'higher-incidence', 'weighted', '47-14-5', '42-15-5', 'large-defect', 'small-defect', 'small-defect-b', 'small-defect-c', 'multicover', 'multicover-incidence', 'multicover-large-defect', 'coefficient-positivity', 'affine-constructions', 'affine-schoenheim', 'affine-optimality', 'lifting-comparison', 'schoenheim-improvement', 'multicover-small-defect', 'low-degree-selection', 'seed-comparison', 'exact-design', 'point-reduction', 'base-affine', 'schoenheim-family-comparison', 'max-degree-sequence', 'max-guarantee', 'max-covering', 'max-higher-covering', '14-8-5', '59-17-5', '66-18-5', '79-22-5', '87-23-5', '98-22-5', 'labelled-cliques', 'turan-duality', 'turan', 'de-caen', 'chvatal', 'gkp-combination', 'gkp-induced', 'gkp-induced-averaging', 'projective-hyperplanes', 'finite-flat-geometry', 'degree-selected', '20-11-3', 'two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts', '14-5-3', 'quadruple-assembly', '34-18-3', '15-6-4', '16-7-5', '17-8-6', '18-9-7', '19-10-8', '35-19-4', '36-20-5', '37-21-6', '38-22-7', '39-23-8', 'seven-block-core', 'seven-block', '19-9-3', 'projective-link-bounds', 'truncated-plane-loads', 'pair-equality'] if key not in ('pair-equality', 'truncated-plane-loads', 'multicover')]
+
+
+# C(4k,k,2): additive registration of divisibility, arithmetic and attainment.
+C4K_COMPONENT_KEYS = ('pair-divisibility', 'twisted-arithmetic', 'pair-constructions', '4k-k-2')
+C4K_IMPORTS = {'CoveringDesigns.PairDivisibility.Adapter': ['CoveringDesigns.PairEquality.Classification',
+                                              'CoveringDesigns.TruncatedPlaneLoads.Actual',
+                                              'CoveringDesigns.Multicover.Family'],
+ 'CoveringDesigns.PairDivisibility.Classification': ['CoveringDesigns.PairDivisibility.Adapter',
+                                                     'CoveringDesigns.PairDivisibility.TwistedLoads'],
+ 'CoveringDesigns.PairDivisibility.TwistedLoads': ['CoveringDesigns.PairEquality.Twisted'],
+ 'CoveringDesigns.PairDivisibility': ['CoveringDesigns.PairDivisibility.Classification',
+                                      'CoveringDesigns.Foundations.StandardAxioms'],
+ 'CoveringDesigns.TwistedArithmetic.Determinant': ['CoveringDesigns.TwistedArithmetic.MatePairs'],
+ 'CoveringDesigns.TwistedArithmetic.MatePairs': [],
+ 'CoveringDesigns.TwistedArithmetic.OrderFour': ['CoveringDesigns.TwistedArithmetic.Determinant',
+                                                 'CoveringDesigns.PairEquality.Twisted'],
+ 'CoveringDesigns.TwistedArithmetic': ['CoveringDesigns.TwistedArithmetic.OrderFour',
+                                       'CoveringDesigns.Foundations.StandardAxioms'],
+ 'CoveringDesigns.PairConstructions.Projective': ['CoveringDesigns.ProjectiveHyperplanes.Geometry'],
+ 'CoveringDesigns.PairConstructions.Weighted': ['CoveringDesigns.PairConstructions.Projective',
+                                                'CoveringDesigns.AffineConstructions.Construction',
+                                                'CoveringDesigns.TwoKMinusTwo.Expansion',
+                                                'CoveringDesigns.PointReduction.Family'],
+ 'CoveringDesigns.PairConstructions': ['CoveringDesigns.PairConstructions.Weighted',
+                                       'CoveringDesigns.Foundations.StandardAxioms'],
+ 'CoveringDesigns.C4k_K_2.Attainment': ['CoveringDesigns.C4k_K_2.Barker',
+                                        'CoveringDesigns.PairConstructions.Weighted',
+                                        'CoveringDesigns.AffineConstructions.Examples'],
+ 'CoveringDesigns.C4k_K_2.Barker': ['CoveringDesigns.Foundations.Relabelling'],
+ 'CoveringDesigns.C4k_K_2.Examples': ['CoveringDesigns.C4k_K_2'],
+ 'CoveringDesigns.C4k_K_2.LowerBound': ['CoveringDesigns.PairDivisibility',
+                                        'CoveringDesigns.TwistedArithmetic.OrderFour'],
+ 'CoveringDesigns.C4k_K_2': ['CoveringDesigns.C4k_K_2.LowerBound',
+                             'CoveringDesigns.C4k_K_2.Attainment',
+                             'CoveringDesigns.Foundations.StandardAxioms']}
+COMPONENTS['pair-divisibility'] = {'entry': 'CoveringDesigns.PairDivisibility',
+ 'audit_name': 'pair-divisibility-audit',
+ 'audit_file': 'PairDivisibility.lean',
+ 'principal_theorem': 'CoveringDesigns.PairDivisibility.divisibility',
+ 'explicit_theorem': 'CoveringDesigns.AuditPairDivisibility.divisibility_explicit',
+ 'summary_path': 'results/pair-divisibility-verification.json',
+ 'theorems': ['CoveringDesigns.PairDivisibility.degree_floor',
+              'CoveringDesigns.PairDivisibility.incidence_floor',
+              'CoveringDesigns.PairDivisibility.equality_support_size',
+              'CoveringDesigns.PairDivisibility.normalized_loads',
+              'CoveringDesigns.PairDivisibility.twisted_of_not_dvd',
+              'CoveringDesigns.PairDivisibility.divisibility',
+              'CoveringDesigns.PairDivisibility.improved_floor',
+              'CoveringDesigns.PairDivisibility.family_divisibility',
+              'CoveringDesigns.PairDivisibility.family_improved_floor',
+              'CoveringDesigns.PairDivisibility.twisted_mate_equation',
+              'CoveringDesigns.PairDivisibility.twisted_multiplicity'],
+ 'milestones': [],
+ 'independent_of': ['caro-tuza',
+                    'horsley',
+                    '11-5-2',
+                    '12-5-2',
+                    '12-6-3',
+                    '13-7-4',
+                    'horsley-lifts',
+                    'equality',
+                    '17-9-5',
+                    'higher-incidence',
+                    'weighted',
+                    '47-14-5',
+                    '42-15-5',
+                    'large-defect',
+                    'small-defect',
+                    'small-defect-b',
+                    'small-defect-c',
+                    'multicover-incidence',
+                    'multicover-large-defect',
+                    'coefficient-positivity',
+                    'affine-constructions',
+                    'affine-schoenheim',
+                    'affine-optimality',
+                    'lifting-comparison',
+                    'schoenheim-improvement',
+                    'multicover-small-defect',
+                    'low-degree-selection',
+                    'seed-comparison',
+                    'exact-design',
+                    'point-reduction',
+                    'base-affine',
+                    'schoenheim-family-comparison',
+                    'max-degree-sequence',
+                    'max-guarantee',
+                    'max-covering',
+                    'max-higher-covering',
+                    '14-8-5',
+                    '59-17-5',
+                    '66-18-5',
+                    '79-22-5',
+                    '87-23-5',
+                    '98-22-5',
+                    'labelled-cliques',
+                    'turan-duality',
+                    'turan',
+                    'de-caen',
+                    'chvatal',
+                    'gkp-combination',
+                    'gkp-induced',
+                    'gkp-induced-averaging',
+                    'projective-hyperplanes',
+                    'finite-flat-geometry',
+                    'degree-selected',
+                    '20-11-3',
+                    'two-k-minus-two',
+                    'two-k-minus-two-equality',
+                    'two-k-minus-c',
+                    'two-k-minus-c-general',
+                    'two-k-minus-two-tightening',
+                    'rank-slack-capacity',
+                    'saturated-matching',
+                    '18-10-3',
+                    'c18103-lifts',
+                    '14-5-3',
+                    'quadruple-assembly',
+                    '34-18-3',
+                    '15-6-4',
+                    '16-7-5',
+                    '17-8-6',
+                    '18-9-7',
+                    '19-10-8',
+                    '35-19-4',
+                    '36-20-5',
+                    '37-21-6',
+                    '38-22-7',
+                    '39-23-8',
+                    'seven-block-core',
+                    'seven-block',
+                    '19-9-3',
+                    'projective-link-bounds',
+                    'twisted-arithmetic',
+                    'pair-constructions',
+                    '4k-k-2'],
+ 'scope': 'Unconditional indexed pair-cover incidence floor and equality divisibility q|k or '
+          '(q+1)|k, q>=4 and k>=q; original support multiplicities and twisted structural '
+          'refinement. Repeated occurrences allowed; no prime-power premise or determinant '
+          'dependency.'}
+COMPONENTS['twisted-arithmetic'] = {'entry': 'CoveringDesigns.TwistedArithmetic',
+ 'audit_name': 'twisted-arithmetic-audit',
+ 'audit_file': 'TwistedArithmetic.lean',
+ 'principal_theorem': 'CoveringDesigns.TwistedArithmetic.no_twisted_four',
+ 'explicit_theorem': 'CoveringDesigns.AuditTwistedArithmetic.no_twisted_explicit',
+ 'summary_path': 'results/twisted-arithmetic-verification.json',
+ 'theorems': ['CoveringDesigns.TwistedArithmetic.pairedGram',
+              'CoveringDesigns.TwistedArithmetic.instFintypeMateRepresentatives',
+              'CoveringDesigns.TwistedArithmetic.pairedGram_apply',
+              'CoveringDesigns.TwistedArithmetic.pairedGram_det',
+              'CoveringDesigns.TwistedArithmetic.MateRepresentatives',
+              'CoveringDesigns.TwistedArithmetic.mateEquiv',
+              'CoveringDesigns.TwistedArithmetic.mateEquiv_swap',
+              'CoveringDesigns.TwistedArithmetic.mateRepresentatives_card',
+              'CoveringDesigns.TwistedArithmetic.incidence',
+              'CoveringDesigns.TwistedArithmetic.incidence_gram',
+              'CoveringDesigns.TwistedArithmetic.squareIncidence',
+              'CoveringDesigns.TwistedArithmetic.order_four_determinant',
+              'CoveringDesigns.TwistedArithmetic.no_twisted_four'],
+ 'milestones': [],
+ 'independent_of': ['caro-tuza',
+                    'horsley',
+                    'schoenheim',
+                    '11-5-2',
+                    '12-5-2',
+                    '12-6-3',
+                    '13-7-4',
+                    'horsley-lifts',
+                    'horsley-singh',
+                    'equality',
+                    '17-9-5',
+                    'higher-incidence',
+                    'weighted',
+                    '47-14-5',
+                    '42-15-5',
+                    'large-defect',
+                    'small-defect',
+                    'small-defect-b',
+                    'small-defect-c',
+                    'multicover',
+                    'multicover-incidence',
+                    'multicover-large-defect',
+                    'coefficient-positivity',
+                    'affine-constructions',
+                    'affine-schoenheim',
+                    'affine-optimality',
+                    'lifting-comparison',
+                    'schoenheim-improvement',
+                    'multicover-small-defect',
+                    'low-degree-selection',
+                    'seed-comparison',
+                    'exact-design',
+                    'point-reduction',
+                    'base-affine',
+                    'schoenheim-family-comparison',
+                    'max-degree-sequence',
+                    'max-guarantee',
+                    'max-covering',
+                    'max-higher-covering',
+                    '14-8-5',
+                    '59-17-5',
+                    '66-18-5',
+                    '79-22-5',
+                    '87-23-5',
+                    '98-22-5',
+                    'labelled-cliques',
+                    'turan-duality',
+                    'turan',
+                    'de-caen',
+                    'chvatal',
+                    'gkp-combination',
+                    'gkp-induced',
+                    'gkp-induced-averaging',
+                    'projective-hyperplanes',
+                    'finite-flat-geometry',
+                    'degree-selected',
+                    '20-11-3',
+                    'two-k-minus-two',
+                    'two-k-minus-two-equality',
+                    'two-k-minus-c',
+                    'two-k-minus-c-general',
+                    'two-k-minus-two-tightening',
+                    'rank-slack-capacity',
+                    'saturated-matching',
+                    '18-10-3',
+                    'c18103-lifts',
+                    '14-5-3',
+                    'quadruple-assembly',
+                    '34-18-3',
+                    '15-6-4',
+                    '16-7-5',
+                    '17-8-6',
+                    '18-9-7',
+                    '19-10-8',
+                    '35-19-4',
+                    '36-20-5',
+                    '37-21-6',
+                    '38-22-7',
+                    '39-23-8',
+                    'seven-block-core',
+                    'seven-block',
+                    '19-9-3',
+                    'projective-link-bounds',
+                    'pair-divisibility',
+                    'pair-constructions',
+                    '4k-k-2'],
+ 'scope': 'Fixed-point-free mate partition, paired-Gram determinant, actual integer incidence Gram '
+          'identity, determinant square 3^10*5^11 and nonexistence of an order-four twisted plane. '
+          'No covering arithmetic or construction dependency.'}
+COMPONENTS['pair-constructions'] = {'entry': 'CoveringDesigns.PairConstructions',
+ 'audit_name': 'pair-constructions-audit',
+ 'audit_file': 'PairConstructions.lean',
+ 'principal_theorem': 'CoveringDesigns.PairConstructions.weighted_projective',
+ 'explicit_theorem': 'CoveringDesigns.AuditPairConstructions.weighted_explicit',
+ 'summary_path': 'results/pair-constructions-verification.json',
+ 'theorems': ['CoveringDesigns.PairConstructions.projective_line_intersection',
+              'CoveringDesigns.PairConstructions.weighted_projective'],
+ 'milestones': [],
+ 'independent_of': ['caro-tuza',
+                    'horsley',
+                    '11-5-2',
+                    '12-5-2',
+                    '12-6-3',
+                    '13-7-4',
+                    'horsley-lifts',
+                    'equality',
+                    '17-9-5',
+                    'higher-incidence',
+                    'weighted',
+                    '47-14-5',
+                    '42-15-5',
+                    'large-defect',
+                    'small-defect',
+                    'small-defect-b',
+                    'small-defect-c',
+                    'multicover-incidence',
+                    'multicover-large-defect',
+                    'coefficient-positivity',
+                    'affine-optimality',
+                    'lifting-comparison',
+                    'schoenheim-improvement',
+                    'multicover-small-defect',
+                    'low-degree-selection',
+                    'seed-comparison',
+                    'exact-design',
+                    'base-affine',
+                    'schoenheim-family-comparison',
+                    'max-degree-sequence',
+                    'max-guarantee',
+                    'max-covering',
+                    'max-higher-covering',
+                    '14-8-5',
+                    '59-17-5',
+                    '66-18-5',
+                    '79-22-5',
+                    '87-23-5',
+                    '98-22-5',
+                    'labelled-cliques',
+                    'turan-duality',
+                    'turan',
+                    'de-caen',
+                    'chvatal',
+                    'gkp-combination',
+                    'gkp-induced',
+                    'gkp-induced-averaging',
+                    'finite-flat-geometry',
+                    'degree-selected',
+                    '20-11-3',
+                    'two-k-minus-two-equality',
+                    'two-k-minus-c',
+                    'two-k-minus-c-general',
+                    'two-k-minus-two-tightening',
+                    'rank-slack-capacity',
+                    'saturated-matching',
+                    '18-10-3',
+                    'c18103-lifts',
+                    '14-5-3',
+                    'quadruple-assembly',
+                    '34-18-3',
+                    '15-6-4',
+                    '16-7-5',
+                    '17-8-6',
+                    '18-9-7',
+                    '19-10-8',
+                    '35-19-4',
+                    '36-20-5',
+                    '37-21-6',
+                    '38-22-7',
+                    '39-23-8',
+                    'seven-block-core',
+                    'seven-block',
+                    '19-9-3',
+                    'projective-link-bounds',
+                    'truncated-plane-loads',
+                    'pair-equality',
+                    'pair-divisibility',
+                    'twisted-arithmetic',
+                    '4k-k-2'],
+ 'scope': 'Classical weighted projective pair-cover construction for prime-power q, weights r and '
+          'u with 1<=r<=u; actual ordinary families on q(qu+r) arbitrary labelled points, with at '
+          'most q^2+q+1 distinct blocks. Twins, restriction, padding and deduplication are proved.'}
+COMPONENTS['4k-k-2'] = {'entry': 'CoveringDesigns.C4k_K_2.Examples',
+ 'audit_name': '4k-k-2-audit',
+ 'audit_file': 'C4k_K_2.lean',
+ 'principal_theorem': 'CoveringDesigns.C4k_K_2.exactness',
+ 'explicit_theorem': 'CoveringDesigns.AuditC4k_K_2.exactness_explicit',
+ 'summary_path': 'results/4k-k-2-verification.json',
+ 'theorems': ['CoveringDesigns.C4k_K_2.affine_attainment',
+              'CoveringDesigns.C4k_K_2.upper_bound',
+              'CoveringDesigns.C4k_K_2.Barker.blocks',
+              'CoveringDesigns.C4k_K_2.Barker.blocks_distinct',
+              'CoveringDesigns.C4k_K_2.Barker.family',
+              'CoveringDesigns.C4k_K_2.Barker.family_card',
+              'CoveringDesigns.C4k_K_2.Barker.family_uniform',
+              'CoveringDesigns.C4k_K_2.Barker.family_covers',
+              'CoveringDesigns.C4k_K_2.Barker.family_isCover',
+              'CoveringDesigns.C4k_K_2.Barker.attainment',
+              'CoveringDesigns.C4k_K_2.Examples.c32_8_2',
+              'CoveringDesigns.C4k_K_2.Examples.c36_9_2',
+              'CoveringDesigns.C4k_K_2.Examples.c40_10_2',
+              'CoveringDesigns.C4k_K_2.Examples.c44_11_2',
+              'CoveringDesigns.C4k_K_2.Examples.c60_15_2',
+              'CoveringDesigns.C4k_K_2.indexed_twenty',
+              'CoveringDesigns.C4k_K_2.indexed_twenty_one',
+              'CoveringDesigns.C4k_K_2.lower_bound',
+              'CoveringDesigns.C4k_K_2.attainment',
+              'CoveringDesigns.C4k_K_2.exactness',
+              'CoveringDesigns.C4k_K_2.covering_number'],
+ 'milestones': [],
+ 'independent_of': ['caro-tuza',
+                    'horsley',
+                    '11-5-2',
+                    '12-5-2',
+                    '12-6-3',
+                    '13-7-4',
+                    'horsley-lifts',
+                    'equality',
+                    '17-9-5',
+                    'higher-incidence',
+                    'weighted',
+                    '47-14-5',
+                    '42-15-5',
+                    'large-defect',
+                    'small-defect',
+                    'small-defect-b',
+                    'small-defect-c',
+                    'multicover-incidence',
+                    'multicover-large-defect',
+                    'coefficient-positivity',
+                    'affine-optimality',
+                    'lifting-comparison',
+                    'schoenheim-improvement',
+                    'multicover-small-defect',
+                    'low-degree-selection',
+                    'seed-comparison',
+                    'exact-design',
+                    'base-affine',
+                    'schoenheim-family-comparison',
+                    'max-degree-sequence',
+                    'max-guarantee',
+                    'max-covering',
+                    'max-higher-covering',
+                    '14-8-5',
+                    '59-17-5',
+                    '66-18-5',
+                    '79-22-5',
+                    '87-23-5',
+                    '98-22-5',
+                    'labelled-cliques',
+                    'turan-duality',
+                    'turan',
+                    'de-caen',
+                    'chvatal',
+                    'gkp-combination',
+                    'gkp-induced',
+                    'gkp-induced-averaging',
+                    'finite-flat-geometry',
+                    'degree-selected',
+                    '20-11-3',
+                    'two-k-minus-two-equality',
+                    'two-k-minus-c',
+                    'two-k-minus-c-general',
+                    'two-k-minus-two-tightening',
+                    'rank-slack-capacity',
+                    'saturated-matching',
+                    '18-10-3',
+                    'c18103-lifts',
+                    '14-5-3',
+                    'quadruple-assembly',
+                    '34-18-3',
+                    '15-6-4',
+                    '16-7-5',
+                    '17-8-6',
+                    '18-9-7',
+                    '19-10-8',
+                    '35-19-4',
+                    '36-20-5',
+                    '37-21-6',
+                    '38-22-7',
+                    '39-23-8',
+                    'seven-block-core',
+                    'seven-block',
+                    '19-9-3',
+                    'projective-link-bounds'],
+ 'scope': 'Unconditional C(4k,k,2)=20 if 4|k and 21 otherwise, every k>=8, with arbitrary-label '
+          'ordinary attainment and indexed repeated-occurrence lower bounds for k>=4. Affine and '
+          'weighted projective constructions, exceptional historical Barker (44,11,2) witness, and '
+          'five general-theorem applications.'}
+# End C(4k,k,2) registration.
+
+# New consumers only; the registered C4k source interfaces above stay unchanged.
+from qk_registration import QK_IMPORTS, register as register_qk
+register_qk(COMPONENTS)
+C4K_COMPONENT_KEYS += ('qk-k-2',)
+
+from pair_consequences_registration import PC_IMPORTS, register as register_pair_consequences
+register_pair_consequences(COMPONENTS)
+C4K_COMPONENT_KEYS += ('pair-consequences',)
+
+from order_six_registration import SIX_IMPORTS, register as register_order_six
+register_order_six(COMPONENTS)
+C4K_COMPONENT_KEYS += ('6k-k-2',)
+
 def source(module):
     return ROOT / (module.replace('.', '/') + '.lean')
 
@@ -2370,12 +3053,83 @@ def closure(entry):
     return SourceGraph().closure(entry)
 
 
-PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching', '18-10-3': 'CoveringDesigns.C18_10_3.SquareSupport', 'c18103-lifts': 'CoveringDesigns.Applications.C18103Lifts', '14-5-3': 'CoveringDesigns.C14_5_3.Examples', 'quadruple-assembly': 'CoveringDesigns.QuadrupleAssembly', '34-18-3': 'CoveringDesigns.C34_18_3', '15-6-4': 'CoveringDesigns.C15_6_4', '16-7-5': 'CoveringDesigns.C16_7_5', '17-8-6': 'CoveringDesigns.C17_8_6', '18-9-7': 'CoveringDesigns.C18_9_7', '19-10-8': 'CoveringDesigns.C19_10_8', '35-19-4': 'CoveringDesigns.C35_19_4', '36-20-5': 'CoveringDesigns.C36_20_5', '37-21-6': 'CoveringDesigns.C37_21_6', '38-22-7': 'CoveringDesigns.C38_22_7', '39-23-8': 'CoveringDesigns.C39_23_8', 'seven-block-core': 'CoveringDesigns.SevenBlock.Core', 'seven-block': 'CoveringDesigns.SevenBlock', '19-9-3': 'CoveringDesigns.C19_9_3', 'projective-link-bounds': 'CoveringDesigns.ProjectiveLinkBounds'}
+PUBLICATION_BOUNDARIES = {'caro-tuza': 'CoveringDesigns.CaroTuza', 'horsley': 'CoveringDesigns.Horsley', 'schoenheim': 'CoveringDesigns.Schoenheim', '11-5-2': 'CoveringDesigns.C11_5_2', '12-5-2': 'CoveringDesigns.C12_5_2', '12-6-3': 'CoveringDesigns.C12_6_3', '13-7-4': 'CoveringDesigns.C13_7_4', 'horsley-lifts': 'CoveringDesigns.Applications.HorsleyLifts', 'horsley-singh': 'CoveringDesigns.HorsleySingh', 'equality': 'CoveringDesigns.Equality', '17-9-5': 'CoveringDesigns.C17_9_5', 'higher-incidence': 'CoveringDesigns.HigherIncidence', 'weighted': 'CoveringDesigns.Weighted', '47-14-5': 'CoveringDesigns.C47_14_5', '42-15-5': 'CoveringDesigns.C42_15_5', 'large-defect': 'CoveringDesigns.LargeDefect', 'small-defect': 'CoveringDesigns.SmallDefect', 'small-defect-b': 'CoveringDesigns.SmallDefectB', 'small-defect-c': 'CoveringDesigns.SmallDefectC', 'multicover': 'CoveringDesigns.Multicover', 'multicover-incidence': 'CoveringDesigns.MulticoverIncidence', 'multicover-large-defect': 'CoveringDesigns.MulticoverLargeDefect', 'coefficient-positivity': 'CoveringDesigns.CoefficientPositivity', 'affine-constructions': 'CoveringDesigns.AffineConstructions', 'affine-schoenheim': 'CoveringDesigns.AffineSchoenheim', 'affine-optimality': 'CoveringDesigns.AffineOptimality', 'lifting-comparison': 'CoveringDesigns.LiftingComparison', 'schoenheim-improvement': 'CoveringDesigns.SchoenheimImprovement', 'multicover-small-defect': 'CoveringDesigns.MulticoverSmallDefect', 'low-degree-selection': 'CoveringDesigns.LowDegreeSelection', 'seed-comparison': 'CoveringDesigns.SeedComparison', 'exact-design': 'CoveringDesigns.ExactDesign', 'point-reduction': 'CoveringDesigns.PointReduction', 'base-affine': 'CoveringDesigns.BaseAffine', 'schoenheim-family-comparison': 'CoveringDesigns.SchoenheimFamilyComparison', 'max-degree-sequence': 'CoveringDesigns.MaxDegreeSequence', 'max-guarantee': 'CoveringDesigns.MaxGuarantee', 'max-covering': 'CoveringDesigns.MaxCovering', 'max-higher-covering': 'CoveringDesigns.MaxHigherCovering', '14-8-5': 'CoveringDesigns.C14_8_5', '59-17-5': 'CoveringDesigns.C59_17_5', '66-18-5': 'CoveringDesigns.C66_18_5', '79-22-5': 'CoveringDesigns.C79_22_5', '87-23-5': 'CoveringDesigns.C87_23_5', '98-22-5': 'CoveringDesigns.C98_22_5', 'labelled-cliques': 'CoveringDesigns.LabelledCliques', 'turan-duality': 'CoveringDesigns.Turan.Duality', 'turan': 'CoveringDesigns.Turan', 'de-caen': 'CoveringDesigns.DeCaen', 'chvatal': 'CoveringDesigns.Chvatal', 'gkp-combination': 'CoveringDesigns.GKPCombination', 'gkp-induced': 'CoveringDesigns.GKPInduced', 'gkp-induced-averaging': 'CoveringDesigns.GKPInducedAveraging', 'projective-hyperplanes': 'CoveringDesigns.ProjectiveHyperplanes', 'finite-flat-geometry': 'CoveringDesigns.FiniteGeometry', 'degree-selected': 'CoveringDesigns.DegreeSelected', '20-11-3': 'CoveringDesigns.C20_11_3', 'two-k-minus-two': 'CoveringDesigns.TwoKMinusTwo', 'two-k-minus-two-equality': 'CoveringDesigns.TwoKMinusTwoEquality', 'two-k-minus-c': 'CoveringDesigns.TwoKMinusC', 'two-k-minus-c-general': 'CoveringDesigns.TwoKMinusCGeneral', 'two-k-minus-two-tightening': 'CoveringDesigns.TwoKMinusTwoTightening', 'rank-slack-capacity': 'CoveringDesigns.RankSlackCapacity', 'saturated-matching': 'CoveringDesigns.SaturatedMatching', '18-10-3': 'CoveringDesigns.C18_10_3.SquareSupport', 'c18103-lifts': 'CoveringDesigns.Applications.C18103Lifts', '14-5-3': 'CoveringDesigns.C14_5_3.Examples', 'quadruple-assembly': 'CoveringDesigns.QuadrupleAssembly', '34-18-3': 'CoveringDesigns.C34_18_3', '15-6-4': 'CoveringDesigns.C15_6_4', '16-7-5': 'CoveringDesigns.C16_7_5', '17-8-6': 'CoveringDesigns.C17_8_6', '18-9-7': 'CoveringDesigns.C18_9_7', '19-10-8': 'CoveringDesigns.C19_10_8', '35-19-4': 'CoveringDesigns.C35_19_4', '36-20-5': 'CoveringDesigns.C36_20_5', '37-21-6': 'CoveringDesigns.C37_21_6', '38-22-7': 'CoveringDesigns.C38_22_7', '39-23-8': 'CoveringDesigns.C39_23_8', 'seven-block-core': 'CoveringDesigns.SevenBlock.Core', 'seven-block': 'CoveringDesigns.SevenBlock', '19-9-3': 'CoveringDesigns.C19_9_3', 'projective-link-bounds': 'CoveringDesigns.ProjectiveLinkBounds', 'truncated-plane-loads': 'CoveringDesigns.TruncatedPlaneLoads', 'pair-equality': 'CoveringDesigns.PairEquality', 'pair-divisibility': 'CoveringDesigns.PairDivisibility', 'twisted-arithmetic': 'CoveringDesigns.TwistedArithmetic', 'pair-constructions': 'CoveringDesigns.PairConstructions', '4k-k-2': 'CoveringDesigns.C4k_K_2.Examples', 'qk-k-2': 'CoveringDesigns.Qk_K_2', 'pair-consequences': 'CoveringDesigns.PairConsequences', '6k-k-2': 'CoveringDesigns.C6k_K_2'}
 
 def check_sources():
     publication_boundaries = PUBLICATION_BOUNDARIES
     closure = SourceGraph().closure
     closures = {key: closure(item['entry']) for key, item in COMPONENTS.items()}
+    six_sources = {source(module) for module in SIX_IMPORTS}
+    for key, paths in closures.items():
+        if key != '6k-k-2':
+            assert not paths & six_sources, f'Established component {key} imports order-six additions'
+    for module, dependencies in SIX_IMPORTS.items():
+        assert project_imports(source(module).read_text(), str(source(module))) == dependencies, module
+    # The completed geometry is derived without importing its obstruction.
+    assert not closure('CoveringDesigns.C6k_K_2.Completion') & {
+        source('CoveringDesigns.C6k_K_2.' + part) for part in
+        ('Discriminant', 'PrimeKernel', 'Isotropic', 'Matrix', 'LowerBound', 'Numerical')}
+    pc_sources = {source(module) for module in PC_IMPORTS}
+    for key, paths in closures.items():
+        if key not in ('pair-consequences', '6k-k-2'):
+            assert not paths & pc_sources, f'Established component {key} imports immediate consequences'
+    for module, dependencies in PC_IMPORTS.items():
+        assert project_imports(source(module).read_text(), str(source(module))) == dependencies, module
+    pc_numeric = closure('CoveringDesigns.PairConsequences.Numerical')
+    assert not pc_numeric & {source('CoveringDesigns.Qk_K_2.' + m) for m in
+                             ('Construction','Exact','Numerical','Perona','DeHeerMuir')}
+    assert not closure('CoveringDesigns.PairConsequences.Primitive') & {
+        source('CoveringDesigns.PairConsequences.Arithmetic'),
+        source('CoveringDesigns.Qk_K_2.Determinant')}
+    qk_sources = {source(module) for module in QK_IMPORTS}
+    for key, paths in closures.items():
+        if key not in ('qk-k-2', 'pair-consequences', '6k-k-2'):
+            assert not paths & qk_sources, f'Established component {key} imports Qk additions'
+    for module, dependencies in QK_IMPORTS.items():
+        assert project_imports(source(module).read_text(), str(source(module))) == dependencies, module
+    construction = closure('CoveringDesigns.Qk_K_2.Construction')
+    assert not construction & {source(m) for m in QK_IMPORTS if m != 'CoveringDesigns.Qk_K_2.Construction'}
+    lifts = closure('CoveringDesigns.Qk_K_2.Lifts')
+    assert not lifts & {source('CoveringDesigns.Qk_K_2.' + m) for m in ('Construction','Perona','DeHeerMuir','Numerical','Exact')}
+    # C(4k,k,2): new consumers have exact direct interfaces; old components stay independent.
+    c4k_sources = {source(module) for module in C4K_IMPORTS}
+    for key, paths in closures.items():
+        if key not in C4K_COMPONENT_KEYS:
+            assert not paths & c4k_sources, f'Established component {key} imports C4k additions'
+    for module, dependencies in C4K_IMPORTS.items():
+        actual = project_imports(source(module).read_text(), str(source(module)))
+        assert actual == dependencies, f'C4k direct interface changed: {module}'
+    assert not closures['pair-divisibility'] & {
+        source(m) for m in C4K_IMPORTS if m.startswith('CoveringDesigns.TwistedArithmetic')}, \
+        'General divisibility acquired determinant arithmetic'
+    assert not closures['pair-constructions'] & {
+        source(m) for m in C4K_IMPORTS if m.startswith(('CoveringDesigns.PairDivisibility',
+                                                      'CoveringDesigns.TwistedArithmetic',
+                                                      'CoveringDesigns.C4k_K_2'))}, \
+        'Projective construction acquired a lower bound or numerical witness'
+    # End C(4k,k,2) dependency checks.
+    # Pair equality must not enter any established component or broaden its own imports.
+    pair_equality_sources = {source(module) for module in PAIR_EQUALITY_IMPORTS}
+    for key, paths in closures.items():
+        if key in C4K_COMPONENT_KEYS:
+            continue  # Declared new consumers; their exact interfaces are checked above.
+        if key != 'pair-equality':
+            assert not paths & pair_equality_sources, f'Established component {key} imports pair equality'
+    for module, dependencies in PAIR_EQUALITY_IMPORTS.items():
+        actual = project_imports(source(module).read_text(), str(source(module)))
+        assert actual == dependencies, f'Pair equality interface changed: {module}'
+    # The new finite-incidence component cannot change existing dependency closures.
+    truncated_sources = {source(module) for module in TRUNCATED_PLANE_LOAD_IMPORTS}
+    for key, paths in closures.items():
+        if key in C4K_COMPONENT_KEYS:
+            continue  # Declared new consumers of the unchanged load component.
+        if key == 'pair-equality':
+            continue  # The new bridge explicitly reuses the unchanged Plane and controls.
+        if key != 'truncated-plane-loads':
+            assert not paths & truncated_sources, f'Established component {key} imports truncated-plane loads'
+    for module, dependencies in TRUNCATED_PLANE_LOAD_IMPORTS.items():
+        actual = project_imports(source(module).read_text(), str(source(module)))
+        assert actual == dependencies, f'Truncated-plane load interface changed: {module}'
     # The weak family cannot acquire deletion; existing components stay independent.
     projective_sources = {source(module) for module in PROJECTIVE_LINK_IMPORTS}
     for key, paths in closures.items():
@@ -2740,6 +3494,10 @@ def check_sources():
     family_root = ROOT / 'CoveringDesigns/TwoKMinusTwo'
     family_entry = source('CoveringDesigns.TwoKMinusTwo')
     for key, paths in closures.items():
+        if key in ('pair-constructions', '4k-k-2', 'qk-k-2', 'pair-consequences'):
+            assert {p for p in paths if p == family_entry or p.is_relative_to(family_root)} == {
+                source('CoveringDesigns.TwoKMinusTwo.Expansion')}, f'{key} imports beyond generic expansion'
+            continue
         if key not in ('two-k-minus-two', 'two-k-minus-two-equality', 'two-k-minus-c', 'two-k-minus-c-general', 'two-k-minus-two-tightening', 'rank-slack-capacity', 'saturated-matching', '18-10-3', 'c18103-lifts', '34-18-3', *C34183_LIFT_KEYS):
             assert not any(p == family_entry or p.is_relative_to(family_root) for p in paths), \
                 f'Established component {key} imports TwoKMinusTwo'
@@ -2832,9 +3590,23 @@ def check_sources():
     projective_root = ROOT / 'CoveringDesigns/ProjectiveHyperplanes'
     projective_entry = source('CoveringDesigns.ProjectiveHyperplanes')
     for key, paths in closures.items():
+        if key in ('pair-constructions', '4k-k-2', 'qk-k-2', 'pair-consequences'):
+            assert {p for p in paths if p == source('CoveringDesigns.ProjectiveHyperplanes') or
+                    p.is_relative_to(ROOT / 'CoveringDesigns/ProjectiveHyperplanes')} == {
+                source('CoveringDesigns.ProjectiveHyperplanes.' + part) for part in
+                ('Points', 'Geometry', 'GeometricSum')}, f'{key} imports beyond projective incidence'
+            continue
         if key not in ('projective-hyperplanes', 'finite-flat-geometry'):
             assert not any(p == projective_entry or p.is_relative_to(projective_root) for p in paths), \
                 f'Established component {key} imports ProjectiveHyperplanes'
+    projective_dependencies = {'GeometricSum': ['CoveringDesigns.AffineSchoenheim.Arithmetic'], 'Points': ['CoveringDesigns.AffineConstructions.Geometry', 'CoveringDesigns.ProjectiveHyperplanes.GeometricSum'], 'Geometry': ['CoveringDesigns.ProjectiveHyperplanes.Points']}
+    for part, dependencies in projective_dependencies.items():
+        module = 'CoveringDesigns.ProjectiveHyperplanes' + ('.' + part if part else '')
+        expected = {source(module)}
+        for dependency in dependencies:
+            expected |= closure(dependency)
+        assert closure(module) == expected, \
+            f'ProjectiveHyperplanes {part or "entry"} imports outside its declared interface'
     averaging_root = ROOT / 'CoveringDesigns/GKPInducedAveraging'
     averaging_entry = source('CoveringDesigns.GKPInducedAveraging')
     for key, paths in closures.items():
@@ -3047,12 +3819,28 @@ def check_sources():
     # Construction foundations may reuse only the established basic definitions and relabelling.
     affine_allowed = {source('CoveringDesigns.Foundations.' + name)
                       for name in ('Basic', 'Relabelling')}
-    for name in ('Transformations', 'Geometry'):
+    for name in ('Transformations', 'Geometry', 'Construction', 'Examples'):
         module = 'CoveringDesigns.AffineConstructions.' + name
         affine_allowed.add(source(module))
         assert closure(module) == affine_allowed, \
             f'Affine {name} imports a specialised bound, example or later construction: {module}'
     # Lemma 9 arithmetic may use only the existing Schonheim recurrence.
+    affine_arithmetic = 'CoveringDesigns.AffineSchoenheim.Arithmetic'
+    assert closure(affine_arithmetic) == {source(affine_arithmetic)}, \
+        'Affine Schonheim arithmetic must be independent of all covering modules'
+    # Theorem 10 reuses corrected arithmetic, general incidence and the affine construction.
+    # Remark 14: numerical comparisons and indexed lifting do not import rank or selection.
+    lifting_algebra = 'CoveringDesigns.LiftingComparison.Algebra'
+    lifting_allowed = closure('CoveringDesigns.LargeDefect.Algebra') | {source(lifting_algebra)}
+    assert closure(lifting_algebra) == lifting_allowed, \
+        'Lifting comparison algebra must remain independent of covering theory'
+    lifting_allowed |= closure('CoveringDesigns.Multicover.Schoenheim')
+    for name in ('Iteration', 'Covering'):
+        module = 'CoveringDesigns.LiftingComparison.' + name
+        lifting_allowed.add(source(module))
+        assert closure(module) == lifting_allowed, \
+            f'Lifting {name} must remain independent of rank, selection and applications'
+    # Lemma 7: pure arithmetic is separate from the existing general rank theorem.
     # Exact designs: numerical counting and binomial cores have no rank dependency.
     exact_design_dependencies = {'Basic': ['CoveringDesigns.Multicover.Links'], 'Counting': ['CoveringDesigns.ExactDesign.Basic', 'CoveringDesigns.Multicover.Schoenheim']}
     for part, dependencies in exact_design_dependencies.items():
@@ -3114,6 +3902,9 @@ def check_manifests():
     for manifest in Path('coverings').glob('*/inputs.json'):
         for item in json.loads(manifest.read_text())['inputs']:
             assert sha(Path(item['path'])) == item['sha256'], item['path']
+        if manifest.parent.name == 'truncated-plane-loads':
+            from check_truncated_plane_loads import check
+            check()
         if manifest.parent.name == '18-10-3':
             check_c18103_witness()
         if manifest.parent.name == '19-9-3':
@@ -3134,8 +3925,21 @@ def check_manifests():
         if manifest.parent.name == '34-18-3':
             from check_c34183_witness import check
             check()
+        if manifest.parent.name == 'qk-k-2':
+            from check_qk_data import check
+            check()
+        if manifest.parent.name == 'qk-k-2':
+            from pair_consequence_data import check
+            check()
+        if manifest.parent.name == '6k-k-2':
+            from order_six_data import check
+            check()
+        if manifest.parent.name == '4k-k-2':
+            from check_c4k_barker import check
+            check()
 
 
+# C(4k,k,2) witness correspondence is part of the existing manifest checks.
 def audit_name(key):
     return COMPONENTS[key].get('audit_name', 'c' + key.split('-')[0] + '-audit')
 

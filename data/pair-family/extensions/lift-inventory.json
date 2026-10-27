@@ -1,0 +1,4097 @@
+{
+  "candidate_count": 59,
+  "compared_count": 53,
+  "exact_matches": [],
+  "existing_result_comparisons": [
+    {
+      "account": "coverings/47-14-5/README.md",
+      "difference": 45,
+      "documented_lower": 895,
+      "new_paper_lower": 940,
+      "parameters": [
+        47,
+        14,
+        5
+      ],
+      "sha256": "9ce1124a1b5a2c1587a8c6b40a44ac91140bf3c61db26faeab8bc9eedec9b5a4",
+      "status": "Existing account read only; no fresh compilation",
+      "title": "# C(47,14,5) \u2265 895"
+    },
+    {
+      "account": "coverings/59-17-5/README.md",
+      "difference": 43,
+      "documented_lower": 964,
+      "new_paper_lower": 1007,
+      "parameters": [
+        59,
+        17,
+        5
+      ],
+      "sha256": "8f896dd16156b5242f29a89498ac4a0ef2e40eb28b3108f09a16e2f0a9e9ec69",
+      "status": "Existing account read only; no fresh compilation",
+      "title": "# C(59,17,5) \u2265 964"
+    },
+    {
+      "account": "coverings/79-22-5/README.md",
+      "difference": 43,
+      "documented_lower": 1038,
+      "new_paper_lower": 1081,
+      "parameters": [
+        79,
+        22,
+        5
+      ],
+      "sha256": "f0985ce2efb0b26ab8dc6c0e22c1a3050a1824b0605463c4ebd7a75bf9b1b07e",
+      "status": "Existing account read only; no fresh compilation",
+      "title": "# C(79,22,5) \u2265 1038"
+    }
+  ],
+  "improvement_count": 53,
+  "matches_coordinator_inventory": true,
+  "rows": [
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        78
+      ],
+      "chain": [
+        {
+          "denominator": 10,
+          "derived": 78,
+          "input_lower": 21,
+          "numerator": 777,
+          "parameters": [
+            37,
+            10,
+            3
+          ],
+          "quotient": 77,
+          "remainder": 7
+        }
+      ],
+      "derived": 78,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 74,
+      "parameters": [
+        37,
+        10,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        36,
+        9,
+        2
+      ],
+      "upper": 85
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        78,
+        270
+      ],
+      "chain": [
+        {
+          "denominator": 10,
+          "derived": 78,
+          "input_lower": 21,
+          "numerator": 777,
+          "parameters": [
+            37,
+            10,
+            3
+          ],
+          "quotient": 77,
+          "remainder": 7
+        },
+        {
+          "denominator": 11,
+          "derived": 270,
+          "input_lower": 78,
+          "numerator": 2964,
+          "parameters": [
+            38,
+            11,
+            4
+          ],
+          "quotient": 269,
+          "remainder": 5
+        }
+      ],
+      "derived": 270,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 256,
+      "parameters": [
+        38,
+        11,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        36,
+        9,
+        2
+      ],
+      "upper": 408
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        78,
+        270,
+        878
+      ],
+      "chain": [
+        {
+          "denominator": 10,
+          "derived": 78,
+          "input_lower": 21,
+          "numerator": 777,
+          "parameters": [
+            37,
+            10,
+            3
+          ],
+          "quotient": 77,
+          "remainder": 7
+        },
+        {
+          "denominator": 11,
+          "derived": 270,
+          "input_lower": 78,
+          "numerator": 2964,
+          "parameters": [
+            38,
+            11,
+            4
+          ],
+          "quotient": 269,
+          "remainder": 5
+        },
+        {
+          "denominator": 12,
+          "derived": 878,
+          "input_lower": 270,
+          "numerator": 10530,
+          "parameters": [
+            39,
+            12,
+            5
+          ],
+          "quotient": 877,
+          "remainder": 6
+        }
+      ],
+      "derived": 878,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 832,
+      "parameters": [
+        39,
+        12,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        36,
+        9,
+        2
+      ],
+      "upper": 1804
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        78,
+        270,
+        878,
+        2702
+      ],
+      "chain": [
+        {
+          "denominator": 10,
+          "derived": 78,
+          "input_lower": 21,
+          "numerator": 777,
+          "parameters": [
+            37,
+            10,
+            3
+          ],
+          "quotient": 77,
+          "remainder": 7
+        },
+        {
+          "denominator": 11,
+          "derived": 270,
+          "input_lower": 78,
+          "numerator": 2964,
+          "parameters": [
+            38,
+            11,
+            4
+          ],
+          "quotient": 269,
+          "remainder": 5
+        },
+        {
+          "denominator": 12,
+          "derived": 878,
+          "input_lower": 270,
+          "numerator": 10530,
+          "parameters": [
+            39,
+            12,
+            5
+          ],
+          "quotient": 877,
+          "remainder": 6
+        },
+        {
+          "denominator": 13,
+          "derived": 2702,
+          "input_lower": 878,
+          "numerator": 35120,
+          "parameters": [
+            40,
+            13,
+            6
+          ],
+          "quotient": 2701,
+          "remainder": 7
+        }
+      ],
+      "derived": 2702,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 2560,
+      "parameters": [
+        40,
+        13,
+        6
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        36,
+        9,
+        2
+      ],
+      "upper": 7652
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        78,
+        270,
+        878,
+        2702,
+        7913
+      ],
+      "chain": [
+        {
+          "denominator": 10,
+          "derived": 78,
+          "input_lower": 21,
+          "numerator": 777,
+          "parameters": [
+            37,
+            10,
+            3
+          ],
+          "quotient": 77,
+          "remainder": 7
+        },
+        {
+          "denominator": 11,
+          "derived": 270,
+          "input_lower": 78,
+          "numerator": 2964,
+          "parameters": [
+            38,
+            11,
+            4
+          ],
+          "quotient": 269,
+          "remainder": 5
+        },
+        {
+          "denominator": 12,
+          "derived": 878,
+          "input_lower": 270,
+          "numerator": 10530,
+          "parameters": [
+            39,
+            12,
+            5
+          ],
+          "quotient": 877,
+          "remainder": 6
+        },
+        {
+          "denominator": 13,
+          "derived": 2702,
+          "input_lower": 878,
+          "numerator": 35120,
+          "parameters": [
+            40,
+            13,
+            6
+          ],
+          "quotient": 2701,
+          "remainder": 7
+        },
+        {
+          "denominator": 14,
+          "derived": 7913,
+          "input_lower": 2702,
+          "numerator": 110782,
+          "parameters": [
+            41,
+            14,
+            7
+          ],
+          "quotient": 7913,
+          "remainder": 0
+        }
+      ],
+      "derived": 7913,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 7498,
+      "parameters": [
+        41,
+        14,
+        7
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        36,
+        9,
+        2
+      ],
+      "upper": 24841
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        78,
+        270,
+        878,
+        2702,
+        7913,
+        22157
+      ],
+      "chain": [
+        {
+          "denominator": 10,
+          "derived": 78,
+          "input_lower": 21,
+          "numerator": 777,
+          "parameters": [
+            37,
+            10,
+            3
+          ],
+          "quotient": 77,
+          "remainder": 7
+        },
+        {
+          "denominator": 11,
+          "derived": 270,
+          "input_lower": 78,
+          "numerator": 2964,
+          "parameters": [
+            38,
+            11,
+            4
+          ],
+          "quotient": 269,
+          "remainder": 5
+        },
+        {
+          "denominator": 12,
+          "derived": 878,
+          "input_lower": 270,
+          "numerator": 10530,
+          "parameters": [
+            39,
+            12,
+            5
+          ],
+          "quotient": 877,
+          "remainder": 6
+        },
+        {
+          "denominator": 13,
+          "derived": 2702,
+          "input_lower": 878,
+          "numerator": 35120,
+          "parameters": [
+            40,
+            13,
+            6
+          ],
+          "quotient": 2701,
+          "remainder": 7
+        },
+        {
+          "denominator": 14,
+          "derived": 7913,
+          "input_lower": 2702,
+          "numerator": 110782,
+          "parameters": [
+            41,
+            14,
+            7
+          ],
+          "quotient": 7913,
+          "remainder": 0
+        },
+        {
+          "denominator": 15,
+          "derived": 22157,
+          "input_lower": 7913,
+          "numerator": 332346,
+          "parameters": [
+            42,
+            15,
+            8
+          ],
+          "quotient": 22156,
+          "remainder": 6
+        }
+      ],
+      "derived": 22157,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 20995,
+      "parameters": [
+        42,
+        15,
+        8
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        36,
+        9,
+        2
+      ],
+      "upper": 80910
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79
+      ],
+      "chain": [
+        {
+          "denominator": 11,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 861,
+          "parameters": [
+            41,
+            11,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 3
+        }
+      ],
+      "derived": 79,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 75,
+      "parameters": [
+        41,
+        11,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        40,
+        10,
+        2
+      ],
+      "upper": 89
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79,
+        277
+      ],
+      "chain": [
+        {
+          "denominator": 11,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 861,
+          "parameters": [
+            41,
+            11,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 3
+        },
+        {
+          "denominator": 12,
+          "derived": 277,
+          "input_lower": 79,
+          "numerator": 3318,
+          "parameters": [
+            42,
+            12,
+            4
+          ],
+          "quotient": 276,
+          "remainder": 6
+        }
+      ],
+      "derived": 277,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 263,
+      "parameters": [
+        42,
+        12,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        40,
+        10,
+        2
+      ],
+      "upper": 435
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79,
+        277,
+        917
+      ],
+      "chain": [
+        {
+          "denominator": 11,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 861,
+          "parameters": [
+            41,
+            11,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 3
+        },
+        {
+          "denominator": 12,
+          "derived": 277,
+          "input_lower": 79,
+          "numerator": 3318,
+          "parameters": [
+            42,
+            12,
+            4
+          ],
+          "quotient": 276,
+          "remainder": 6
+        },
+        {
+          "denominator": 13,
+          "derived": 917,
+          "input_lower": 277,
+          "numerator": 11911,
+          "parameters": [
+            43,
+            13,
+            5
+          ],
+          "quotient": 916,
+          "remainder": 3
+        }
+      ],
+      "derived": 917,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 870,
+      "parameters": [
+        43,
+        13,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        40,
+        10,
+        2
+      ],
+      "upper": 1835
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79,
+        277,
+        917,
+        2882
+      ],
+      "chain": [
+        {
+          "denominator": 11,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 861,
+          "parameters": [
+            41,
+            11,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 3
+        },
+        {
+          "denominator": 12,
+          "derived": 277,
+          "input_lower": 79,
+          "numerator": 3318,
+          "parameters": [
+            42,
+            12,
+            4
+          ],
+          "quotient": 276,
+          "remainder": 6
+        },
+        {
+          "denominator": 13,
+          "derived": 917,
+          "input_lower": 277,
+          "numerator": 11911,
+          "parameters": [
+            43,
+            13,
+            5
+          ],
+          "quotient": 916,
+          "remainder": 3
+        },
+        {
+          "denominator": 14,
+          "derived": 2882,
+          "input_lower": 917,
+          "numerator": 40348,
+          "parameters": [
+            44,
+            14,
+            6
+          ],
+          "quotient": 2882,
+          "remainder": 0
+        }
+      ],
+      "derived": 2882,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 2735,
+      "parameters": [
+        44,
+        14,
+        6
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        40,
+        10,
+        2
+      ],
+      "upper": 8447
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79,
+        277,
+        917,
+        2882,
+        8646
+      ],
+      "chain": [
+        {
+          "denominator": 11,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 861,
+          "parameters": [
+            41,
+            11,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 3
+        },
+        {
+          "denominator": 12,
+          "derived": 277,
+          "input_lower": 79,
+          "numerator": 3318,
+          "parameters": [
+            42,
+            12,
+            4
+          ],
+          "quotient": 276,
+          "remainder": 6
+        },
+        {
+          "denominator": 13,
+          "derived": 917,
+          "input_lower": 277,
+          "numerator": 11911,
+          "parameters": [
+            43,
+            13,
+            5
+          ],
+          "quotient": 916,
+          "remainder": 3
+        },
+        {
+          "denominator": 14,
+          "derived": 2882,
+          "input_lower": 917,
+          "numerator": 40348,
+          "parameters": [
+            44,
+            14,
+            6
+          ],
+          "quotient": 2882,
+          "remainder": 0
+        },
+        {
+          "denominator": 15,
+          "derived": 8646,
+          "input_lower": 2882,
+          "numerator": 129690,
+          "parameters": [
+            45,
+            15,
+            7
+          ],
+          "quotient": 8646,
+          "remainder": 0
+        }
+      ],
+      "derived": 8646,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 8205,
+      "parameters": [
+        45,
+        15,
+        7
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        40,
+        10,
+        2
+      ],
+      "upper": 29718
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79,
+        277,
+        917,
+        2882,
+        8646,
+        24858
+      ],
+      "chain": [
+        {
+          "denominator": 11,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 861,
+          "parameters": [
+            41,
+            11,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 3
+        },
+        {
+          "denominator": 12,
+          "derived": 277,
+          "input_lower": 79,
+          "numerator": 3318,
+          "parameters": [
+            42,
+            12,
+            4
+          ],
+          "quotient": 276,
+          "remainder": 6
+        },
+        {
+          "denominator": 13,
+          "derived": 917,
+          "input_lower": 277,
+          "numerator": 11911,
+          "parameters": [
+            43,
+            13,
+            5
+          ],
+          "quotient": 916,
+          "remainder": 3
+        },
+        {
+          "denominator": 14,
+          "derived": 2882,
+          "input_lower": 917,
+          "numerator": 40348,
+          "parameters": [
+            44,
+            14,
+            6
+          ],
+          "quotient": 2882,
+          "remainder": 0
+        },
+        {
+          "denominator": 15,
+          "derived": 8646,
+          "input_lower": 2882,
+          "numerator": 129690,
+          "parameters": [
+            45,
+            15,
+            7
+          ],
+          "quotient": 8646,
+          "remainder": 0
+        },
+        {
+          "denominator": 16,
+          "derived": 24858,
+          "input_lower": 8646,
+          "numerator": 397716,
+          "parameters": [
+            46,
+            16,
+            8
+          ],
+          "quotient": 24857,
+          "remainder": 4
+        }
+      ],
+      "derived": 24858,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 23590,
+      "parameters": [
+        46,
+        16,
+        8
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        40,
+        10,
+        2
+      ],
+      "upper": 96419
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79
+      ],
+      "chain": [
+        {
+          "denominator": 12,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 945,
+          "parameters": [
+            45,
+            12,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 9
+        }
+      ],
+      "derived": 79,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 75,
+      "parameters": [
+        45,
+        12,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        44,
+        11,
+        2
+      ],
+      "upper": 88
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79,
+        280
+      ],
+      "chain": [
+        {
+          "denominator": 12,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 945,
+          "parameters": [
+            45,
+            12,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 9
+        },
+        {
+          "denominator": 13,
+          "derived": 280,
+          "input_lower": 79,
+          "numerator": 3634,
+          "parameters": [
+            46,
+            13,
+            4
+          ],
+          "quotient": 279,
+          "remainder": 7
+        }
+      ],
+      "derived": 280,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 266,
+      "parameters": [
+        46,
+        13,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        44,
+        11,
+        2
+      ],
+      "upper": 465
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79,
+        280,
+        940
+      ],
+      "chain": [
+        {
+          "denominator": 12,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 945,
+          "parameters": [
+            45,
+            12,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 9
+        },
+        {
+          "denominator": 13,
+          "derived": 280,
+          "input_lower": 79,
+          "numerator": 3634,
+          "parameters": [
+            46,
+            13,
+            4
+          ],
+          "quotient": 279,
+          "remainder": 7
+        },
+        {
+          "denominator": 14,
+          "derived": 940,
+          "input_lower": 280,
+          "numerator": 13160,
+          "parameters": [
+            47,
+            14,
+            5
+          ],
+          "quotient": 940,
+          "remainder": 0
+        }
+      ],
+      "derived": 940,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 894,
+      "parameters": [
+        47,
+        14,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        44,
+        11,
+        2
+      ],
+      "upper": 2340
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79,
+        280,
+        940,
+        3008
+      ],
+      "chain": [
+        {
+          "denominator": 12,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 945,
+          "parameters": [
+            45,
+            12,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 9
+        },
+        {
+          "denominator": 13,
+          "derived": 280,
+          "input_lower": 79,
+          "numerator": 3634,
+          "parameters": [
+            46,
+            13,
+            4
+          ],
+          "quotient": 279,
+          "remainder": 7
+        },
+        {
+          "denominator": 14,
+          "derived": 940,
+          "input_lower": 280,
+          "numerator": 13160,
+          "parameters": [
+            47,
+            14,
+            5
+          ],
+          "quotient": 940,
+          "remainder": 0
+        },
+        {
+          "denominator": 15,
+          "derived": 3008,
+          "input_lower": 940,
+          "numerator": 45120,
+          "parameters": [
+            48,
+            15,
+            6
+          ],
+          "quotient": 3008,
+          "remainder": 0
+        }
+      ],
+      "derived": 3008,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 2861,
+      "parameters": [
+        48,
+        15,
+        6
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        44,
+        11,
+        2
+      ],
+      "upper": 9262
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        79,
+        280,
+        940,
+        3008,
+        9212
+      ],
+      "chain": [
+        {
+          "denominator": 12,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 945,
+          "parameters": [
+            45,
+            12,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 9
+        },
+        {
+          "denominator": 13,
+          "derived": 280,
+          "input_lower": 79,
+          "numerator": 3634,
+          "parameters": [
+            46,
+            13,
+            4
+          ],
+          "quotient": 279,
+          "remainder": 7
+        },
+        {
+          "denominator": 14,
+          "derived": 940,
+          "input_lower": 280,
+          "numerator": 13160,
+          "parameters": [
+            47,
+            14,
+            5
+          ],
+          "quotient": 940,
+          "remainder": 0
+        },
+        {
+          "denominator": 15,
+          "derived": 3008,
+          "input_lower": 940,
+          "numerator": 45120,
+          "parameters": [
+            48,
+            15,
+            6
+          ],
+          "quotient": 3008,
+          "remainder": 0
+        },
+        {
+          "denominator": 16,
+          "derived": 9212,
+          "input_lower": 3008,
+          "numerator": 147392,
+          "parameters": [
+            49,
+            16,
+            7
+          ],
+          "quotient": 9212,
+          "remainder": 0
+        }
+      ],
+      "derived": 9212,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 8762,
+      "parameters": [
+        49,
+        16,
+        7
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        44,
+        11,
+        2
+      ],
+      "upper": 34725
+    },
+    {
+      "catalogue_available": false,
+      "ceilings": [
+        79,
+        280,
+        940,
+        3008,
+        9212,
+        27095
+      ],
+      "chain": [
+        {
+          "denominator": 12,
+          "derived": 79,
+          "input_lower": 21,
+          "numerator": 945,
+          "parameters": [
+            45,
+            12,
+            3
+          ],
+          "quotient": 78,
+          "remainder": 9
+        },
+        {
+          "denominator": 13,
+          "derived": 280,
+          "input_lower": 79,
+          "numerator": 3634,
+          "parameters": [
+            46,
+            13,
+            4
+          ],
+          "quotient": 279,
+          "remainder": 7
+        },
+        {
+          "denominator": 14,
+          "derived": 940,
+          "input_lower": 280,
+          "numerator": 13160,
+          "parameters": [
+            47,
+            14,
+            5
+          ],
+          "quotient": 940,
+          "remainder": 0
+        },
+        {
+          "denominator": 15,
+          "derived": 3008,
+          "input_lower": 940,
+          "numerator": 45120,
+          "parameters": [
+            48,
+            15,
+            6
+          ],
+          "quotient": 3008,
+          "remainder": 0
+        },
+        {
+          "denominator": 16,
+          "derived": 9212,
+          "input_lower": 3008,
+          "numerator": 147392,
+          "parameters": [
+            49,
+            16,
+            7
+          ],
+          "quotient": 9212,
+          "remainder": 0
+        },
+        {
+          "denominator": 17,
+          "derived": 27095,
+          "input_lower": 9212,
+          "numerator": 460600,
+          "parameters": [
+            50,
+            17,
+            8
+          ],
+          "quotient": 27094,
+          "remainder": 2
+        }
+      ],
+      "derived": 27095,
+      "lower": null,
+      "parameters": [
+        50,
+        17,
+        8
+      ],
+      "seed": [
+        44,
+        11,
+        2
+      ],
+      "upper": null
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80
+      ],
+      "chain": [
+        {
+          "denominator": 14,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1113,
+          "parameters": [
+            53,
+            14,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 7
+        }
+      ],
+      "derived": 80,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 76,
+      "parameters": [
+        53,
+        14,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        52,
+        13,
+        2
+      ],
+      "upper": 87
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80,
+        288
+      ],
+      "chain": [
+        {
+          "denominator": 14,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1113,
+          "parameters": [
+            53,
+            14,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 7
+        },
+        {
+          "denominator": 15,
+          "derived": 288,
+          "input_lower": 80,
+          "numerator": 4320,
+          "parameters": [
+            54,
+            15,
+            4
+          ],
+          "quotient": 288,
+          "remainder": 0
+        }
+      ],
+      "derived": 288,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 274,
+      "parameters": [
+        54,
+        15,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        52,
+        13,
+        2
+      ],
+      "upper": 469
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80,
+        288,
+        990
+      ],
+      "chain": [
+        {
+          "denominator": 14,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1113,
+          "parameters": [
+            53,
+            14,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 7
+        },
+        {
+          "denominator": 15,
+          "derived": 288,
+          "input_lower": 80,
+          "numerator": 4320,
+          "parameters": [
+            54,
+            15,
+            4
+          ],
+          "quotient": 288,
+          "remainder": 0
+        },
+        {
+          "denominator": 16,
+          "derived": 990,
+          "input_lower": 288,
+          "numerator": 15840,
+          "parameters": [
+            55,
+            16,
+            5
+          ],
+          "quotient": 990,
+          "remainder": 0
+        }
+      ],
+      "derived": 990,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 945,
+      "parameters": [
+        55,
+        16,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        52,
+        13,
+        2
+      ],
+      "upper": 1977
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80,
+        288,
+        990,
+        3262
+      ],
+      "chain": [
+        {
+          "denominator": 14,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1113,
+          "parameters": [
+            53,
+            14,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 7
+        },
+        {
+          "denominator": 15,
+          "derived": 288,
+          "input_lower": 80,
+          "numerator": 4320,
+          "parameters": [
+            54,
+            15,
+            4
+          ],
+          "quotient": 288,
+          "remainder": 0
+        },
+        {
+          "denominator": 16,
+          "derived": 990,
+          "input_lower": 288,
+          "numerator": 15840,
+          "parameters": [
+            55,
+            16,
+            5
+          ],
+          "quotient": 990,
+          "remainder": 0
+        },
+        {
+          "denominator": 17,
+          "derived": 3262,
+          "input_lower": 990,
+          "numerator": 55440,
+          "parameters": [
+            56,
+            17,
+            6
+          ],
+          "quotient": 3261,
+          "remainder": 3
+        }
+      ],
+      "derived": 3262,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 3113,
+      "parameters": [
+        56,
+        17,
+        6
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        52,
+        13,
+        2
+      ],
+      "upper": 10635
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80,
+        288,
+        990,
+        3262,
+        10330
+      ],
+      "chain": [
+        {
+          "denominator": 14,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1113,
+          "parameters": [
+            53,
+            14,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 7
+        },
+        {
+          "denominator": 15,
+          "derived": 288,
+          "input_lower": 80,
+          "numerator": 4320,
+          "parameters": [
+            54,
+            15,
+            4
+          ],
+          "quotient": 288,
+          "remainder": 0
+        },
+        {
+          "denominator": 16,
+          "derived": 990,
+          "input_lower": 288,
+          "numerator": 15840,
+          "parameters": [
+            55,
+            16,
+            5
+          ],
+          "quotient": 990,
+          "remainder": 0
+        },
+        {
+          "denominator": 17,
+          "derived": 3262,
+          "input_lower": 990,
+          "numerator": 55440,
+          "parameters": [
+            56,
+            17,
+            6
+          ],
+          "quotient": 3261,
+          "remainder": 3
+        },
+        {
+          "denominator": 18,
+          "derived": 10330,
+          "input_lower": 3262,
+          "numerator": 185934,
+          "parameters": [
+            57,
+            18,
+            7
+          ],
+          "quotient": 10329,
+          "remainder": 12
+        }
+      ],
+      "derived": 10330,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 9858,
+      "parameters": [
+        57,
+        18,
+        7
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        52,
+        13,
+        2
+      ],
+      "upper": 44002
+    },
+    {
+      "catalogue_available": false,
+      "ceilings": [
+        80,
+        288,
+        990,
+        3262,
+        10330,
+        31534
+      ],
+      "chain": [
+        {
+          "denominator": 14,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1113,
+          "parameters": [
+            53,
+            14,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 7
+        },
+        {
+          "denominator": 15,
+          "derived": 288,
+          "input_lower": 80,
+          "numerator": 4320,
+          "parameters": [
+            54,
+            15,
+            4
+          ],
+          "quotient": 288,
+          "remainder": 0
+        },
+        {
+          "denominator": 16,
+          "derived": 990,
+          "input_lower": 288,
+          "numerator": 15840,
+          "parameters": [
+            55,
+            16,
+            5
+          ],
+          "quotient": 990,
+          "remainder": 0
+        },
+        {
+          "denominator": 17,
+          "derived": 3262,
+          "input_lower": 990,
+          "numerator": 55440,
+          "parameters": [
+            56,
+            17,
+            6
+          ],
+          "quotient": 3261,
+          "remainder": 3
+        },
+        {
+          "denominator": 18,
+          "derived": 10330,
+          "input_lower": 3262,
+          "numerator": 185934,
+          "parameters": [
+            57,
+            18,
+            7
+          ],
+          "quotient": 10329,
+          "remainder": 12
+        },
+        {
+          "denominator": 19,
+          "derived": 31534,
+          "input_lower": 10330,
+          "numerator": 599140,
+          "parameters": [
+            58,
+            19,
+            8
+          ],
+          "quotient": 31533,
+          "remainder": 13
+        }
+      ],
+      "derived": 31534,
+      "lower": null,
+      "parameters": [
+        58,
+        19,
+        8
+      ],
+      "seed": [
+        52,
+        13,
+        2
+      ],
+      "upper": null
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80
+      ],
+      "chain": [
+        {
+          "denominator": 15,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1197,
+          "parameters": [
+            57,
+            15,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 12
+        }
+      ],
+      "derived": 80,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 76,
+      "parameters": [
+        57,
+        15,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        56,
+        14,
+        2
+      ],
+      "upper": 84
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80,
+        290
+      ],
+      "chain": [
+        {
+          "denominator": 15,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1197,
+          "parameters": [
+            57,
+            15,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 12
+        },
+        {
+          "denominator": 16,
+          "derived": 290,
+          "input_lower": 80,
+          "numerator": 4640,
+          "parameters": [
+            58,
+            16,
+            4
+          ],
+          "quotient": 290,
+          "remainder": 0
+        }
+      ],
+      "derived": 290,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 276,
+      "parameters": [
+        58,
+        16,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        56,
+        14,
+        2
+      ],
+      "upper": 504
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80,
+        290,
+        1007
+      ],
+      "chain": [
+        {
+          "denominator": 15,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1197,
+          "parameters": [
+            57,
+            15,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 12
+        },
+        {
+          "denominator": 16,
+          "derived": 290,
+          "input_lower": 80,
+          "numerator": 4640,
+          "parameters": [
+            58,
+            16,
+            4
+          ],
+          "quotient": 290,
+          "remainder": 0
+        },
+        {
+          "denominator": 17,
+          "derived": 1007,
+          "input_lower": 290,
+          "numerator": 17110,
+          "parameters": [
+            59,
+            17,
+            5
+          ],
+          "quotient": 1006,
+          "remainder": 8
+        }
+      ],
+      "derived": 1007,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 963,
+      "parameters": [
+        59,
+        17,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        56,
+        14,
+        2
+      ],
+      "upper": 2195
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80,
+        290,
+        1007,
+        3357
+      ],
+      "chain": [
+        {
+          "denominator": 15,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1197,
+          "parameters": [
+            57,
+            15,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 12
+        },
+        {
+          "denominator": 16,
+          "derived": 290,
+          "input_lower": 80,
+          "numerator": 4640,
+          "parameters": [
+            58,
+            16,
+            4
+          ],
+          "quotient": 290,
+          "remainder": 0
+        },
+        {
+          "denominator": 17,
+          "derived": 1007,
+          "input_lower": 290,
+          "numerator": 17110,
+          "parameters": [
+            59,
+            17,
+            5
+          ],
+          "quotient": 1006,
+          "remainder": 8
+        },
+        {
+          "denominator": 18,
+          "derived": 3357,
+          "input_lower": 1007,
+          "numerator": 60420,
+          "parameters": [
+            60,
+            18,
+            6
+          ],
+          "quotient": 3356,
+          "remainder": 12
+        }
+      ],
+      "derived": 3357,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 3210,
+      "parameters": [
+        60,
+        18,
+        6
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        56,
+        14,
+        2
+      ],
+      "upper": 10567
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        80,
+        290,
+        1007,
+        3357,
+        10778
+      ],
+      "chain": [
+        {
+          "denominator": 15,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1197,
+          "parameters": [
+            57,
+            15,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 12
+        },
+        {
+          "denominator": 16,
+          "derived": 290,
+          "input_lower": 80,
+          "numerator": 4640,
+          "parameters": [
+            58,
+            16,
+            4
+          ],
+          "quotient": 290,
+          "remainder": 0
+        },
+        {
+          "denominator": 17,
+          "derived": 1007,
+          "input_lower": 290,
+          "numerator": 17110,
+          "parameters": [
+            59,
+            17,
+            5
+          ],
+          "quotient": 1006,
+          "remainder": 8
+        },
+        {
+          "denominator": 18,
+          "derived": 3357,
+          "input_lower": 1007,
+          "numerator": 60420,
+          "parameters": [
+            60,
+            18,
+            6
+          ],
+          "quotient": 3356,
+          "remainder": 12
+        },
+        {
+          "denominator": 19,
+          "derived": 10778,
+          "input_lower": 3357,
+          "numerator": 204777,
+          "parameters": [
+            61,
+            19,
+            7
+          ],
+          "quotient": 10777,
+          "remainder": 14
+        }
+      ],
+      "derived": 10778,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 10306,
+      "parameters": [
+        61,
+        19,
+        7
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        56,
+        14,
+        2
+      ],
+      "upper": 45286
+    },
+    {
+      "catalogue_available": false,
+      "ceilings": [
+        80,
+        290,
+        1007,
+        3357,
+        10778,
+        33412
+      ],
+      "chain": [
+        {
+          "denominator": 15,
+          "derived": 80,
+          "input_lower": 21,
+          "numerator": 1197,
+          "parameters": [
+            57,
+            15,
+            3
+          ],
+          "quotient": 79,
+          "remainder": 12
+        },
+        {
+          "denominator": 16,
+          "derived": 290,
+          "input_lower": 80,
+          "numerator": 4640,
+          "parameters": [
+            58,
+            16,
+            4
+          ],
+          "quotient": 290,
+          "remainder": 0
+        },
+        {
+          "denominator": 17,
+          "derived": 1007,
+          "input_lower": 290,
+          "numerator": 17110,
+          "parameters": [
+            59,
+            17,
+            5
+          ],
+          "quotient": 1006,
+          "remainder": 8
+        },
+        {
+          "denominator": 18,
+          "derived": 3357,
+          "input_lower": 1007,
+          "numerator": 60420,
+          "parameters": [
+            60,
+            18,
+            6
+          ],
+          "quotient": 3356,
+          "remainder": 12
+        },
+        {
+          "denominator": 19,
+          "derived": 10778,
+          "input_lower": 3357,
+          "numerator": 204777,
+          "parameters": [
+            61,
+            19,
+            7
+          ],
+          "quotient": 10777,
+          "remainder": 14
+        },
+        {
+          "denominator": 20,
+          "derived": 33412,
+          "input_lower": 10778,
+          "numerator": 668236,
+          "parameters": [
+            62,
+            20,
+            8
+          ],
+          "quotient": 33411,
+          "remainder": 16
+        }
+      ],
+      "derived": 33412,
+      "lower": null,
+      "parameters": [
+        62,
+        20,
+        8
+      ],
+      "seed": [
+        56,
+        14,
+        2
+      ],
+      "upper": null
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81
+      ],
+      "chain": [
+        {
+          "denominator": 16,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1281,
+          "parameters": [
+            61,
+            16,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 1
+        }
+      ],
+      "derived": 81,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 77,
+      "parameters": [
+        61,
+        16,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        60,
+        15,
+        2
+      ],
+      "upper": 84
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        296
+      ],
+      "chain": [
+        {
+          "denominator": 16,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1281,
+          "parameters": [
+            61,
+            16,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 1
+        },
+        {
+          "denominator": 17,
+          "derived": 296,
+          "input_lower": 81,
+          "numerator": 5022,
+          "parameters": [
+            62,
+            17,
+            4
+          ],
+          "quotient": 295,
+          "remainder": 7
+        }
+      ],
+      "derived": 296,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 281,
+      "parameters": [
+        62,
+        17,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        60,
+        15,
+        2
+      ],
+      "upper": 511
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        296,
+        1036
+      ],
+      "chain": [
+        {
+          "denominator": 16,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1281,
+          "parameters": [
+            61,
+            16,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 1
+        },
+        {
+          "denominator": 17,
+          "derived": 296,
+          "input_lower": 81,
+          "numerator": 5022,
+          "parameters": [
+            62,
+            17,
+            4
+          ],
+          "quotient": 295,
+          "remainder": 7
+        },
+        {
+          "denominator": 18,
+          "derived": 1036,
+          "input_lower": 296,
+          "numerator": 18648,
+          "parameters": [
+            63,
+            18,
+            5
+          ],
+          "quotient": 1036,
+          "remainder": 0
+        }
+      ],
+      "derived": 1036,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 984,
+      "parameters": [
+        63,
+        18,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        60,
+        15,
+        2
+      ],
+      "upper": 2284
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        296,
+        1036,
+        3490
+      ],
+      "chain": [
+        {
+          "denominator": 16,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1281,
+          "parameters": [
+            61,
+            16,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 1
+        },
+        {
+          "denominator": 17,
+          "derived": 296,
+          "input_lower": 81,
+          "numerator": 5022,
+          "parameters": [
+            62,
+            17,
+            4
+          ],
+          "quotient": 295,
+          "remainder": 7
+        },
+        {
+          "denominator": 18,
+          "derived": 1036,
+          "input_lower": 296,
+          "numerator": 18648,
+          "parameters": [
+            63,
+            18,
+            5
+          ],
+          "quotient": 1036,
+          "remainder": 0
+        },
+        {
+          "denominator": 19,
+          "derived": 3490,
+          "input_lower": 1036,
+          "numerator": 66304,
+          "parameters": [
+            64,
+            19,
+            6
+          ],
+          "quotient": 3489,
+          "remainder": 13
+        }
+      ],
+      "derived": 3490,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 3315,
+      "parameters": [
+        64,
+        19,
+        6
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        60,
+        15,
+        2
+      ],
+      "upper": 10691
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        296,
+        1036,
+        3490,
+        11343
+      ],
+      "chain": [
+        {
+          "denominator": 16,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1281,
+          "parameters": [
+            61,
+            16,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 1
+        },
+        {
+          "denominator": 17,
+          "derived": 296,
+          "input_lower": 81,
+          "numerator": 5022,
+          "parameters": [
+            62,
+            17,
+            4
+          ],
+          "quotient": 295,
+          "remainder": 7
+        },
+        {
+          "denominator": 18,
+          "derived": 1036,
+          "input_lower": 296,
+          "numerator": 18648,
+          "parameters": [
+            63,
+            18,
+            5
+          ],
+          "quotient": 1036,
+          "remainder": 0
+        },
+        {
+          "denominator": 19,
+          "derived": 3490,
+          "input_lower": 1036,
+          "numerator": 66304,
+          "parameters": [
+            64,
+            19,
+            6
+          ],
+          "quotient": 3489,
+          "remainder": 13
+        },
+        {
+          "denominator": 20,
+          "derived": 11343,
+          "input_lower": 3490,
+          "numerator": 226850,
+          "parameters": [
+            65,
+            20,
+            7
+          ],
+          "quotient": 11342,
+          "remainder": 10
+        }
+      ],
+      "derived": 11343,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 10774,
+      "parameters": [
+        65,
+        20,
+        7
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        60,
+        15,
+        2
+      ],
+      "upper": 48702
+    },
+    {
+      "catalogue_available": false,
+      "ceilings": [
+        81,
+        296,
+        1036,
+        3490,
+        11343,
+        35650
+      ],
+      "chain": [
+        {
+          "denominator": 16,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1281,
+          "parameters": [
+            61,
+            16,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 1
+        },
+        {
+          "denominator": 17,
+          "derived": 296,
+          "input_lower": 81,
+          "numerator": 5022,
+          "parameters": [
+            62,
+            17,
+            4
+          ],
+          "quotient": 295,
+          "remainder": 7
+        },
+        {
+          "denominator": 18,
+          "derived": 1036,
+          "input_lower": 296,
+          "numerator": 18648,
+          "parameters": [
+            63,
+            18,
+            5
+          ],
+          "quotient": 1036,
+          "remainder": 0
+        },
+        {
+          "denominator": 19,
+          "derived": 3490,
+          "input_lower": 1036,
+          "numerator": 66304,
+          "parameters": [
+            64,
+            19,
+            6
+          ],
+          "quotient": 3489,
+          "remainder": 13
+        },
+        {
+          "denominator": 20,
+          "derived": 11343,
+          "input_lower": 3490,
+          "numerator": 226850,
+          "parameters": [
+            65,
+            20,
+            7
+          ],
+          "quotient": 11342,
+          "remainder": 10
+        },
+        {
+          "denominator": 21,
+          "derived": 35650,
+          "input_lower": 11343,
+          "numerator": 748638,
+          "parameters": [
+            66,
+            21,
+            8
+          ],
+          "quotient": 35649,
+          "remainder": 9
+        }
+      ],
+      "derived": 35650,
+      "lower": null,
+      "parameters": [
+        66,
+        21,
+        8
+      ],
+      "seed": [
+        60,
+        15,
+        2
+      ],
+      "upper": null
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81
+      ],
+      "chain": [
+        {
+          "denominator": 18,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1449,
+          "parameters": [
+            69,
+            18,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 9
+        }
+      ],
+      "derived": 81,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 77,
+      "parameters": [
+        69,
+        18,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        68,
+        17,
+        2
+      ],
+      "upper": 84
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        299
+      ],
+      "chain": [
+        {
+          "denominator": 18,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1449,
+          "parameters": [
+            69,
+            18,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 9
+        },
+        {
+          "denominator": 19,
+          "derived": 299,
+          "input_lower": 81,
+          "numerator": 5670,
+          "parameters": [
+            70,
+            19,
+            4
+          ],
+          "quotient": 298,
+          "remainder": 8
+        }
+      ],
+      "derived": 299,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 284,
+      "parameters": [
+        70,
+        19,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        68,
+        17,
+        2
+      ],
+      "upper": 530
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        299,
+        1062
+      ],
+      "chain": [
+        {
+          "denominator": 18,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1449,
+          "parameters": [
+            69,
+            18,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 9
+        },
+        {
+          "denominator": 19,
+          "derived": 299,
+          "input_lower": 81,
+          "numerator": 5670,
+          "parameters": [
+            70,
+            19,
+            4
+          ],
+          "quotient": 298,
+          "remainder": 8
+        },
+        {
+          "denominator": 20,
+          "derived": 1062,
+          "input_lower": 299,
+          "numerator": 21229,
+          "parameters": [
+            71,
+            20,
+            5
+          ],
+          "quotient": 1061,
+          "remainder": 9
+        }
+      ],
+      "derived": 1062,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 1009,
+      "parameters": [
+        71,
+        20,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        68,
+        17,
+        2
+      ],
+      "upper": 2542
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        299,
+        1062,
+        3642
+      ],
+      "chain": [
+        {
+          "denominator": 18,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1449,
+          "parameters": [
+            69,
+            18,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 9
+        },
+        {
+          "denominator": 19,
+          "derived": 299,
+          "input_lower": 81,
+          "numerator": 5670,
+          "parameters": [
+            70,
+            19,
+            4
+          ],
+          "quotient": 298,
+          "remainder": 8
+        },
+        {
+          "denominator": 20,
+          "derived": 1062,
+          "input_lower": 299,
+          "numerator": 21229,
+          "parameters": [
+            71,
+            20,
+            5
+          ],
+          "quotient": 1061,
+          "remainder": 9
+        },
+        {
+          "denominator": 21,
+          "derived": 3642,
+          "input_lower": 1062,
+          "numerator": 76464,
+          "parameters": [
+            72,
+            21,
+            6
+          ],
+          "quotient": 3641,
+          "remainder": 3
+        }
+      ],
+      "derived": 3642,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 3460,
+      "parameters": [
+        72,
+        21,
+        6
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        68,
+        17,
+        2
+      ],
+      "upper": 11530
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        299,
+        1062,
+        3642,
+        12085
+      ],
+      "chain": [
+        {
+          "denominator": 18,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1449,
+          "parameters": [
+            69,
+            18,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 9
+        },
+        {
+          "denominator": 19,
+          "derived": 299,
+          "input_lower": 81,
+          "numerator": 5670,
+          "parameters": [
+            70,
+            19,
+            4
+          ],
+          "quotient": 298,
+          "remainder": 8
+        },
+        {
+          "denominator": 20,
+          "derived": 1062,
+          "input_lower": 299,
+          "numerator": 21229,
+          "parameters": [
+            71,
+            20,
+            5
+          ],
+          "quotient": 1061,
+          "remainder": 9
+        },
+        {
+          "denominator": 21,
+          "derived": 3642,
+          "input_lower": 1062,
+          "numerator": 76464,
+          "parameters": [
+            72,
+            21,
+            6
+          ],
+          "quotient": 3641,
+          "remainder": 3
+        },
+        {
+          "denominator": 22,
+          "derived": 12085,
+          "input_lower": 3642,
+          "numerator": 265866,
+          "parameters": [
+            73,
+            22,
+            7
+          ],
+          "quotient": 12084,
+          "remainder": 18
+        }
+      ],
+      "derived": 12085,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 11481,
+      "parameters": [
+        73,
+        22,
+        7
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        68,
+        17,
+        2
+      ],
+      "upper": 59301
+    },
+    {
+      "catalogue_available": false,
+      "ceilings": [
+        81,
+        299,
+        1062,
+        3642,
+        12085,
+        38883
+      ],
+      "chain": [
+        {
+          "denominator": 18,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1449,
+          "parameters": [
+            69,
+            18,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 9
+        },
+        {
+          "denominator": 19,
+          "derived": 299,
+          "input_lower": 81,
+          "numerator": 5670,
+          "parameters": [
+            70,
+            19,
+            4
+          ],
+          "quotient": 298,
+          "remainder": 8
+        },
+        {
+          "denominator": 20,
+          "derived": 1062,
+          "input_lower": 299,
+          "numerator": 21229,
+          "parameters": [
+            71,
+            20,
+            5
+          ],
+          "quotient": 1061,
+          "remainder": 9
+        },
+        {
+          "denominator": 21,
+          "derived": 3642,
+          "input_lower": 1062,
+          "numerator": 76464,
+          "parameters": [
+            72,
+            21,
+            6
+          ],
+          "quotient": 3641,
+          "remainder": 3
+        },
+        {
+          "denominator": 22,
+          "derived": 12085,
+          "input_lower": 3642,
+          "numerator": 265866,
+          "parameters": [
+            73,
+            22,
+            7
+          ],
+          "quotient": 12084,
+          "remainder": 18
+        },
+        {
+          "denominator": 23,
+          "derived": 38883,
+          "input_lower": 12085,
+          "numerator": 894290,
+          "parameters": [
+            74,
+            23,
+            8
+          ],
+          "quotient": 38882,
+          "remainder": 4
+        }
+      ],
+      "derived": 38883,
+      "lower": null,
+      "parameters": [
+        74,
+        23,
+        8
+      ],
+      "seed": [
+        68,
+        17,
+        2
+      ],
+      "upper": null
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81
+      ],
+      "chain": [
+        {
+          "denominator": 19,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1533,
+          "parameters": [
+            73,
+            19,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 13
+        }
+      ],
+      "derived": 81,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 77,
+      "parameters": [
+        73,
+        19,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        72,
+        18,
+        2
+      ],
+      "upper": 85
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        300
+      ],
+      "chain": [
+        {
+          "denominator": 19,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1533,
+          "parameters": [
+            73,
+            19,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 13
+        },
+        {
+          "denominator": 20,
+          "derived": 300,
+          "input_lower": 81,
+          "numerator": 5994,
+          "parameters": [
+            74,
+            20,
+            4
+          ],
+          "quotient": 299,
+          "remainder": 14
+        }
+      ],
+      "derived": 300,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 285,
+      "parameters": [
+        74,
+        20,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        72,
+        18,
+        2
+      ],
+      "upper": 508
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        300,
+        1072
+      ],
+      "chain": [
+        {
+          "denominator": 19,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1533,
+          "parameters": [
+            73,
+            19,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 13
+        },
+        {
+          "denominator": 20,
+          "derived": 300,
+          "input_lower": 81,
+          "numerator": 5994,
+          "parameters": [
+            74,
+            20,
+            4
+          ],
+          "quotient": 299,
+          "remainder": 14
+        },
+        {
+          "denominator": 21,
+          "derived": 1072,
+          "input_lower": 300,
+          "numerator": 22500,
+          "parameters": [
+            75,
+            21,
+            5
+          ],
+          "quotient": 1071,
+          "remainder": 9
+        }
+      ],
+      "derived": 1072,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 1026,
+      "parameters": [
+        75,
+        21,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        72,
+        18,
+        2
+      ],
+      "upper": 2588
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        300,
+        1072,
+        3704
+      ],
+      "chain": [
+        {
+          "denominator": 19,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1533,
+          "parameters": [
+            73,
+            19,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 13
+        },
+        {
+          "denominator": 20,
+          "derived": 300,
+          "input_lower": 81,
+          "numerator": 5994,
+          "parameters": [
+            74,
+            20,
+            4
+          ],
+          "quotient": 299,
+          "remainder": 14
+        },
+        {
+          "denominator": 21,
+          "derived": 1072,
+          "input_lower": 300,
+          "numerator": 22500,
+          "parameters": [
+            75,
+            21,
+            5
+          ],
+          "quotient": 1071,
+          "remainder": 9
+        },
+        {
+          "denominator": 22,
+          "derived": 3704,
+          "input_lower": 1072,
+          "numerator": 81472,
+          "parameters": [
+            76,
+            22,
+            6
+          ],
+          "quotient": 3703,
+          "remainder": 6
+        }
+      ],
+      "derived": 3704,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 3545,
+      "parameters": [
+        76,
+        22,
+        6
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        72,
+        18,
+        2
+      ],
+      "upper": 12734
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        300,
+        1072,
+        3704,
+        12401
+      ],
+      "chain": [
+        {
+          "denominator": 19,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1533,
+          "parameters": [
+            73,
+            19,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 13
+        },
+        {
+          "denominator": 20,
+          "derived": 300,
+          "input_lower": 81,
+          "numerator": 5994,
+          "parameters": [
+            74,
+            20,
+            4
+          ],
+          "quotient": 299,
+          "remainder": 14
+        },
+        {
+          "denominator": 21,
+          "derived": 1072,
+          "input_lower": 300,
+          "numerator": 22500,
+          "parameters": [
+            75,
+            21,
+            5
+          ],
+          "quotient": 1071,
+          "remainder": 9
+        },
+        {
+          "denominator": 22,
+          "derived": 3704,
+          "input_lower": 1072,
+          "numerator": 81472,
+          "parameters": [
+            76,
+            22,
+            6
+          ],
+          "quotient": 3703,
+          "remainder": 6
+        },
+        {
+          "denominator": 23,
+          "derived": 12401,
+          "input_lower": 3704,
+          "numerator": 285208,
+          "parameters": [
+            77,
+            23,
+            7
+          ],
+          "quotient": 12400,
+          "remainder": 8
+        }
+      ],
+      "derived": 12401,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 11869,
+      "parameters": [
+        77,
+        23,
+        7
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        72,
+        18,
+        2
+      ],
+      "upper": 64273
+    },
+    {
+      "catalogue_available": false,
+      "ceilings": [
+        81,
+        300,
+        1072,
+        3704,
+        12401,
+        40304
+      ],
+      "chain": [
+        {
+          "denominator": 19,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1533,
+          "parameters": [
+            73,
+            19,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 13
+        },
+        {
+          "denominator": 20,
+          "derived": 300,
+          "input_lower": 81,
+          "numerator": 5994,
+          "parameters": [
+            74,
+            20,
+            4
+          ],
+          "quotient": 299,
+          "remainder": 14
+        },
+        {
+          "denominator": 21,
+          "derived": 1072,
+          "input_lower": 300,
+          "numerator": 22500,
+          "parameters": [
+            75,
+            21,
+            5
+          ],
+          "quotient": 1071,
+          "remainder": 9
+        },
+        {
+          "denominator": 22,
+          "derived": 3704,
+          "input_lower": 1072,
+          "numerator": 81472,
+          "parameters": [
+            76,
+            22,
+            6
+          ],
+          "quotient": 3703,
+          "remainder": 6
+        },
+        {
+          "denominator": 23,
+          "derived": 12401,
+          "input_lower": 3704,
+          "numerator": 285208,
+          "parameters": [
+            77,
+            23,
+            7
+          ],
+          "quotient": 12400,
+          "remainder": 8
+        },
+        {
+          "denominator": 24,
+          "derived": 40304,
+          "input_lower": 12401,
+          "numerator": 967278,
+          "parameters": [
+            78,
+            24,
+            8
+          ],
+          "quotient": 40303,
+          "remainder": 6
+        }
+      ],
+      "derived": 40304,
+      "lower": null,
+      "parameters": [
+        78,
+        24,
+        8
+      ],
+      "seed": [
+        72,
+        18,
+        2
+      ],
+      "upper": null
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81
+      ],
+      "chain": [
+        {
+          "denominator": 20,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1617,
+          "parameters": [
+            77,
+            20,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 17
+        }
+      ],
+      "derived": 81,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 77,
+      "parameters": [
+        77,
+        20,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        76,
+        19,
+        2
+      ],
+      "upper": 85
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        301
+      ],
+      "chain": [
+        {
+          "denominator": 20,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1617,
+          "parameters": [
+            77,
+            20,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 17
+        },
+        {
+          "denominator": 21,
+          "derived": 301,
+          "input_lower": 81,
+          "numerator": 6318,
+          "parameters": [
+            78,
+            21,
+            4
+          ],
+          "quotient": 300,
+          "remainder": 18
+        }
+      ],
+      "derived": 301,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 286,
+      "parameters": [
+        78,
+        21,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        76,
+        19,
+        2
+      ],
+      "upper": 510
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        301,
+        1081
+      ],
+      "chain": [
+        {
+          "denominator": 20,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1617,
+          "parameters": [
+            77,
+            20,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 17
+        },
+        {
+          "denominator": 21,
+          "derived": 301,
+          "input_lower": 81,
+          "numerator": 6318,
+          "parameters": [
+            78,
+            21,
+            4
+          ],
+          "quotient": 300,
+          "remainder": 18
+        },
+        {
+          "denominator": 22,
+          "derived": 1081,
+          "input_lower": 301,
+          "numerator": 23779,
+          "parameters": [
+            79,
+            22,
+            5
+          ],
+          "quotient": 1080,
+          "remainder": 19
+        }
+      ],
+      "derived": 1081,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 1037,
+      "parameters": [
+        79,
+        22,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        76,
+        19,
+        2
+      ],
+      "upper": 2780
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        301,
+        1081,
+        3760
+      ],
+      "chain": [
+        {
+          "denominator": 20,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1617,
+          "parameters": [
+            77,
+            20,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 17
+        },
+        {
+          "denominator": 21,
+          "derived": 301,
+          "input_lower": 81,
+          "numerator": 6318,
+          "parameters": [
+            78,
+            21,
+            4
+          ],
+          "quotient": 300,
+          "remainder": 18
+        },
+        {
+          "denominator": 22,
+          "derived": 1081,
+          "input_lower": 301,
+          "numerator": 23779,
+          "parameters": [
+            79,
+            22,
+            5
+          ],
+          "quotient": 1080,
+          "remainder": 19
+        },
+        {
+          "denominator": 23,
+          "derived": 3760,
+          "input_lower": 1081,
+          "numerator": 86480,
+          "parameters": [
+            80,
+            23,
+            6
+          ],
+          "quotient": 3760,
+          "remainder": 0
+        }
+      ],
+      "derived": 3760,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 3607,
+      "parameters": [
+        80,
+        23,
+        6
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        76,
+        19,
+        2
+      ],
+      "upper": 13906
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        81,
+        301,
+        1081,
+        3760,
+        12690
+      ],
+      "chain": [
+        {
+          "denominator": 20,
+          "derived": 81,
+          "input_lower": 21,
+          "numerator": 1617,
+          "parameters": [
+            77,
+            20,
+            3
+          ],
+          "quotient": 80,
+          "remainder": 17
+        },
+        {
+          "denominator": 21,
+          "derived": 301,
+          "input_lower": 81,
+          "numerator": 6318,
+          "parameters": [
+            78,
+            21,
+            4
+          ],
+          "quotient": 300,
+          "remainder": 18
+        },
+        {
+          "denominator": 22,
+          "derived": 1081,
+          "input_lower": 301,
+          "numerator": 23779,
+          "parameters": [
+            79,
+            22,
+            5
+          ],
+          "quotient": 1080,
+          "remainder": 19
+        },
+        {
+          "denominator": 23,
+          "derived": 3760,
+          "input_lower": 1081,
+          "numerator": 86480,
+          "parameters": [
+            80,
+            23,
+            6
+          ],
+          "quotient": 3760,
+          "remainder": 0
+        },
+        {
+          "denominator": 24,
+          "derived": 12690,
+          "input_lower": 3760,
+          "numerator": 304560,
+          "parameters": [
+            81,
+            24,
+            7
+          ],
+          "quotient": 12690,
+          "remainder": 0
+        }
+      ],
+      "derived": 12690,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 12059,
+      "parameters": [
+        81,
+        24,
+        7
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        76,
+        19,
+        2
+      ],
+      "upper": 66600
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        82
+      ],
+      "chain": [
+        {
+          "denominator": 22,
+          "derived": 82,
+          "input_lower": 21,
+          "numerator": 1785,
+          "parameters": [
+            85,
+            22,
+            3
+          ],
+          "quotient": 81,
+          "remainder": 3
+        }
+      ],
+      "derived": 82,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 78,
+      "parameters": [
+        85,
+        22,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        84,
+        21,
+        2
+      ],
+      "upper": 85
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        82,
+        307
+      ],
+      "chain": [
+        {
+          "denominator": 22,
+          "derived": 82,
+          "input_lower": 21,
+          "numerator": 1785,
+          "parameters": [
+            85,
+            22,
+            3
+          ],
+          "quotient": 81,
+          "remainder": 3
+        },
+        {
+          "denominator": 23,
+          "derived": 307,
+          "input_lower": 82,
+          "numerator": 7052,
+          "parameters": [
+            86,
+            23,
+            4
+          ],
+          "quotient": 306,
+          "remainder": 14
+        }
+      ],
+      "derived": 307,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 292,
+      "parameters": [
+        86,
+        23,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        84,
+        21,
+        2
+      ],
+      "upper": 556
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        82,
+        307,
+        1113
+      ],
+      "chain": [
+        {
+          "denominator": 22,
+          "derived": 82,
+          "input_lower": 21,
+          "numerator": 1785,
+          "parameters": [
+            85,
+            22,
+            3
+          ],
+          "quotient": 81,
+          "remainder": 3
+        },
+        {
+          "denominator": 23,
+          "derived": 307,
+          "input_lower": 82,
+          "numerator": 7052,
+          "parameters": [
+            86,
+            23,
+            4
+          ],
+          "quotient": 306,
+          "remainder": 14
+        },
+        {
+          "denominator": 24,
+          "derived": 1113,
+          "input_lower": 307,
+          "numerator": 26709,
+          "parameters": [
+            87,
+            24,
+            5
+          ],
+          "quotient": 1112,
+          "remainder": 21
+        }
+      ],
+      "derived": 1113,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 1059,
+      "parameters": [
+        87,
+        24,
+        5
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        84,
+        21,
+        2
+      ],
+      "upper": 2497
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        82
+      ],
+      "chain": [
+        {
+          "denominator": 23,
+          "derived": 82,
+          "input_lower": 21,
+          "numerator": 1869,
+          "parameters": [
+            89,
+            23,
+            3
+          ],
+          "quotient": 81,
+          "remainder": 6
+        }
+      ],
+      "derived": 82,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 79,
+      "parameters": [
+        89,
+        23,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        88,
+        22,
+        2
+      ],
+      "upper": 86
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        82,
+        308
+      ],
+      "chain": [
+        {
+          "denominator": 23,
+          "derived": 82,
+          "input_lower": 21,
+          "numerator": 1869,
+          "parameters": [
+            89,
+            23,
+            3
+          ],
+          "quotient": 81,
+          "remainder": 6
+        },
+        {
+          "denominator": 24,
+          "derived": 308,
+          "input_lower": 82,
+          "numerator": 7380,
+          "parameters": [
+            90,
+            24,
+            4
+          ],
+          "quotient": 307,
+          "remainder": 12
+        }
+      ],
+      "derived": 308,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 297,
+      "parameters": [
+        90,
+        24,
+        4
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        88,
+        22,
+        2
+      ],
+      "upper": 424
+    },
+    {
+      "catalogue_available": true,
+      "ceilings": [
+        82
+      ],
+      "chain": [
+        {
+          "denominator": 24,
+          "derived": 82,
+          "input_lower": 21,
+          "numerator": 1953,
+          "parameters": [
+            93,
+            24,
+            3
+          ],
+          "quotient": 81,
+          "remainder": 9
+        }
+      ],
+      "derived": 82,
+      "exceeds_listed_upper": false,
+      "improves_listed_lower": true,
+      "lower": 79,
+      "parameters": [
+        93,
+        24,
+        3
+      ],
+      "reaches_listed_upper": false,
+      "seed": [
+        92,
+        23,
+        2
+      ],
+      "upper": 87
+    }
+  ],
+  "scope": "Twelve reviewed q=4 seeds; v<100,k<25,3<=t<=8",
+  "status": "pass",
+  "upper_conflicts": []
+}
